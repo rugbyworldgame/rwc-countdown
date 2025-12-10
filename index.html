@@ -9,8 +9,8 @@
     :root {
         --text-main: #dfe8ff;
         --text-sub: rgba(223,232,255,0.55);
-        --px: 0;
-        --py: 0;
+        --px: 0px;   /* параллакс X */
+        --py: 0px;   /* параллакс Y */
     }
 
     body {
@@ -20,7 +20,7 @@
         justify-content: flex-start;
         align-items: center;
         flex-direction: column;
-        background: #000814;
+        background: radial-gradient(circle at 20% -20%, #001a3a, #000814 55%, #00040a 100%);
         color: var(--text-main);
         font-family: Arial, sans-serif;
         text-align: center;
@@ -30,105 +30,123 @@
     }
 
     /* ===============================
-       🔥 PREMIUM MOVING BACKGROUND FX
+       БАЗОВЫЙ КЛАСС ДЛЯ FX-СЛОЁВ
        =============================== */
 
-    body::before {
-        content: "";
+    .fx-layer {
         position: fixed;
-        inset: -40%;
-        background:
-            radial-gradient(circle at 20% 120%, rgba(0, 110, 255, 0.32) 0, transparent 60%),
-            radial-gradient(circle at 80% -20%, rgba(0, 180, 255, 0.28) 0, transparent 60%),
-            radial-gradient(circle at 50% 0%, rgba(255,255,255,0.07), transparent 65%);
-        mix-blend-mode: screen;
-        opacity: 0.33;
-        transform: translate3d(var(--px), var(--py), 0);
-        animation: bgMove 28s ease-in-out infinite alternate;
-        z-index: -3;
+        inset: -20%;
         pointer-events: none;
+        z-index: -5;
+        will-change: transform, opacity, background-position;
+        transform: translate3d(0,0,0);
+        transition: transform 0.12s ease-out;
     }
 
-    @keyframes bgMove {
-        0%   { transform: translate3d(var(--px), var(--py), 0); }
-        100% { transform: translate3d(var(--px), calc(var(--py) - 3%), 0); }
+    /* Глубинный слой (мягкие пятна света) */
+    .fx-depth {
+        z-index: -5;
+        background:
+            radial-gradient(circle at 15% 110%, rgba(0, 110, 255, 0.32) 0, transparent 55%),
+            radial-gradient(circle at 85% -10%, rgba(0, 180, 255, 0.28) 0, transparent 60%),
+            radial-gradient(circle at 50% 0%, rgba(255,255,255,0.08), transparent 70%);
+        opacity: 0.35;
+        animation: depthDrift 28s ease-in-out infinite alternate;
+        transform: translate3d(
+            calc(var(--px) * -0.25),
+            calc(var(--py) * -0.25),
+            0
+        );
     }
 
-    /* ===============================
-       💡 SPOTLIGHT FROM TOP
-       =============================== */
+    @keyframes depthDrift {
+        0%   { transform: translate3d(calc(var(--px) * -0.25), calc(var(--py) * -0.25), 0); }
+        100% { transform: translate3d(calc(var(--px) * -0.25), calc(var(--py) * -0.25 - 20px), 0); }
+    }
 
-    body::after {
-        content: "";
-        position: fixed;
-        left: 50%;
-        top: -22%;
-        transform: translateX(-50%);
-        width: 180%;
-        height: 70%;
+    /* Прожектор сверху */
+    .fx-spotlight {
+        z-index: -4;
+        inset: -10% -20% 45%;
         background: radial-gradient(
             ellipse at top,
-            rgba(255, 255, 255, 0.24) 0%,
-            rgba(255, 255, 255, 0.06) 30%,
+            rgba(255, 255, 255, 0.26) 0%,
+            rgba(255, 255, 255, 0.09) 25%,
             rgba(0, 0, 0, 0) 75%
         );
-        opacity: 0.55;
-        pointer-events: none;
         mix-blend-mode: screen;
-        z-index: -2;
+        opacity: 0.6;
+        transform: translate3d(
+            calc(var(--px) * -0.2),
+            calc(var(--py) * -0.4),
+            0
+        );
     }
 
-    /* ===============================
-       🌫 CINEMATIC MIST LAYER
-       =============================== */
-
+    /* Туман перед логотипом / таймером */
     .fx-mist {
-        position: fixed;
-        inset: -10% -20% 40%;
+        z-index: -3;
+        inset: -5% -25% 45%;
         background:
             radial-gradient(circle at 50% 0%, rgba(255,255,255,0.12) 0, transparent 55%),
-            radial-gradient(circle at 30% 10%, rgba(255,255,255,0.06) 0, transparent 50%);
+            radial-gradient(circle at 30% 15%, rgba(255,255,255,0.06) 0, transparent 55%);
         opacity: 0.35;
         filter: blur(4px);
         mix-blend-mode: screen;
-        z-index: -1;
-        pointer-events: none;
-        transform: translate3d(var(--px), var(--py), 0);
         animation: mistDrift 32s ease-in-out infinite alternate;
+        transform: translate3d(
+            calc(var(--px) * -0.15),
+            calc(var(--py) * -0.3),
+            0
+        );
     }
 
     @keyframes mistDrift {
-        0%   { transform: translate3d(var(--px), var(--py), 0); }
-        100% { transform: translate3d(var(--px), calc(var(--py) + 4%), 0); }
+        0%   { transform: translate3d(calc(var(--px) * -0.15), calc(var(--py) * -0.3), 0); }
+        100% { transform: translate3d(calc(var(--px) * -0.15 + 5px), calc(var(--py) * -0.3 + 25px), 0); }
     }
 
-    /* ===============================
-       ✨ PARTICLE FX
-       =============================== */
-
+    /* Частицы (премиальный рассеянный свет) */
     .fx-particles {
-        position: fixed;
-        inset: -20%;
+        z-index: -2;
+        inset: -25%;
         background-image:
-            radial-gradient(circle, rgba(255,255,255,0.18) 0, transparent 55%);
-        background-size: 180px 180px;
-        opacity: 0.23;
+            radial-gradient(circle, rgba(255,255,255,0.15) 0, transparent 55%);
+        background-size: 220px 220px;
+        opacity: 0.22;
         mix-blend-mode: screen;
-        z-index: -1;
-        pointer-events: none;
-        transform: translate3d(var(--px), var(--py), 0);
         animation: particlesFloat 40s linear infinite;
+        transform: translate3d(
+            calc(var(--px) * -0.1),
+            calc(var(--py) * -0.2),
+            0
+        );
     }
 
     @keyframes particlesFloat {
-        0%   {
-            transform: translate3d(var(--px), var(--py), 0);
+        0% {
+            transform: translate3d(calc(var(--px) * -0.1), calc(var(--py) * -0.2), 0);
             background-position: 0 0;
         }
         100% {
-            transform: translate3d(var(--px), calc(var(--py) - 4%), 0);
-            background-position: 120px 160px;
+            transform: translate3d(calc(var(--px) * -0.1), calc(var(--py) * -0.2 - 30px), 0);
+            background-position: 140px 190px;
         }
+    }
+
+    /* Виньетка по краям */
+    .fx-vignette {
+        z-index: -1;
+        inset: -2%;
+        background: radial-gradient(circle at center,
+                    transparent 55%,
+                    rgba(0,0,0,0.35) 100%);
+        opacity: 0.9;
+        transform: translate3d(
+            calc(var(--px) * -0.05),
+            calc(var(--py) * -0.05),
+            0
+        );
     }
 
     /* ===============================
@@ -145,6 +163,7 @@
     .logo svg {
         width: 82px;
         height: auto;
+        filter: drop-shadow(0 0 8px rgba(223,232,255,0.65));
     }
 
     .logo-caption {
@@ -157,19 +176,19 @@
     }
 
     /* ===============================
-       HEADER
+       TEXT / HEADER
        =============================== */
 
     h1 {
         font-size: clamp(1.2rem, 3.4vw, 1.65rem);
         margin-bottom: 14px;
         font-weight: 600;
-        color: rgba(223,232,255,0.85);
+        color: rgba(223,232,255,0.88);
         text-shadow: 0 0 10px rgba(0,0,0,0.5);
     }
 
     /* ===============================
-       TWO-LINE TIMER
+       TIMER (TWO LINES)
        =============================== */
 
     .timer-block {
@@ -210,9 +229,12 @@
 </head>
 <body>
 
-<!-- FX LAYERS -->
-<div class="fx-mist"></div>
-<div class="fx-particles"></div>
+<!-- CINEMATIC FX LAYERS -->
+<div class="fx-layer fx-depth"></div>
+<div class="fx-layer fx-spotlight"></div>
+<div class="fx-layer fx-mist"></div>
+<div class="fx-layer fx-particles"></div>
+<div class="fx-layer fx-vignette"></div>
 
 <!-- LOGO -->
 <div class="logo">
@@ -291,32 +313,41 @@ function updateTimer() {
 
 setInterval(updateTimer, 1000);
 updateTimer();
-</script>
 
-<script>
 /* ---------- PARALLAX FX ----------- */
 
 const root = document.documentElement;
+const strengthDesktop = 8;   // максимум смещения в px на ПК
+const strengthMobile  = 4;   // максимум смещения в px на телефонах
 
-function applyParallax(x, y) {
-    root.style.setProperty('--px', x + 'px');
-    root.style.setProperty('--py', y + 'px');
+function applyParallax(xNorm, yNorm) {
+    // xNorm и yNorm в диапазоне [-1; 1]
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    const s = isMobile ? strengthMobile : strengthDesktop;
+
+    const x = xNorm * s;
+    const y = yNorm * s;
+
+    root.style.setProperty('--px', x.toFixed(2) + 'px');
+    root.style.setProperty('--py', y.toFixed(2) + 'px');
 }
 
-const strength = 4;
-
-/* Телефоны — гироскоп */
+/* ----- Телефоны (гироскоп) ----- */
 window.addEventListener('deviceorientation', (e) => {
-    const x = (e.gamma || 0) / 45;
-    const y = (e.beta  || 0) / 45;
-    applyParallax(x * strength, y * strength);
+    if (e.gamma === null || e.beta === null) return;
+
+    const xNorm = (e.gamma || 0) / 45; // наклон вправо/влево
+    const yNorm = (e.beta  || 0) / 45; // наклон вперёд/назад
+
+    applyParallax(xNorm, yNorm);
 });
 
-/* ПК — мышь */
+/* ----- ПК (мышь) ----- */
 window.addEventListener('mousemove', (e) => {
-    const x = (e.clientX / window.innerWidth  - 0.5) * 2;
-    const y = (e.clientY / window.innerHeight - 0.5) * 2;
-    applyParallax(x * strength, y * strength);
+    const xNorm = (e.clientX / window.innerWidth  - 0.5) * 2;
+    const yNorm = (e.clientY / window.innerHeight - 0.5) * 2;
+
+    applyParallax(xNorm, yNorm);
 });
 </script>
 
