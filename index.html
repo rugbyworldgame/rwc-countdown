@@ -10,7 +10,7 @@
         --text-main: #dfe8ff;
         --text-sub: rgba(223,232,255,0.55);
         --text-muted: rgba(223,232,255,0.75);
-        --text-heading: rgba(223,232,255,0.88); /* Приглушённый заголовок */
+        --text-heading: rgba(223,232,255,0.88); /* приглушённый заголовок */
     }
 
     body {
@@ -24,18 +24,62 @@
         color: var(--text-main);
         font-family: Arial, sans-serif;
         text-align: center;
-        padding-top: 6vh; /* чуть выше */
+        padding-top: 6vh;
+        position: relative;
+        overflow: hidden; /* чтобы анимация фона не вылезала за края */
+    }
+
+    /* ПРОЖЕКТОР СВЕРХУ */
+    body::before {
+        content: "";
+        position: fixed;
+        inset: -25% -15% auto -15%;
+        height: 60%;
+        background:
+            radial-gradient(ellipse at top,
+                rgba(255, 255, 255, 0.16) 0%,
+                rgba(255, 255, 255, 0.04) 35%,
+                rgba(0, 0, 0, 0) 70%);
+        opacity: 0.65;
+        pointer-events: none;
+        mix-blend-mode: screen;
+        z-index: -1;
+    }
+
+    /* ЛЁГКОЕ ДВИЖЕНИЕ ПРЕМИУМ-ГРАДИЕНТА */
+    body::after {
+        content: "";
+        position: fixed;
+        inset: -30%;
+        background:
+            radial-gradient(circle at 20% 120%,
+                rgba(0, 90, 180, 0.40) 0,
+                transparent 60%),
+            radial-gradient(circle at 80% -20%,
+                rgba(0, 200, 255, 0.28) 0,
+                transparent 60%);
+        opacity: 0.28;
+        mix-blend-mode: soft-light;
+        pointer-events: none;
+        animation: gradientMove 22s ease-in-out infinite alternate;
+        z-index: -1;
+    }
+
+    @keyframes gradientMove {
+        0%   { transform: translate3d(0, 0, 0); }
+        100% { transform: translate3d(0, -3%, 0); }
     }
 
     .logo {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-bottom: 18px; /* меньше отступ */
+        margin-bottom: 18px;
+        user-select: none;
     }
 
     .logo svg {
-        width: 75px;  /* уменьшили */
+        width: 75px;
         height: auto;
     }
 
@@ -47,11 +91,19 @@
         margin-top: 6px;
     }
 
+    .logo-subcaption {
+        font-size: 0.64rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: rgba(223,232,255,0.40);
+        margin-top: 2px;
+    }
+
     h1 {
         font-size: clamp(1.1rem, 3.3vw, 1.55rem);
         margin-bottom: 18px;
         font-weight: 600;
-        color: var(--text-heading); /* мягче */
+        color: var(--text-heading);
         text-shadow: 0 0 6px rgba(0,0,0,0.4);
     }
 
@@ -59,15 +111,15 @@
         font-size: clamp(2.5rem, 6.3vw, 3.6rem);
         font-weight: 500;
         letter-spacing: 1px;
-        text-shadow: 
+        text-shadow:
             0 0 12px rgba(0,0,0,0.65),
-            0 0 22px rgba(0,0,0,0.35); /* усилено */
+            0 0 22px rgba(0,0,0,0.35);
         margin-bottom: 14px;
     }
 
     .subtitle {
         font-size: clamp(0.75rem, 2vw, 0.87rem);
-        opacity: 0.45; /* тише */
+        opacity: 0.45;
         margin-top: 2px;
     }
 </style>
@@ -101,7 +153,6 @@
             <path d="M40 90 H60" stroke-linecap="round"/>
         </g>
 
-        <!-- Подставка -->
         <path d="M30 98 Q50 104 70 98"
               stroke="#dfe8ff"
               stroke-width="1.2"
@@ -112,6 +163,7 @@
     </svg>
 
     <div class="logo-caption">RWC&nbsp;2027</div>
+    <div class="logo-subcaption">Australia&nbsp;2027</div>
 </div>
 
 <!-- ОСНОВНОЙ БЛОК -->
