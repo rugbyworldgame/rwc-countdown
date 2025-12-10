@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Обратный отсчёт до Кубка мира по регби</title>
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: radial-gradient(circle, #001a33, #000814);
+        color: #ffffff;
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    #timer {
+        font-size: 3rem;
+        letter-spacing: 2px;
+    }
+    h1 { margin-bottom: 20px; }
+</style>
+</head>
+<body>
+
+<div>
+    <h1>До Кубка Мира по Регби осталось:</h1>
+    <div id="timer"></div>
+</div>
+
+<script>
+    function updateTimer() {
+        const target = new Date("2027-10-01T00:00:00").getTime();
+        const now = Date.now();
+        const diff = target - now;
+
+        if (diff <= 0) {
+            document.getElementById("timer").innerHTML = "Старт!";
+            return;
+        }
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+
+        document.getElementById("timer").innerHTML =
+            days + " дн · " +
+            hours + " ч · " +
+            minutes + " мин · " +
+            seconds + " сек";
+    }
+
+    setInterval(updateTimer, 1000);
+    updateTimer();
+</script>
+
+</body>
+</html>
+
