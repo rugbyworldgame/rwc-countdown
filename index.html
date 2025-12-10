@@ -15,46 +15,76 @@
         margin: 0;
         height: 100vh;
         display: flex;
-        justify-content: flex-start;   /* ЧУТЬ ВЫШЕ БЛОК */
+        justify-content: flex-start;   /* блок чуть выше центра */
         align-items: center;
         flex-direction: column;
         background: radial-gradient(circle, #001a33, #000814);
         color: var(--text-main);
         font-family: Arial, sans-serif;
         text-align: center;
-        padding-top: 8vh; /* смещение блока вверх */
+        padding-top: 7vh;
+        padding-left: 16px;
+        padding-right: 16px;
+        box-sizing: border-box;
+    }
+
+    .logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        margin-bottom: 20px;
+    }
+
+    .logo svg {
+        width: 82px;
+        max-width: 22vw;
+        height: auto;
+    }
+
+    .logo-caption {
+        font-size: 0.75rem;
+        letter-spacing: 0.32em;
+        text-transform: uppercase;
+        color: var(--text-sub);
     }
 
     h1 {
         font-size: clamp(1.2rem, 3.4vw, 1.65rem);
         margin-bottom: 16px;
         font-weight: 600;
-        text-shadow: 0 0 10px rgba(0,0,0,0.55); /* мягкая тень */
+        text-shadow: 0 0 10px rgba(0,0,0,0.55);
     }
 
     #timer {
         font-size: clamp(2.4rem, 6vw, 3.4rem);
         font-weight: 500;
-        letter-spacing: 1px;    /* меньше расстояние — плотнее, дороже */
+        letter-spacing: 1px;
         text-shadow: 0 0 10px rgba(0,0,0,0.6);
         line-height: 1.22;
         margin-bottom: 12px;
     }
 
     .subtitle {
-        font-size: clamp(0.78rem, 2vw, 0.9rem); /* немного крупнее */
+        font-size: clamp(0.78rem, 2vw, 0.9rem);
         opacity: 0.55;
         margin-top: 4px;
     }
 
-    /* Улучшенная мобильная адаптация */
     @media (max-width: 480px) {
         body {
-            padding-top: 12vh; /* центрирование на мобильных */
+            padding-top: 10vh;
         }
         #timer {
             font-size: 2.55rem;
             letter-spacing: 0.8px;
+        }
+        .logo svg {
+            width: 70px;
+        }
+        .logo-caption {
+            font-size: 0.7rem;
+            letter-spacing: 0.26em;
         }
     }
 </style>
@@ -62,38 +92,42 @@
 </head>
 <body>
 
-<div>
-    <h1>До Кубка Мира по Регби осталось:</h1>
-    <div id="timer"></div>
-    <div class="subtitle">Rugby World Cup 2027 starts in:</div>
-</div>
+<div class="logo">
+    <!-- Минималистичный SVG-логотип RWC 2027 с мягким glow -->
+    <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+            <!-- мягкое свечение вокруг линий -->
+            <filter id="cup-glow" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="2" result="blur"/>
+                <feColorMatrix in="blur" type="matrix"
+                    values="0 0 0 0 0.87
+                            0 0 0 0 0.91
+                            0 0 0 0 1
+                            0 0 0 0.75 0" result="glow"/>
+                <feMerge>
+                    <feMergeNode in="glow"/>
+                    <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+            </filter>
+        </defs>
 
-<script>
-    function updateTimer() {
-        const target = new Date("2027-10-01T00:00:00").getTime();
-        const now = Date.now();
-        const diff = target - now;
+        <!-- контур чаши: супер-минимализм 2-3 линиями -->
+        <g stroke="#dfe8ff" stroke-width="1.4" fill="none" filter="url(#cup-glow)">
+            <!-- боковые линии -->
+            <path d="M30 25 Q28 55 40 78" stroke-linecap="round"/>
+            <path d="M70 25 Q72 55 60 78" stroke-linecap="round"/>
 
-        if (diff <= 0) {
-            document.getElementById("timer").innerHTML = "Старт!";
-            return;
-        }
+            <!-- верхняя линия "крышки" -->
+            <path d="M30 25 Q50 12 70 25" stroke-linecap="round"/>
 
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-        const minutes = Math.floor((diff / (1000 * 60)) % 60);
-        const seconds = Math.floor((diff / 1000) % 60);
+            <!-- "ножка" -->
+            <path d="M45 80 Q50 84 55 80" stroke-linecap="round"/>
+            <path d="M40 88 H60" stroke-linecap="round"/>
+        </g>
 
-        document.getElementById("timer").innerHTML =
-            days + " дн · " +
-            hours.toString().padStart(2, "0") + " ч · " +
-            minutes.toString().padStart(2, "0") + " мин · " +
-            seconds.toString().padStart(2, "0") + " сек";
-    }
-
-    setInterval(updateTimer, 1000);
-    updateTimer();
-</script>
-
-</body>
-</html>
+        <!-- дуга-намёк на мяч под кубком -->
+        <path d="M28 96 Q50 104 72 96"
+              stroke="#dfe8ff"
+              stroke-width="1"
+              stroke-linecap="round"
+              fill="none"
