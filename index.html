@@ -27,7 +27,10 @@
         overflow: hidden;
     }
 
-    /* 🔥 ПРЕМИАЛЬНОЕ ДВИЖЕНИЕ ФОНА */
+    /* ===============================
+       🔥 PREMIUM MOVING BACKGROUND FX
+       =============================== */
+
     body::before {
         content: "";
         position: fixed;
@@ -39,7 +42,7 @@
         mix-blend-mode: screen;
         opacity: 0.33;
         animation: bgMove 28s ease-in-out infinite alternate;
-        z-index: -2;
+        z-index: -3;
         pointer-events: none;
     }
 
@@ -48,7 +51,10 @@
         100% { transform: translate3d(0, -3%, 0); }
     }
 
-    /* 💡 ПРОЖЕКТОР СВЕРХУ */
+    /* ===============================
+       💡 SPOTLIGHT FROM TOP
+       =============================== */
+
     body::after {
         content: "";
         position: fixed;
@@ -66,12 +72,58 @@
         opacity: 0.55;
         pointer-events: none;
         mix-blend-mode: screen;
-        z-index: -1;
+        z-index: -2;
     }
 
-    /* ==========================
-       ЛОГОТИП
-    ========================== */
+    /* ===============================
+       🌫 CINEMATIC MIST LAYER
+       =============================== */
+
+    .fx-mist {
+        position: fixed;
+        inset: -10% -20% 40%;
+        background:
+            radial-gradient(circle at 50% 0%, rgba(255,255,255,0.10) 0, transparent 55%),
+            radial-gradient(circle at 30% 10%, rgba(255,255,255,0.05) 0, transparent 50%);
+        opacity: 0.35;
+        filter: blur(4px);
+        mix-blend-mode: screen;
+        z-index: -1;
+        pointer-events: none;
+        animation: mistDrift 32s ease-in-out infinite alternate;
+    }
+
+    @keyframes mistDrift {
+        0%   { transform: translate3d(0, 0, 0); }
+        100% { transform: translate3d(0, 4%, 0); }
+    }
+
+    /* ===============================
+       ✨ PARTICLE FX
+       =============================== */
+
+    .fx-particles {
+        position: fixed;
+        inset: -20%;
+        background-image:
+            radial-gradient(circle, rgba(255,255,255,0.18) 0, transparent 55%);
+        background-size: 180px 180px;
+        opacity: 0.23;
+        mix-blend-mode: screen;
+        z-index: -1;
+        pointer-events: none;
+        animation: particlesFloat 40s linear infinite;
+    }
+
+    @keyframes particlesFloat {
+        0%   { transform: translate3d(0,0,0); background-position: 0 0; }
+        100% { transform: translate3d(0,-4%,0); background-position: 120px 160px; }
+    }
+
+    /* ===============================
+       LOGO
+       =============================== */
+
     .logo {
         display: flex;
         flex-direction: column;
@@ -93,9 +145,10 @@
         line-height: 1.2;
     }
 
-    /* ==========================
-       ЗАГОЛОВОК
-    ========================== */
+    /* ===============================
+       TEXT / HEADER
+       =============================== */
+
     h1 {
         font-size: clamp(1.2rem, 3.4vw, 1.65rem);
         margin-bottom: 14px;
@@ -104,9 +157,10 @@
         text-shadow: 0 0 10px rgba(0,0,0,0.5);
     }
 
-    /* ==========================
-       ДВУХСТРОЧНЫЙ ТАЙМЕР
-    ========================== */
+    /* ===============================
+       TIMER (TWO LINES)
+       =============================== */
+
     .timer-block {
         display: flex;
         flex-direction: column;
@@ -144,6 +198,10 @@
 
 </head>
 <body>
+
+<!-- CINEMATIC FX LAYERS -->
+<div class="fx-mist"></div>
+<div class="fx-particles"></div>
 
 <!-- LOGO -->
 <div class="logo">
@@ -185,9 +243,10 @@
     </div>
 </div>
 
-<!-- TEXT + TIMER -->
+<!-- TITLE -->
 <h1>До Кубка Мира по Регби осталось:</h1>
 
+<!-- TIMER -->
 <div class="timer-block">
     <div id="timer-line1" class="timer-line"></div>
     <div id="timer-line2" class="timer-line"></div>
@@ -225,4 +284,3 @@ updateTimer();
 
 </body>
 </html>
-
