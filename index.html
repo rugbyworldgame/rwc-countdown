@@ -127,30 +127,41 @@
         margin-top: 4px;
     }
 
-    /* ---------- GROUPS SECTION ---------- */
+     /* ---------- GROUPS SECTION (fixed center + safe wide cards) ---------- */
 
-    .groups-section {
-        margin-top: 52px;
-        padding: 0 16px 56px;
-        max-width: 1100px;
-        width: 100%;
-    }
+.groups-section {
+    margin-top: 52px;
+    padding: 0 16px 56px;
+    max-width: 1200px;     /* увеличено с 1100 */
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;    /* центрируем жёстко */
+}
 
-    /* GRID — desktop 3x2 */
+/* DESKTOP — 3 columns */
+.groups-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 26px 32px;
+
+    justify-items: center;   /* ВСЕ карточки строго по центру */
+    align-items: start;
+}
+
+/* TABLET — 2 columns */
+@media (max-width: 960px) {
     .groups-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0,1fr));
-        gap: 22px 26px;
-        text-align: left;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* MOBILE — 1 column */
+@media (max-width: 640px) {
+    .groups-grid {
+        grid-template-columns: 1fr;
         justify-items: center;
     }
-
-    /* GRID — tablet 2 columns */
-    @media (max-width: 960px) {
-        .groups-grid {
-            grid-template-columns: repeat(2,1fr);
-        }
-    }
+}
 
     /* GRID — mobile 1 column + FULL CENTER */
     @media (max-width: 640px) {
