@@ -1,17 +1,161 @@
-<!-- ГРУППЫ ТУРНИРА -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"> 
+<title>Кубок мира по регби — Австралия 2027</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
 <style>
+    :root {
+        --text-main: #dfe8ff;
+        --text-sub: rgba(223,232,255,0.55);
+        --accent-soft: #8FAFE6; /* мягкий премиальный акцент */
+    }
+
+    body {
+        margin: 0;
+        height: auto;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        background: radial-gradient(circle at 50% 0%, #102746 0%, #000814 55%, #00040a 100%);
+        color: var(--text-main);
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding-top: 7vh;
+        position: relative;
+        overflow-x: hidden;
+    }
+
+    /* ---------- APPLE CLEAN CINEMATIC BACKGROUND ---------- */
+
+    body::before {
+        content: "";
+        position: fixed;
+        inset: -40% -30% 35%;
+        background: radial-gradient(circle at 50% 0%,
+            rgba(90, 140, 255, 0.28) 0%,
+            rgba(12, 32, 64, 0.0) 60%);
+        mix-blend-mode: screen;
+        opacity: 0.55;
+        pointer-events: none;
+        z-index: -2;
+        animation: bgBreath 26s ease-in-out infinite alternate;
+    }
+
+    body::after {
+        content: "";
+        position: fixed;
+        left: 50%;
+        top: -26%;
+        transform: translateX(-50%);
+        width: 160%;
+        height: 70%;
+        background: radial-gradient(
+            ellipse at top,
+            rgba(255, 255, 255, 0.22) 0%,
+            rgba(255, 255, 255, 0.08) 26%,
+            rgba(0, 0, 0, 0.0) 72%
+        );
+        opacity: 0.6;
+        mix-blend-mode: screen;
+        pointer-events: none;
+        z-index: -1;
+        animation: spotBreath 18s ease-in-out infinite alternate;
+    }
+
+    @keyframes bgBreath {
+        0%   { opacity: 0.45; transform: translate3d(0, 0, 0); }
+        100% { opacity: 0.65; transform: translate3d(0, 2.5%, 0); }
+    }
+
+    @keyframes spotBreath {
+        0%   { opacity: 0.5; transform: translateX(-50%) translateY(0); }
+        100% { opacity: 0.7; transform: translateX(-50%) translateY(3%); }
+    }
+
+    /* ---------- ЛОГОТИП ---------- */
+
+    .logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 22px;
+    }
+
+    .logo svg {
+        width: 82px;
+        height: auto;
+    }
+
+    .logo-caption {
+        font-size: 0.75rem;
+        letter-spacing: 0.32em;
+        text-transform: uppercase;
+        color: var(--text-sub);
+        margin-top: 6px;
+        line-height: 1.2;
+    }
+
+    /* ---------- ТАЙМЕР ---------- */
+
+    h1 {
+        font-size: clamp(1.2rem, 3.4vw, 1.65rem);
+        margin-bottom: 14px;
+        font-weight: 600;
+        color: rgba(223,232,255,0.88);
+        text-shadow: 0 0 10px rgba(0,0,0,0.45);
+    }
+
+    .timer-block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 22px;
+    }
+
+    .timer-line {
+        font-size: clamp(2.1rem, 6vw, 3rem);
+        font-weight: 500;
+        text-shadow: 0 0 10px rgba(0,0,0,0.6);
+        color: var(--text-main);
+        line-height: 1.2;
+    }
+
+    #timer-line1 {
+        margin-bottom: 4px;
+    }
+
+    .subtitle {
+        font-size: clamp(0.78rem, 2vw, 0.9rem);
+        opacity: 0.55;
+        margin-top: 4px;
+    }
+
+    /* ---------- ГРУППЫ ТУРНИРА ---------- */
+
     .groups-section {
-        margin-top: 48px;
+        margin-top: 52px;
         padding: 0 16px 56px;
         max-width: 1100px;
         width: 100%;
+    }
+
+    .groups-title {
+        font-size: clamp(1rem, 2.1vw, 1.25rem);
+        font-weight: 600;
+        margin-bottom: 20px;
+        color: var(--text-main);
+        text-align: left;
+        opacity: 0.9;
     }
 
     .groups-grid {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 18px 22px;
-        animation: fadeIn 1.4s ease;
     }
 
     .group-card {
@@ -20,26 +164,6 @@
         background: rgba(0, 0, 0, 0.22);
         box-shadow: 0 0 0 1px rgba(255,255,255,0.03);
         text-align: left;
-        opacity: 0;
-        transform: translateY(12px);
-        animation: cardPop 0.8s ease forwards;
-    }
-
-    .group-card:nth-child(1) { animation-delay: 0.12s; }
-    .group-card:nth-child(2) { animation-delay: 0.20s; }
-    .group-card:nth-child(3) { animation-delay: 0.28s; }
-    .group-card:nth-child(4) { animation-delay: 0.36s; }
-    .group-card:nth-child(5) { animation-delay: 0.44s; }
-    .group-card:nth-child(6) { animation-delay: 0.52s; }
-
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
-
-    @keyframes cardPop {
-        0% { opacity: 0; transform: translateY(16px); }
-        100% { opacity: 1; transform: translateY(0); }
     }
 
     .group-title {
@@ -72,48 +196,78 @@
         margin-bottom: 0;
     }
 
-    /* ---------- АДАПТАЦИЯ ---------- */
-    
-    /* планшеты */
     @media (max-width: 960px) {
         .groups-grid {
             grid-template-columns: repeat(2, minmax(0, 1fr));
         }
     }
 
-    /* телефоны */
     @media (max-width: 640px) {
-
-        .groups-section {
-            margin-top: 32px;
-            padding-bottom: 38px;
-        }
-
         .groups-grid {
             grid-template-columns: 1fr;
-            gap: 14px;
         }
-
         .group-card {
-            padding: 12px 14px 10px;
-            border-radius: 14px;
-            text-align: center; /* мобильник — всё по центру */
-        }
-
-        .group-title {
-            font-size: 0.78rem;
-            letter-spacing: 0.2em;
-        }
-
-        .group-team {
-            font-size: 0.88rem;
-            margin-bottom: 3px;
+            padding: 14px 14px 12px;
         }
     }
 </style>
+</head>
 
+<body>
+
+<!-- ЛОГО -->
+<div class="logo">
+    <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <filter id="cup-glow" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="2" result="blur"/>
+                <feColorMatrix in="blur" type="matrix"
+                    values="0 0 0 0 0.87
+                            0 0 0 0 0.91
+                            0 0 0 0 1
+                            0 0 0 0.75 0" result="glow"/>
+                <feMerge>
+                    <feMergeNode in="glow"/>
+                    <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+            </filter>
+        </defs>
+
+        <g stroke="#dfe8ff" stroke-width="1.6" fill="none" filter="url(#cup-glow)">
+            <path d="M32 30 Q28 58 42 82" stroke-linecap="round"/>
+            <path d="M68 30 Q72 58 58 82" stroke-linecap="round"/>
+            <path d="M32 30 Q50 16 68 30" stroke-linecap="round"/>
+            <path d="M45 86 Q50 90 55 86" stroke-linecap="round"/>
+            <path d="M40 94 H60" stroke-linecap="round"/>
+        </g>
+
+        <path d="M28 102 Q50 110 72 102"
+              stroke="#dfe8ff"
+              stroke-width="1.1"
+              stroke-linecap="round"
+              opacity="0.8"
+              filter="url(#cup-glow)"/>
+    </svg>
+
+    <div class="logo-caption">
+        RWC 2027<br>AUSTRALIA 2027
+    </div>
+</div>
+
+<!-- ТАЙМЕР -->
+<h1>До Кубка Мира по Регби осталось:</h1>
+
+<div class="timer-block">
+    <div id="timer-line1" class="timer-line"></div>
+    <div id="timer-line2" class="timer-line"></div>
+</div>
+
+<div class="subtitle">Rugby World Cup 2027 starts in:</div>
+
+<!-- ГРУППЫ -->
 <div class="groups-section">
-    <div class="groups-grid">
+    
+        <div class="groups-grid">
 
         <!-- A -->
         <div class="group-card">
@@ -177,3 +331,34 @@
 
     </div>
 </div>
+
+<script>
+function updateTimer() {
+    const target = new Date("2027-10-01T00:00:00").getTime();
+    const now = Date.now();
+    const diff = target - now;
+
+    if (diff <= 0) {
+        document.getElementById("timer-line1").innerHTML = "Старт!";
+        document.getElementById("timer-line2").innerHTML = "";
+        return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    document.getElementById("timer-line1").innerHTML =
+        `${days} дн · ${hours.toString().padStart(2, "0")} ч`;
+
+    document.getElementById("timer-line2").innerHTML =
+        `${minutes.toString().padStart(2, "0")} мин · ${seconds.toString().padStart(2, "0")} сек`;
+}
+
+setInterval(updateTimer, 1000);
+updateTimer();
+</script>
+
+</body>
+</html>
