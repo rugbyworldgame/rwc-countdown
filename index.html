@@ -29,49 +29,48 @@
         overflow-x: hidden;
     }
 
-    /* ---------- BACKGROUND LIGHT EFFECTS ---------- */
-    body::before {
-        content: "";
-        position: fixed;
-        inset: -40% -30% 35%;
-        background: radial-gradient(circle at 50% 0%,
-            rgba(90,140,255,0.28) 0%,
-            rgba(12,32,64,0) 60%);
-        mix-blend-mode: screen;
-        opacity: 0.55;
-        pointer-events: none;
-        z-index: -2;
-        animation: bgBreath 26s ease-in-out infinite alternate;
-    }
+  /* ---------- MINIMAL CLEAN BACKGROUND (Variant B) ---------- */
 
-    body::after {
-        content: "";
-        position: fixed;
-        left: 50%;
-        top: -26%;
-        transform: translateX(-50%);
-        width: 160%;
-        height: 70%;
-        background: radial-gradient(ellipse at top,
-            rgba(255,255,255,0.22) 0%,
-            rgba(255,255,255,0.08) 26%,
-            rgba(0,0,0,0) 72%);
-        opacity: 0.6;
-        mix-blend-mode: screen;
-        pointer-events: none;
-        z-index: -1;
-        animation: spotBreath 18s ease-in-out infinite alternate;
-    }
+body {
+    background: radial-gradient(circle at 50% 0%,
+        #1a2f4d 0%,
+        #091626 55%,
+        #04080f 100%);
+    position: relative;
+}
 
-    @keyframes bgBreath {
-        0% { opacity: 0.45; transform: translateY(0); }
-        100% { opacity: 0.65; transform: translateY(2.5%); }
-    }
+/* Верхнее мягкое свечение строго по центру */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at 50% 0%,
+        rgba(255, 255, 255, 0.16) 0%,
+        rgba(255, 255, 255, 0.05) 22%,
+        rgba(0, 0, 0, 0) 70%);
+    opacity: 0.55;
+    pointer-events: none;
+    z-index: -1;
+    animation: bgBreath 22s ease-in-out infinite alternate;
+}
 
-    @keyframes spotBreath {
-        0% { opacity: 0.5; transform: translateX(-50%) translateY(0); }
-        100% { opacity: 0.7; transform: translateX(-50%) translateY(3%); }
-    }
+/* Лёгкий общий soft-glow без смещения */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at 50% 35%,
+        rgba(120, 160, 255, 0.12),
+        rgba(0, 0, 0, 0));
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes bgBreath {
+    from { opacity: 0.45; }
+    to   { opacity: 0.65; }
+}
 
     /* ---------- LOGO ---------- */
     .logo {
