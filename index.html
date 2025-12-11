@@ -35,8 +35,8 @@
         position: fixed;
         inset: -40% -30% 35%;
         background: radial-gradient(circle at 50% 0%,
-            rgba(90, 140, 255, 0.28) 0%,
-            rgba(12, 32, 64, 0) 60%);
+            rgba(90,140,255,0.28) 0%,
+            rgba(12,32,64,0) 60%);
         mix-blend-mode: screen;
         opacity: 0.55;
         pointer-events: none;
@@ -52,12 +52,10 @@
         transform: translateX(-50%);
         width: 160%;
         height: 70%;
-        background: radial-gradient(
-            ellipse at top,
-            rgba(255, 255, 255, 0.22) 0%,
-            rgba(255, 255, 255, 0.08) 26%,
-            rgba(0, 0, 0, 0) 72%
-        );
+        background: radial-gradient(ellipse at top,
+            rgba(255,255,255,0.22) 0%,
+            rgba(255,255,255,0.08) 26%,
+            rgba(0,0,0,0) 72%);
         opacity: 0.6;
         mix-blend-mode: screen;
         pointer-events: none;
@@ -129,7 +127,8 @@
         margin-top: 4px;
     }
 
-    /* ---------- GROUPS ---------- */
+    /* ---------- GROUPS SECTION ---------- */
+
     .groups-section {
         margin-top: 52px;
         padding: 0 16px 56px;
@@ -137,39 +136,47 @@
         width: 100%;
     }
 
+    /* GRID — desktop 3x2 */
     .groups-grid {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(3, minmax(0,1fr));
         gap: 22px 26px;
         text-align: left;
+        justify-items: center;
     }
 
+    /* GRID — tablet 2 columns */
     @media (max-width: 960px) {
         .groups-grid {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(2,1fr);
         }
     }
 
+    /* GRID — mobile 1 column + FULL CENTER */
     @media (max-width: 640px) {
         .groups-grid {
             grid-template-columns: 1fr;
             text-align: center;
+            justify-items: center;
+            align-items: center;
         }
     }
 
+    /* GROUP CARD */
     .group-card {
         padding: 18px 20px 15px;
         border-radius: 18px;
-        background: rgba(0, 0, 0, 0.22);
+        background: rgba(0,0,0,0.22);
         box-shadow: 0 0 0 1px rgba(255,255,255,0.03);
 
-        /* animation base */
+        /* smooth animations */
         opacity: 0;
         transform: translateY(22px);
+        will-change: opacity, transform;
         animation: fadeUp 0.7s ease-out forwards;
     }
 
-    /* последовательное появление */
+    /* sequential fade */
     .group-card:nth-child(1) { animation-delay: 0.15s; }
     .group-card:nth-child(2) { animation-delay: 0.30s; }
     .group-card:nth-child(3) { animation-delay: 0.45s; }
@@ -178,12 +185,18 @@
     .group-card:nth-child(6) { animation-delay: 0.90s; }
 
     @keyframes fadeUp {
-        to {
-            opacity: 1;
-            transform: translateY(0);
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* MOBILE CARD COMPRESSION */
+    @media (max-width: 640px) {
+        .group-card {
+            padding: 14px 16px 12px;
+            max-width: 360px;
         }
     }
 
+    /* CARD CONTENT */
     .group-title {
         font-size: 0.8rem;
         letter-spacing: 0.22em;
