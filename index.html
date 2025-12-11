@@ -31,7 +31,6 @@
         padding-top: 7vh;
         overflow-x: hidden;
 
-        /* Чистый симметричный фон */
         background: radial-gradient(circle at 50% 0%,
             #1a2f4d 0%,
             #091626 55%,
@@ -39,7 +38,6 @@
         position: relative;
     }
 
-    /* Верхнее мягкое свечение строго по центру */
     body::before {
         content: "";
         position: fixed;
@@ -54,7 +52,6 @@
         animation: bgBreath 22s ease-in-out infinite alternate;
     }
 
-    /* Дополнительное мягкое свечение */
     body::after {
         content: "";
         position: fixed;
@@ -70,6 +67,15 @@
     @keyframes bgBreath {
         from { opacity: 0.45; }
         to   { opacity: 0.65; }
+    }
+
+    /* ================================
+       ALIGN FIX (MOBILE)
+    ================================ */
+    @media (max-width: 640px) {
+        .top-align-fix {
+            transform: translateX(3px);
+        }
     }
 
     /* ================================
@@ -144,7 +150,6 @@
         width: 100%;
     }
 
-    /* Desktop grid */
     .groups-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -152,14 +157,12 @@
         justify-items: center;
     }
 
-    /* Tablet */
     @media (max-width: 960px) {
         .groups-grid {
             grid-template-columns: repeat(2, 1fr);
         }
     }
 
-    /* Mobile */
     @media (max-width: 640px) {
         .groups-grid {
             grid-template-columns: 1fr;
@@ -179,12 +182,10 @@
         background: rgba(0,0,0,0.22);
         box-shadow: 0 0 0 1px rgba(255,255,255,0.03);
 
-        /* Анимация появления */
         opacity: 0;
         transform: translateY(22px);
         animation: fadeUp 0.7s ease-out forwards;
 
-        /* Hover (только мышь) */
         transition:
             transform 0.25s ease,
             box-shadow 0.25s ease,
@@ -201,7 +202,6 @@
         }
     }
 
-    /* Появление по очереди */
     .group-card:nth-child(1) { animation-delay: 0.15s; }
     .group-card:nth-child(2) { animation-delay: 0.30s; }
     .group-card:nth-child(3) { animation-delay: 0.45s; }
@@ -213,7 +213,6 @@
         to { opacity: 1; transform: translateY(0); }
     }
 
-    /* MOBILE – premium wide */
     @media (max-width: 640px) {
         .group-card {
             width: 92%;
@@ -263,55 +262,60 @@
 
 <body>
 
-<!-- LOGO -->
-<div class="logo">
-    <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-            <filter id="cup-glow" x="-50%" y="-50%" width="200%" height="200%">
-                <feGaussianBlur stdDeviation="2" result="blur" />
-                <feColorMatrix in="blur" type="matrix"
-                    values="0 0 0 0 0.87
-                            0 0 0 0 0.91
-                            0 0 0 0 1
-                            0 0 0 0.75 0"
-                    result="glow" />
-                <feMerge>
-                    <feMergeNode in="glow" />
-                    <feMergeNode in="SourceGraphic" />
-                </feMerge>
-            </filter>
-        </defs>
+<!-- TOP ALIGN FIX WRAPPER -->
+<div class="top-align-fix">
 
-        <g stroke="#dfe8ff" stroke-width="1.6" fill="none" filter="url(#cup-glow)">
-            <path d="M32 30 Q28 58 42 82" stroke-linecap="round"/>
-            <path d="M68 30 Q72 58 58 82" stroke-linecap="round"/>
-            <path d="M32 30 Q50 16 68 30" stroke-linecap="round"/>
-            <path d="M45 86 Q50 90 55 86" stroke-linecap="round"/>
-            <path d="M40 94 H60" stroke-linecap="round"/>
-        </g>
+    <!-- LOGO -->
+    <div class="logo">
+        <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <filter id="cup-glow" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur stdDeviation="2" result="blur" />
+                    <feColorMatrix in="blur" type="matrix"
+                        values="0 0 0 0 0.87
+                                0 0 0 0 0.91
+                                0 0 0 0 1
+                                0 0 0 0.75 0"
+                        result="glow" />
+                    <feMerge>
+                        <feMergeNode in="glow" />
+                        <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                </filter>
+            </defs>
 
-        <path d="M28 102 Q50 110 72 102"
-              stroke="#dfe8ff"
-              stroke-width="1.1"
-              stroke-linecap="round"
-              opacity="0.8"
-              filter="url(#cup-glow)"/>
-    </svg>
+            <g stroke="#dfe8ff" stroke-width="1.6" fill="none" filter="url(#cup-glow)">
+                <path d="M32 30 Q28 58 42 82" stroke-linecap="round"/>
+                <path d="M68 30 Q72 58 58 82" stroke-linecap="round"/>
+                <path d="M32 30 Q50 16 68 30" stroke-linecap="round"/>
+                <path d="M45 86 Q50 90 55 86" stroke-linecap="round"/>
+                <path d="M40 94 H60" stroke-linecap="round"/>
+            </g>
 
-    <div class="logo-caption">
-        RWC 2027<br>AUSTRALIA 2027
+            <path d="M28 102 Q50 110 72 102"
+                  stroke="#dfe8ff"
+                  stroke-width="1.1"
+                  stroke-linecap="round"
+                  opacity="0.8"
+                  filter="url(#cup-glow)"/>
+        </svg>
+
+        <div class="logo-caption">
+            RWC 2027<br>AUSTRALIA 2027
+        </div>
     </div>
-</div>
 
-<!-- TIMER -->
-<h1>До Кубка Мира по Регби осталось:</h1>
+    <!-- TIMER -->
+    <h1>До Кубка Мира по Регби осталось:</h1>
 
-<div class="timer-block">
-    <div id="timer-line1" class="timer-line"></div>
-    <div id="timer-line2" class="timer-line"></div>
-</div>
+    <div class="timer-block">
+        <div id="timer-line1" class="timer-line"></div>
+        <div id="timer-line2" class="timer-line"></div>
+    </div>
 
-<div class="subtitle">Rugby World Cup 2027 starts in:</div>
+    <div class="subtitle">Rugby World Cup 2027 starts in:</div>
+
+</div> <!-- END .top-align-fix -->
 
 <!-- GROUPS -->
 <div class="groups-section">
@@ -373,7 +377,6 @@
 
 </div>
 </div>
-
 
 <script>
 function updateTimer() {
