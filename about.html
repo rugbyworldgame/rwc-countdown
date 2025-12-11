@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>О турнире — Кубок мира по регби 2027</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<style>
+    :root {
+        --text-main: #dfe8ff;
+        --text-sub: rgba(223,232,255,0.55);
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: radial-gradient(circle at 50% 0%, #102746 0%, #000814 55%, #00040a 100%);
+        color: var(--text-main);
+        text-align: center;
+        overflow-x: hidden;
+        padding-top: 7vh;
+    }
+
+    /* LOGO */
+    .logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 22px;
+    }
+    .logo svg { width: 82px; height: auto; }
+    .logo-caption {
+        font-size: 0.75rem;
+        letter-spacing: 0.32em;
+        color: var(--text-sub);
+        margin-top: 6px;
+    }
+
+    /* BURGER */
+    .burger {
+        position: fixed;
+        top: 18px;
+        right: 22px;
+        width: 38px;
+        height: 28px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+        z-index: 1000;
+    }
+    .burger span {
+        display: block;
+        height: 4px;
+        background: var(--text-main);
+        border-radius: 4px;
+        transition: 0.3s;
+    }
+
+    /* MENU PANEL */
+    .menu-panel {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 84%;
+        height: 100vh;
+        background: rgba(10, 20, 35, 0.82);
+        backdrop-filter: blur(12px);
+        transition: 0.35s ease;
+        z-index: 999;
+        padding-top: 90px;
+        text-align: center;
+    }
+    .menu-panel.open {
+        right: 0;
+    }
+    .menu-panel a {
+        display: block;
+        color: var(--text-main);
+        font-size: 1.4rem;
+        margin: 22px 0;
+        text-decoration: none;
+        opacity: 0.92;
+    }
+
+    .close-menu {
+        position: absolute;
+        top: 22px;
+        right: 26px;
+        font-size: 2.6rem;
+        color: var(--text-main);
+        cursor: pointer;
+    }
+
+    /* PAGE TITLE */
+    h1 {
+        font-size: clamp(1.7rem, 4vw, 2.4rem);
+        margin-top: 20px;
+        margin-bottom: 16px;
+    }
+    .subtitle {
+        font-size: 1rem;
+        opacity: 0.65;
+        max-width: 680px;
+        margin: 0 auto 34px;
+    }
+
+    /* CONTENT BLOCK */
+    .content {
+        max-width: 820px;
+        margin: 0 auto;
+        padding: 0 18px;
+        text-align: left;
+        line-height: 1.6;
+        font-size: 1.1rem;
+    }
+
+    .section-title {
+        margin-top: 38px;
+        margin-bottom: 12px;
+        font-size: 1.35rem;
+        font-weight: bold;
+        color: var(--text-main);
+    }
+
+    .dev-card {
+        margin: 42px auto;
+        background: rgba(255,255,255,0.06);
+        backdrop-filter: blur(10px);
+        border-radius: 22px;
+        padding: 26px;
+        max-width: 720px;
+        text-align: center;
+        box-shadow: 0 0 22px rgba(0,0,0,0.35);
+    }
+
+    .badge {
+        display: inline-block;
+        padding: 6px 22px;
+        border-radius: 16px;
+        border: 1px solid rgba(223,232,255,0.35);
+        font-size: 0.85rem;
+        letter-spacing: 0.16em;
+        margin-bottom: 16px;
+        opacity: 0.85;
+    }
+
+</style>
+</head>
+
+<body>
+
+<!-- BURGER -->
+<div class="burger" onclick="openMenu()">
+    <span></span><span></span><span></span>
+</div>
+
+<!-- MENU PANEL -->
+<div class="menu-panel" id="menuPanel">
+    <div class="close-menu" onclick="closeMenu()">×</div>
+    <a href="/">Главная</a>
+    <a href="/streams.html">Трансляции</a>
+    <a href="/schedule.html">Расписание</a>
+    <a href="/news.html">Новости</a>
+    <a href="/about.html">О турнире</a>
+    <a href="/shop.html">Магазин</a>
+    <a href="/contacts.html">Контакты</a>
+</div>
+
+<!-- LOGO -->
+<div class="logo">
+    <svg viewBox="0 0 100 120">
+        <g stroke="#dfe8ff" stroke-width="1.6" fill="none">
+            <path d="M32 30 Q28 58 42 82"/>
+            <path d="M68 30 Q72 58 58 82"/>
+            <path d="M32 30 Q50 16 68 30"/>
+            <path d="M45 86 Q50 90 55 86"/>
+            <path d="M40 94 H60"/>
+        </g>
+    </svg>
+    <div class="logo-caption">RWC 2027<br>AUSTRALIA 2027</div>
+</div>
+
+<h1>О турнире</h1>
+<p class="subtitle">
+    В 2027 году Австралия примет главное событие мирового регби — Кубок мира.  
+    Это будет третий Мировой кубок в истории страны и один из самых масштабных спортивных турниров десятилетия.
+</p>
+
+<div class="content">
+
+    <div class="section-title">📌 Общая информация</div>
+    <p>
+        Кубок мира по регби 2027 станет 11-м по счёту. Турнир пройдёт в Австралии с июня по июль,  
+        собрав сильнейшие сборные планеты: от титанов Южного полушария до европейских грандов.  
+        Формат соревнований включает групповой этап и стадию плей-офф вплоть до финала.
+    </p>
+
+    <div class="section-title">🌍 Участники и формат</div>
+    <p>
+        В соревновании примут участие 24 команды — расширенный формат впервые вводится именно в 2027 году.  
+        Сборные будут разделены на группы, после чего лучшие продолжат борьбу в матчах на вылет.
+    </p>
+
+    <div class="section-title">🏟️ Города и стадионы</div>
+    <p>
+        Ожидается проведение матчей в крупнейших городах Австралии: Сиднее, Мельбурне, Бризбене, Перте и Аделаиде.  
+        Страна обладает развитой инфраструктурой и богатой спортивной культурой — турнир обещает быть зрелищным.
+    </p>
+
+</div>
+
+<div class="dev-card">
+    <div class="badge">РАЗДЕЛ БУДЕТ ДОПОЛНЕН</div>
+    <p style="opacity:0.9; font-size:1.15rem; line-height:1.55;">
+        Мы готовим расширенный раздел с историей турнира, командами, стадионами и ключевыми данными.  
+        Следите за обновлениями — скоро здесь появится больше материалов.
+    </p>
+</div>
+
+<script>
+function openMenu() {
+    document.getElementById("menuPanel").classList.add("open");
+}
+function closeMenu() {
+    document.getElementById("menuPanel").classList.remove("open");
+}
+</script>
+
+</body>
+</html>
