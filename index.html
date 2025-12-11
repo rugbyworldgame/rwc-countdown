@@ -152,20 +152,52 @@
         }
     }
 
-    /* GROUP CARD */
+    /* GRID — mobile 1 column + FULL CENTER */
+    @media (max-width: 640px) {
+        .groups-grid {
+            grid-template-columns: 1fr;
+            text-align: center;
+            justify-items: center;
+            align-items: center;
+        }
+    }
+
+    /* GROUP CARD — базовая (desktop / tablet) */
     .group-card {
+        width: 88%;                 /* стало чуть шире колонки */
+        max-width: 340px;           /* чтобы не разъезжалось на ультрашироких */
         padding: 18px 20px 15px;
         border-radius: 18px;
         background: rgba(0,0,0,0.22);
         box-shadow: 0 0 0 1px rgba(255,255,255,0.03);
 
+        /* анимация появления */
         opacity: 0;
         transform: translateY(22px);
         will-change: opacity, transform;
+
         animation: fadeUp 0.7s ease-out forwards;
+
+        /* плавный hover */
+        transition:
+            transform 0.25s ease,
+            box-shadow 0.25s ease,
+            background 0.25s ease,
+            border-color 0.25s ease;
     }
 
-    /* sequential fade */
+    /* hover только для нормальных курсоров, чтобы не мешать тач-устройствам */
+    @media (hover:hover) and (pointer:fine) {
+        .group-card:hover {
+            transform: translateY(-4px);
+            background: rgba(255,255,255,0.05);
+            box-shadow:
+                0 10px 26px rgba(0,0,0,0.55),
+                0 0 0 1px rgba(143,175,230,0.35);
+        }
+    }
+
+    /* последовательное появление */
     .group-card:nth-child(1) { animation-delay: 0.15s; }
     .group-card:nth-child(2) { animation-delay: 0.30s; }
     .group-card:nth-child(3) { animation-delay: 0.45s; }
@@ -175,6 +207,14 @@
 
     @keyframes fadeUp {
         to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* MOBILE CARD COMPRESSION — базовый */
+    @media (max-width: 640px) {
+        .group-card {
+            padding: 14px 16px 12px;
+            max-width: 360px;
+        }
     }
 
     /* CARD CONTENT */
@@ -213,10 +253,8 @@
         }
 
         .groups-grid {
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr !important;
             justify-items: center;
-            align-items: center;
-            text-align: center;
             gap: 22px;
         }
 
@@ -260,6 +298,7 @@
             line-height: 1.35;
         }
     }
+
 </style>
 </head>
 
