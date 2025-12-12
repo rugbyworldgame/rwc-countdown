@@ -13,7 +13,8 @@
   --accent-soft:#8FAFE6;
 }
 
-/* ===== GLOBAL ===== */
+/* ================= GLOBAL ================= */
+
 body{
   margin:0;
   font-family:Arial,sans-serif;
@@ -22,58 +23,148 @@ body{
   padding-top:7vh;
   overflow-x:hidden;
   background:radial-gradient(circle at 50% 0%,#1a2f4d 0%,#091626 55%,#04080f 100%);
+  position:relative;
 }
-body.menu-open{overflow:hidden}
 
-/* ===== BACKGROUND ===== */
-body::before,body::after{
+body::before{
   content:"";
   position:fixed;
   inset:0;
+  background:radial-gradient(circle at 50% 0%,rgba(255,255,255,.16),rgba(255,255,255,.05) 22%,transparent 70%);
+  opacity:.55;
   pointer-events:none;
   z-index:-1;
 }
-body::before{
-  background:radial-gradient(circle at 50% 0%,rgba(255,255,255,.16),rgba(255,255,255,.05) 22%,transparent 70%);
-  opacity:.55;
-}
+
 body::after{
+  content:"";
+  position:fixed;
+  inset:0;
   background:radial-gradient(circle at 50% 35%,rgba(120,160,255,.12),transparent);
   opacity:.35;
+  pointer-events:none;
+  z-index:-1;
 }
 
-/* ===== MENU ===== */
+/* ================= LOGO ================= */
+
+.logo{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  margin-bottom:22px;
+}
+
+.logo svg{width:82px}
+
+.logo-caption{
+  font-size:.75rem;
+  letter-spacing:.32em;
+  color:var(--text-sub);
+}
+
+/* ================= TIMER ================= */
+
+h1{
+  font-size:clamp(1.2rem,3.4vw,1.65rem);
+  margin-bottom:14px;
+}
+
+.timer-line{
+  font-size:clamp(2.1rem,6vw,3rem);
+  font-weight:500;
+}
+
+.subtitle{
+  font-size:.85rem;
+  opacity:.55;
+}
+
+/* ================= GROUPS ================= */
+
+.groups-section{
+  margin-top:52px;
+  padding:0 16px 56px;
+  max-width:1200px;
+}
+
+.groups-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:26px 32px;
+}
+
+@media(max-width:960px){.groups-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.groups-grid{grid-template-columns:1fr}}
+
+.group-card{
+  width:88%;
+  max-width:340px;
+  padding:18px 20px;
+  border-radius:18px;
+  background:rgba(0,0,0,.22);
+  opacity:0;
+  transform:translateY(22px);
+  animation:fadeUp .7s ease forwards;
+}
+
+@keyframes fadeUp{to{opacity:1;transform:none}}
+
+.group-title{
+  font-size:.8rem;
+  letter-spacing:.22em;
+  color:var(--accent-soft);
+}
+
+.group-divider{
+  height:1px;
+  margin:10px 0;
+  background:linear-gradient(90deg,rgba(223,232,255,.4),rgba(223,232,255,.08));
+}
+
+/* ================= MENU ================= */
+
 .menu-btn{
   position:fixed;
   top:24px;
   right:26px;
   width:36px;
   height:28px;
-  z-index:2000;
+  z-index:1200;
   display:flex;
   flex-direction:column;
   justify-content:space-between;
   cursor:pointer;
 }
+
 .menu-btn span{
   height:3px;
+  width:100%;
   background:rgba(255,255,255,.85);
   border-radius:2px;
-  transition:.35s;
+  transition:transform .35s ease,opacity .25s ease;
 }
-.menu-btn.active span:nth-child(1){transform:translateY(12px) rotate(45deg)}
-.menu-btn.active span:nth-child(2){opacity:0}
-.menu-btn.active span:nth-child(3){transform:translateY(-12px) rotate(-45deg)}
+
+.menu-btn.active span:nth-child(1){
+  transform:translateY(12px) rotate(45deg);
+}
+.menu-btn.active span:nth-child(2){
+  opacity:0;
+}
+.menu-btn.active span:nth-child(3){
+  transform:translateY(-12px) rotate(-45deg);
+}
 
 .menu-overlay{
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,.4);
+  background:rgba(0,0,0,.35);
   opacity:0;
   pointer-events:none;
-  transition:.4s;
-  z-index:1500;
+  transition:opacity .35s ease;
+  z-index:1100;
 }
+
 .menu-overlay.active{
   opacity:1;
   pointer-events:auto;
@@ -85,45 +176,56 @@ body::after{
   right:0;
   height:100vh;
   width:min(320px,80%);
-  background:rgba(8,10,20,.85);
+  background:rgba(8,10,20,.82);
   backdrop-filter:blur(22px);
   transform:translateX(100%);
-  transition:.4s;
-  z-index:1800;
+  transition:transform .4s ease;
+  z-index:1150;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
 }
-.side-menu.active{transform:none}
+
+.side-menu.active{
+  transform:translateX(0);
+}
+
 .side-menu a{
   color:rgba(223,232,255,.92);
   text-decoration:none;
   font-size:1.1rem;
   margin:14px 0;
-  letter-spacing:.06em;
-}
-
-/* ===== CONTENT (сокращено, без изменений по логике) ===== */
-.logo{margin-bottom:22px}
-.timer-line{font-size:clamp(2.1rem,6vw,3rem)}
-.groups-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px 32px}
-@media(max-width:960px){.groups-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:640px){.groups-grid{grid-template-columns:1fr}}
-.group-card{background:rgba(0,0,0,.22);border-radius:18px;padding:18px 20px}
-
-/* ===== MOBILE ===== */
-@media(max-width:480px){
-  .menu-btn{top:20px;right:20px}
 }
 </style>
 </head>
 
 <body>
 
+<div class="logo">
+  <svg viewBox="0 0 100 120">
+    <path d="M32 30 Q50 16 68 30" stroke="#dfe8ff" fill="none"/>
+  </svg>
+  <div class="logo-caption">RWC 2027<br>AUSTRALIA 2027</div>
+</div>
+
+<h1>До Кубка Мира по Регби осталось:</h1>
+<div class="timer-line" id="timer-line1"></div>
+<div class="timer-line" id="timer-line2"></div>
+<div class="subtitle">Rugby World Cup 2027 starts in:</div>
+
+<div class="groups-section">
+  <div class="groups-grid">
+    <div class="group-card"><div class="group-title">Группа A</div><div class="group-divider"></div>Новая Зеландия<br>Австралия<br>Чили<br>Гонконг–Китай</div>
+    <div class="group-card"><div class="group-title">Группа B</div><div class="group-divider"></div>ЮАР<br>Италия<br>Грузия<br>Румыния</div>
+    <div class="group-card"><div class="group-title">Группа C</div><div class="group-divider"></div>Аргентина<br>Фиджи<br>Испания<br>Канада</div>
+  </div>
+</div>
+
 <!-- MENU -->
 <div class="menu-btn" id="menuBtn"><span></span><span></span><span></span></div>
 <div class="menu-overlay" id="menuOverlay"></div>
+
 <nav class="side-menu" id="sideMenu">
   <a href="/">Главная</a>
   <a href="/streams.html">Трансляции</a>
@@ -135,28 +237,47 @@ body::after{
   <a href="/partners.html">Партнёры</a>
 </nav>
 
-<!-- ТВОЙ КОНТЕНТ НИЖЕ (без изменений структуры) -->
-
 <script>
+function updateTimer(){
+  const t=new Date("2027-10-01T00:00:00").getTime();
+  const d=t-Date.now();
+  if(d<=0)return;
+  const days=Math.floor(d/864e5);
+  const h=Math.floor(d/36e5)%24;
+  const m=Math.floor(d/6e4)%60;
+  const s=Math.floor(d/1e3)%60;
+  document.getElementById("timer-line1").innerHTML=`${days} дн · ${h.toString().padStart(2,"0")} ч`;
+  document.getElementById("timer-line2").innerHTML=`${m.toString().padStart(2,"0")} мин · ${s.toString().padStart(2,"0")} сек`;
+}
+setInterval(updateTimer,1000);
+updateTimer();
+
+/* MENU CONTROL */
 const menuBtn=document.getElementById("menuBtn");
 const sideMenu=document.getElementById("sideMenu");
-const overlay=document.getElementById("menuOverlay");
+const menuOverlay=document.getElementById("menuOverlay");
+let anim=false;
 
 function openMenu(){
+  if(anim) return;
+  anim=true;
   menuBtn.classList.add("active");
   sideMenu.classList.add("active");
-  overlay.classList.add("active");
-  document.body.classList.add("menu-open");
+  menuOverlay.classList.add("active");
+  setTimeout(()=>anim=false,400);
 }
+
 function closeMenu(){
+  if(anim) return;
+  anim=true;
   menuBtn.classList.remove("active");
   sideMenu.classList.remove("active");
-  overlay.classList.remove("active");
-  document.body.classList.remove("menu-open");
+  menuOverlay.classList.remove("active");
+  setTimeout(()=>anim=false,400);
 }
 
 menuBtn.onclick=()=> sideMenu.classList.contains("active") ? closeMenu() : openMenu();
-overlay.onclick=closeMenu;
+menuOverlay.onclick=closeMenu;
 document.querySelectorAll(".side-menu a").forEach(a=>a.onclick=closeMenu);
 window.addEventListener("pageshow",closeMenu);
 </script>
