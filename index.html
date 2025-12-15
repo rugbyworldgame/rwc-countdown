@@ -19,7 +19,7 @@
 
     body {
         margin: 0;
-        height: auto;
+        min-height: 100vh;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -257,6 +257,172 @@
         opacity: 0.9;
     }
 
+    /* ================================
+       FIXED: APPLE DARK GLASS MENU
+       (исправленная версия)
+    ================================ */
+
+    /* Кнопка меню (гамбургер) */
+    .menu-btn {
+        position: fixed;
+        top: 24px;
+        right: 26px;
+        width: 36px;
+        height: 28px;
+        cursor: pointer;
+        z-index: 1100; /* Увеличено для поверх всех элементов */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background: transparent;
+        border: none;
+        padding: 0;
+    }
+    
+    .menu-btn span {
+        display: block;
+        height: 3px;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.85);
+        border-radius: 2px;
+        transition: all 0.35s ease;
+        pointer-events: none;
+    }
+    
+    .menu-btn.active span:nth-child(1) {
+        transform: translateY(12px) rotate(45deg);
+    }
+    
+    .menu-btn.active span:nth-child(2) {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    
+    .menu-btn.active span:nth-child(3) {
+        transform: translateY(-12px) rotate(-45deg);
+    }
+
+    /* Затемнение фона */
+    .menu-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.45);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.4s ease;
+        z-index: 1000; /* Под меню, но над всем остальным */
+        backdrop-filter: blur(2px);
+    }
+    
+    .menu-overlay.active {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    /* Панель меню */
+    .side-menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: min(320px, 85%);
+        background: rgba(8, 10, 20, 0.92);
+        backdrop-filter: blur(20px) saturate(180%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        box-shadow: -8px 0 32px rgba(0, 0, 0, 0.5);
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        z-index: 1050; /* Между кнопкой и overlay */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 20px;
+    }
+
+    /* Активное состояние */
+    .side-menu.active {
+        transform: translateX(0);
+    }
+
+    /* Ссылки меню */
+    .side-menu a {
+        color: rgba(223,232,255,0.92);
+        text-decoration: none;
+        font-size: 1.1rem;
+        margin: 16px 0;
+        padding: 8px 20px;
+        letter-spacing: 0.06em;
+        transition: all 0.25s ease;
+        border-radius: 8px;
+        width: 100%;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .side-menu a::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 3px;
+        background: var(--accent-soft);
+        transform: translateX(-10px);
+        transition: transform 0.3s ease;
+    }
+    
+    .side-menu a:hover {
+        color: #fff;
+        background: rgba(143, 175, 230, 0.1);
+    }
+    
+    .side-menu a:hover::before {
+        transform: translateX(0);
+    }
+
+    /* Для мобильных — чуть компактнее */
+    @media (max-width: 480px) {
+        .menu-btn {
+            top: 20px;
+            right: 20px;
+            width: 32px;
+            height: 24px;
+        }
+        
+        .menu-btn span {
+            height: 2.5px;
+        }
+        
+        .menu-btn.active span:nth-child(1) {
+            transform: translateY(10px) rotate(45deg);
+        }
+        
+        .menu-btn.active span:nth-child(3) {
+            transform: translateY(-10px) rotate(-45deg);
+        }
+        
+        .side-menu {
+            width: min(280px, 80%);
+        }
+        
+        .side-menu a {
+            font-size: 1rem;
+            margin: 12px 0;
+            padding: 10px 16px;
+        }
+    }
+
+    /* Отключаем прокрутку при открытом меню */
+    body.menu-open {
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+    }
+
 </style>
 </head>
 
@@ -378,6 +544,23 @@
 </div>
 </div>
 
+<!-- МЕНЮ -->
+<button class="menu-btn" id="menuBtn" aria-label="Открыть меню" aria-expanded="false">
+    <span></span><span></span><span></span>
+</button>
+
+<div class="menu-overlay" id="menuOverlay"></div>
+<nav class="side-menu" id="sideMenu" aria-label="Основное меню">
+    <a href="/">Главная</a>
+    <a href="/streams.html">Трансляции</a>
+    <a href="/schedule.html">Расписание</a>
+    <a href="/news.html">Новости</a>
+    <a href="/about.html">О турнире</a>
+    <a href="/shop.html">Магазин</a>
+    <a href="/contacts.html">Контакты</a>
+    <a href="/partners.html">Партнёры</a>
+</nav>
+
 <script>
 function updateTimer() {
     const target = new Date("2027-10-01T00:00:00").getTime();
@@ -404,136 +587,56 @@ function updateTimer() {
 
 setInterval(updateTimer, 1000);
 updateTimer();
-</script>
-<!-- ========== APPLE DARK GLASS MENU ========== -->
-<style>
-/* Кнопка меню (гамбургер) */
-.menu-btn {
-  position: fixed;
-  top: 24px;
-  right: 26px;
-  width: 36px;
-  height: 28px;
-  cursor: pointer;
-  z-index: 1100;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.menu-btn span {
-  display: block;
-  height: 3px;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.85);
-  border-radius: 2px;
-  transition: all 0.35s ease;
-}
-.menu-btn.active span:nth-child(1) {
-  transform: translateY(12px) rotate(45deg);
-}
-.menu-btn.active span:nth-child(2) {
-  opacity: 0;
-}
-.menu-btn.active span:nth-child(3) {
-  transform: translateY(-12px) rotate(-45deg);
-}
 
-/* Затемнение фона */
-.menu-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.35);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.4s ease;
-  z-index: 1000;
-}
-.menu-overlay.active {
-  opacity: 1;
-  pointer-events: all;
-}
-
-/* Панель меню */
-.side-menu {
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 100vh;
-  width: min(320px, 80%);
-  background: rgba(8, 10, 20, 0.8);
-  backdrop-filter: blur(22px);
-  box-shadow: -8px 0 22px rgba(0, 0, 0, 0.45);
-  transform: translateX(100%);
-  transition: transform 0.4s ease;
-  z-index: 1050;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Активное состояние */
-.side-menu.active {
-  transform: translateX(0);
-}
-
-/* Ссылки меню */
-.side-menu a {
-  color: rgba(223,232,255,0.92);
-  text-decoration: none;
-  font-size: 1.1rem;
-  margin: 14px 0;
-  letter-spacing: 0.06em;
-  transition: color 0.25s ease;
-}
-.side-menu a:hover {
-  color: #8FAFE6;
-}
-
-/* Для мобильных — чуть компактнее */
-@media (max-width: 480px) {
-  .menu-btn { top: 20px; right: 20px; }
-  .side-menu a { font-size: 1rem; margin: 12px 0; }
-}
-</style>
-
-<!-- Кнопка -->
-<div class="menu-btn" id="menuBtn">
-  <span></span><span></span><span></span>
-</div>
-
-<!-- Фон и панель -->
-<div class="menu-overlay" id="menuOverlay"></div>
-<nav class="side-menu" id="sideMenu">
-  <a href="/">Главная</a>
-  <a href="/streams.html">Трансляции</a>
-  <a href="/schedule.html">Расписание</a>
-  <a href="/news.html">Новости</a>
-  <a href="/about.html">О турнире</a>
-  <a href="/shop.html">Магазин</a>
-  <a href="/contacts.html">Контакты</a>
-  <a href="/partners.html">Партнёры</a>
-</nav>
-
-<!-- JS -->
-<script>
+// ========== МЕНЮ ==========
 const menuBtn = document.getElementById("menuBtn");
 const sideMenu = document.getElementById("sideMenu");
 const menuOverlay = document.getElementById("menuOverlay");
 
-menuBtn.addEventListener("click", () => {
-  menuBtn.classList.toggle("active");
-  sideMenu.classList.toggle("active");
-  menuOverlay.classList.toggle("active");
+function toggleMenu() {
+    const isActive = sideMenu.classList.contains("active");
+    
+    menuBtn.classList.toggle("active");
+    sideMenu.classList.toggle("active");
+    menuOverlay.classList.toggle("active");
+    document.body.classList.toggle("menu-open");
+    
+    // Обновляем ARIA атрибуты для доступности
+    menuBtn.setAttribute("aria-expanded", !isActive);
+    
+    // Фокус для доступности
+    if (!isActive) {
+        setTimeout(() => {
+            sideMenu.querySelector("a").focus();
+        }, 400);
+    }
+}
+
+function closeMenu() {
+    menuBtn.classList.remove("active");
+    sideMenu.classList.remove("active");
+    menuOverlay.classList.remove("active");
+    document.body.classList.remove("menu-open");
+    menuBtn.setAttribute("aria-expanded", "false");
+    menuBtn.focus();
+}
+
+// Обработчики событий
+menuBtn.addEventListener("click", toggleMenu);
+menuOverlay.addEventListener("click", closeMenu);
+
+// Закрытие меню по ESC
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && sideMenu.classList.contains("active")) {
+        closeMenu();
+    }
 });
 
-menuOverlay.addEventListener("click", () => {
-  menuBtn.classList.remove("active");
-  sideMenu.classList.remove("active");
-  menuOverlay.classList.remove("active");
+// Закрытие меню при клике на ссылку внутри меню
+sideMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", closeMenu);
 });
 </script>
-<!-- ========== END APPLE DARK GLASS MENU ========== -->
 
 </body>
 </html>
