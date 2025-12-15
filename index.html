@@ -1,16 +1,22 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
 <title>Кубок мира по регби — Австралия 2027</title>
+<meta name="description" content="Официальный отсчет времени до Кубка мира по регби 2027 в Австралии. Расписание, команды и трансляции.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
     :root {
         --text-main: #dfe8ff;
         --text-sub: rgba(223,232,255,0.55);
         --accent-soft: #8FAFE6;
+        --font-main: 'Inter', sans-serif; /* Обновленный шрифт */
     }
 
     /* ================================
@@ -25,7 +31,7 @@
         align-items: center;
         justify-content: flex-start;
 
-        font-family: Arial, sans-serif;
+        font-family: var(--font-main);
         text-align: center;
         color: var(--text-main);
         padding-top: 7vh;
@@ -97,12 +103,13 @@
     }
 
     .logo-caption {
-        margin-top: 6px;
+        margin-top: 10px;
         font-size: 0.75rem;
         color: var(--text-sub);
         letter-spacing: 0.32em;
         text-transform: uppercase;
-        line-height: 1.2;
+        line-height: 1.4;
+        font-weight: 500;
     }
 
     /* ================================
@@ -115,6 +122,7 @@
         font-weight: 600;
         color: rgba(223,232,255,0.88);
         text-shadow: 0 0 10px rgba(0,0,0,0.45);
+        letter-spacing: -0.02em;
     }
 
     .timer-block {
@@ -126,9 +134,11 @@
 
     .timer-line {
         font-size: clamp(2.1rem, 6vw, 3rem);
-        font-weight: 500;
+        font-weight: 700;
         line-height: 1.2;
         text-shadow: 0 0 10px rgba(0,0,0,0.65);
+        font-feature-settings: "tnum"; /* Моноширинные цифры, чтобы не прыгали */
+        font-variant-numeric: tabular-nums;
     }
 
     #timer-line1 { margin-bottom: 4px; }
@@ -137,6 +147,7 @@
         margin-top: 4px;
         font-size: clamp(0.78rem, 2vw, 0.9rem);
         opacity: 0.55;
+        font-weight: 300;
     }
 
     /* ================================
@@ -176,7 +187,7 @@
     .group-card {
         width: 88%;
         max-width: 340px;
-        padding: 18px 20px 15px;
+        padding: 20px 20px 18px;
 
         border-radius: 18px;
         background: rgba(0,0,0,0.22);
@@ -217,7 +228,7 @@
         .group-card {
             width: 92%;
             max-width: 420px;
-            padding: 18px 22px 16px;
+            padding: 20px 22px 18px;
             border-radius: 20px;
 
             background: rgba(255,255,255,0.04);
@@ -240,21 +251,133 @@
         letter-spacing: 0.22em;
         text-transform: uppercase;
         color: var(--accent-soft);
-        margin-bottom: 6px;
+        margin-bottom: 8px;
+        font-weight: 700;
     }
 
     .group-divider {
         height: 1px;
-        margin-bottom: 10px;
+        margin-bottom: 12px;
         background: linear-gradient(90deg,
             rgba(223,232,255,0.4),
             rgba(223,232,255,0.08));
     }
 
     .group-team {
-        font-size: 0.9rem;
-        margin-bottom: 4px;
+        font-size: 0.95rem;
+        margin-bottom: 5px;
         opacity: 0.9;
+        font-weight: 400;
+    }
+
+    /* ================================
+       APPLE DARK GLASS MENU STYLES
+    ================================ */
+    
+    /* Кнопка меню (гамбургер) - теперь button */
+    .menu-btn {
+        position: fixed;
+        top: 24px;
+        right: 26px;
+        width: 36px;
+        height: 28px;
+        cursor: pointer;
+        z-index: 1100;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+        /* Сброс стилей кнопки */
+        background: transparent;
+        border: none;
+        padding: 0;
+        outline: none;
+    }
+    
+    .menu-btn:focus-visible {
+        outline: 2px solid var(--accent-soft);
+        outline-offset: 4px;
+        border-radius: 4px;
+    }
+
+    .menu-btn span {
+        display: block;
+        height: 3px;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.85);
+        border-radius: 2px;
+        transition: all 0.35s ease;
+        pointer-events: none; /* Чтобы клик всегда шел на кнопку */
+    }
+
+    .menu-btn.active span:nth-child(1) {
+        transform: translateY(12px) rotate(45deg);
+    }
+    .menu-btn.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-btn.active span:nth-child(3) {
+        transform: translateY(-12px) rotate(-45deg);
+    }
+
+    /* Затемнение фона */
+    .menu-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.35);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.4s ease;
+        z-index: 1000;
+    }
+    .menu-overlay.active {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    /* Панель меню */
+    .side-menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: min(320px, 80%);
+        background: rgba(8, 10, 20, 0.8);
+        backdrop-filter: blur(22px);
+        -webkit-backdrop-filter: blur(22px);
+        box-shadow: -8px 0 22px rgba(0, 0, 0, 0.45);
+        transform: translateX(100%);
+        transition: transform 0.4s ease;
+        z-index: 1050;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Активное состояние */
+    .side-menu.active {
+        transform: translateX(0);
+    }
+
+    /* Ссылки меню */
+    .side-menu a {
+        color: rgba(223,232,255,0.92);
+        text-decoration: none;
+        font-size: 1.1rem;
+        margin: 14px 0;
+        letter-spacing: 0.06em;
+        font-weight: 500;
+        transition: color 0.25s ease;
+    }
+    .side-menu a:hover {
+        color: #8FAFE6;
+    }
+
+    /* Для мобильных */
+    @media (max-width: 480px) {
+        .menu-btn { top: 20px; right: 20px; }
+        .side-menu a { font-size: 1rem; margin: 12px 0; }
     }
 
 </style>
@@ -262,10 +385,8 @@
 
 <body>
 
-<!-- TOP ALIGN FIX WRAPPER -->
 <div class="top-align-fix">
 
-    <!-- LOGO -->
     <div class="logo">
         <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
             <defs>
@@ -305,7 +426,6 @@
         </div>
     </div>
 
-    <!-- TIMER -->
     <h1>До Кубка Мира по Регби осталось:</h1>
 
     <div class="timer-block">
@@ -315,10 +435,7 @@
 
     <div class="subtitle">Rugby World Cup 2027 starts in:</div>
 
-</div> <!-- END .top-align-fix -->
-
-<!-- GROUPS -->
-<div class="groups-section">
+</div> <div class="groups-section">
 <div class="groups-grid">
 
     <div class="group-card">
@@ -378,131 +495,10 @@
 </div>
 </div>
 
-<script>
-function updateTimer() {
-    const target = new Date("2027-10-01T00:00:00").getTime();
-    const now = Date.now();
-    const diff = target - now;
-
-    if (diff <= 0) {
-        document.getElementById("timer-line1").innerHTML = "Старт!";
-        document.getElementById("timer-line2").innerHTML = "";
-        return;
-    }
-
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((diff / (1000 * 60)) % 60);
-    const seconds = Math.floor((diff / 1000) % 60);
-
-    document.getElementById("timer-line1").innerHTML =
-        `${days} дн · ${hours.toString().padStart(2, "0")} ч`;
-
-    document.getElementById("timer-line2").innerHTML =
-        `${minutes.toString().padStart(2, "0")} мин · ${seconds.toString().padStart(2, "0")} сек`;
-}
-
-setInterval(updateTimer, 1000);
-updateTimer();
-</script>
-<!-- ========== APPLE DARK GLASS MENU ========== -->
-<style>
-/* Кнопка меню (гамбургер) */
-.menu-btn {
-  position: fixed;
-  top: 24px;
-  right: 26px;
-  width: 36px;
-  height: 28px;
-  cursor: pointer;
-  z-index: 1100;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.menu-btn span {
-  display: block;
-  height: 3px;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.85);
-  border-radius: 2px;
-  transition: all 0.35s ease;
-}
-.menu-btn.active span:nth-child(1) {
-  transform: translateY(12px) rotate(45deg);
-}
-.menu-btn.active span:nth-child(2) {
-  opacity: 0;
-}
-.menu-btn.active span:nth-child(3) {
-  transform: translateY(-12px) rotate(-45deg);
-}
-
-/* Затемнение фона */
-.menu-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.35);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.4s ease;
-  z-index: 1000;
-}
-.menu-overlay.active {
-  opacity: 1;
-  pointer-events: all;
-}
-
-/* Панель меню */
-.side-menu {
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 100vh;
-  width: min(320px, 80%);
-  background: rgba(8, 10, 20, 0.8);
-  backdrop-filter: blur(22px);
-  box-shadow: -8px 0 22px rgba(0, 0, 0, 0.45);
-  transform: translateX(100%);
-  transition: transform 0.4s ease;
-  z-index: 1050;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Активное состояние */
-.side-menu.active {
-  transform: translateX(0);
-}
-
-/* Ссылки меню */
-.side-menu a {
-  color: rgba(223,232,255,0.92);
-  text-decoration: none;
-  font-size: 1.1rem;
-  margin: 14px 0;
-  letter-spacing: 0.06em;
-  transition: color 0.25s ease;
-}
-.side-menu a:hover {
-  color: #8FAFE6;
-}
-
-/* Для мобильных — чуть компактнее */
-@media (max-width: 480px) {
-  .menu-btn { top: 20px; right: 20px; }
-  .side-menu a { font-size: 1rem; margin: 12px 0; }
-}
-</style>
-
-<!-- Кнопка -->
-<div class="menu-btn" id="menuBtn">
+<button class="menu-btn" id="menuBtn" type="button" aria-label="Открыть меню" aria-expanded="false">
   <span></span><span></span><span></span>
-</div>
+</button>
 
-<!-- Фон и панель -->
 <div class="menu-overlay" id="menuOverlay"></div>
 <nav class="side-menu" id="sideMenu">
   <a href="/">Главная</a>
@@ -515,25 +511,74 @@ updateTimer();
   <a href="/partners.html">Партнёры</a>
 </nav>
 
-<!-- JS -->
 <script>
-const menuBtn = document.getElementById("menuBtn");
-const sideMenu = document.getElementById("sideMenu");
-const menuOverlay = document.getElementById("menuOverlay");
+    /* ===========================
+       1. TIMER LOGIC (Timezone Fixed)
+       =========================== */
+    function updateTimer() {
+        // Указываем дату в формате ISO с часовым поясом Австралии (UTC+10:00 или UTC+11:00)
+        // Для примера взято UTC+10:00. 
+        // Если нужно точное время начала первого матча, замените эту строку.
+        const target = new Date("2027-10-01T00:00:00+10:00").getTime();
+        
+        const now = Date.now();
+        const diff = target - now;
 
-menuBtn.addEventListener("click", () => {
-  menuBtn.classList.toggle("active");
-  sideMenu.classList.toggle("active");
-  menuOverlay.classList.toggle("active");
-});
+        if (diff <= 0) {
+            const t1 = document.getElementById("timer-line1");
+            const t2 = document.getElementById("timer-line2");
+            if (t1) t1.innerHTML = "Старт!";
+            if (t2) t2.innerHTML = "";
+            return;
+        }
 
-menuOverlay.addEventListener("click", () => {
-  menuBtn.classList.remove("active");
-  sideMenu.classList.remove("active");
-  menuOverlay.classList.remove("active");
-});
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+
+        const t1 = document.getElementById("timer-line1");
+        const t2 = document.getElementById("timer-line2");
+
+        if (t1) t1.innerHTML = `${days} дн · ${hours.toString().padStart(2, "0")} ч`;
+        if (t2) t2.innerHTML = `${minutes.toString().padStart(2, "0")} мин · ${seconds.toString().padStart(2, "0")} сек`;
+    }
+
+    setInterval(updateTimer, 1000);
+    updateTimer();
+
+    /* ===========================
+       2. MENU LOGIC (Accessible)
+       =========================== */
+    const menuBtn = document.getElementById("menuBtn");
+    const sideMenu = document.getElementById("sideMenu");
+    const menuOverlay = document.getElementById("menuOverlay");
+    const menuLinks = sideMenu.querySelectorAll('a');
+
+    function toggleMenu() {
+        const isActive = menuBtn.classList.toggle("active");
+        sideMenu.classList.toggle("active");
+        menuOverlay.classList.toggle("active");
+        // Обновляем ARIA атрибут для доступности
+        menuBtn.setAttribute('aria-expanded', isActive);
+    }
+
+    function closeMenu() {
+        menuBtn.classList.remove("active");
+        sideMenu.classList.remove("active");
+        menuOverlay.classList.remove("active");
+        menuBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    menuBtn.addEventListener("click", toggleMenu);
+    menuOverlay.addEventListener("click", closeMenu);
+
+    // Автоматически закрывать меню при клике на любую ссылку
+    menuLinks.forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
 </script>
-<!-- ========== END APPLE DARK GLASS MENU ========== -->
 
 </body>
 </html>
+  
