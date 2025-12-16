@@ -17,6 +17,16 @@
 
   z-index: 1100;
 }
+.menu-btn span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: rgba(223,232,255,0.95);
+  border-radius: 3px;
+  transform-origin: center;
+  transition: transform 0.35s ease, opacity 0.25s ease;
+}
+
 
 .menu-btn span {
   display: block;
@@ -42,7 +52,7 @@
 .menu-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(6, 12, 22, 0.45);
+  background: rgba(6, 12, 22, 0.65);
   backdrop-filter: blur(2px);
   opacity: 0;
   pointer-events: none;
@@ -54,6 +64,7 @@
   opacity: 1;
   pointer-events: auto;
 }
+
 
 /* SIDE MENU */
 .side-menu {
