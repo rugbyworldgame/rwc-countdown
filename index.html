@@ -244,8 +244,12 @@ h1 {
   right: 0;
   height: 100vh;
   width: min(320px, 80%);
-  background: rgba(8,10,20,0.8);
-  backdrop-filter: blur(22px);
+  background: linear-gradient(
+  180deg,
+  rgba(18, 26, 44, 0.72),
+  rgba(10, 16, 30, 0.88)
+);
+backdrop-filter: blur(18px) saturate(140%);
   box-shadow: -8px 0 22px rgba(0,0,0,0.45);
   transform: translateX(100%);
   transition: transform 0.4s cubic-bezier(.4,0,.2,1);
