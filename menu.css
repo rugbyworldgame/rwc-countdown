@@ -102,3 +102,33 @@ body.menu-open {
   z-index: 5000;
 }
 
+/* FORCE MENU BUTTON VISIBILITY */
+.menu-btn {
+  position: fixed !important;
+  top: 18px !important;
+  right: 22px !important;
+
+  width: 36px !important;
+  height: 26px !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+
+  z-index: 9999 !important;
+}
+
+.menu-btn span {
+  display: block !important;
+  width: 100% !important;
+  height: 3px !important;
+  background: rgba(223,232,255,0.95) !important;
+  border-radius: 3px !important;
+}
