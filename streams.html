@@ -1,152 +1,199 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
- <meta charset="UTF-8">
-<title>Трансляции — Кубок мира по регби 2027</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="stylesheet" href="/menu.css">
+  <meta charset="UTF-8">
+  <title>Трансляции — Кубок мира по регби 2027</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
- .page-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    text-align: center;
-}
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/menu.css">
 
+  <style>
     :root {
-        --text-main: #dfe8ff;
-        --text-sub: rgba(223,232,255,0.55);
-        --accent-soft: #8FAFE6;
+      --text-main: #dfe8ff;
+      --text-sub: rgba(223,232,255,0.55);
+      --accent-soft: #8FAFE6;
     }
 
     body {
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-        background: radial-gradient(circle at 50% 0%, #102746 0%, #000814 55%, #00040a 100%);
-        color: var(--text-main);
-       overflow-x: hidden;
-     
-           }
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: radial-gradient(circle at 50% 0%, #102746 0%, #000814 55%, #00040a 100%);
+      color: var(--text-main);
+      overflow-x: hidden;
+    }
+
+    .page-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      text-align: center;
+    }
 
     /* LOGO */
     .logo {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 22px;
-    }
-    .logo svg { width: 82px; height: auto; }
-    .logo-caption {
-        font-size: 0.75rem;
-        letter-spacing: 0.32em;
-        color: var(--text-sub);
-        margin-top: 6px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 28px 0 22px;
     }
 
-        /* PAGE TITLE */
-    h1 {
-        font-size: clamp(1.6rem, 4vw, 2.4rem);
-        margin-top: 24px;
-        margin-bottom: 16px;
+    .logo svg {
+      width: 82px;
+      height: auto;
     }
+
+    .logo-caption {
+      font-size: 0.75rem;
+      letter-spacing: 0.32em;
+      color: var(--text-sub);
+      margin-top: 6px;
+    }
+
+    /* TITLES */
+    h1 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      margin: 24px 0 16px;
+    }
+
     .subtitle {
-        font-size: 1rem;
-        opacity: 0.65;
-        max-width: 600px;
-        margin: 0 auto 32px;
+      font-size: 1rem;
+      opacity: 0.65;
+      max-width: 600px;
+      margin: 0 auto 32px;
+    }
+
+    /* VIDEO */
+    .video-wrapper {
+      width: 100%;
+      max-width: 900px;
+      margin: 26px auto 0;
+      aspect-ratio: 16 / 9;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #000;
+      box-shadow: 0 0 26px rgba(0,0,0,0.45);
+    }
+
+    .video-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
     }
 
     /* CARD */
     .dev-card {
-        margin: 0 auto;
-        margin-top: 26px;
-        background: rgba(255,255,255,0.06);
-        backdrop-filter: blur(10px);
-        border-radius: 22px;
-        padding: 26px;
-        max-width: 720px;
-        text-align: center;
-        box-shadow: 0 0 22px rgba(0,0,0,0.35);
+      margin: 32px auto 0;
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(10px);
+      border-radius: 22px;
+      padding: 26px;
+      max-width: 720px;
+      box-shadow: 0 0 22px rgba(0,0,0,0.35);
     }
 
     .badge {
-        display: inline-block;
-        padding: 6px 22px;
-        border-radius: 16px;
-        border: 1px solid rgba(223,232,255,0.35);
-        font-size: 0.85rem;
-        letter-spacing: 0.16em;
-        margin-bottom: 16px;
-        opacity: 0.85;
+      display: inline-block;
+      padding: 6px 22px;
+      border-radius: 16px;
+      border: 1px solid rgba(223,232,255,0.35);
+      font-size: 0.85rem;
+      letter-spacing: 0.16em;
+      margin-bottom: 16px;
+      opacity: 0.85;
     }
 
     .dev-text {
-        font-size: 1.15rem;
-        line-height: 1.55;
-        margin-bottom: 16px;
+      font-size: 1.15rem;
+      line-height: 1.55;
+      margin-bottom: 12px;
     }
- /* VIDEO */
-.video-wrapper {
-  width: 100%;
-  max-width: 900px;
-  margin: 26px auto 0;
-  aspect-ratio: 16 / 9;
-  border-radius: 18px;
-  overflow: hidden;
-  background: #000;
-  box-shadow: 0 0 26px rgba(0,0,0,0.45);
-}
-
-.video-wrapper iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-</style>
-
+  </style>
 </head>
+
 <body>
 
-<div id="menu-container"></div>
+  <!-- MENU WILL BE LOADED HERE -->
+  <div id="menu-container"></div>
 
-<div class="page-content">
+  <div class="page-content">
 
-  <!-- LOGO -->
-  <div class="logo">
-    <!-- SVG и подпись -->
-  </div>
-
-  <h1>Трансляции матчей</h1>
-
-  <p class="subtitle">
-    Здесь будут доступны прямые трансляции Кубка мира по регби 2027.
-  </p>
-
-  <div class="video-wrapper">
-    <iframe
-      src="https://vk.com/video_ext.php?oid=-15550428&id=456245389&autoplay=1"
-      allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
-      allowfullscreen>
-    </iframe>
-  </div>
-
-  <div class="dev-card">
-    <div class="badge">РАЗДЕЛ В РАЗРАБОТКЕ</div>
-    <div class="dev-text">
-      Мы готовим удобный раздел для просмотра трансляций,
-      включая прямые эфиры матчей, лучшие моменты и повторы.
+    <div class="logo">
+      <!-- SVG логотип здесь -->
+      <div class="logo-caption">RWC 2027<br>AUSTRALIA 2027</div>
     </div>
-    <div class="dev-text" style="opacity:0.7;">
-      Следите за обновлениями — раздел будет открыт одним из первых после публикации данных.
+
+    <h1>Трансляции матчей</h1>
+
+    <p class="subtitle">
+      Здесь будут доступны прямые трансляции Кубка мира по регби 2027.
+    </p>
+
+    <div class="video-wrapper">
+      <iframe
+        src="https://vk.com/video_ext.php?oid=-15550428&id=456245389&autoplay=1"
+        allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
+        allowfullscreen>
+      </iframe>
     </div>
+
+    <div class="dev-card">
+      <div class="badge">РАЗДЕЛ В РАЗРАБОТКЕ</div>
+      <div class="dev-text">
+        Мы готовим удобный раздел для просмотра трансляций,
+        включая прямые эфиры матчей, лучшие моменты и повторы.
+      </div>
+      <div class="dev-text" style="opacity:0.7;">
+        Следите за обновлениями — раздел будет открыт одним из первых после публикации данных.
+      </div>
+    </div>
+
   </div>
 
-</div>
+  <!-- MENU SCRIPT — СТРОГО ПЕРЕД </body> -->
+  <script>
+    fetch('/menu.html')
+      .then(r => r.text())
+      .then(html => {
+        const container = document.getElementById('menu-container');
+        container.innerHTML = html;
+        initMenu();
+      });
+
+    function initMenu() {
+      const menuBtn = document.getElementById('menuBtn');
+      const sideMenu = document.getElementById('sideMenu');
+      const menuOverlay = document.getElementById('menuOverlay');
+
+      if (!menuBtn || !sideMenu || !menuOverlay) {
+        console.warn('MENU ELEMENTS NOT FOUND');
+        return;
+      }
+
+      const menuLinks = sideMenu.querySelectorAll('a');
+
+      function openMenu() {
+        menuBtn.classList.add('active');
+        sideMenu.classList.add('active');
+        menuOverlay.classList.add('active');
+        document.body.classList.add('menu-open');
+      }
+
+      function closeMenu() {
+        menuBtn.classList.remove('active');
+        sideMenu.classList.remove('active');
+        menuOverlay.classList.remove('active');
+        document.body.classList.remove('menu-open');
+      }
+
+      menuBtn.addEventListener('click', () => {
+        menuBtn.classList.contains('active') ? closeMenu() : openMenu();
+      });
+
+      menuOverlay.addEventListener('click', closeMenu);
+      menuLinks.forEach(a => a.addEventListener('click', closeMenu));
+    }
+  </script>
 
 </body>
-
 </html>
