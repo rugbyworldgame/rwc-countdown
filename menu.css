@@ -48,15 +48,18 @@
   transform: translateY(-11.5px) rotate(-45deg);
 }
 
-/* OVERLAY */
+/* OVERLAY — затемнение без засвета */
 .menu-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(6, 12, 22, 0.65);
-  backdrop-filter: blur(2px);
+
+  background: rgba(3, 8, 16, 0.78);
+  backdrop-filter: blur(1px);
+
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.25s ease;
+
   z-index: 998;
 }
 
@@ -64,6 +67,7 @@
   opacity: 1;
   pointer-events: auto;
 }
+
 
 
 /* SIDE MENU */
