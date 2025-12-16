@@ -6,380 +6,213 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
+<!-- ЕДИНОЕ МЕНЮ -->
+<link rel="stylesheet" href="/menu.css">
+
 <style>
-    :root {
-        --text-main: #dfe8ff;
-        --text-sub: rgba(223,232,255,0.65);
-        --accent-soft: #8FAFE6;
-    }
+:root {
+  --text-main: #dfe8ff;
+  --text-sub: rgba(223,232,255,0.65);
+  --accent-soft: #8FAFE6;
+}
 
-    * {
-        box-sizing: border-box;
-    }
+* { box-sizing: border-box; }
 
-    body {
-        margin: 0;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 
-        background: radial-gradient(circle at 50% 0%, #102746 0%, #000814 55%, #00040a 100%);
-        color: var(--text-main);
-        font-family: Arial, sans-serif;
-        text-align: center;
-        padding-top: 7vh;
-        position: relative;
-        overflow-x: hidden;
-    }
+  background: radial-gradient(circle at 50% 0%, #102746 0%, #000814 55%, #00040a 100%);
+  color: var(--text-main);
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding-top: 7vh;
+  position: relative;
+  overflow-x: hidden;
+}
 
-    /* ---------- BACKGROUND LIGHT EFFECTS ---------- */
-    body::before {
-        content: "";
-        position: fixed;
-        inset: -40% -30% 35%;
-        background: radial-gradient(circle at 50% 0%,
-            rgba(90,140,255,0.28) 0%,
-            rgba(12,32,64,0) 60%);
-        mix-blend-mode: screen;
-        opacity: 0.55;
-        pointer-events: none;
-        z-index: -2;
-        animation: bgBreath 26s ease-in-out infinite alternate;
-    }
+/* BACKGROUND EFFECTS */
+body::before {
+  content: "";
+  position: fixed;
+  inset: -40% -30% 35%;
+  background: radial-gradient(circle at 50% 0%,
+    rgba(90,140,255,0.28) 0%,
+    rgba(12,32,64,0) 60%);
+  mix-blend-mode: screen;
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: -2;
+}
 
-    body::after {
-        content: "";
-        position: fixed;
-        left: 50%;
-        top: -26%;
-        transform: translateX(-50%);
-        width: 160%;
-        height: 70%;
-        background: radial-gradient(ellipse at top,
-            rgba(255,255,255,0.22) 0%,
-            rgba(255,255,255,0.08) 26%,
-            rgba(0,0,0,0) 72%);
-        opacity: 0.6;
-        mix-blend-mode: screen;
-        pointer-events: none;
-        z-index: -1;
-        animation: spotBreath 18s ease-in-out infinite alternate;
-    }
+body::after {
+  content: "";
+  position: fixed;
+  left: 50%;
+  top: -26%;
+  transform: translateX(-50%);
+  width: 160%;
+  height: 70%;
+  background: radial-gradient(ellipse at top,
+    rgba(255,255,255,0.22) 0%,
+    rgba(255,255,255,0.08) 26%,
+    rgba(0,0,0,0) 72%);
+  opacity: 0.6;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: -1;
+}
 
-    @keyframes bgBreath {
-        0% { opacity: 0.45; transform: translateY(0); }
-        100% { opacity: 0.65; transform: translateY(2.5%); }
-    }
+/* LOGO */
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 22px;
+}
 
-    @keyframes spotBreath {
-        0% { opacity: 0.5; transform: translateX(-50%) translateY(0); }
-        100% { opacity: 0.7; transform: translateX(-50%) translateY(3%); }
-    }
+.logo svg { width: 82px; }
 
-    /* ---------- LOGO (как на главной) ---------- */
+.logo-caption {
+  font-size: 0.75rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--text-sub);
+  margin-top: 6px;
+}
 
-    .logo {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 22px;
-    }
+/* PAGE CONTENT */
+.page-wrapper {
+  width: 100%;
+  max-width: 960px;
+  padding: 0 16px 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-    .logo svg {
-        width: 82px;
-        height: auto;
-    }
+.page-title {
+  font-size: clamp(1.6rem, 3.2vw, 2.1rem);
+  font-weight: 600;
+  margin: 18px 0 8px;
+}
 
-    .logo-caption {
-        font-size: 0.75rem;
-        letter-spacing: 0.32em;
-        text-transform: uppercase;
-        color: var(--text-sub);
-        margin-top: 6px;
-        line-height: 1.2;
-    }
+.page-subtitle {
+  font-size: clamp(0.9rem, 1.9vw, 1.05rem);
+  color: var(--text-sub);
+  margin-bottom: 28px;
+}
 
-    /* ---------- HAMBURGER BUTTON ---------- */
+.info-card {
+  width: 100%;
+  max-width: 640px;
+  padding: 22px;
+  border-radius: 22px;
+  background: radial-gradient(circle at top left,
+    rgba(120,160,255,0.10) 0%,
+    rgba(0,0,0,0.72) 48%,
+    rgba(0,0,0,0.9) 100%);
+  box-shadow:
+    0 16px 40px rgba(0,0,0,0.65),
+    0 0 0 1px rgba(255,255,255,0.06);
+  backdrop-filter: blur(16px);
+}
 
-    .menu-toggle {
-        position: fixed;
-        top: 18px;
-        right: 20px;
-        width: 34px;
-        height: 26px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        background: transparent;
-        border: none;
-        padding: 0;
-        cursor: pointer;
-        z-index: 1200;
-    }
-
-    .menu-toggle span {
-        display: block;
-        height: 3px;
-        border-radius: 999px;
-        background: rgba(223,232,255,0.9);
-        box-shadow: 0 0 8px rgba(0,0,0,0.7);
-        transition: transform 0.25s ease, opacity 0.25s ease;
-    }
-
-    body.menu-open .menu-toggle span:nth-child(1) {
-        transform: translateY(9px) rotate(45deg);
-    }
-
-    body.menu-open .menu-toggle span:nth-child(2) {
-        opacity: 0;
-    }
-
-    body.menu-open .menu-toggle span:nth-child(3) {
-        transform: translateY(-9px) rotate(-45deg);
-    }
-
-    /* ---------- NAV OVERLAY (APPLE DARK GLASS) ---------- */
-
-    .nav-overlay {
-        position: fixed;
-        inset: 0;
-        background: radial-gradient(circle at top,
-                    rgba(15, 35, 70, 0.98) 0%,
-                    rgba(3, 6, 20, 0.98) 42%,
-                    rgba(0, 0, 0, 0.98) 100%);
-        backdrop-filter: blur(18px);
-        -webkit-backdrop-filter: blur(18px);
-        opacity: 0;
-        transform: translateX(6%);
-        pointer-events: none;
-        transition: opacity 0.28s ease, transform 0.28s ease;
-        z-index: 1100;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    body.menu-open .nav-overlay {
-        opacity: 1;
-        transform: translateX(0);
-        pointer-events: auto;
-    }
-
-    .nav-inner {
-        width: 100%;
-        max-width: 480px;
-        padding: 0 32px;
-        text-align: center;
-    }
-
-    .nav-list {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    .nav-item {
-        margin-bottom: 22px;
-    }
-
-    .nav-link {
-        text-decoration: none;
-        font-size: 1.3rem;
-        letter-spacing: 0.08em;
-        text-transform: none;
-        color: rgba(223,232,255,0.92);
-        transition: opacity 0.2s ease, transform 0.2s ease;
-    }
-
-    .nav-link:hover {
-        opacity: 1;
-        transform: translateY(-1px);
-    }
-
-    /* ---------- PAGE CONTENT ---------- */
-
-    .page-wrapper {
-        width: 100%;
-        max-width: 960px;
-        padding: 0 16px 56px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .page-title {
-        font-size: clamp(1.6rem, 3.2vw, 2.1rem);
-        font-weight: 600;
-        margin: 18px 0 8px;
-        color: rgba(223,232,255,0.94);
-    }
-
-    .page-subtitle {
-        font-size: clamp(0.9rem, 1.9vw, 1.05rem);
-        color: var(--text-sub);
-        margin-bottom: 28px;
-    }
-
-    .info-card {
-        width: 100%;
-        max-width: 640px;
-        padding: 22px 22px 20px;
-        border-radius: 22px;
-        background: radial-gradient(circle at top left,
-                    rgba(120,160,255,0.10) 0%,
-                    rgba(0,0,0,0.72) 48%,
-                    rgba(0,0,0,0.9) 100%);
-        box-shadow:
-            0 16px 40px rgba(0,0,0,0.65),
-            0 0 0 1px rgba(255,255,255,0.06);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
-        text-align: center;
-    }
-
-    .info-pill {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 4px 14px;
-        border-radius: 999px;
-        border: 1px solid rgba(143,175,230,0.55);
-        font-size: 0.78rem;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        color: var(--accent-soft);
-        margin-bottom: 14px;
-    }
-
-    .info-main {
-        font-size: 1.1rem;
-        margin-bottom: 10px;
-    }
-
-    .info-note {
-        font-size: 0.9rem;
-        color: var(--text-sub);
-        margin-bottom: 0;
-    }
-
-    @media (max-width: 640px) {
-        body {
-            padding-top: 6vh;
-        }
-
-        .page-wrapper {
-            padding-bottom: 40px;
-        }
-
-        .info-card {
-            padding: 20px 18px 18px;
-            border-radius: 20px;
-        }
-    }
+.info-pill {
+  display: inline-flex;
+  padding: 4px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(143,175,230,0.55);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-soft);
+  margin-bottom: 14px;
+}
 </style>
 </head>
 
 <body>
 
-<!-- HAMBURGER BUTTON -->
-<button class="menu-toggle" aria-label="Открыть меню">
-    <span></span>
-    <span></span>
-    <span></span>
-</button>
+<!-- КОНТЕЙНЕР МЕНЮ -->
+<div id="menu-container"></div>
 
-<!-- NAV OVERLAY -->
-<nav class="nav-overlay" aria-hidden="true">
-    <div class="nav-inner">
-        <ul class="nav-list">
-            <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
-            <li class="nav-item"><a class="nav-link" href="live.html">Трансляции</a></li>
-            <li class="nav-item"><a class="nav-link" href="schedule.html">Расписание</a></li>
-            <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
-            <li class="nav-item"><a class="nav-link" href="about.html">О турнире</a></li>
-            <li class="nav-item"><a class="nav-link" href="shop.html">Магазин</a></li>
-            <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
-        </ul>
-    </div>
-</nav>
-
-<!-- LOGO (как на главной) -->
+<!-- LOGO -->
 <div class="logo">
-    <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-            <filter id="cup-glow" x="-50%" y="-50%" width="200%" height="200%">
-                <feGaussianBlur stdDeviation="2" result="blur" />
-                <feColorMatrix in="blur" type="matrix"
-                    values="0 0 0 0 0.87
-                            0 0 0 0 0.91
-                            0 0 0 0 1
-                            0 0 0 0.75 0"
-                    result="glow" />
-                <feMerge>
-                    <feMergeNode in="glow" />
-                    <feMergeNode in="SourceGraphic" />
-                </feMerge>
-            </filter>
-        </defs>
+  <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="#dfe8ff" stroke-width="1.6" fill="none">
+      <path d="M32 30 Q28 58 42 82" stroke-linecap="round"/>
+      <path d="M68 30 Q72 58 58 82" stroke-linecap="round"/>
+      <path d="M32 30 Q50 16 68 30" stroke-linecap="round"/>
+      <path d="M45 86 Q50 90 55 86" stroke-linecap="round"/>
+      <path d="M40 94 H60" stroke-linecap="round"/>
+    </g>
+    <path d="M28 102 Q50 110 72 102"
+          stroke="#dfe8ff" stroke-width="1.1"
+          stroke-linecap="round" opacity="0.8"/>
+  </svg>
 
-        <g stroke="#dfe8ff" stroke-width="1.6" fill="none" filter="url(#cup-glow)">
-            <path d="M32 30 Q28 58 42 82" stroke-linecap="round" />
-            <path d="M68 30 Q72 58 58 82" stroke-linecap="round" />
-            <path d="M32 30 Q50 16 68 30" stroke-linecap="round" />
-            <path d="M45 86 Q50 90 55 86" stroke-linecap="round" />
-            <path d="M40 94 H60" stroke-linecap="round" />
-        </g>
-
-        <path d="M28 102 Q50 110 72 102" stroke="#dfe8ff"
-              stroke-width="1.1" stroke-linecap="round" opacity="0.8"
-              filter="url(#cup-glow)" />
-    </svg>
-
-    <div class="logo-caption">
-        RWC 2027<br>AUSTRALIA 2027
-    </div>
+  <div class="logo-caption">
+    RWC 2027<br>AUSTRALIA 2027
+  </div>
 </div>
 
-<!-- PAGE CONTENT -->
+<!-- CONTENT -->
 <div class="page-wrapper">
-    <h1 class="page-title">Расписание матчей</h1>
-    <p class="page-subtitle">
-        Официальный календарь Кубка мира по регби 2027 появится здесь после его публикации.
-    </p>
+  <h1 class="page-title">Расписание матчей</h1>
+  <p class="page-subtitle">
+    Официальный календарь Кубка мира по регби 2027 появится здесь после его публикации.
+  </p>
 
-    <div class="info-card">
-        <div class="info-pill">Раздел в разработке</div>
-        <p class="info-main">
-            Мы готовим удобное расписание по дням, группам и стадиям плей-офф,
-            с указанием времени начала матчей и каналов трансляции.
-        </p>
-        <p class="info-note">
-            Следите за обновлениями на главной странице и в наших соцсетях —
-            расписание будет добавлено одним из первых.
-        </p>
-    </div>
+  <div class="info-card">
+    <div class="info-pill">Раздел в разработке</div>
+    <p>
+      Мы готовим удобное расписание по дням, группам и стадиям плей-офф,
+      с указанием времени начала матчей и каналов трансляции.
+    </p>
+  </div>
 </div>
 
+<!-- ПОДКЛЮЧЕНИЕ МЕНЮ -->
 <script>
-    // Открытие / закрытие меню
-    const toggleBtn = document.querySelector('.menu-toggle');
-    const navOverlay = document.querySelector('.nav-overlay');
+fetch('/menu.html')
+  .then(r => r.text())
+  .then(html => {
+    document.getElementById('menu-container').innerHTML = html;
+    initMenu();
+  });
 
-    function toggleMenu() {
-        document.body.classList.toggle('menu-open');
-        const isOpen = document.body.classList.contains('menu-open');
-        navOverlay.setAttribute('aria-hidden', String(!isOpen));
-    }
+function initMenu() {
+  const menuBtn = document.getElementById("menuBtn");
+  const sideMenu = document.getElementById("sideMenu");
+  const menuOverlay = document.getElementById("menuOverlay");
+  const menuLinks = sideMenu.querySelectorAll("a");
 
-    toggleBtn.addEventListener('click', toggleMenu);
-    navOverlay.addEventListener('click', function (e) {
-        // клики по фону закрывают меню, по ссылкам — нет
-        if (e.target === navOverlay) {
-            toggleMenu();
-        }
-    });
+  function openMenu() {
+    menuBtn.classList.add("active");
+    sideMenu.classList.add("active");
+    menuOverlay.classList.add("active");
+    document.body.classList.add("menu-open");
+  }
+
+  function closeMenu() {
+    menuBtn.classList.remove("active");
+    sideMenu.classList.remove("active");
+    menuOverlay.classList.remove("active");
+    document.body.classList.remove("menu-open");
+  }
+
+  menuBtn.addEventListener("click", () => {
+    menuBtn.classList.contains("active") ? closeMenu() : openMenu();
+  });
+
+  menuOverlay.addEventListener("click", closeMenu);
+  menuLinks.forEach(a => a.addEventListener("click", closeMenu));
+}
 </script>
 
 </body>
