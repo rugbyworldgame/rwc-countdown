@@ -109,9 +109,7 @@
 /* BODY LOCK */
 body.menu-open {
   overflow: hidden;
-  position: fixed;
-  width: 100%;
-}
+ }
 
 .menu-btn {
   z-index: 5000;
