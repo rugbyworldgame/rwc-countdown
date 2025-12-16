@@ -6,186 +6,164 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
+<!-- ЕДИНОЕ МЕНЮ -->
+<link rel="stylesheet" href="/menu.css">
+
 <style>
-    :root {
-        --text-main: #dfe8ff;
-        --text-sub: rgba(223,232,255,0.55);
-    }
+:root {
+  --text-main: #dfe8ff;
+  --text-sub: rgba(223,232,255,0.55);
+  --accent-soft: #8FAFE6;
+}
 
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-        background: radial-gradient(circle at 50% 0%, #102746 0%, #000814 55%, #00040a 100%);
-        color: var(--text-main);
-        text-align: center;
-        overflow-x: hidden;
-        padding-top: 7vh;
-    }
+body {
+  margin: 0;
+  padding-top: 7vh;
+  font-family: Arial, sans-serif;
+  background: radial-gradient(circle at 50% 0%, #102746 0%, #000814 55%, #00040a 100%);
+  color: var(--text-main);
+  text-align: center;
+  overflow-x: hidden;
+}
 
-    /* LOGO */
-    .logo {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 22px;
-    }
-    .logo svg { width: 82px; height: auto; }
-    .logo-caption {
-        font-size: 0.75rem;
-        letter-spacing: 0.32em;
-        color: var(--text-sub);
-        margin-top: 6px;
-    }
+/* LOGO */
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 22px;
+}
+.logo svg {
+  width: 82px;
+  height: auto;
+}
+.logo-caption {
+  font-size: 0.75rem;
+  letter-spacing: 0.32em;
+  color: var(--text-sub);
+  margin-top: 6px;
+}
 
-    /* BURGER */
-    .burger {
-        position: fixed;
-        top: 18px;
-        right: 22px;
-        width: 38px;
-        height: 28px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        cursor: pointer;
-        z-index: 1000;
-    }
-    .burger span {
-        display: block;
-        height: 4px;
-        background: var(--text-main);
-        border-radius: 4px;
-        transition: 0.3s;
-    }
+/* TITLES */
+h1 {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+.subtitle {
+  font-size: 1rem;
+  opacity: 0.65;
+  max-width: 620px;
+  margin: 0 auto 32px;
+}
 
-    /* MENU PANEL */
-    .menu-panel {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 84%;
-        height: 100vh;
-        background: rgba(10, 20, 35, 0.82);
-        backdrop-filter: blur(12px);
-        transition: 0.35s ease;
-        z-index: 999;
-        padding-top: 90px;
-        text-align: center;
-    }
-    .menu-panel.open { right: 0; }
-    .menu-panel a {
-        display: block;
-        color: var(--text-main);
-        font-size: 1.4rem;
-        margin: 22px 0;
-        text-decoration: none;
-        opacity: 0.92;
-    }
+/* CARD */
+.dev-card {
+  margin: 0 auto;
+  margin-top: 26px;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(10px);
+  border-radius: 22px;
+  padding: 26px;
+  max-width: 720px;
+  text-align: center;
+  box-shadow: 0 0 22px rgba(0,0,0,0.35);
+}
 
-    .close-menu {
-        position: absolute;
-        top: 22px;
-        right: 26px;
-        font-size: 2.6rem;
-        color: var(--text-main);
-        cursor: pointer;
-    }
+.badge {
+  display: inline-block;
+  padding: 6px 22px;
+  border-radius: 16px;
+  border: 1px solid rgba(223,232,255,0.35);
+  font-size: 0.85rem;
+  letter-spacing: 0.16em;
+  margin-bottom: 16px;
+  opacity: 0.85;
+}
 
-    /* TITLE */
-    h1 {
-        font-size: clamp(1.7rem, 4vw, 2.4rem);
-        margin-top: 20px;
-        margin-bottom: 16px;
-    }
-
-    .subtitle {
-        font-size: 1rem;
-        opacity: 0.65;
-        max-width: 680px;
-        margin: 0 auto 34px;
-    }
-
-    /* DEVELOPMENT CARD */
-    .dev-card {
-        margin: 42px auto;
-        background: rgba(255,255,255,0.06);
-        backdrop-filter: blur(10px);
-        border-radius: 22px;
-        padding: 26px;
-        max-width: 720px;
-        text-align: center;
-        box-shadow: 0 0 22px rgba(0,0,0,0.35);
-    }
-    .badge {
-        display: inline-block;
-        padding: 6px 22px;
-        border-radius: 16px;
-        border: 1px solid rgba(223,232,255,0.35);
-        font-size: 0.85rem;
-        letter-spacing: 0.16em;
-        margin-bottom: 16px;
-        opacity: 0.85;
-    }
-
+.dev-text {
+  font-size: 1.15rem;
+  line-height: 1.55;
+  margin-bottom: 16px;
+}
 </style>
 </head>
 
 <body>
 
-<!-- BURGER -->
-<div class="burger" onclick="openMenu()">
-    <span></span><span></span><span></span>
-</div>
-
-<!-- MENU PANEL -->
-<div class="menu-panel" id="menuPanel">
-    <div class="close-menu" onclick="closeMenu()">×</div>
-    <a href="/">Главная</a>
-    <a href="/streams.html">Трансляции</a>
-    <a href="/schedule.html">Расписание</a>
-    <a href="/news.html">Новости</a>
-    <a href="/about.html">О турнире</a>
-    <a href="/shop.html">Магазин</a>
-    <a href="/contacts.html">Контакты</a>
-</div>
+<!-- КОНТЕЙНЕР МЕНЮ -->
+<div id="menu-container"></div>
 
 <!-- LOGO -->
 <div class="logo">
-    <svg viewBox="0 0 100 120">
-        <g stroke="#dfe8ff" stroke-width="1.6" fill="none">
-            <path d="M32 30 Q28 58 42 82"/>
-            <path d="M68 30 Q72 58 58 82"/>
-            <path d="M32 30 Q50 16 68 30"/>
-            <path d="M45 86 Q50 90 55 86"/>
-            <path d="M40 94 H60"/>
-        </g>
-    </svg>
-    <div class="logo-caption">RWC 2027<br>AUSTRALIA 2027</div>
+  <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="#dfe8ff" stroke-width="1.6" fill="none">
+      <path d="M32 30 Q28 58 42 82"/>
+      <path d="M68 30 Q72 58 58 82"/>
+      <path d="M32 30 Q50 16 68 30"/>
+      <path d="M45 86 Q50 90 55 86"/>
+      <path d="M40 94 H60"/>
+    </g>
+  </svg>
+  <div class="logo-caption">
+    RWC 2027<br>AUSTRALIA 2027
+  </div>
 </div>
 
 <h1>Контакты</h1>
-
 <p class="subtitle">
-   Каналы связи с организацией турнира и медиа-командой.  
-   Раздел находится в разработке и скоро будет доступен.
+  Связь с командой проекта Rugby World Cup 2027.
 </p>
 
 <div class="dev-card">
-    <div class="badge">РАЗДЕЛ В РАЗРАБОТКЕ</div>
-    <p style="opacity:0.9; font-size:1.16rem; line-height:1.55;">
-        Здесь появятся официальные контакты, форма обратной связи,  
-        информация для СМИ и аккредитации, а также техническая поддержка трансляций.  
-        Мы работаем над этим разделом.
-    </p>
+  <div class="badge">РАЗДЕЛ В РАЗРАБОТКЕ</div>
+
+  <div class="dev-text">
+    Здесь будут размещены официальные контакты проекта:  
+    электронная почта, ссылки на социальные сети и формы обратной связи.
+  </div>
+
+  <div class="dev-text" style="opacity:0.7;">
+    Пока вы можете следить за обновлениями на сайте и в наших соцсетях.  
+    Контактная информация появится в ближайшее время.
+  </div>
 </div>
 
+<!-- ПОДКЛЮЧЕНИЕ МЕНЮ -->
 <script>
-function openMenu() {
-    document.getElementById("menuPanel").classList.add("open");
-}
-function closeMenu() {
-    document.getElementById("menuPanel").classList.remove("open");
+fetch('/menu.html')
+  .then(r => r.text())
+  .then(html => {
+    document.getElementById('menu-container').innerHTML = html;
+    initMenu();
+  });
+
+function initMenu() {
+  const menuBtn = document.getElementById("menuBtn");
+  const sideMenu = document.getElementById("sideMenu");
+  const menuOverlay = document.getElementById("menuOverlay");
+  const menuLinks = sideMenu.querySelectorAll("a");
+
+  function openMenu() {
+    menuBtn.classList.add("active");
+    sideMenu.classList.add("active");
+    menuOverlay.classList.add("active");
+    document.body.classList.add("menu-open");
+  }
+
+  function closeMenu() {
+    menuBtn.classList.remove("active");
+    sideMenu.classList.remove("active");
+    menuOverlay.classList.remove("active");
+    document.body.classList.remove("menu-open");
+  }
+
+  menuBtn.addEventListener("click", () => {
+    menuBtn.classList.contains("active") ? closeMenu() : openMenu();
+  });
+
+  menuOverlay.addEventListener("click", closeMenu);
+  menuLinks.forEach(a => a.addEventListener("click", closeMenu));
 }
 </script>
 
