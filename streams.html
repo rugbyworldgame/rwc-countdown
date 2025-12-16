@@ -30,26 +30,6 @@
       text-align: center;
     }
 
-    /* LOGO */
-    .logo {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 28px 0 22px;
-    }
-
-    .logo svg {
-      width: 82px;
-      height: auto;
-    }
-
-    .logo-caption {
-      font-size: 0.75rem;
-      letter-spacing: 0.32em;
-      color: var(--text-sub);
-      margin-top: 6px;
-    }
-
     /* TITLES */
     h1 {
       font-size: clamp(1.6rem, 4vw, 2.4rem);
@@ -107,34 +87,31 @@
       font-size: 1.15rem;
       line-height: 1.55;
       margin-bottom: 12px;
-    } .stream-disclaimer {
-  margin: 28px auto 18px;
-  max-width: 720px;
-  font-size: 0.75rem;
-  line-height: 1.4;
-  color: rgba(223,232,255,0.4);
-  text-align: center;
-}
+    }
 
+    /* DISCLAMER */
+    .stream-disclaimer {
+      margin: 32px auto 22px;
+      max-width: 720px;
+      font-size: 0.75rem;
+      line-height: 1.4;
+      color: rgba(223,232,255,0.4);
+      text-align: center;
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- MENU WILL BE LOADED HERE -->
+  <!-- MENU -->
   <div id="menu-container"></div>
 
   <div class="page-content">
 
-    <div class="logo">
-      <!-- SVG логотип здесь -->
-      <div class="logo-caption">RWC 2027<br>AUSTRALIA 2027</div>
-    </div>
-
     <h1>Трансляции матчей</h1>
 
     <p class="subtitle">
-      Здесь будут доступны прямые трансляции Кубка мира по регби 2027.
+      Актуальная резервная трансляция матчей регби.
     </p>
 
     <div class="video-wrapper">
@@ -146,25 +123,29 @@
     </div>
 
     <div class="dev-card">
-      <div class="badge">РАЗДЕЛ В РАЗРАБОТКЕ</div>
+      <div class="badge">РЕЗЕРВНЫЙ СТРИМ</div>
       <div class="dev-text">
-        Мы готовим удобный раздел для просмотра трансляций,
-        включая прямые эфиры матчей, лучшие моменты и повторы.
+        Здесь отображается актуальная резервная трансляция.
       </div>
       <div class="dev-text" style="opacity:0.7;">
-        Следите за обновлениями — раздел будет открыт одним из первых после публикации данных.
+        Если матч обновился — просто обновите страницу.
       </div>
+    </div>
+
+    <!-- DISCLAMER -->
+    <div class="stream-disclaimer">
+      Трансляция предоставляется из открытых источников.<br>
+      Сайт не является правообладателем видеоматериала.
     </div>
 
   </div>
 
-  <!-- MENU SCRIPT — СТРОГО ПЕРЕД </body> -->
+  <!-- MENU SCRIPT -->
   <script>
     fetch('/menu.html')
       .then(r => r.text())
       .then(html => {
-        const container = document.getElementById('menu-container');
-        container.innerHTML = html;
+        document.getElementById('menu-container').innerHTML = html;
         initMenu();
       });
 
@@ -173,10 +154,7 @@
       const sideMenu = document.getElementById('sideMenu');
       const menuOverlay = document.getElementById('menuOverlay');
 
-      if (!menuBtn || !sideMenu || !menuOverlay) {
-        console.warn('MENU ELEMENTS NOT FOUND');
-        return;
-      }
+      if (!menuBtn || !sideMenu || !menuOverlay) return;
 
       const menuLinks = sideMenu.querySelectorAll('a');
 
