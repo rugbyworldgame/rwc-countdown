@@ -1,553 +1,437 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <title>Кубок мира по регби — Австралия 2027</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta charset="UTF-8">
 
-  <style>
-    :root{
-      --text-main:#dfe8ff;
-      --text-sub:rgba(223,232,255,0.55);
-      --accent-soft:#8FAFE6;
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-      --bg-1:#1a2f4d;
-      --bg-2:#091626;
-      --bg-3:#04080f;
+<title>Кубок мира по регби — Австралия 2027</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
-      --glass: rgba(8,10,20,0.88);
-      --glass-border: rgba(255,255,255,0.08);
-      --shadow-1: rgba(0,0,0,0.45);
-    }
+<style>
+:root {
+  --text-main: #dfe8ff;
+  --text-sub: rgba(223,232,255,0.55);
+  --accent-soft: #8FAFE6;
+}
 
-    /* ===== BASE / MOBILE SAFETY ===== */
-    html{
-      width:100%;
-      max-width:100%;
-      overflow-x:hidden;
-      -webkit-text-size-adjust:100%;
-      text-size-adjust:100%;
-    }
-    *, *::before, *::after{ box-sizing:border-box; }
+/* ===== MOBILE FIXES ===== */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
 
-    body{
-      margin:0;
-      width:100%;
-      max-width:100%;
-      overflow-x:hidden;
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
 
-      font-family: Arial, sans-serif;
-      color:var(--text-main);
-      background: radial-gradient(circle at 50% 0%, var(--bg-1) 0%, var(--bg-2) 55%, var(--bg-3) 100%);
-      position:relative;
-    }
+/* ===== BODY ===== */
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    /* блокируем прокрутку страницы, когда меню открыто */
-    html.menu-open{
-      overflow:hidden;
-    }
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: var(--text-main);
+  padding-top: 7vh;
 
-    body::before{
-      content:"";
-      position:fixed;
-      inset:0;
-      background: radial-gradient(circle at 50% 0%,
-        rgba(255,255,255,0.16) 0%,
-        rgba(255,255,255,0.05) 22%,
-        rgba(0,0,0,0) 70%);
-      opacity:0.55;
-      pointer-events:none;
-      z-index:-1;
-      animation:bgBreath 22s ease-in-out infinite alternate;
-    }
+  background: radial-gradient(circle at 50% 0%,
+    #1a2f4d 0%,
+    #091626 55%,
+    #04080f 100%);
+  position: relative;
+}
 
-    body::after{
-      content:"";
-      position:fixed;
-      inset:0;
-      background: radial-gradient(circle at 50% 35%,
-        rgba(120,160,255,0.12),
-        rgba(0,0,0,0));
-      opacity:0.35;
-      pointer-events:none;
-      z-index:-1;
-    }
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%,
+    rgba(255,255,255,0.16) 0%,
+    rgba(255,255,255,0.05) 22%,
+    rgba(0,0,0,0) 70%);
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: -1;
+}
 
-    @keyframes bgBreath{
-      from{ opacity:0.45; }
-      to{ opacity:0.65; }
-    }
+/* Блокировка body при меню */
+body.menu-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
 
-    /* ===== PAGE CONTAINER ===== */
-    .page{
-      width:100%;
-      max-width:1200px;
-      margin:0 auto;
-      padding:7vh 16px 56px;
-      text-align:center;
-    }
+/* ===== LOGO ===== */
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 22px;
+}
 
-    /* ===== LOGO ===== */
-    .logo{
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      margin-bottom:22px;
-    }
-    .logo svg{
-      width:82px;
-      height:auto;
-      display:block;
-      margin:0 auto 6px;
-    }
-    .logo-caption{
-      font-size:0.75rem;
-      color:var(--text-sub);
-      letter-spacing:0.32em;
-      text-transform:uppercase;
-      line-height:1.2;
-    }
+.logo svg {
+  width: 82px;
+  margin-bottom: 6px;
+}
 
-    /* ===== TIMER ===== */
-    h1{
-      font-size:clamp(1.2rem, 3.4vw, 1.65rem);
-      margin:0 0 14px;
-      font-weight:600;
-      color:rgba(223,232,255,0.9);
-      text-shadow:0 0 10px rgba(0,0,0,0.45);
-    }
-    .timer-line{
-      font-size:clamp(2.1rem, 6vw, 3rem);
-      font-weight:500;
-      line-height:1.15;
-      text-shadow:0 0 10px rgba(0,0,0,0.65);
-    }
-    .subtitle{
-      margin-top:6px;
-      font-size:clamp(0.78rem, 2vw, 0.9rem);
-      opacity:0.55;
-    }
+.logo-caption {
+  font-size: 0.75rem;
+  color: var(--text-sub);
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
 
-    /* ===== GROUPS ===== */
-    .groups-section{
-      margin-top:52px;
-      width:100%;
-    }
-    .groups-grid{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:26px 32px;
-      justify-items:center;
-      width:100%;
-    }
-    @media (max-width:960px){
-      .groups-grid{ grid-template-columns:repeat(2, 1fr); }
-    }
-    @media (max-width:640px){
-      .groups-grid{ grid-template-columns:1fr; }
-    }
+/* ===== TIMER ===== */
+h1 {
+  font-size: clamp(1.2rem, 3.4vw, 1.65rem);
+  margin-bottom: 14px;
+  font-weight: 600;
+}
 
-    .group-card{
-      width:min(420px, 92%);
-      max-width:340px;
-      padding:18px 22px 16px;
-      border-radius:18px;
+.timer-line {
+  font-size: clamp(2.1rem, 6vw, 3rem);
+  line-height: 1.2;
+}
 
-      background: rgba(0,0,0,0.22);
-      box-shadow: 0 0 0 1px rgba(255,255,255,0.03);
+.subtitle {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  opacity: 0.55;
+}
 
-      opacity:0;
-      transform: translateY(18px);
-      animation: fadeUp .65s ease-out forwards;
+/* ===== GROUPS ===== */
+.groups-section {
+  margin-top: 52px;
+  padding: 0 16px 56px;
+  max-width: 1200px;
+  width: 100%;
+}
 
-      transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
-    }
+.groups-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px 32px;
+  justify-items: center;
+}
 
-    .group-card:nth-child(1){ animation-delay:.10s }
-    .group-card:nth-child(2){ animation-delay:.20s }
-    .group-card:nth-child(3){ animation-delay:.30s }
-    .group-card:nth-child(4){ animation-delay:.40s }
-    .group-card:nth-child(5){ animation-delay:.50s }
-    .group-card:nth-child(6){ animation-delay:.60s }
+@media (max-width: 960px) {
+  .groups-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .groups-grid { grid-template-columns: 1fr; }
+}
 
-    @keyframes fadeUp{
-      to{ opacity:1; transform: translateY(0); }
-    }
+.group-card {
+  width: 88%;
+  max-width: 340px;
+  padding: 18px 20px 16px;
+  border-radius: 18px;
+  background: rgba(0,0,0,0.22);
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.03);
 
-    @media (max-width:640px){
-      .group-card{
-        border-radius:20px;
-        background: rgba(255,255,255,0.04);
-        backdrop-filter: blur(8px);
-        box-shadow: 0 0 22px rgba(0,0,0,0.35);
-      }
-    }
+  opacity: 0;
+  transform: translateY(22px);
+  animation: fadeUp 0.6s ease forwards;
 
-    @media (hover:hover) and (pointer:fine){
-      .group-card:hover{
-        transform: translateY(-4px);
-        background: rgba(255,255,255,0.05);
-        box-shadow:
-          0 10px 26px rgba(0,0,0,0.55),
-          0 0 0 1px rgba(143,175,230,0.35);
-      }
-    }
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
 
-    .group-title{
-      font-size:0.8rem;
-      letter-spacing:0.22em;
-      text-transform:uppercase;
-      color:var(--accent-soft);
-      margin-bottom:6px;
-    }
-    .group-divider{
-      height:1px;
-      margin:0 0 10px;
-      background: linear-gradient(90deg, rgba(223,232,255,0.4), rgba(223,232,255,0.08));
-    }
-    .group-team{
-      font-size:0.95rem;
-      margin-bottom:4px;
-      opacity:0.92;
-    }
+.group-card:nth-child(1){animation-delay:.1s}
+.group-card:nth-child(2){animation-delay:.2s}
+.group-card:nth-child(3){animation-delay:.3s}
+.group-card:nth-child(4){animation-delay:.4s}
+.group-card:nth-child(5){animation-delay:.5s}
+.group-card:nth-child(6){animation-delay:.6s}
 
-    /* ===== MENU BUTTON (всегда бургер, без превращения в крест) ===== */
-    .menu-btn{
-      all:unset;
-      position:fixed;
-      top:22px;
-      right:22px;
-      width:44px;
-      height:44px;
-      cursor:pointer;
-      z-index:1200;
+@keyframes fadeUp {
+  to { opacity: 1; transform: none; }
+}
 
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      gap:5px;
+/* Hover (desktop only) */
+@media (hover:hover) and (pointer:fine) {
+  .group-card:hover {
+    transform: translateY(-4px);
+    background: rgba(255,255,255,0.05);
+    box-shadow:
+      0 10px 26px rgba(0,0,0,0.55),
+      0 0 0 1px rgba(143,175,230,0.35);
+  }
+}
 
-      border-radius:14px;
-      background: rgba(0,0,0,0.18);
-      box-shadow: 0 0 0 1px rgba(255,255,255,0.06);
-      backdrop-filter: blur(10px);
-    }
-    .menu-btn span{
-      width:22px;
-      height:2px;
-      margin:0 auto;
-      background: rgba(255,255,255,0.92);
-      border-radius:2px;
-      display:block;
-    }
-    .menu-btn:focus-visible{
-      outline:2px solid rgba(143,175,230,0.6);
-      outline-offset:3px;
-    }
+.group-title {
+  font-size: 0.8rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent-soft);
+  margin-bottom: 6px;
+}
 
-    /* ===== OVERLAY (должен ловить тап/клик) ===== */
-    .menu-overlay{
-      position:fixed;
-      inset:0;
-      background: rgba(0,0,0,0.35);
-      opacity:0;
-      pointer-events:none;
-      transition: opacity .25s ease;
-      z-index:1140;
-      touch-action:none;
-    }
-    .menu-overlay.active{
-      opacity:1;
-      pointer-events:auto;
-    }
+.group-divider {
+  height: 1px;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg,
+    rgba(223,232,255,0.4),
+    rgba(223,232,255,0.08));
+}
 
-    /* ===== SIDE MENU ===== */
-    .side-menu{
-      position:fixed;
-      top:0;
-      right:0;
-      height:100vh;
-      width:min(320px, 84vw);
+.group-team {
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
 
-      background: var(--glass);
-      backdrop-filter: blur(22px);
-      border-left: 1px solid var(--glass-border);
-      box-shadow: -10px 0 26px var(--shadow-1);
+/* ===== MENU BUTTON ===== */
+.menu-btn {
+  all: unset;
+  position: fixed;
+  top: 24px;
+  right: 26px;
+  width: 36px;
+  height: 28px;
+  cursor: pointer;
+  z-index: 1100;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
-      transform: translateX(100%);
-      transition: transform .36s cubic-bezier(.4,0,.2,1);
-      z-index:1150;
+.menu-btn span {
+  height: 3px;
+  background: rgba(255,255,255,0.85);
+  border-radius: 2px;
+  transition: all 0.35s ease;
+}
 
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      padding:64px 18px 24px; /* сверху место под крестик внутри меню */
-    }
-    .side-menu.active{
-      transform: translateX(0);
-    }
+.menu-btn.active span:nth-child(1) {
+  transform: translateY(12px) rotate(45deg);
+}
+.menu-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+.menu-btn.active span:nth-child(3) {
+  transform: translateY(-12px) rotate(-45deg);
+}
 
-    /* Кнопка закрытия внутри меню (не фиксированная, не конфликтует с бургером) */
-    .menu-close{
-      all:unset;
-      position:absolute;
-      top:18px;
-      right:18px;
-      width:40px;
-      height:40px;
-      display:grid;
-      place-items:center;
-      cursor:pointer;
-      border-radius:12px;
-      background: rgba(0,0,0,0.18);
-      box-shadow: 0 0 0 1px rgba(255,255,255,0.06);
-      color: rgba(255,255,255,0.92);
-      font-size:22px;
-      line-height:1;
-    }
-    .menu-close:focus-visible{
-      outline:2px solid rgba(143,175,230,0.6);
-      outline-offset:3px;
-    }
+/* ===== OVERLAY ===== */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+  touch-action: none;
+}
 
-    .side-menu a{
-      color: rgba(223,232,255,0.92);
-      text-decoration:none;
-      font-size:1.08rem;
-      margin: 12px 0;
-      letter-spacing:0.06em;
-      transition: color .2s ease, transform .2s ease;
-    }
-    .side-menu a:focus-visible{
-      outline:2px solid rgba(143,175,230,0.6);
-      outline-offset:4px;
-      border-radius:10px;
-    }
-    @media (hover:hover) and (pointer:fine){
-      .side-menu a:hover{
-        color: var(--accent-soft);
-        transform: translateX(2px);
-      }
-    }
+.menu-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
 
-    /* защита от случайного горизонтального скролла */
-    .page, .groups-section, .groups-grid, .group-card, .logo, h1, .timer-line, .subtitle{
-      max-width:100%;
-    }
-  </style>
+/* ===== SIDE MENU ===== */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: min(320px, 80%);
+  background: rgba(8,10,20,0.8);
+  backdrop-filter: blur(22px);
+  box-shadow: -8px 0 22px rgba(0,0,0,0.45);
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(.4,0,.2,1);
+  z-index: 1050;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.side-menu.active {
+  transform: translateX(0);
+}
+
+.side-menu a {
+  color: rgba(223,232,255,0.92);
+  text-decoration: none;
+  font-size: 1.1rem;
+  margin: 14px 0;
+  letter-spacing: 0.06em;
+}
+</style>
 </head>
 
 <body>
 
-  <!-- MENU -->
-  <button class="menu-btn" id="menuBtn" aria-label="Меню" aria-expanded="false" aria-controls="sideMenu">
-    <span></span><span></span><span></span>
-  </button>
+<!-- LOGO -->
+<div class="logo">
+  <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="#dfe8ff" stroke-width="1.6" fill="none">
+      <path d="M32 30 Q28 58 42 82" stroke-linecap="round"/>
+      <path d="M68 30 Q72 58 58 82" stroke-linecap="round"/>
+      <path d="M32 30 Q50 16 68 30" stroke-linecap="round"/>
+      <path d="M45 86 Q50 90 55 86" stroke-linecap="round"/>
+      <path d="M40 94 H60" stroke-linecap="round"/>
+    </g>
+    <path d="M28 102 Q50 110 72 102"
+          stroke="#dfe8ff"
+          stroke-width="1.1"
+          stroke-linecap="round"
+          opacity="0.8"/>
+  </svg>
 
-  <div class="menu-overlay" id="menuOverlay"></div>
-
-  <nav class="side-menu" id="sideMenu" aria-label="Навигация">
-    <button class="menu-close" id="menuClose" aria-label="Закрыть меню">✕</button>
-
-    <a href="/">Главная</a>
-    <a href="/streams.html">Трансляции</a>
-    <a href="/schedule.html">Расписание</a>
-    <a href="/news.html">Новости</a>
-    <a href="/about.html">О турнире</a>
-    <a href="/shop.html">Магазин</a>
-    <a href="/contacts.html">Контакты</a>
-  </nav>
-
-  <div class="page">
-
-    <!-- LOGO -->
-    <div class="logo">
-      <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <filter id="cup-glow" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="2" result="blur"/>
-            <feColorMatrix in="blur" type="matrix"
-              values="0 0 0 0 0.87
-                      0 0 0 0 0.91
-                      0 0 0 0 1
-                      0 0 0 0.75 0"/>
-            <feMerge>
-              <feMergeNode/>
-              <feMergeNode in="SourceGraphic"/>
-            </feMerge>
-          </filter>
-        </defs>
-
-        <g stroke="#dfe8ff" stroke-width="1.6" fill="none" filter="url(#cup-glow)">
-          <path d="M32 30 Q28 58 42 82" stroke-linecap="round"/>
-          <path d="M68 30 Q72 58 58 82" stroke-linecap="round"/>
-          <path d="M32 30 Q50 16 68 30" stroke-linecap="round"/>
-          <path d="M45 86 Q50 90 55 86" stroke-linecap="round"/>
-          <path d="M40 94 H60" stroke-linecap="round"/>
-        </g>
-
-        <path d="M28 102 Q50 110 72 102"
-              stroke="#dfe8ff"
-              stroke-width="1.1"
-              stroke-linecap="round"
-              opacity="0.8"
-              filter="url(#cup-glow)"/>
-      </svg>
-
-      <div class="logo-caption">RWC 2027<br>AUSTRALIA 2027</div>
-    </div>
-
-    <!-- TIMER -->
-    <h1>До Кубка Мира по Регби осталось:</h1>
-
-    <div>
-      <div id="timer-line1" class="timer-line"></div>
-      <div id="timer-line2" class="timer-line"></div>
-    </div>
-
-    <div class="subtitle">Rugby World Cup 2027 starts in:</div>
-
-    <!-- GROUPS -->
-    <div class="groups-section">
-      <div class="groups-grid">
-
-        <div class="group-card">
-          <div class="group-title">Группа A</div>
-          <div class="group-divider"></div>
-          <div class="group-team">Новая Зеландия</div>
-          <div class="group-team">Австралия</div>
-          <div class="group-team">Чили</div>
-          <div class="group-team">Гонконг–Китай</div>
-        </div>
-
-        <div class="group-card">
-          <div class="group-title">Группа B</div>
-          <div class="group-divider"></div>
-          <div class="group-team">ЮАР</div>
-          <div class="group-team">Италия</div>
-          <div class="group-team">Грузия</div>
-          <div class="group-team">Румыния</div>
-        </div>
-
-        <div class="group-card">
-          <div class="group-title">Группа C</div>
-          <div class="group-divider"></div>
-          <div class="group-team">Аргентина</div>
-          <div class="group-team">Фиджи</div>
-          <div class="group-team">Испания</div>
-          <div class="group-team">Канада</div>
-        </div>
-
-        <div class="group-card">
-          <div class="group-title">Группа D</div>
-          <div class="group-divider"></div>
-          <div class="group-team">Ирландия</div>
-          <div class="group-team">Шотландия</div>
-          <div class="group-team">Уругвай</div>
-          <div class="group-team">Португалия</div>
-        </div>
-
-        <div class="group-card">
-          <div class="group-title">Группа E</div>
-          <div class="group-divider"></div>
-          <div class="group-team">Франция</div>
-          <div class="group-team">Япония</div>
-          <div class="group-team">США</div>
-          <div class="group-team">Самоа</div>
-        </div>
-
-        <div class="group-card">
-          <div class="group-title">Группа F</div>
-          <div class="group-divider"></div>
-          <div class="group-team">Англия</div>
-          <div class="group-team">Уэльс</div>
-          <div class="group-team">Тонга</div>
-          <div class="group-team">Зимбабве</div>
-        </div>
-
-      </div>
-    </div>
-
+  <div class="logo-caption">
+    RWC 2027<br>AUSTRALIA 2027
   </div>
+</div>
 
-  <script>
-    // ===== TIMER =====
-    function updateTimer() {
-      const target = new Date("2027-10-01T00:00:00").getTime();
-      const diff = target - Date.now();
+<h1>До Кубка Мира по Регби осталось:</h1>
 
-      if (diff <= 0) {
-        document.getElementById("timer-line1").textContent = "Старт!";
-        document.getElementById("timer-line2").textContent = "";
-        return;
-      }
+<div>
+  <div id="timer-line1" class="timer-line"></div>
+  <div id="timer-line2" class="timer-line"></div>
+</div>
 
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((diff / (1000 * 60)) % 60);
-      const seconds = Math.floor((diff / 1000) % 60);
+<div class="subtitle">Rugby World Cup 2027 starts in:</div>
 
-      document.getElementById("timer-line1").textContent =
-        `${days} дн · ${hours.toString().padStart(2, "0")} ч`;
+<div class="groups-section">
+<div class="groups-grid">
 
-      document.getElementById("timer-line2").textContent =
-        `${minutes.toString().padStart(2, "0")} мин · ${seconds.toString().padStart(2, "0")} сек`;
-    }
+<div class="group-card">
+  <div class="group-title">Группа A</div>
+  <div class="group-divider"></div>
+  <div class="group-team">Новая Зеландия</div>
+  <div class="group-team">Австралия</div>
+  <div class="group-team">Чили</div>
+  <div class="group-team">Гонконг–Китай</div>
+</div>
 
-    setInterval(updateTimer, 1000);
-    updateTimer();
+<div class="group-card">
+  <div class="group-title">Группа B</div>
+  <div class="group-divider"></div>
+  <div class="group-team">ЮАР</div>
+  <div class="group-team">Италия</div>
+  <div class="group-team">Грузия</div>
+  <div class="group-team">Румыния</div>
+</div>
 
-    // ===== MENU =====
-    const menuBtn = document.getElementById("menuBtn");
-    const sideMenu = document.getElementById("sideMenu");
-    const menuOverlay = document.getElementById("menuOverlay");
-    const menuClose = document.getElementById("menuClose");
-    const menuLinks = sideMenu.querySelectorAll("a");
+<div class="group-card">
+  <div class="group-title">Группа C</div>
+  <div class="group-divider"></div>
+  <div class="group-team">Аргентина</div>
+  <div class="group-team">Фиджи</div>
+  <div class="group-team">Испания</div>
+  <div class="group-team">Канада</div>
+</div>
 
-    function openMenu(){
-      sideMenu.classList.add("active");
-      menuOverlay.classList.add("active");
-      document.documentElement.classList.add("menu-open");
-      menuBtn.setAttribute("aria-expanded", "true");
-    }
+<div class="group-card">
+  <div class="group-title">Группа D</div>
+  <div class="group-divider"></div>
+  <div class="group-team">Ирландия</div>
+  <div class="group-team">Шотландия</div>
+  <div class="group-team">Уругвай</div>
+  <div class="group-team">Португалия</div>
+</div>
 
-    function closeMenu(){
-      sideMenu.classList.remove("active");
-      menuOverlay.classList.remove("active");
-      document.documentElement.classList.remove("menu-open");
-      menuBtn.setAttribute("aria-expanded", "false");
-    }
+<div class="group-card">
+  <div class="group-title">Группа E</div>
+  <div class="group-divider"></div>
+  <div class="group-team">Франция</div>
+  <div class="group-team">Япония</div>
+  <div class="group-team">США</div>
+  <div class="group-team">Самоа</div>
+</div>
 
-    function toggleMenu(){
-      const isOpen = sideMenu.classList.contains("active");
-      if (isOpen) closeMenu();
-      else openMenu();
-    }
+<div class="group-card">
+  <div class="group-title">Группа F</div>
+  <div class="group-divider"></div>
+  <div class="group-team">Англия</div>
+  <div class="group-team">Уэльс</div>
+  <div class="group-team">Тонга</div>
+  <div class="group-team">Зимбабве</div>
+</div>
 
-    menuBtn.addEventListener("click", toggleMenu);
+</div>
+</div>
 
-    // фон закрывает меню всегда (для мобильных обязательно pointerdown)
-    menuOverlay.addEventListener("pointerdown", closeMenu);
-    menuOverlay.addEventListener("click", closeMenu);
+<!-- MENU -->
+<button class="menu-btn" id="menuBtn" aria-label="Меню">
+  <span></span><span></span><span></span>
+</button>
 
-    // крестик внутри меню
-    menuClose.addEventListener("click", closeMenu);
+<div class="menu-overlay" id="menuOverlay"></div>
 
-    // клик по пункту меню закрывает
-    menuLinks.forEach((a)=>a.addEventListener("click", closeMenu));
+<nav class="side-menu" id="sideMenu">
+  <a href="/">Главная</a>
+  <a href="/streams.html">Трансляции</a>
+  <a href="/schedule.html">Расписание</a>
+  <a href="/news.html">Новости</a>
+  <a href="/about.html">О турнире</a>
+  <a href="/shop.html">Магазин</a>
+  <a href="/contacts.html">Контакты</a>
+</nav>
 
-    // Escape на десктопе
-    document.addEventListener("keydown", (e)=>{
-      if (e.key === "Escape") closeMenu();
-    });
+<script>
+function updateTimer() {
+  const target = new Date("2027-10-01T00:00:00").getTime();
+  const diff = target - Date.now();
+  if (diff <= 0) return;
 
-    // при ресайзе закрываем, чтобы не было “полу-состояния”
-    window.addEventListener("resize", ()=>{
-      if (sideMenu.classList.contains("active")) closeMenu();
-    });
-  </script>
+  const d = Math.floor(diff / 86400000);
+  const h = Math.floor(diff / 3600000 % 24);
+  const m = Math.floor(diff / 60000 % 60);
+  const s = Math.floor(diff / 1000 % 60);
+
+  document.getElementById("timer-line1").innerHTML =
+    `${d} дн · ${h.toString().padStart(2,"0")} ч`;
+  document.getElementById("timer-line2").innerHTML =
+    `${m.toString().padStart(2,"0")} мин · ${s.toString().padStart(2,"0")} сек`;
+}
+
+setInterval(updateTimer, 1000);
+updateTimer();
+
+/* MENU LOGIC — STABLE */
+const menuBtn = document.getElementById("menuBtn");
+const sideMenu = document.getElementById("sideMenu");
+const menuOverlay = document.getElementById("menuOverlay");
+const menuLinks = sideMenu.querySelectorAll("a");
+
+function openMenu() {
+  menuBtn.classList.add("active");
+  sideMenu.classList.add("active");
+  menuOverlay.classList.add("active");
+  document.body.classList.add("menu-open");
+}
+
+function closeMenu() {
+  menuBtn.classList.remove("active");
+  sideMenu.classList.remove("active");
+  menuOverlay.classList.remove("active");
+  document.body.classList.remove("menu-open");
+}
+
+menuBtn.addEventListener("click", () => {
+  if (menuBtn.classList.contains("active")) {
+    closeMenu();
+  } else {
+    openMenu();
+  }
+});
+
+menuOverlay.addEventListener("click", closeMenu);
+menuLinks.forEach(link => link.addEventListener("click", closeMenu));
+</script>
 
 </body>
 </html>
