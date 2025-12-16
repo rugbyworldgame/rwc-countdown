@@ -30,10 +30,49 @@
       text-align: center;
     }
 
+    /* STREAM STATUS */
+    .stream-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 18px auto 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .stream-status .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    .stream-status.live {
+      color: #9dffb3;
+      background: rgba(20, 80, 40, 0.35);
+    }
+
+    .stream-status.live .dot {
+      background: #32ff7e;
+      box-shadow: 0 0 6px rgba(50,255,126,0.8);
+    }
+
+    .stream-status.offline {
+      color: rgba(223,232,255,0.6);
+      background: rgba(255,255,255,0.08);
+    }
+
+    .stream-status.offline .dot {
+      background: rgba(223,232,255,0.5);
+    }
+
     /* TITLES */
     h1 {
       font-size: clamp(1.6rem, 4vw, 2.4rem);
-      margin: 24px 0 16px;
+      margin: 16px 0 16px;
     }
 
     .subtitle {
@@ -89,7 +128,7 @@
       margin-bottom: 12px;
     }
 
-    /* DISCLAMER */
+    /* DISCLAIMER */
     .stream-disclaimer {
       margin: 32px auto 22px;
       max-width: 720px;
@@ -107,6 +146,12 @@
   <div id="menu-container"></div>
 
   <div class="page-content">
+
+    <!-- STREAM STATUS -->
+    <div class="stream-status live">
+      <span class="dot"></span>
+      LIVE
+    </div>
 
     <h1>Трансляции матчей</h1>
 
@@ -132,7 +177,6 @@
       </div>
     </div>
 
-    <!-- DISCLAMER -->
     <div class="stream-disclaimer">
       Трансляция предоставляется из открытых источников.<br>
       Сайт не является правообладателем видеоматериала.
