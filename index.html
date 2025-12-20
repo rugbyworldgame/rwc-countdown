@@ -42,29 +42,22 @@ body {
 
   padding-top: 7vh;
 
-  background: radial-gradient(
-    circle at 50% 0%,
-    #1a2f4d 0%,
-    #091626 55%,
-    #04080f 100%
-  );
+  /* ВАЖНО: фон + свет СРАЗУ ЗДЕСЬ */
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(255,255,255,0.12) 0%,
+      rgba(255,255,255,0.04) 22%,
+      rgba(0,0,0,0) 70%
+    ),
+    radial-gradient(
+      circle at 50% 0%,
+      #1a2f4d 0%,
+      #091626 55%,
+      #04080f 100%
+    );
 
   position: relative;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: radial-gradient(
-    circle at 50% 0%,
-    rgba(255,255,255,0.16) 0%,
-    rgba(255,255,255,0.05) 22%,
-    rgba(0,0,0,0) 70%
-  );
-  opacity: 0.55;
-  pointer-events: none;
-  z-index: -1;
 }
 
 /* ===== LOGO ===== */
@@ -231,68 +224,19 @@ h1 {
 
 <div class="groups-section">
   <div class="groups-grid">
-
-    <!-- группы — без изменений -->
+    <!-- группы без изменений -->
     <!-- A -->
-    <div class="group-card">
-      <div class="group-title">Группа A</div>
-      <div class="group-divider"></div>
-      <div class="group-team">Новая Зеландия</div>
-      <div class="group-team">Австралия</div>
-      <div class="group-team">Чили</div>
-      <div class="group-team">Гонконг–Китай</div>
-    </div>
-
+    <div class="group-card"><div class="group-title">Группа A</div><div class="group-divider"></div><div class="group-team">Новая Зеландия</div><div class="group-team">Австралия</div><div class="group-team">Чили</div><div class="group-team">Гонконг–Китай</div></div>
     <!-- B -->
-    <div class="group-card">
-      <div class="group-title">Группа B</div>
-      <div class="group-divider"></div>
-      <div class="group-team">ЮАР</div>
-      <div class="group-team">Италия</div>
-      <div class="group-team">Грузия</div>
-      <div class="group-team">Румыния</div>
-    </div>
-
+    <div class="group-card"><div class="group-title">Группа B</div><div class="group-divider"></div><div class="group-team">ЮАР</div><div class="group-team">Италия</div><div class="group-team">Грузия</div><div class="group-team">Румыния</div></div>
     <!-- C -->
-    <div class="group-card">
-      <div class="group-title">Группа C</div>
-      <div class="group-divider"></div>
-      <div class="group-team">Аргентина</div>
-      <div class="group-team">Фиджи</div>
-      <div class="group-team">Испания</div>
-      <div class="group-team">Канада</div>
-    </div>
-
+    <div class="group-card"><div class="group-title">Группа C</div><div class="group-divider"></div><div class="group-team">Аргентина</div><div class="group-team">Фиджи</div><div class="group-team">Испания</div><div class="group-team">Канада</div></div>
     <!-- D -->
-    <div class="group-card">
-      <div class="group-title">Группа D</div>
-      <div class="group-divider"></div>
-      <div class="group-team">Ирландия</div>
-      <div class="group-team">Шотландия</div>
-      <div class="group-team">Уругвай</div>
-      <div class="group-team">Португалия</div>
-    </div>
-
+    <div class="group-card"><div class="group-title">Группа D</div><div class="group-divider"></div><div class="group-team">Ирландия</div><div class="group-team">Шотландия</div><div class="group-team">Уругвай</div><div class="group-team">Португалия</div></div>
     <!-- E -->
-    <div class="group-card">
-      <div class="group-title">Группа E</div>
-      <div class="group-divider"></div>
-      <div class="group-team">Франция</div>
-      <div class="group-team">Япония</div>
-      <div class="group-team">США</div>
-      <div class="group-team">Самоа</div>
-    </div>
-
+    <div class="group-card"><div class="group-title">Группа E</div><div class="group-divider"></div><div class="group-team">Франция</div><div class="group-team">Япония</div><div class="group-team">США</div><div class="group-team">Самоа</div></div>
     <!-- F -->
-    <div class="group-card">
-      <div class="group-title">Группа F</div>
-      <div class="group-divider"></div>
-      <div class="group-team">Англия</div>
-      <div class="group-team">Уэльс</div>
-      <div class="group-team">Тонга</div>
-      <div class="group-team">Зимбабве</div>
-    </div>
-
+    <div class="group-card"><div class="group-title">Группа F</div><div class="group-divider"></div><div class="group-team">Англия</div><div class="group-team">Уэльс</div><div class="group-team">Тонга</div><div class="group-team">Зимбабве</div></div>
   </div>
 </div>
 
