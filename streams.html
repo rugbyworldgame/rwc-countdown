@@ -138,8 +138,6 @@
       color: rgba(223,232,255,0.4);
       text-align: center;
     }
-
-
   </style>
 </head>
 
@@ -152,12 +150,11 @@
 
     <div class="stream-status live">
       <span class="dot"></span>
-     LIVE 23:00 - 01:00MSK
+      LIVE 23:00 - 01:00MSK
     </div>
 
-
     <p class="subtitle">
-    Прямые трансляци регби.
+      Прямые трансляци регби.
     </p>
 
     <div class="video-wrapper">
@@ -190,44 +187,8 @@
 
   </div>
 
-  <script>
-    fetch('/menu.html')
-      .then(r => r.text())
-      .then(html => {
-        document.getElementById('menu-container').innerHTML = html;
-        initMenu();
-      });
-
-    function initMenu() {
-      const menuBtn = document.getElementById('menuBtn');
-      const sideMenu = document.getElementById('sideMenu');
-      const menuOverlay = document.getElementById('menuOverlay');
-      if (!menuBtn || !sideMenu || !menuOverlay) return;
-
-      const menuLinks = sideMenu.querySelectorAll('a');
-
-      function openMenu() {
-        menuBtn.classList.add('active');
-        sideMenu.classList.add('active');
-        menuOverlay.classList.add('active');
-        document.body.classList.add('menu-open');
-      }
-
-      function closeMenu() {
-        menuBtn.classList.remove('active');
-        sideMenu.classList.remove('active');
-        menuOverlay.classList.remove('active');
-        document.body.classList.remove('menu-open');
-      }
-
-      menuBtn.addEventListener('click', () => {
-        menuBtn.classList.contains('active') ? closeMenu() : openMenu();
-      });
-
-      menuOverlay.addEventListener('click', closeMenu);
-      menuLinks.forEach(a => a.addEventListener('click', closeMenu));
-    }
-  </script>
+  <!-- ЕДИНЫЙ СКРИПТ МЕНЮ -->
+  <script src="/menu.js"></script>
 
 </body>
 </html>
