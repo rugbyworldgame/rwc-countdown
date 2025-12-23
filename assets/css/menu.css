@@ -35,7 +35,7 @@
 }
 
 /* =========================================
-   OVERLAY — ЗАТЕМНЕНИЕ (ПОД СТЕКЛОМ)
+   OVERLAY — ЗАТЕМНЕНИЕ
    ========================================= */
 
 .menu-overlay {
@@ -48,7 +48,7 @@
   );
   opacity: 0;
   transition: opacity .35s ease;
-  z-index: 1100; /* ВАЖНО: НИЖЕ МЕНЮ */
+  z-index: 1100;
   pointer-events: none;
 }
 
@@ -58,7 +58,7 @@
 }
 
 /* =========================================
-   SIDE MENU — GLASS PANEL
+   SIDE MENU — PANEL
    ========================================= */
 
 .side-menu {
@@ -70,14 +70,12 @@
   width: 320px;
   max-width: 82vw;
 
-  /* ПОЛУПРОЗРАЧНЫЙ ФОН ДЛЯ СТЕКЛА */
   background: linear-gradient(
     180deg,
     rgba(18,26,44,0.35),
     rgba(10,16,30,0.45)
   );
 
-  /* РЕАЛЬНЫЙ GLASS EFFECT */
   backdrop-filter: blur(22px) saturate(135%);
   -webkit-backdrop-filter: blur(22px) saturate(135%);
 
@@ -86,7 +84,7 @@
 
   transform: translateX(100%);
   transition: transform .45s cubic-bezier(.4,0,.2,1);
-  z-index: 1200; /* ВАЖНО: ВЫШЕ OVERLAY */
+  z-index: 1200;
 
   display: flex;
   flex-direction: column;
@@ -101,7 +99,30 @@
 }
 
 /* =========================================
-   SOFT EDGE — РАСТВОРЕНИЕ КРАЯ
+   DESKTOP EDGE — КРОМКА (ГЛАВНОЕ)
+   ========================================= */
+
+@media (min-width: 1024px) {
+  .side-menu::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -1px;
+    width: 1px;
+    height: 100%;
+    pointer-events: none;
+
+    background: linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.18),
+      rgba(255,255,255,0.06),
+      rgba(255,255,255,0.12)
+    );
+  }
+}
+
+/* =========================================
+   SOFT EDGE — РАСТВОРЕНИЕ
    ========================================= */
 
 .side-menu::after {
@@ -140,7 +161,7 @@
 }
 
 /* =========================================
-   MOBILE — АККУРАТНО
+   MOBILE — БЕЗ ИЗМЕНЕНИЙ
    ========================================= */
 
 @media (max-width: 768px) {
