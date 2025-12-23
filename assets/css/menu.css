@@ -210,3 +210,22 @@ button,
   -webkit-tap-highlight-color: transparent;
   outline: none;
 }
+
+@media (max-width: 768px) {
+  .side-menu {
+    /* Гасим мобильный нижний glow */
+    mask-image: linear-gradient(
+      to top,
+      transparent 0%,
+      black 12%,
+      black 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to top,
+      transparent 0%,
+      black 12%,
+      black 100%
+    );
+  }
+}
+
