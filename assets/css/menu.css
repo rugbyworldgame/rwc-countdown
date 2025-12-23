@@ -39,18 +39,24 @@
 /* =========================================
    OVERLAY — НЕВИДИМЫЙ, НО КЛИКАБЕЛЬНЫЙ
    ========================================= */
-
 .menu-overlay {
   position: fixed;
   inset: 0;
-  background: transparent; /* никакого затемнения */
+
+  /* МИКРО-СЛОЙ — НЕ ВИДЕН, НО ФИКСИРУЕТ */
+  background: rgba(0,0,0,0.001);
+
+  opacity: 0;
   pointer-events: none;
   z-index: 1200;
 }
 
 .menu-overlay.active {
-  pointer-events: auto; /* закрытие по клику */
+  opacity: 1;
+  pointer-events: auto;
 }
+
+
 
 /* =========================================
    SIDE MENU — CLEAN GLASS PANEL
