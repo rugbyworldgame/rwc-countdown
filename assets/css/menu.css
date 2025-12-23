@@ -66,10 +66,13 @@
 
   /* стекло, которое читается и на тёмных фонах */
   background: linear-gradient(
-    180deg,
-    rgba(20,30,52,0.78),
-    rgba(12,18,36,0.88)
-  );
+  180deg,
+  rgba(18,26,44,0.88),
+  rgba(10,16,30,0.92)
+);
+
+border-left: 1px solid rgba(255,255,255,0.06);
+
 
   backdrop-filter: blur(18px) saturate(125%);
   -webkit-backdrop-filter: blur(18px) saturate(125%);
