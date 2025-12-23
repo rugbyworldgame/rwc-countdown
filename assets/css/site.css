@@ -1,5 +1,5 @@
 /* =========================================
-   SITE BACKGROUND v1 — CLEAN & BALANCED
+   SITE BACKGROUND v1 — CLEAN & BALANCED (FIXED)
    ========================================= */
 
 html,
@@ -28,15 +28,15 @@ body {
 }
 
 /* -----------------------------------------
-   ВЕРХНИЙ СВЕТ (НЕ БЕЛЫЙ, ХОЛОДНЫЙ)
+   ФОНОВЫЕ СЛОИ — БЕЗ FIXED И БЕЗ Z-INDEX-ВМЕШАТЕЛЬСТВА
+   (чтобы не ломать stacking context меню/overlay)
    ----------------------------------------- */
 
 body::before {
   content: "";
-  position: fixed;
+  position: absolute;
   inset: 0;
   pointer-events: none;
-  z-index: 0;
 
   background:
     radial-gradient(
@@ -47,16 +47,11 @@ body::before {
     );
 }
 
-/* -----------------------------------------
-   ГЛУБИНА НИЗА (АККУРАТНАЯ)
-   ----------------------------------------- */
-
 body::after {
   content: "";
-  position: fixed;
+  position: absolute;
   inset: 0;
   pointer-events: none;
-  z-index: 0;
 
   background:
     radial-gradient(
@@ -67,10 +62,7 @@ body::after {
 }
 
 /* -----------------------------------------
-   БАЗОВЫЙ СЛОЙ КОНТЕНТА
+   ВАЖНО:
+   УБРАНО body > * { z-index: 1; }
+   Это правило ломало слои меню/overlay и клики на мобиле.
    ----------------------------------------- */
-
-body > * {
-  position: relative;
-  z-index: 1;
-}
