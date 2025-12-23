@@ -105,22 +105,30 @@ h1 {
   .groups-grid { grid-template-columns: 1fr; }
 }
 
-/* ===== ANIMATION ONLY ===== */
-.group-card {
+/* ===== ANIMATION ONLY (НЕ ПЕРЕБИВАЕМ СТИЛИ КАРТОЧЕК ИЗ site.css) ===== */
+.groups-grid .group-card {
   opacity: 0;
   transform: translateY(22px);
   animation: fadeUp 0.6s ease forwards;
 }
 
-.group-card:nth-child(1){animation-delay:.1s}
-.group-card:nth-child(2){animation-delay:.2s}
-.group-card:nth-child(3){animation-delay:.3s}
-.group-card:nth-child(4){animation-delay:.4s}
-.group-card:nth-child(5){animation-delay:.5s}
-.group-card:nth-child(6){animation-delay:.6s}
+.groups-grid .group-card:nth-child(1){animation-delay:.1s}
+.groups-grid .group-card:nth-child(2){animation-delay:.2s}
+.groups-grid .group-card:nth-child(3){animation-delay:.3s}
+.groups-grid .group-card:nth-child(4){animation-delay:.4s}
+.groups-grid .group-card:nth-child(5){animation-delay:.5s}
+.groups-grid .group-card:nth-child(6){animation-delay:.6s}
 
 @keyframes fadeUp {
   to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .groups-grid .group-card {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 }
 </style>
 </head>
