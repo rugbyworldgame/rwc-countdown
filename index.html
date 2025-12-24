@@ -14,33 +14,24 @@
 :root {
   --text-main: #dfe8ff;
   --text-sub: rgba(223,232,255,0.55);
-  --accent-soft: #8FAFE6;
 }
 
 /* ===== BASE ===== */
-html {
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-}
-
 html, body {
+  margin: 0;
+  padding: 0;
   width: 100%;
-  max-width: 100%;
   overflow-x: hidden;
 }
 
 body {
-  margin: 0;
   min-height: 100vh;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
   font-family: Arial, sans-serif;
   text-align: center;
   color: var(--text-main);
 
+  /* ВАЖНО: убрали центрирование flex */
+  display: block;
   padding-top: 7vh;
 }
 
@@ -82,19 +73,33 @@ h1 {
   opacity: 0.55;
 }
 
-/* ===== GROUPS LAYOUT ONLY ===== */
+/* ===== GROUPS PLATFORM (КЛЮЧЕВОЕ) ===== */
 .groups-section {
-  margin-top: 52px;
-  padding: 0 16px 56px;
-  max-width: 1200px;
-  width: 100%;
+  margin: 64px auto 72px;
+  padding: 48px 16px 56px;
+
+  max-width: 1280px;
+
+  /* СЛОЙ-ПОДЛОЖКА */
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(40,70,130,0.22),
+      rgba(10,20,45,0.85)
+    );
+
+  border-radius: 42px;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(220,230,255,0.06),
+    0 60px 120px rgba(0,0,0,0.55);
 }
 
+/* ===== GRID ===== */
 .groups-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 26px 32px;
-  justify-items: center;
 }
 
 @media (max-width: 960px) {
@@ -105,26 +110,26 @@ h1 {
   .groups-grid { grid-template-columns: 1fr; }
 }
 
-/* ===== ANIMATION ONLY (НЕ ТРОГАЕМ СТИЛИ КАРТОЧЕК) ===== */
-.groups-grid .group-card {
+/* ===== ANIMATION ONLY ===== */
+.group-card {
   opacity: 0;
   transform: translateY(22px);
   animation: fadeUp 0.6s ease forwards;
 }
 
-.groups-grid .group-card:nth-child(1){animation-delay:.1s}
-.groups-grid .group-card:nth-child(2){animation-delay:.2s}
-.groups-grid .group-card:nth-child(3){animation-delay:.3s}
-.groups-grid .group-card:nth-child(4){animation-delay:.4s}
-.groups-grid .group-card:nth-child(5){animation-delay:.5s}
-.groups-grid .group-card:nth-child(6){animation-delay:.6s}
+.group-card:nth-child(1){animation-delay:.1s}
+.group-card:nth-child(2){animation-delay:.2s}
+.group-card:nth-child(3){animation-delay:.3s}
+.group-card:nth-child(4){animation-delay:.4s}
+.group-card:nth-child(5){animation-delay:.5s}
+.group-card:nth-child(6){animation-delay:.6s}
 
 @keyframes fadeUp {
   to { opacity: 1; transform: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .groups-grid .group-card {
+  .group-card {
     animation: none;
     opacity: 1;
     transform: none;
@@ -135,23 +140,20 @@ h1 {
 
 <body>
 
-<!-- MENU -->
 <div id="menu-container"></div>
 
-<!-- LOGO -->
 <div class="logo">
   <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
     <g stroke="#dfe8ff" stroke-width="1.6" fill="none">
-      <path d="M32 30 Q28 58 42 82" stroke-linecap="round"/>
-      <path d="M68 30 Q72 58 58 82" stroke-linecap="round"/>
-      <path d="M32 30 Q50 16 68 30" stroke-linecap="round"/>
-      <path d="M45 86 Q50 90 55 86" stroke-linecap="round"/>
-      <path d="M40 94 H60" stroke-linecap="round"/>
+      <path d="M32 30 Q28 58 42 82"/>
+      <path d="M68 30 Q72 58 58 82"/>
+      <path d="M32 30 Q50 16 68 30"/>
+      <path d="M45 86 Q50 90 55 86"/>
+      <path d="M40 94 H60"/>
     </g>
     <path d="M28 102 Q50 110 72 102"
           stroke="#dfe8ff"
           stroke-width="1.1"
-          stroke-linecap="round"
           opacity="0.8"/>
   </svg>
 
@@ -171,6 +173,8 @@ h1 {
 
 <div class="groups-section">
   <div class="groups-grid">
+
+    <!-- ГРУППЫ (без изменений) -->
     <div class="group-card">
       <div class="group-title">Группа A</div>
       <div class="group-divider"></div>
@@ -224,6 +228,7 @@ h1 {
       <div class="group-team">Тонга</div>
       <div class="group-team">Зимбабве</div>
     </div>
+
   </div>
 </div>
 
@@ -243,7 +248,6 @@ function updateTimer() {
   document.getElementById("timer-line2").innerHTML =
     `${m.toString().padStart(2,"0")} мин · ${s.toString().padStart(2,"0")} сек`;
 }
-
 setInterval(updateTimer, 1000);
 updateTimer();
 </script>
@@ -251,4 +255,4 @@ updateTimer();
 <script src="/menu.js"></script>
 
 </body>
-        </html>
+</html>
