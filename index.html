@@ -1,258 +1,137 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<title>Кубок мира по регби — Австралия 2027</title>
+  <title>Кубок мира по регби — Австралия 2027</title>
 
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="stylesheet" href="/assets/css/site.css">
-<link rel="stylesheet" href="/assets/css/menu.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-<style>
-:root {
-  --text-main: #dfe8ff;
-  --text-sub: rgba(223,232,255,0.55);
-}
-
-/* ===== BASE ===== */
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  overflow-x: hidden;
-}
-
-body {
-  min-height: 100vh;
-  font-family: Arial, sans-serif;
-  text-align: center;
-  color: var(--text-main);
-
-  /* ВАЖНО: убрали центрирование flex */
-  display: block;
-  padding-top: 7vh;
-}
-
-/* ===== LOGO ===== */
-.logo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 22px;
-}
-
-.logo svg {
-  width: 82px;
-  margin-bottom: 6px;
-}
-
-.logo-caption {
-  font-size: 0.75rem;
-  color: var(--text-sub);
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-}
-
-/* ===== TIMER ===== */
-h1 {
-  font-size: clamp(1.2rem, 3.4vw, 1.65rem);
-  margin-bottom: 14px;
-  font-weight: 600;
-}
-
-.timer-line {
-  font-size: clamp(2.1rem, 6vw, 3rem);
-  line-height: 1.2;
-}
-
-.subtitle {
-  margin-top: 6px;
-  font-size: 0.85rem;
-  opacity: 0.55;
-}
-
-/* ===== GROUPS PLATFORM (КЛЮЧЕВОЕ) ===== */
-.groups-section {
-  margin: 64px auto 72px;
-  padding: 48px 16px 56px;
-
-  max-width: 1280px;
-
-  /* СЛОЙ-ПОДЛОЖКА */
-  background:
-    radial-gradient(
-      ellipse at center,
-      rgba(40,70,130,0.22),
-      rgba(10,20,45,0.85)
-    );
-
-  border-radius: 42px;
-
-  box-shadow:
-    inset 0 0 0 1px rgba(220,230,255,0.06),
-    0 60px 120px rgba(0,0,0,0.55);
-}
-
-/* ===== GRID ===== */
-.groups-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 26px 32px;
-}
-
-@media (max-width: 960px) {
-  .groups-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 640px) {
-  .groups-grid { grid-template-columns: 1fr; }
-}
-
-/* ===== ANIMATION ONLY ===== */
-.group-card {
-  opacity: 0;
-  transform: translateY(22px);
-  animation: fadeUp 0.6s ease forwards;
-}
-
-.group-card:nth-child(1){animation-delay:.1s}
-.group-card:nth-child(2){animation-delay:.2s}
-.group-card:nth-child(3){animation-delay:.3s}
-.group-card:nth-child(4){animation-delay:.4s}
-.group-card:nth-child(5){animation-delay:.5s}
-.group-card:nth-child(6){animation-delay:.6s}
-
-@keyframes fadeUp {
-  to { opacity: 1; transform: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .group-card {
-    animation: none;
-    opacity: 1;
-    transform: none;
-  }
-}
-</style>
+  <!-- Важно: menu.css не должен лезть в карточки. Карточки — только в site.css -->
+  <link rel="stylesheet" href="/assets/css/menu.css" />
+  <link rel="stylesheet" href="/assets/css/site.css" />
 </head>
 
 <body>
+  <div id="menu-container"></div>
 
-<div id="menu-container"></div>
+  <main class="page">
+    <section class="container">
+      <header class="hero">
+        <div class="logo" aria-label="Логотип Rugby World Cup 2027">
+          <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="RWC 2027">
+            <g stroke="currentColor" stroke-width="1.6" fill="none">
+              <path d="M32 30 Q28 58 42 82"/>
+              <path d="M68 30 Q72 58 58 82"/>
+              <path d="M32 30 Q50 16 68 30"/>
+              <path d="M45 86 Q50 90 55 86"/>
+              <path d="M40 94 H60"/>
+            </g>
+            <path d="M28 102 Q50 110 72 102"
+                  stroke="currentColor"
+                  stroke-width="1.1"
+                  opacity="0.8"/>
+          </svg>
 
-<div class="logo">
-  <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
-    <g stroke="#dfe8ff" stroke-width="1.6" fill="none">
-      <path d="M32 30 Q28 58 42 82"/>
-      <path d="M68 30 Q72 58 58 82"/>
-      <path d="M32 30 Q50 16 68 30"/>
-      <path d="M45 86 Q50 90 55 86"/>
-      <path d="M40 94 H60"/>
-    </g>
-    <path d="M28 102 Q50 110 72 102"
-          stroke="#dfe8ff"
-          stroke-width="1.1"
-          opacity="0.8"/>
-  </svg>
+          <div class="logo-caption">
+            RWC 2027<br />AUSTRALIA 2027
+          </div>
+        </div>
 
-  <div class="logo-caption">
-    RWC 2027<br>AUSTRALIA 2027
-  </div>
-</div>
+        <h1 class="h1">До Кубка Мира по Регби осталось</h1>
 
-<h1>До Кубка Мира по Регби осталось:</h1>
+        <div class="timer" aria-label="Таймер до старта Кубка мира 2027">
+          <div id="timer-line1" class="timer-line"></div>
+          <div id="timer-line2" class="timer-line"></div>
+          <div class="subtitle">Rugby World Cup 2027 starts in</div>
+        </div>
+      </header>
 
-<div>
-  <div id="timer-line1" class="timer-line"></div>
-  <div id="timer-line2" class="timer-line"></div>
-</div>
+      <section class="groups" aria-label="Группы">
+        <h2 class="h2">Группы</h2>
 
-<div class="subtitle">Rugby World Cup 2027 starts in:</div>
+        <div class="groups-grid">
+          <article class="group-card">
+            <div class="group-title">Группа A</div>
+            <div class="group-divider"></div>
+            <div class="group-team">Новая Зеландия</div>
+            <div class="group-team">Австралия</div>
+            <div class="group-team">Чили</div>
+            <div class="group-team">Гонконг–Китай</div>
+          </article>
 
-<div class="groups-section">
-  <div class="groups-grid">
+          <article class="group-card">
+            <div class="group-title">Группа B</div>
+            <div class="group-divider"></div>
+            <div class="group-team">ЮАР</div>
+            <div class="group-team">Италия</div>
+            <div class="group-team">Грузия</div>
+            <div class="group-team">Румыния</div>
+          </article>
 
-    <!-- ГРУППЫ (без изменений) -->
-    <div class="group-card">
-      <div class="group-title">Группа A</div>
-      <div class="group-divider"></div>
-      <div class="group-team">Новая Зеландия</div>
-      <div class="group-team">Австралия</div>
-      <div class="group-team">Чили</div>
-      <div class="group-team">Гонконг–Китай</div>
-    </div>
+          <article class="group-card">
+            <div class="group-title">Группа C</div>
+            <div class="group-divider"></div>
+            <div class="group-team">Аргентина</div>
+            <div class="group-team">Фиджи</div>
+            <div class="group-team">Испания</div>
+            <div class="group-team">Канада</div>
+          </article>
 
-    <div class="group-card">
-      <div class="group-title">Группа B</div>
-      <div class="group-divider"></div>
-      <div class="group-team">ЮАР</div>
-      <div class="group-team">Италия</div>
-      <div class="group-team">Грузия</div>
-      <div class="group-team">Румыния</div>
-    </div>
+          <article class="group-card">
+            <div class="group-title">Группа D</div>
+            <div class="group-divider"></div>
+            <div class="group-team">Ирландия</div>
+            <div class="group-team">Шотландия</div>
+            <div class="group-team">Уругвай</div>
+            <div class="group-team">Португалия</div>
+          </article>
 
-    <div class="group-card">
-      <div class="group-title">Группа C</div>
-      <div class="group-divider"></div>
-      <div class="group-team">Аргентина</div>
-      <div class="group-team">Фиджи</div>
-      <div class="group-team">Испания</div>
-      <div class="group-team">Канада</div>
-    </div>
+          <article class="group-card">
+            <div class="group-title">Группа E</div>
+            <div class="group-divider"></div>
+            <div class="group-team">Франция</div>
+            <div class="group-team">Япония</div>
+            <div class="group-team">США</div>
+            <div class="group-team">Самоа</div>
+          </article>
 
-    <div class="group-card">
-      <div class="group-title">Группа D</div>
-      <div class="group-divider"></div>
-      <div class="group-team">Ирландия</div>
-      <div class="group-team">Шотландия</div>
-      <div class="group-team">Уругвай</div>
-      <div class="group-team">Португалия</div>
-    </div>
+          <article class="group-card">
+            <div class="group-title">Группа F</div>
+            <div class="group-divider"></div>
+            <div class="group-team">Англия</div>
+            <div class="group-team">Уэльс</div>
+            <div class="group-team">Тонга</div>
+            <div class="group-team">Зимбабве</div>
+          </article>
+        </div>
+      </section>
+    </section>
+  </main>
 
-    <div class="group-card">
-      <div class="group-title">Группа E</div>
-      <div class="group-divider"></div>
-      <div class="group-team">Франция</div>
-      <div class="group-team">Япония</div>
-      <div class="group-team">США</div>
-      <div class="group-team">Самоа</div>
-    </div>
+  <script>
+    function updateTimer() {
+      const target = new Date("2027-10-01T00:00:00").getTime();
+      const diff = target - Date.now();
+      if (diff <= 0) return;
 
-    <div class="group-card">
-      <div class="group-title">Группа F</div>
-      <div class="group-divider"></div>
-      <div class="group-team">Англия</div>
-      <div class="group-team">Уэльс</div>
-      <div class="group-team">Тонга</div>
-      <div class="group-team">Зимбабве</div>
-    </div>
+      const d = Math.floor(diff / 86400000);
+      const h = Math.floor((diff / 3600000) % 24);
+      const m = Math.floor((diff / 60000) % 60);
+      const s = Math.floor((diff / 1000) % 60);
 
-  </div>
-</div>
+      document.getElementById("timer-line1").textContent =
+        `${d} дн · ${String(h).padStart(2, "0")} ч`;
+      document.getElementById("timer-line2").textContent =
+        `${String(m).padStart(2, "0")} мин · ${String(s).padStart(2, "0")} сек`;
+    }
+    setInterval(updateTimer, 1000);
+    updateTimer();
+  </script>
 
-<script>
-function updateTimer() {
-  const target = new Date("2027-10-01T00:00:00").getTime();
-  const diff = target - Date.now();
-  if (diff <= 0) return;
-
-  const d = Math.floor(diff / 86400000);
-  const h = Math.floor(diff / 3600000 % 24);
-  const m = Math.floor(diff / 60000 % 60);
-  const s = Math.floor(diff / 1000 % 60);
-
-  document.getElementById("timer-line1").innerHTML =
-    `${d} дн · ${h.toString().padStart(2,"0")} ч`;
-  document.getElementById("timer-line2").innerHTML =
-    `${m.toString().padStart(2,"0")} мин · ${s.toString().padStart(2,"0")} сек`;
-}
-setInterval(updateTimer, 1000);
-updateTimer();
-</script>
-
-<script src="/menu.js"></script>
-
+  <!-- Пока оставляю путь как у тебя, чтобы ничего не сломать.
+       На следующем шаге перенесём в /assets/js/menu.js строго по ТЗ. -->
+  <script src="/menu.js"></script>
 </body>
 </html>
