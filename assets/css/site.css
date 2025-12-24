@@ -1,151 +1,156 @@
 /* =========================================
-   SITE BACKGROUND — NIGHT STADIUM BROADCAST
-   FINAL / DESKTOP FOCUSED
+   ROOT
+   ========================================= */
+
+:root {
+  --bg-deep: #050812;
+  --bg-main: #0b1633;
+
+  --text-main: #dfe8ff;
+  --text-sub: rgba(223,232,255,0.55);
+
+  --card-bg: rgba(8,14,32,0.55);
+  --card-border: rgba(255,255,255,0.10);
+  --card-border-hover: rgba(255,255,255,0.22);
+
+  --divider: rgba(210,220,255,0.55);
+}
+
+
+/* =========================================
+   BASE
    ========================================= */
 
 html,
 body {
   margin: 0;
   padding: 0;
-  background-color: #050812;
+  background-color: var(--bg-deep);
   color-scheme: dark;
 }
 
 body {
+  min-height: 100vh;
+  overflow-x: hidden;
+
   background:
-    /* ЛЕВЫЙ ПРОЖЕКТОР */
     radial-gradient(
-      ellipse at 12% 18%,
-      rgba(120,150,255,0.22),
-      rgba(40,60,120,0.18) 28%,
-      rgba(10,18,36,0.55) 55%,
-      rgba(5,8,18,0.95) 85%
+      ellipse at 50% 0%,
+      rgba(120,150,255,0.28),
+      rgba(40,70,160,0.18) 35%,
+      rgba(12,22,55,0.85) 70%,
+      #050812 100%
     ),
-
-    /* ПРАВЫЙ ПРОЖЕКТОР */
-    radial-gradient(
-      ellipse at 88% 22%,
-      rgba(120,150,255,0.18),
-      rgba(35,55,110,0.16) 30%,
-      rgba(10,18,36,0.55) 58%,
-      rgba(5,8,18,0.95) 86%
-    ),
-
-    /* ЦЕНТРАЛЬНАЯ АТМОСФЕРА */
-    radial-gradient(
-      ellipse at 50% 32%,
-      rgba(150,175,255,0.22),
-      rgba(70,95,170,0.18) 32%,
-      rgba(20,30,65,0.55) 60%,
-      rgba(5,8,18,0.92) 88%
-    ),
-
-    /* ВИНЬЕТКА */
-    radial-gradient(
-      ellipse at center,
-      rgba(0,0,0,0) 42%,
-      rgba(0,0,0,0.35) 68%,
-      rgba(0,0,0,0.72) 100%
-    ),
-
-    /* БАЗОВАЯ НОЧЬ */
     linear-gradient(
       180deg,
       #0b1633 0%,
-      #071028 42%,
+      #070e1f 45%,
       #050812 100%
     );
-
-  min-height: 100vh;
-  overflow-x: hidden;
 }
 
+
 /* =========================================
-   GROUP CARDS — BASELINE (RESTORED)
+   GROUP CARDS — ОСНОВА
    ========================================= */
 
 .group-card {
-  width: 100%;
-  max-width: 340px;
-  padding: 18px 20px 16px;
+  position: relative;
 
-  background: rgba(8,14,30,0.72);
-  border-radius: 18px;
+  width: 100%;
+  max-width: 100%;
+
+  padding: 22px 24px 26px;
+
+  background: var(--card-bg);
+
+  border-radius: 28px;
 
   box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,0.08),
-    0 18px 42px rgba(0,0,0,0.65);
+    inset 0 0 0 1px var(--card-border),
+    0 18px 44px rgba(0,0,0,0.65);
 
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease,
-    background 0.25s ease;
+    border-color 0.25s ease;
 }
 
+
+/* =========================================
+   ТЕКСТ В КАРТОЧКАХ
+   ========================================= */
+
 .group-title {
-  font-size: 0.8rem;
-  letter-spacing: 0.28em;
+  margin-bottom: 12px;
+
+  font-size: 0.75rem;
+  letter-spacing: 0.32em;
   text-transform: uppercase;
-  color: rgba(200,220,255,0.9);
-  margin-bottom: 6px;
+
+  color: rgba(205,220,255,0.85);
 }
 
 .group-divider {
   height: 1px;
-  margin-bottom: 10px;
+  width: 100%;
+  margin: 10px 0 16px;
+
   background: linear-gradient(
     90deg,
-    rgba(200,220,255,0.5),
-    rgba(200,220,255,0.08)
+    transparent,
+    var(--divider),
+    transparent
   );
 }
 
 .group-team {
-  font-size: 0.9rem;
-  margin-bottom: 4px;
-  color: rgba(240,245,255,0.95);
+  font-size: 1rem;
+  line-height: 1.55;
+
+  color: rgba(245,248,255,0.95);
 }
 
-@media (hover:hover) and (pointer:fine) {
+
+/* =========================================
+   HOVER — ТОЛЬКО DESKTOP
+   ========================================= */
+
+@media (hover: hover) and (pointer: fine) {
   .group-card:hover {
-    transform: translateY(-4px);
-    background: rgba(12,20,44,0.85);
+    transform: translateY(-6px);
+
     box-shadow:
-      inset 0 0 0 1px rgba(160,190,255,0.22),
-      0 22px 52px rgba(0,0,0,0.75);
+      inset 0 0 0 1px var(--card-border-hover),
+      0 26px 64px rgba(0,0,0,0.85);
   }
 }
 
-/* ===== MOBILE CARD GEOMETRY FIX ===== */
+
+/* =========================================
+   МОБИЛЬНАЯ ГЕОМЕТРИЯ (КЛЮЧЕВОЙ ФИКС)
+   ========================================= */
+
 @media (max-width: 640px) {
+
+  /* центрируем карточки, убираем прижатие */
+  .groups-grid {
+    justify-items: center;
+  }
+
   .group-card {
-    width: 92%;
-    max-width: 360px;
-    margin: 0 auto;
-
-    border-radius: 22px;
-
-    padding-left: 22px;
-    padding-right: 22px;
+    max-width: 92%;
+    border-radius: 26px;
   }
 }
-/* ===== MOBILE CARD EDGE BALANCE (FINAL) ===== */
-@media (max-width: 640px) {
-  .group-card {
-    width: calc(100% - 32px);
-    margin-left: auto;
-    margin-right: auto;
 
-    border-radius: 24px;
 
-    background-position: center center;
-    background-size: 140% 140%;
-  }
-}
-/* ===== MOBILE CARD GEOMETRY FIX ===== */
-@media (max-width: 640px) {
+/* =========================================
+   СНИЖЕНИЕ ДВИЖЕНИЯ
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
   .group-card {
-    width: 92%;
-    border-radius: 22px;
+    transition: none;
   }
 }
