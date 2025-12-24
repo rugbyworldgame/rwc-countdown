@@ -12,12 +12,12 @@
 <link rel="stylesheet" href="/assets/css/menu.css">
 
 <style>
-/* === LIVE === */
+/* ===== LIVE STATUS ===== */
 .stream-status{
   display:inline-flex;
   align-items:center;
   gap:10px;
-  margin:12px auto 18px;
+  margin:10px auto 12px;
   padding:8px 18px;
   border-radius:999px;
   background:rgba(20,80,40,.35);
@@ -27,133 +27,125 @@
   font-weight:600;
 }
 .stream-status .dot{
-  width:9px;
-  height:9px;
-  border-radius:50%;
+  width:9px;height:9px;border-radius:50%;
   background:#32ff7e;
   box-shadow:0 0 8px rgba(50,255,126,.8);
 }
 
-/* === VIDEO === */
+/* ===== VIDEO ===== */
 .video-wrapper{
   width:100%;
   max-width:900px;
-  margin:8px auto 0;
+  margin:6px auto 0;
   aspect-ratio:16/9;
-  border-radius:20px;
+  border-radius:22px;
   overflow:hidden;
   background:#000;
   box-shadow:0 0 30px rgba(0,0,0,.45);
 }
 .video-wrapper iframe{
-  width:100%;
-  height:100%;
-  border:0;
+  width:100%;height:100%;border:0;
 }
 
-/* === SERVICE NOTE === */
+/* ===== SERVICE NOTE ===== */
 .stream-service{
-  margin:10px auto 18px;
-  padding:10px 14px;
+  margin:10px auto 26px;
+  padding:10px 16px;
   max-width:680px;
   background:rgba(0,0,0,.28);
   backdrop-filter:blur(6px);
   border-radius:14px;
   font-size:.8rem;
-  line-height:1.45;
   color:rgba(223,232,255,.7);
 }
 
-/* === MATCH CARD === */
-.dev-card{
-  margin:0 auto 26px;
+/* ===== MATCH PILL (ТОЛЬКО МАТЧ) ===== */
+.match-pill{
+  margin:0 auto 18px;
+  max-width:560px;
+  padding:14px 20px;
+  border-radius:999px;
   background:rgba(255,255,255,.06);
-  backdrop-filter:blur(12px);
-  border-radius:22px;
-  padding:22px;
-  max-width:720px;
-  box-shadow:0 0 26px rgba(0,0,0,.35);
-}
-.badge{
-  display:inline-block;
-  padding:6px 20px;
-  border-radius:16px;
-  border:1px solid rgba(223,232,255,.35);
-  font-size:.8rem;
-  letter-spacing:.14em;
-  margin-bottom:12px;
-  opacity:.9;
-}
-.dev-text{
-  font-size:1.05rem;
-  line-height:1.5;
+  backdrop-filter:blur(14px);
+  border:1px solid rgba(223,232,255,.25);
+  font-size:.95rem;
+  letter-spacing:.08em;
 }
 
-/* === DISCLAIMER === */
-.stream-disclaimer{
-  margin:18px auto 32px;
-  max-width:720px;
+/* ===== TEXT BLOCK BELOW ===== */
+.match-actions{
+  text-align:center;
+  font-size:1.05rem;
+  line-height:1.55;
+  margin-bottom:40px;
+}
+.match-actions .hint{
+  opacity:.65;
+  font-size:.9rem;
+}
+
+/* ===== FOOTER DISCLAIMER ===== */
+footer{
+  padding:26px 16px 32px;
+  text-align:center;
   font-size:.72rem;
   line-height:1.4;
   color:rgba(223,232,255,.45);
-  text-align:center;
 }
 </style>
 </head>
 
 <body>
 
-<!-- МЕНЮ -->
+<!-- MENU -->
 <div id="menu-container"></div>
 
 <main class="page">
 <section class="container" style="text-align:center;">
 
-  <!-- LIVE САМЫЙ ВЕРХ -->
-  <div class="stream-status">
-    <span class="dot"></span>
-    LIVE · 23:00–01:00 МСК
-  </div>
-
-  <!-- ЗАГОЛОВОК -->
   <h1 class="h1">Прямые трансляции</h1>
   <p class="subtitle">
     Прямые эфиры матчей и записи трансляций мирового регби.
   </p>
 
-  <!-- ВИДЕО -->
+  <div class="stream-status">
+    <span class="dot"></span>
+    LIVE · 23:00–01:00 МСК
+  </div>
+
   <div class="video-wrapper">
     <iframe
       src="https://vk.com/video_ext.php?oid=-15550428&id=456245398&autoplay=1"
-      allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
+      allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
       allowfullscreen>
     </iframe>
   </div>
 
-  <!-- ПОДСКАЗКА -->
   <div class="stream-service">
     ℹ️ Если трансляция не запускается, обновите страницу 1–2 раза и подождите несколько секунд.
   </div>
 
-  <!-- КАРТОЧКА МАТЧА -->
-  <div class="dev-card">
-    <div class="badge">«Бордо» – «Тулон» · 21.12 · 23:00 МСК</div>
-    <div class="dev-text">Смотреть регби онлайн</div>
-    <div class="dev-text" style="opacity:.65;">
-      Если видео не появилось сразу — обновите страницу.
-    </div>
+  <!-- ОТДЕЛЬНЫЙ БЛОК С МАТЧЕМ -->
+  <div class="match-pill">
+    «Бордо» — «Тулон» · 21.12 · 23:00 МСК
   </div>
 
-  <!-- ДИСКЛЕЙМЕР -->
-  <div class="stream-disclaimer">
-    Трансляция предоставляется из открытых источников.<br>
-    Сайт не является правообладателем видеоматериала.
+  <!-- ТЕКСТ ОТДЕЛЬНО -->
+  <div class="match-actions">
+    Смотреть регби онлайн<br>
+    <span class="hint">
+      Если видео не появилось сразу — обновите страницу.
+    </span>
   </div>
 
 </section>
 </main>
 
-<script src="/menu.js"></script>
+<footer>
+  Трансляция предоставляется из открытых источников.<br>
+  Сайт не является правообладателем видеоматериала.
+</footer>
 
+<script src="/menu.js"></script>
 </body>
 </html>
