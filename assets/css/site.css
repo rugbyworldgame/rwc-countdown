@@ -1,5 +1,6 @@
 /* =========================================
-   SITE BACKGROUND — DARK NIGHT (STABLE)
+   SITE BACKGROUND — NIGHT STADIUM BROADCAST
+   FINAL / DESKTOP FOCUSED
    ========================================= */
 
 html,
@@ -12,105 +13,49 @@ body {
 
 body {
   background:
+    /* ЛЕВЫЙ ПРОЖЕКТОР */
     radial-gradient(
-      ellipse at 50% -10%,
-      rgba(110,140,255,0.28),
-      rgba(40,60,120,0.30) 40%,
-      rgba(10,18,36,0.75) 70%,
-      rgba(5,8,18,1) 100%
+      ellipse at 12% 18%,
+      rgba(120,150,255,0.22),
+      rgba(40,60,120,0.18) 28%,
+      rgba(10,18,36,0.55) 55%,
+      rgba(5,8,18,0.95) 85%
     ),
+
+    /* ПРАВЫЙ ПРОЖЕКТОР */
+    radial-gradient(
+      ellipse at 88% 22%,
+      rgba(120,150,255,0.18),
+      rgba(35,55,110,0.16) 30%,
+      rgba(10,18,36,0.55) 58%,
+      rgba(5,8,18,0.95) 86%
+    ),
+
+    /* ЦЕНТРАЛЬНАЯ АТМОСФЕРА */
+    radial-gradient(
+      ellipse at 50% 32%,
+      rgba(150,175,255,0.22),
+      rgba(70,95,170,0.18) 32%,
+      rgba(20,30,65,0.55) 60%,
+      rgba(5,8,18,0.92) 88%
+    ),
+
+    /* ВИНЬЕТКА */
+    radial-gradient(
+      ellipse at center,
+      rgba(0,0,0,0) 42%,
+      rgba(0,0,0,0.35) 68%,
+      rgba(0,0,0,0.72) 100%
+    ),
+
+    /* БАЗОВАЯ НОЧЬ */
     linear-gradient(
       180deg,
       #0b1633 0%,
-      #070e1f 45%,
+      #071028 42%,
       #050812 100%
     );
 
   min-height: 100vh;
   overflow-x: hidden;
-}
-
-/* =========================================
-   GROUP CARDS — CLEAN GLASS (FINAL)
-   ========================================= */
-
-.group-card {
-  width: 88%;
-  max-width: 340px;
-  padding: 20px 22px 18px;
-
-  background: rgba(10,16,34,0.55);
-  border-radius: 18px;
-
-  border: 1px solid rgba(180,200,255,0.18);
-
-  box-shadow:
-    0 12px 36px rgba(0,0,0,0.55),
-    inset 0 0 0 1px rgba(255,255,255,0.04);
-
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    background 0.25s ease;
-}
-
-/* -----------------------------------------
-   Hover — мягкий подъём (DESKTOP ONLY)
-   ----------------------------------------- */
-
-@media (hover: hover) and (pointer: fine) {
-  .group-card:hover {
-    transform: translateY(-6px);
-
-    background: rgba(18,26,54,0.72);
-
-    box-shadow:
-      /* холодный контур */
-      0 0 0 1px rgba(210,230,255,0.35),
-
-      /* внешний подъём */
-      0 26px 64px rgba(0,0,0,0.75),
-
-      /* внутренняя глубина */
-      inset 0 0 0 1px rgba(255,255,255,0.06);
-  }
-}
-
-/* =========================================
-   GROUP TITLE
-   ========================================= */
-
-.group-title {
-  font-size: 0.8rem;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-
-  color: rgba(190,210,255,0.85);
-  margin-bottom: 6px;
-}
-
-/* =========================================
-   DIVIDER
-   ========================================= */
-
-.group-divider {
-  height: 1px;
-  margin-bottom: 12px;
-
-  background: linear-gradient(
-    90deg,
-    rgba(190,210,255,0.55),
-    rgba(190,210,255,0.10)
-  );
-}
-
-/* =========================================
-   TEAM NAMES
-   ========================================= */
-
-.group-team {
-  font-size: 0.95rem;
-  margin-bottom: 4px;
-
-  color: rgba(245,248,255,0.95);
 }
