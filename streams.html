@@ -13,12 +13,18 @@
 <link rel="stylesheet" href="/assets/css/menu.css">
 
 <style>
+/* === HERO === */
+.hero {
+  padding-top: 28px;
+  margin-bottom: 6px;
+}
+
 /* === LIVE === */
 .stream-status {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  margin: 12px auto 10px;
+  margin: 6px auto 10px;
   padding: 8px 18px;
   border-radius: 999px;
   background: rgba(20, 80, 40, 0.35);
@@ -40,12 +46,12 @@
 .video-wrapper {
   width: 100%;
   max-width: 900px;
-  margin: 6px auto 0;
+  margin: 4px auto 0;
   aspect-ratio: 16 / 9;
   border-radius: 20px;
   overflow: hidden;
   background: #000;
-  box-shadow: 0 0 30px rgba(0,0,0,0.45);
+  box-shadow: 0 0 28px rgba(0,0,0,0.45);
 }
 
 .video-wrapper iframe {
@@ -56,10 +62,10 @@
 
 /* === SERVICE NOTE === */
 .stream-service {
-  margin: 10px auto 22px;
+  margin: 10px auto 20px;
   padding: 10px 14px;
   max-width: 680px;
-  background: rgba(0,0,0,0.28);
+  background: rgba(0,0,0,0.26);
   backdrop-filter: blur(6px);
   border-radius: 14px;
   font-size: 0.8rem;
@@ -69,7 +75,7 @@
 
 /* === MATCH CARD === */
 .dev-card {
-  margin: 0 auto 28px;
+  margin: 0 auto 26px;
   background: rgba(255,255,255,0.06);
   backdrop-filter: blur(12px);
   border-radius: 22px;
@@ -115,26 +121,6 @@
 <section class="container">
 
 <header class="hero">
-  <div class="logo">
-    <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
-      <g stroke="currentColor" stroke-width="1.6" fill="none">
-        <path d="M32 30 Q28 58 42 82"/>
-        <path d="M68 30 Q72 58 58 82"/>
-        <path d="M32 30 Q50 16 68 30"/>
-        <path d="M45 86 Q50 90 55 86"/>
-        <path d="M40 94 H60"/>
-      </g>
-      <path d="M28 102 Q50 110 72 102"
-            stroke="currentColor"
-            stroke-width="1.1"
-            opacity="0.8"/>
-    </svg>
-
-    <div class="logo-caption">
-      RWC 2027<br>AUSTRALIA 2027
-    </div>
-  </div>
-
   <h1 class="h1">Прямые трансляции</h1>
   <p class="subtitle">
     Прямые эфиры матчей и записи трансляций мирового регби.
@@ -181,4 +167,4 @@
 <script src="/menu.js"></script>
 
 </body>
-      </html>
+</html>
