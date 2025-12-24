@@ -110,3 +110,19 @@
 body.menu-open {
   overflow: hidden;
 }
+
+/* ================================
+   PAGE BLUR WHEN MENU OPEN
+   ================================ */
+
+body.menu-open main,
+body.menu-open .page {
+  filter: blur(6px) brightness(0.85);
+  transition: filter .35s ease;
+}
+
+/* по умолчанию */
+main,
+.page {
+  transition: filter .35s ease;
+}
