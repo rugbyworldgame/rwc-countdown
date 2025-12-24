@@ -2,125 +2,89 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>Партнёры — Кубок мира по регби 2027</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-
-<!-- ЕДИНОЕ МЕНЮ -->
-<link rel="stylesheet" href="/assets/css/site.css">    
-<link rel="stylesheet" href="/assets/css/menu.css?v=20271223">
-
-
-<style>
-:root {
-    --text-main: #dfe8ff;
-    --text-sub: rgba(223,232,255,0.55);
-}
-
-body {
-    margin: 0;
-    padding-top: 7vh;
-    font-family: Arial, sans-serif;
-    background: radial-gradient(circle at 50% 0%, #102746 0%, #000814 55%, #00040a 100%);
-    color: var(--text-main);
-    text-align: center;
-    overflow-x: hidden;
-}
-
-/* LOGO */
-.logo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 22px;
-}
-.logo svg { width: 82px; height: auto; }
-.logo-caption {
-    font-size: 0.75rem;
-    letter-spacing: 0.32em;
-    color: var(--text-sub);
-    margin-top: 6px;
-}
-
-/* PAGE TITLE */
-h1 {
-    font-size: clamp(1.7rem, 4vw, 2.4rem);
-    margin-top: 20px;
-    margin-bottom: 16px;
-}
-
-.subtitle {
-    font-size: 1rem;
-    opacity: 0.65;
-    max-width: 680px;
-    margin: 0 auto 34px;
-}
-
-/* DEVELOPMENT CARD */
-.dev-card {
-    margin: 42px auto;
-    background: rgba(255,255,255,0.06);
-    backdrop-filter: blur(10px);
-    border-radius: 22px;
-    padding: 26px;
-    max-width: 720px;
-    text-align: center;
-    box-shadow: 0 0 22px rgba(0,0,0,0.35);
-}
-
-.badge {
-    display: inline-block;
-    padding: 6px 22px;
-    border-radius: 16px;
-    border: 1px solid rgba(223,232,255,0.35);
-    font-size: 0.85rem;
-    letter-spacing: 0.16em;
-    margin-bottom: 16px;
-    opacity: 0.85;
-}
-</style>
+<link rel="stylesheet" href="/assets/css/site.css">
+<link rel="stylesheet" href="/assets/css/menu.css">
 </head>
 
 <body>
 
-<!-- КОНТЕЙНЕР МЕНЮ -->
 <div id="menu-container"></div>
 
-<!-- LOGO -->
-<div class="logo">
-    <svg viewBox="0 0 100 120">
-        <g stroke="#dfe8ff" stroke-width="1.6" fill="none">
-            <path d="M32 30 Q28 58 42 82"/>
-            <path d="M68 30 Q72 58 58 82"/>
-            <path d="M32 30 Q50 16 68 30"/>
-            <path d="M45 86 Q50 90 55 86"/>
-            <path d="M40 94 H60"/>
-        </g>
-    </svg>
-    <div class="logo-caption">
-        RWC 2027<br>AUSTRALIA 2027
+<main class="page">
+
+  <!-- HERO SCENE -->
+  <section class="scene scene-hero">
+    <div class="container">
+
+      <header class="hero">
+
+        <div class="logo">
+          <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+            <g stroke="currentColor" stroke-width="1.6" fill="none">
+              <path d="M32 30 Q28 58 42 82"/>
+              <path d="M68 30 Q72 58 58 82"/>
+              <path d="M32 30 Q50 16 68 30"/>
+              <path d="M45 86 Q50 90 55 86"/>
+              <path d="M40 94 H60"/>
+            </g>
+            <path d="M28 102 Q50 110 72 102"
+                  stroke="currentColor"
+                  stroke-width="1.1"
+                  opacity="0.8"/>
+          </svg>
+
+          <div class="logo-caption">
+            RWC 2027<br>AUSTRALIA 2027
+          </div>
+        </div>
+
+        <h1 class="h1">Партнёры турнира</h1>
+
+        <p class="subtitle" style="max-width:720px;margin:0 auto;">
+          Коммерческие, технологические и медиа-партнёры
+          Кубка мира по регби 2027.
+          Раздел готовится к запуску.
+        </p>
+
+      </header>
+
     </div>
-</div>
+  </section>
 
-<h1>Партнёры турнира</h1>
+  <!-- CONTENT SCENE -->
+  <section class="scene">
+    <div class="container">
 
-<p class="subtitle">
-    Здесь будут представлены наши партнёры,  
-    коммерческие и медиа-платформы.  
-    Раздел готовится к запуску.
-</p>
+      <div class="groups-grid">
 
-<div class="dev-card">
-    <div class="badge">СКОРО ПРИСОЕДИНЯТСЯ</div>
-    <p style="opacity:0.9; font-size:1.16rem; line-height:1.55;">
-        Мы ведём переговоры и формируем пул партнёров турнира.  
-        На этой странице появятся логотипы, официальные ссылки  
-        и категории сотрудничества.
-    </p>
-</div>
+        <article class="group-card">
+          <div class="group-title">СКОРО ПРИСОЕДИНЯТСЯ</div>
+          <div class="group-divider"></div>
 
-<!-- ЕДИНЫЙ СКРИПТ МЕНЮ -->
+          <div class="group-team">
+            Мы формируем пул партнёров турнира и ведём переговоры
+            с коммерческими и медиа-платформами.
+            На этой странице появятся логотипы,
+            официальные ссылки и категории сотрудничества.
+          </div>
+
+          <div class="group-team" style="opacity:.7;margin-top:12px;">
+            Раздел будет обновляться по мере подтверждения партнёров.
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
 <script src="/menu.js"></script>
-
 </body>
 </html>
