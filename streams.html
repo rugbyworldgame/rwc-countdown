@@ -7,17 +7,16 @@
 <title>Трансляции — Кубок мира по регби 2027</title>
 
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-
 <link rel="stylesheet" href="/assets/css/site.css">
 <link rel="stylesheet" href="/assets/css/menu.css">
 
 <style>
-/* ===== LIVE STATUS ===== */
+/* ===== LIVE STATUS (ГЛАВНЫЙ ЯКОРЬ) ===== */
 .stream-status{
   display:inline-flex;
   align-items:center;
   gap:10px;
-  margin:10px auto 12px;
+  margin:18px auto 14px;
   padding:8px 18px;
   border-radius:999px;
   background:rgba(20,80,40,.35);
@@ -44,7 +43,9 @@
   box-shadow:0 0 30px rgba(0,0,0,.45);
 }
 .video-wrapper iframe{
-  width:100%;height:100%;border:0;
+  width:100%;
+  height:100%;
+  border:0;
 }
 
 /* ===== SERVICE NOTE ===== */
@@ -59,7 +60,7 @@
   color:rgba(223,232,255,.7);
 }
 
-/* ===== MATCH PILL (ТОЛЬКО МАТЧ) ===== */
+/* ===== MATCH ONLY (ОТДЕЛЬНЫЙ БЛОК) ===== */
 .match-pill{
   margin:0 auto 18px;
   max-width:560px;
@@ -72,7 +73,7 @@
   letter-spacing:.08em;
 }
 
-/* ===== TEXT BLOCK BELOW ===== */
+/* ===== TEXT BELOW ===== */
 .match-actions{
   text-align:center;
   font-size:1.05rem;
@@ -103,11 +104,7 @@ footer{
 <main class="page">
 <section class="container" style="text-align:center;">
 
-  <h1 class="h1">Прямые трансляции</h1>
-  <p class="subtitle">
-    Прямые эфиры матчей и записи трансляций мирового регби.
-  </p>
-
+  <!-- LIVE СРАЗУ ВВЕРХУ -->
   <div class="stream-status">
     <span class="dot"></span>
     LIVE · 23:00–01:00 МСК
@@ -125,16 +122,16 @@ footer{
     ℹ️ Если трансляция не запускается, обновите страницу 1–2 раза и подождите несколько секунд.
   </div>
 
-  <!-- ОТДЕЛЬНЫЙ БЛОК С МАТЧЕМ -->
+  <!-- ТОЛЬКО МАТЧ -->
   <div class="match-pill">
     «Бордо» — «Тулон» · 21.12 · 23:00 МСК
   </div>
 
-  <!-- ТЕКСТ ОТДЕЛЬНО -->
+  <!-- ДЕЙСТВИЕ -->
   <div class="match-actions">
     Смотреть регби онлайн<br>
     <span class="hint">
-  
+      Если видео не появилось сразу — обновите страницу.
     </span>
   </div>
 
