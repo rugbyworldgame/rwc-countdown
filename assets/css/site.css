@@ -142,3 +142,10 @@ body {
     background-size: 140% 140%;
   }
 }
+/* ===== MOBILE CARD GEOMETRY FIX ===== */
+@media (max-width: 640px) {
+  .group-card {
+    width: 92%;
+    border-radius: 22px;
+  }
+}
