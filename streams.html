@@ -1,196 +1,103 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Трансляции — Кубок мира по регби 2027</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/assets/css/site.css">
- <link rel="stylesheet" href="/assets/css/menu.css?v=20271223">
+<title>Трансляции — Кубок мира по регби 2027</title>
 
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
-  <style>
-    :root {
-      --text-main: #dfe8ff;
-      --text-sub: rgba(223,232,255,0.55);
-      --accent-soft: #8FAFE6;
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: radial-gradient(circle at 50% 0%, #102746 0%, #000814 55%, #00040a 100%);
-      color: var(--text-main);
-      overflow-x: hidden;
-    }
-
-    .page-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-      text-align: center;
-    }
-
-    /* STREAM STATUS */
-    .stream-status {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin: 18px auto 8px;
-      padding: 6px 14px;
-      border-radius: 999px;
-      font-size: 0.75rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-
-    .stream-status .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-    }
-
-    .stream-status.live {
-      color: #9dffb3;
-      background: rgba(20, 80, 40, 0.35);
-    }
-
-    .stream-status.live .dot {
-      background: #32ff7e;
-      box-shadow: 0 0 6px rgba(50,255,126,0.8);
-    }
-
-    /* TITLES */
-    h1 {
-      font-size: clamp(1.6rem, 4vw, 2.4rem);
-      margin: 16px 0;
-    }
-
-    .subtitle {
-      font-size: 1rem;
-      opacity: 0.65;
-      max-width: 600px;
-      margin: 0 auto 28px;
-    }
-
-    /* VIDEO */
-    .video-wrapper {
-      width: 100%;
-      max-width: 900px;
-      margin: 22px auto 0;
-      aspect-ratio: 16 / 9;
-      border-radius: 18px;
-      overflow: hidden;
-      background: #000;
-      box-shadow: 0 0 26px rgba(0,0,0,0.45);
-    }
-
-    .video-wrapper iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    /* SERVICE NOTE */
-    .stream-service {
-      margin: 16px auto 0;
-      max-width: 720px;
-      font-size: 0.85rem;
-      line-height: 1.45;
-      color: rgba(223,232,255,0.6);
-      text-align: center;
-    }
-
-    /* CARD */
-    .dev-card {
-      margin: 28px auto 0;
-      background: rgba(255,255,255,0.06);
-      backdrop-filter: blur(10px);
-      border-radius: 22px;
-      padding: 24px;
-      max-width: 720px;
-      box-shadow: 0 0 22px rgba(0,0,0,0.35);
-    }
-
-    .badge {
-      display: inline-block;
-      padding: 6px 22px;
-      border-radius: 16px;
-      border: 1px solid rgba(223,232,255,0.35);
-      font-size: 0.85rem;
-      letter-spacing: 0.16em;
-      margin-bottom: 14px;
-      opacity: 0.85;
-    }
-
-    .dev-text {
-      font-size: 1.05rem;
-      line-height: 1.55;
-      margin-bottom: 10px;
-    }
-
-    /* DISCLAIMER */
-    .stream-disclaimer {
-      margin: 28px auto 22px;
-      max-width: 720px;
-      font-size: 0.75rem;
-      line-height: 1.4;
-      color: rgba(223,232,255,0.4);
-      text-align: center;
-    }
-  </style>
+<!-- ЕДИНАЯ СЦЕНА САЙТА -->
+<link rel="stylesheet" href="/assets/css/site.css">
+<link rel="stylesheet" href="/assets/css/menu.css">
 </head>
 
 <body>
 
-  <!-- MENU -->
-  <div id="menu-container"></div>
+<!-- МЕНЮ -->
+<div id="menu-container"></div>
 
-  <div class="page-content">
+<main class="page">
+  <section class="container">
 
-    <div class="stream-status live">
-      <span class="dot"></span>
-      LIVE 23:00 - 01:00MSK
-    </div>
+    <!-- HERO / ЛОГО -->
+    <header class="hero">
+      <div class="logo">
+        <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="currentColor" stroke-width="1.6" fill="none">
+            <path d="M32 30 Q28 58 42 82"/>
+            <path d="M68 30 Q72 58 58 82"/>
+            <path d="M32 30 Q50 16 68 30"/>
+            <path d="M45 86 Q50 90 55 86"/>
+            <path d="M40 94 H60"/>
+          </g>
+          <path d="M28 102 Q50 110 72 102"
+                stroke="currentColor"
+                stroke-width="1.1"
+                opacity="0.8"/>
+        </svg>
 
-    <p class="subtitle">
-      Прямые трансляци регби.
-    </p>
-
-    <div class="video-wrapper">
-      <iframe
-        src="https://vk.com/video_ext.php?oid=-15550428&id=456245398&autoplay=1"
-        allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
-        allowfullscreen>
-      </iframe>
-    </div>
-
-    <!-- SERVICE NOTE — СРАЗУ ПОД ПЛЕЕРОМ -->
-    <div class="stream-service">
-      ℹ️ Если трансляция не запускается, обновите страницу 1–2 раза и подождите несколько секунд.
-    </div>
-
-    <div class="dev-card">
-      <div class="badge">«Бордо» – «Тулон»   - 21.12 в 23:00мск</div>
-      <div class="dev-text">
-        Смотреть регби онлайн
+        <div class="logo-caption">
+          RWC 2027<br>AUSTRALIA 2027
+        </div>
       </div>
-      <div class="dev-text" style="opacity:0.7;">
-        Матч не запустился? Обновите страницу.
+
+      <h1 class="h1">Прямые трансляции</h1>
+
+      <p class="subtitle">
+        Прямые эфиры матчей и записи трансляций мирового регби.
+      </p>
+    </header>
+
+    <!-- КОНТЕНТ СТРАНИЦЫ -->
+    <div class="page-content" style="text-align:center;">
+
+      <!-- СТАТУС ТРАНСЛЯЦИИ -->
+      <div class="stream-status live">
+        <span class="dot"></span>
+        LIVE · 23:00–01:00 МСК
       </div>
+
+      <!-- ВИДЕО -->
+      <div class="video-wrapper">
+        <iframe
+          src="https://vk.com/video_ext.php?oid=-15550428&id=456245398&autoplay=1"
+          allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <!-- СЛУЖЕБНАЯ ПОДСКАЗКА -->
+      <div class="stream-service">
+        ℹ️ Если трансляция не запускается, обновите страницу 1–2 раза и подождите несколько секунд.
+      </div>
+
+      <!-- КАРТОЧКА МАТЧА -->
+      <div class="dev-card">
+        <div class="badge">«Бордо» – «Тулон» · 21.12 · 23:00 МСК</div>
+
+        <div class="dev-text">
+          Смотреть регби онлайн
+        </div>
+
+        <div class="dev-text" style="opacity:0.7;">
+          Если видео не появилось сразу — обновите страницу.
+        </div>
+      </div>
+
+      <!-- ДИСКЛЕЙМЕР -->
+      <div class="stream-disclaimer">
+        Трансляция предоставляется из открытых источников.<br>
+        Сайт не является правообладателем видеоматериала.
+      </div>
+
     </div>
 
-    <div class="stream-disclaimer">
-      Трансляция предоставляется из открытых источников.<br>
-      Сайт не является правообладателем видеоматериала.
-    </div>
+  </section>
+</main>
 
-  </div>
-
-  <!-- ЕДИНЫЙ СКРИПТ МЕНЮ -->
-  <script src="/menu.js"></script>
+<script src="/menu.js"></script>
 
 </body>
 </html>
