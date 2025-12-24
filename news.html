@@ -6,85 +6,41 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
-<!-- ЕДИНОЕ МЕНЮ -->
- <link rel="stylesheet" href="/assets/css/site.css"> 
-<link rel="stylesheet" href="/assets/css/menu.css?v=20271223">
-
+<!-- ЕДИНАЯ СЦЕНА САЙТА -->
+<link rel="stylesheet" href="/assets/css/site.css">
+<link rel="stylesheet" href="/assets/css/menu.css">
 
 <style>
-:root {
-  --text-main: #dfe8ff;
-  --text-sub: rgba(223,232,255,0.55);
-  --accent-soft: #8FAFE6;
-}
+/* ===== ЛОКАЛЬНЫЙ КОНТЕНТ (НЕ СЦЕНА) ===== */
 
-body {
-  margin: 0;
-  padding-top: 7vh;
-  font-family: Arial, sans-serif;
-  background: radial-gradient(circle at 50% 0%, #102746 0%, #000814 55%, #00040a 100%);
-  color: var(--text-main);
-  text-align: center;
-  overflow-x: hidden;
-}
-
-/* LOGO */
-.logo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 22px;
-}
-.logo svg {
-  width: 82px;
-  height: auto;
-}
-.logo-caption {
-  font-size: 0.75rem;
-  letter-spacing: 0.32em;
-  color: var(--text-sub);
-  margin-top: 6px;
-}
-
-/* TITLES */
-h1 {
-  font-size: clamp(1.6rem, 4vw, 2.4rem);
-  margin-top: 24px;
-  margin-bottom: 16px;
-}
-.subtitle {
-  font-size: 1rem;
-  opacity: 0.65;
-  max-width: 620px;
-  margin: 0 auto 32px;
-}
-
-/* CARD */
-.dev-card {
+.page-content{
+  max-width: 720px;
   margin: 0 auto;
+  padding: 32px 16px 64px;
+  text-align: center;
+}
+
+.dev-card{
   margin-top: 26px;
   background: rgba(255,255,255,0.06);
-  backdrop-filter: blur(10px);
   border-radius: 22px;
   padding: 26px;
-  max-width: 720px;
-  text-align: center;
   box-shadow: 0 0 22px rgba(0,0,0,0.35);
 }
 
-.badge {
+.badge{
   display: inline-block;
   padding: 6px 22px;
   border-radius: 16px;
   border: 1px solid rgba(223,232,255,0.35);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   letter-spacing: 0.16em;
   margin-bottom: 16px;
   opacity: 0.85;
 }
 
-.dev-text {
-  font-size: 1.15rem;
+.dev-text{
+  font-size: 1.05rem;
   line-height: 1.55;
   margin-bottom: 16px;
 }
@@ -93,44 +49,57 @@ h1 {
 
 <body>
 
-<!-- КОНТЕЙНЕР МЕНЮ -->
+<!-- МЕНЮ -->
 <div id="menu-container"></div>
 
-<!-- LOGO -->
-<div class="logo">
-  <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
-    <g stroke="#dfe8ff" stroke-width="1.6" fill="none">
-      <path d="M32 30 Q28 58 42 82"/>
-      <path d="M68 30 Q72 58 58 82"/>
-      <path d="M32 30 Q50 16 68 30"/>
-      <path d="M45 86 Q50 90 55 86"/>
-      <path d="M40 94 H60"/>
-    </g>
-  </svg>
-  <div class="logo-caption">
-    RWC 2027<br>AUSTRALIA 2027
-  </div>
-</div>
+<main class="page">
+  <section class="container">
 
-<h1>Новости турнира</h1>
-<p class="subtitle">
-  Здесь будет опубликована официальная лента новостей Кубка мира по регби 2027.
-</p>
+    <!-- HERO / ЛОГО (ЕДИНЫЙ СТИЛЬ) -->
+    <header class="hero">
+      <div class="logo">
+        <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="currentColor" stroke-width="1.6" fill="none">
+            <path d="M32 30 Q28 58 42 82"/>
+            <path d="M68 30 Q72 58 58 82"/>
+            <path d="M32 30 Q50 16 68 30"/>
+            <path d="M45 86 Q50 90 55 86"/>
+            <path d="M40 94 H60"/>
+          </g>
+        </svg>
 
-<div class="dev-card">
-  <div class="badge">РАЗДЕЛ В РАЗРАБОТКЕ</div>
+        <div class="logo-caption">
+          RWC 2027<br>AUSTRALIA 2027
+        </div>
+      </div>
 
-  <div class="dev-text">
-    Мы готовим удобный и современный раздел новостей:  
-    объявления, кадровые решения, новости сборных, аналитика и многое другое.
-  </div>
+      <h1 class="h1">Новости турнира</h1>
+      <p class="subtitle">
+        Здесь будет опубликована официальная лента новостей Кубка мира по регби 2027.
+      </p>
+    </header>
 
-  <div class="dev-text" style="opacity:0.7;">
-    Скоро здесь появится первый контент — следите за обновлениями.
-  </div>
-</div>
+    <!-- КОНТЕНТ -->
+    <div class="page-content">
 
-<!-- ЕДИНЫЙ СКРИПТ МЕНЮ -->
+      <div class="dev-card">
+        <div class="badge">РАЗДЕЛ В РАЗРАБОТКЕ</div>
+
+        <div class="dev-text">
+          Мы готовим удобный и современный раздел новостей:  
+          объявления, кадровые решения, новости сборных, аналитика и многое другое.
+        </div>
+
+        <div class="dev-text" style="opacity:0.7;">
+          Скоро здесь появится первый контент — следите за обновлениями.
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+</main>
+
 <script src="/menu.js"></script>
 
 </body>
