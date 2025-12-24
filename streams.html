@@ -13,73 +13,26 @@
 <link rel="stylesheet" href="/assets/css/menu.css">
 
 <style>
-/* ===============================
-   PAGE STRUCTURE FIX
-   =============================== */
-
-.page {
-  padding-top: 7vh;
-}
-
-.container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 18px 80px;
-}
-
-/* ---------- HERO ---------- */
-
+/* ===== HERO FIX ===== */
 .hero {
-  text-align: center;
-  margin-bottom: 56px;
-}
-
-.logo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 22px;
-}
-
-.logo svg {
-  width: 82px;
-}
-
-.logo-caption {
-  font-size: 0.75rem;
-  letter-spacing: 0.32em;
-  opacity: 0.55;
-  margin-top: 6px;
+  margin-bottom: 28px;
 }
 
 .h1 {
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
-  margin: 18px 0 10px;
+  margin-bottom: 6px;
 }
 
 .subtitle {
-  max-width: 520px;
-  margin: 0 auto;
-  font-size: 1rem;
-  opacity: 0.65;
+  margin-bottom: 16px;
 }
 
-/* ---------- MAIN CONTENT ---------- */
-
-.page-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 26px;
-}
-
-/* STATUS */
-
+/* ===== STREAM STATUS ===== */
 .stream-status {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 16px;
+  margin: 0 auto 18px;
+  padding: 6px 14px;
   border-radius: 999px;
   font-size: 0.75rem;
   letter-spacing: 0.12em;
@@ -87,36 +40,32 @@
 }
 
 .stream-status.live {
-  background: rgba(40,120,80,0.35);
-  color: #b8ffd3;
+  color: #9dffb3;
+  background: rgba(20, 80, 40, 0.35);
 }
 
 .stream-status .dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #3dff9e;
-  box-shadow: 0 0 6px rgba(61,255,158,.8);
+  background: #32ff7e;
+  box-shadow: 0 0 6px rgba(50,255,126,0.8);
 }
 
-/* VIDEO CARD */
-
+/* ===== VIDEO ===== */
 .video-card {
-  width: 100%;
-  max-width: 880px;
-  background: rgba(255,255,255,0.06);
-  backdrop-filter: blur(12px);
-  border-radius: 22px;
-  padding: 18px;
-  box-shadow: 0 18px 42px rgba(0,0,0,.55);
+  margin-top: 0;
 }
 
 .video-wrapper {
   width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
   aspect-ratio: 16 / 9;
-  border-radius: 14px;
+  border-radius: 18px;
   overflow: hidden;
   background: #000;
+  box-shadow: 0 0 26px rgba(0,0,0,0.45);
 }
 
 .video-wrapper iframe {
@@ -125,37 +74,32 @@
   border: 0;
 }
 
-/* SERVICE TEXT */
-
+/* ===== SERVICE NOTE ===== */
 .stream-service {
-  max-width: 520px;
+  margin: 14px auto 0;
   font-size: 0.85rem;
-  line-height: 1.45;
   opacity: 0.6;
-  text-align: center;
 }
 
-/* MATCH CARD */
-
+/* ===== MATCH CARD ===== */
 .dev-card {
-  width: 100%;
-  max-width: 640px;
-  background: rgba(255,255,255,0.05);
+  margin: 26px auto 0;
+  background: rgba(255,255,255,0.06);
   backdrop-filter: blur(10px);
   border-radius: 22px;
   padding: 22px;
-  text-align: center;
+  max-width: 720px;
   box-shadow: 0 0 22px rgba(0,0,0,0.35);
 }
 
 .badge {
   display: inline-block;
-  padding: 6px 20px;
+  padding: 6px 22px;
   border-radius: 16px;
   border: 1px solid rgba(223,232,255,0.35);
   font-size: 0.8rem;
   letter-spacing: 0.14em;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   opacity: 0.85;
 }
 
@@ -164,14 +108,11 @@
   line-height: 1.5;
 }
 
-/* DISCLAIMER */
-
+/* ===== DISCLAIMER ===== */
 .stream-disclaimer {
-  max-width: 520px;
-  margin-top: 18px;
+  margin: 22px auto 18px;
   font-size: 0.75rem;
-  line-height: 1.45;
-  opacity: 0.4;
+  opacity: 0.45;
   text-align: center;
 }
 </style>
@@ -179,7 +120,7 @@
 
 <body>
 
-<!-- MENU -->
+<!-- МЕНЮ -->
 <div id="menu-container"></div>
 
 <main class="page">
@@ -208,7 +149,52 @@
       </div>
 
       <h1 class="h1">Прямые трансляции</h1>
-
       <p class="subtitle">
         Прямые эфиры матчей и записи трансляций мирового регби.
-      </p                
+      </p>
+    </header>
+
+    <!-- LIVE STATUS -->
+    <div class="stream-status live">
+      <span class="dot"></span>
+      LIVE · 23:00–01:00 МСК
+    </div>
+
+    <!-- VIDEO -->
+    <div class="video-card">
+      <div class="video-wrapper">
+        <iframe
+          src="https://vk.com/video_ext.php?oid=-15550428&id=456245398&autoplay=1"
+          allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    <!-- SERVICE -->
+    <div class="stream-service">
+      ℹ️ Если трансляция не запускается, обновите страницу 1–2 раза и подождите несколько секунд.
+    </div>
+
+    <!-- MATCH CARD -->
+    <div class="dev-card">
+      <div class="badge">«Бордо» – «Тулон» · 21.12 · 23:00 МСК</div>
+      <div class="dev-text">Смотреть регби онлайн</div>
+      <div class="dev-text" style="opacity:0.65;">
+        Если видео не появилось сразу — обновите страницу.
+      </div>
+    </div>
+
+    <!-- DISCLAIMER -->
+    <div class="stream-disclaimer">
+      Трансляция предоставляется из открытых источников.<br>
+      Сайт не является правообладателем видеоматериала.
+    </div>
+
+  </section>
+</main>
+
+<script src="/menu.js"></script>
+
+</body>
+</html>
