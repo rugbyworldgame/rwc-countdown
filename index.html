@@ -15,41 +15,66 @@
   <div id="menu-container"></div>
 
   <main class="page">
-    <section class="container">
-      <header class="hero">
-        <div class="logo">
-          <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
-            <g stroke="currentColor" stroke-width="1.6" fill="none">
-              <path d="M32 30 Q28 58 42 82"/>
-              <path d="M68 30 Q72 58 58 82"/>
-              <path d="M32 30 Q50 16 68 30"/>
-              <path d="M45 86 Q50 90 55 86"/>
-              <path d="M40 94 H60"/>
-            </g>
-            <path d="M28 102 Q50 110 72 102"
-                  stroke="currentColor"
-                  stroke-width="1.1"
-                  opacity="0.8"/>
-          </svg>
 
-          <div class="logo-caption">
-            RWC 2027<br />AUSTRALIA 2027
+    <!-- HERO SCENE -->
+    <section class="scene scene-hero">
+      <div class="container">
+
+        <header class="hero">
+          <div class="hero-brand">
+
+            <div class="logo">
+              <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+                <g stroke="currentColor" stroke-width="1.6" fill="none">
+                  <path d="M32 30 Q28 58 42 82"/>
+                  <path d="M68 30 Q72 58 58 82"/>
+                  <path d="M32 30 Q50 16 68 30"/>
+                  <path d="M45 86 Q50 90 55 86"/>
+                  <path d="M40 94 H60"/>
+                </g>
+                <path d="M28 102 Q50 110 72 102"
+                      stroke="currentColor"
+                      stroke-width="1.1"
+                      opacity="0.8"/>
+              </svg>
+
+              <div class="logo-caption">
+                RWC 2027<br />AUSTRALIA 2027
+              </div>
+            </div>
+
+            <h1 class="h1">
+              До Кубка мира по регби осталось
+            </h1>
+
           </div>
+
+          <div class="hero-timer">
+            <div class="timer">
+              <div id="timer-line1" class="timer-line"></div>
+              <div id="timer-line2" class="timer-line"></div>
+              <div class="subtitle">
+                Rugby World Cup 2027 starts in
+              </div>
+            </div>
+          </div>
+
+        </header>
+
+      </div>
+    </section>
+
+    <!-- GROUPS SCENE -->
+    <section class="scene scene-groups">
+      <div class="container">
+
+        <div class="section-header">
+          <div class="section-label">Группы</div>
+          <p class="section-subtitle">
+            Состав групп Кубка мира по регби 2027 года
+          </p>
         </div>
 
-        <h1 class="h1">До Кубка Мира по Регби осталось</h1>
-
-        <div class="timer">
-          <div id="timer-line1" class="timer-line"></div>
-          <div id="timer-line2" class="timer-line"></div>
-          <div class="subtitle">Rugby World Cup 2027 starts in</div>
-        </div>
-      </header>
-
-      <!-- SECTION LABEL -->
-      <div class="section-label">Группы</div>
-
-      <section class="groups">
         <div class="groups-grid">
 
           <article class="group-card">
@@ -107,8 +132,10 @@
           </article>
 
         </div>
-      </section>
+
+      </div>
     </section>
+
   </main>
 
   <script>
@@ -127,6 +154,7 @@
       document.getElementById("timer-line2").textContent =
         `${String(m).padStart(2, "0")} мин · ${String(s).padStart(2, "0")} сек`;
     }
+
     setInterval(updateTimer, 1000);
     updateTimer();
   </script>
