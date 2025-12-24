@@ -1,53 +1,53 @@
 /* =========================================
-   MENU — PREMIUM SCENE
-   Визуально приведено к уровню карточек
+   MENU BUTTON
    ========================================= */
-
-/* ---------- MENU BUTTON ---------- */
 
 .menu-btn {
   position: fixed;
   top: 18px;
   right: 22px;
-
   width: 36px;
   height: 26px;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
   background: none;
   border: none;
-  padding: 0;
-
   cursor: pointer;
   z-index: 3000;
 }
 
 .menu-btn span {
-  display: block;
   height: 3px;
-  background: rgba(245,248,255,0.9);
+  background: #f5f8ff;
   border-radius: 3px;
+  transition: transform .3s ease, opacity .2s ease;
 }
 
-/* ---------- OVERLAY ---------- */
+.menu-btn.active span:nth-child(1){
+  transform: translateY(11px) rotate(45deg);
+}
+
+.menu-btn.active span:nth-child(2){
+  opacity: 0;
+}
+
+.menu-btn.active span:nth-child(3){
+  transform: translateY(-11px) rotate(-45deg);
+}
+
+
+/* =========================================
+   OVERLAY
+   ========================================= */
 
 .menu-overlay {
   position: fixed;
   inset: 0;
-
-  /* та же сцена, что и сайт */
-  background: rgba(5,8,18,0.55);
-
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-
+  background: rgba(0,0,0,0.45);
   opacity: 0;
   pointer-events: none;
-
-  transition: opacity .3s ease;
+  transition: opacity .25s ease;
   z-index: 2000;
 }
 
@@ -56,85 +56,107 @@
   pointer-events: auto;
 }
 
-/* ---------- SIDE MENU ---------- */
+
+/* =========================================
+   SIDE MENU — УСИЛЕННАЯ ПАНЕЛЬ
+   ========================================= */
 
 .side-menu {
   position: fixed;
   top: 0;
   right: 0;
-
   height: 100vh;
   width: 320px;
-  max-width: 80vw;
+  max-width: 82vw;
 
-  /* СЦЕНА, А НЕ ПЛОСКИЙ ЦВЕТ */
-  background:
-    radial-gradient(
-      ellipse at 20% 0%,
-      rgba(120,150,255,0.18),
-      rgba(40,70,160,0.12) 35%,
-      rgba(12,22,55,0.75) 70%,
-      rgba(5,8,18,0.95) 100%
-    );
+  background: linear-gradient(
+    180deg,
+    rgba(12,20,40,0.96),
+    rgba(8,14,28,0.96)
+  );
 
   border-left: 1px solid rgba(255,255,255,0.08);
-
-  box-shadow:
-    -12px 0 40px rgba(0,0,0,0.55);
+  box-shadow: -14px 0 34px rgba(0,0,0,0.75);
 
   transform: translateX(100%);
-  transition: transform .36s ease;
+  transition: transform .35s ease;
 
   z-index: 2500;
 
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
 
-  padding: 0 28px;
+  overflow-y: auto;
 }
 
 .side-menu.active {
   transform: translateX(0);
 }
 
-/* ---------- LINKS ---------- */
+
+/* =========================================
+   LINKS + РАЗДЕЛИТЕЛИ
+   ========================================= */
 
 .side-menu a {
-  color: rgba(245,248,255,0.92);
+  position: relative;
+  color: #f5f8ff;
   text-decoration: none;
-
-  font-size: 1.15rem;
-  font-weight: 500;
-
-  margin: 14px 0;
-  letter-spacing: 0.08em;
-
-  transition: opacity .2s ease;
+  font-size: 1.1rem;
+  letter-spacing: .08em;
+  padding: 14px 0;
+  transition: opacity .25s ease;
 }
 
 .side-menu a:hover {
-  opacity: 0.7;
+  opacity: 0.85;
 }
 
-/* ---------- MOBILE ---------- */
+/* лёгкие разделители */
+.side-menu a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 38px;
+  height: 1px;
+  transform: translateX(-50%);
+  background: rgba(255,255,255,0.08);
+}
+
+.side-menu a:last-child::after {
+  display: none;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
 
 @media (max-width: 768px) {
   .side-menu {
     width: 260px;
     max-width: 70vw;
-    padding-top: 22vh;
     justify-content: flex-start;
+    padding-top: 22vh;
   }
 }
 
-/* ---------- BODY LOCK ---------- */
+
+/* =========================================
+   BODY LOCK
+   ========================================= */
 
 body.menu-open {
   overflow: hidden;
 }
 
-/* ---------- UX CLEAN ---------- */
+
+/* =========================================
+   TAP HIGHLIGHT OFF
+   ========================================= */
 
 * {
   -webkit-tap-highlight-color: transparent;
@@ -143,4 +165,4 @@ body.menu-open {
 a,
 button {
   outline: none;
-}
+   }
