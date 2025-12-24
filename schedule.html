@@ -2,184 +2,75 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>Расписание — Кубок мира по регби 2027</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
-<!-- ЕДИНОЕ МЕНЮ -->
-<link rel="stylesheet" href="/assets/css/site.css">  
-<link rel="stylesheet" href="/assets/css/menu.css?v=20271223">
-
-
-<style>
-:root {
-  --text-main: #dfe8ff;
-  --text-sub: rgba(223,232,255,0.65);
-  --accent-soft: #8FAFE6;
-}
-
-* { box-sizing: border-box; }
-
-body {
-  margin: 0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-
-  background: radial-gradient(circle at 50% 0%, #102746 0%, #000814 55%, #00040a 100%);
-  color: var(--text-main);
-  font-family: Arial, sans-serif;
-  text-align: center;
-  padding-top: 7vh;
-  position: relative;
-  overflow-x: hidden;
-}
-
-/* BACKGROUND EFFECTS */
-body::before {
-  content: "";
-  position: fixed;
-  inset: -40% -30% 35%;
-  background: radial-gradient(circle at 50% 0%,
-    rgba(90,140,255,0.28) 0%,
-    rgba(12,32,64,0) 60%);
-  mix-blend-mode: screen;
-  opacity: 0.55;
-  pointer-events: none;
-  z-index: -2;
-}
-
-body::after {
-  content: "";
-  position: fixed;
-  left: 50%;
-  top: -26%;
-  transform: translateX(-50%);
-  width: 160%;
-  height: 70%;
-  background: radial-gradient(ellipse at top,
-    rgba(255,255,255,0.22) 0%,
-    rgba(255,255,255,0.08) 26%,
-    rgba(0,0,0,0) 72%);
-  opacity: 0.6;
-  mix-blend-mode: screen;
-  pointer-events: none;
-  z-index: -1;
-}
-
-/* LOGO */
-.logo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 22px;
-}
-
-.logo svg { width: 82px; }
-
-.logo-caption {
-  font-size: 0.75rem;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-  color: var(--text-sub);
-  margin-top: 6px;
-}
-
-/* PAGE CONTENT */
-.page-wrapper {
-  width: 100%;
-  max-width: 960px;
-  padding: 0 16px 56px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.page-title {
-  font-size: clamp(1.6rem, 3.2vw, 2.1rem);
-  font-weight: 600;
-  margin: 18px 0 8px;
-}
-
-.page-subtitle {
-  font-size: clamp(0.9rem, 1.9vw, 1.05rem);
-  color: var(--text-sub);
-  margin-bottom: 28px;
-}
-
-.info-card {
-  width: 100%;
-  max-width: 640px;
-  padding: 22px;
-  border-radius: 22px;
-  background: radial-gradient(circle at top left,
-    rgba(120,160,255,0.10) 0%,
-    rgba(0,0,0,0.72) 48%,
-    rgba(0,0,0,0.9) 100%);
-  box-shadow:
-    0 16px 40px rgba(0,0,0,0.65),
-    0 0 0 1px rgba(255,255,255,0.06);
-  backdrop-filter: blur(16px);
-}
-
-.info-pill {
-  display: inline-flex;
-  padding: 4px 14px;
-  border-radius: 999px;
-  border: 1px solid rgba(143,175,230,0.55);
-  font-size: 0.78rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--accent-soft);
-  margin-bottom: 14px;
-}
-</style>
+<!-- ЕДИНАЯ СЦЕНА САЙТА -->
+<link rel="stylesheet" href="/assets/css/site.css">
+<link rel="stylesheet" href="/assets/css/menu.css">
 </head>
 
 <body>
 
-<!-- КОНТЕЙНЕР МЕНЮ -->
+<!-- МЕНЮ -->
 <div id="menu-container"></div>
 
-<!-- LOGO -->
-<div class="logo">
-  <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
-    <g stroke="#dfe8ff" stroke-width="1.6" fill="none">
-      <path d="M32 30 Q28 58 42 82" stroke-linecap="round"/>
-      <path d="M68 30 Q72 58 58 82" stroke-linecap="round"/>
-      <path d="M32 30 Q50 16 68 30" stroke-linecap="round"/>
-      <path d="M45 86 Q50 90 55 86" stroke-linecap="round"/>
-      <path d="M40 94 H60" stroke-linecap="round"/>
-    </g>
-    <path d="M28 102 Q50 110 72 102"
-          stroke="#dfe8ff" stroke-width="1.1"
-          stroke-linecap="round" opacity="0.8"/>
-  </svg>
+<main class="page">
+  <section class="container">
 
-  <div class="logo-caption">
-    RWC 2027<br>AUSTRALIA 2027
-  </div>
-</div>
+    <!-- HERO / ЛОГО -->
+    <header class="hero">
+      <div class="logo">
+        <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="currentColor" stroke-width="1.6" fill="none">
+            <path d="M32 30 Q28 58 42 82"/>
+            <path d="M68 30 Q72 58 58 82"/>
+            <path d="M32 30 Q50 16 68 30"/>
+            <path d="M45 86 Q50 90 55 86"/>
+            <path d="M40 94 H60"/>
+          </g>
+          <path d="M28 102 Q50 110 72 102"
+                stroke="currentColor"
+                stroke-width="1.1"
+                opacity="0.8"/>
+        </svg>
 
-<!-- CONTENT -->
-<div class="page-wrapper">
-  <h1 class="page-title">Расписание матчей</h1>
-  <p class="page-subtitle">
-    Официальный календарь Кубка мира по регби 2027 появится здесь после его публикации.
-  </p>
+        <div class="logo-caption">
+          RWC 2027<br>AUSTRALIA 2027
+        </div>
+      </div>
 
-  <div class="info-card">
-    <div class="info-pill">Раздел в разработке</div>
-    <p>
-      Мы готовим удобное расписание по дням, группам и стадиям плей-офф,
-      с указанием времени начала матчей и каналов трансляции.
-    </p>
-  </div>
-</div>
+      <h1 class="h1">Расписание матчей</h1>
 
-<!-- ЕДИНЫЙ СКРИПТ МЕНЮ -->
+      <p class="subtitle">
+        Официальный календарь Кубка мира по регби 2027 будет опубликован ближе к старту турнира.
+      </p>
+    </header>
+
+    <!-- КОНТЕНТ СТРАНИЦЫ -->
+    <div class="page-content">
+
+      <div class="dev-card">
+        <div class="badge">РАЗДЕЛ В РАЗРАБОТКЕ</div>
+
+        <div class="dev-text">
+          Мы готовим удобное расписание по дням, группам и стадиям плей-офф
+          с указанием времени начала матчей и каналов трансляции.
+        </div>
+
+        <div class="dev-text" style="opacity:0.7;">
+          После публикации календаря здесь появится полный список матчей.
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+</main>
+
 <script src="/menu.js"></script>
 
 </body>
