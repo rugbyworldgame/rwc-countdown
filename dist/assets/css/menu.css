@@ -1,0 +1,181 @@
+/* ================================
+   MENU BUTTON (BURGER)
+   ================================ */
+
+.menu-btn {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  width: 36px;
+  height: 26px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+
+  z-index: 3001;
+}
+
+.menu-btn span {
+  height: 3px;
+  background: #f5f8ff;
+  border-radius: 3px;
+  transition: transform .3s ease, opacity .2s ease;
+}
+
+.menu-btn.active span:nth-child(1) {
+  transform: translateY(11px) rotate(45deg);
+}
+
+.menu-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-btn.active span:nth-child(3) {
+  transform: translateY(-11px) rotate(-45deg);
+}
+
+/* ================================
+   MENU OVERLAY (BACKGROUND BLUR)
+   ================================ */
+
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 14, 32, 0.55);
+  backdrop-filter: blur(14px) saturate(120%);
+  -webkit-backdrop-filter: blur(14px) saturate(120%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .35s ease;
+  z-index: 1999;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ================================
+   SIDE MENU (GLASS PANEL)
+   ================================ */
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(64vw, 300px);
+  height: 100vh;
+
+  background: linear-gradient(
+    180deg,
+    rgba(14, 30, 64, 0.78),
+    rgba(6, 14, 32, 0.88)
+  );
+
+  backdrop-filter: blur(22px) saturate(140%);
+  -webkit-backdrop-filter: blur(22px) saturate(140%);
+
+  box-shadow:
+    -18px 0 46px rgba(0,0,0,0.45),
+    inset 1px 0 0 rgba(255,255,255,0.07);
+
+  transform: translateX(100%);
+  transition: transform .4s cubic-bezier(.22,.61,.36,1);
+
+  z-index: 2000;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.side-menu.active {
+  transform: translateX(0);
+}
+
+/* ================================
+   MENU LINKS
+   ================================ */
+
+.side-menu a {
+  position: relative;
+  color: #e9f0ff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  letter-spacing: 0.12em;
+  padding: 14px 0;
+  width: 100%;
+  text-align: center;
+  opacity: 0.92;
+  transition: opacity .25s ease;
+}
+
+.side-menu a:hover {
+  opacity: 1;
+}
+
+.side-menu a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 42px;
+  height: 1px;
+  background: rgba(255,255,255,0.12);
+}
+
+.side-menu a:last-child::after {
+  display: none;
+}
+
+/* ================================
+   CLOSE BUTTON (X)
+   ================================ */
+
+.menu-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  font-size: 30px;
+  color: rgba(255,255,255,0.9);
+  cursor: pointer;
+}
+
+/* ================================
+   BODY LOCK + PAGE BLUR
+   ================================ */
+
+body.menu-open {
+  overflow: hidden;
+}
+
+body.menu-open main,
+body.menu-open .page {
+  filter: blur(5px) brightness(0.9);
+  transition: filter .35s ease;
+}
+
+main,
+.page {
+  transition: filter .35s ease;
+}
+
+/* ================================
+   TAP HIGHLIGHT OFF
+   ================================ */
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  outline: none;
+}
