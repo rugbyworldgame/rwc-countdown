@@ -1,0 +1,35 @@
+.participants-hero{background:radial-gradient(circle at 80% 20%,rgba(201,246,75,.08),transparent 27%),linear-gradient(135deg,#0d2117,#07100d)}
+.participants-intro{margin-bottom:52px}
+.participant-groups{display:grid;gap:56px}
+.participant-group{display:grid;grid-template-columns:180px 1fr;gap:28px;align-items:start}
+.group-heading{position:sticky;top:104px;display:flex;align-items:center;gap:14px}
+.group-heading>span{width:54px;height:54px;border:1px solid rgba(201,246,75,.35);border-radius:50%;display:grid;place-items:center;font:600 25px Oswald;color:var(--lime);background:rgba(201,246,75,.05)}
+.group-heading h2{font-size:25px;margin:0}
+.team-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.team-card{min-height:102px;display:grid;grid-template-columns:52px 1fr auto;align-items:center;gap:16px;padding:18px 20px;background:var(--panel);border:1px solid var(--line);border-radius:14px}
+.team-card.is-ready{transition:.2s;border-color:rgba(201,246,75,.28)}
+.team-card.is-ready:hover{transform:translateY(-3px);background:var(--panel2);border-color:var(--lime)}
+.team-flag{font-size:37px;line-height:1}
+.team-card b{display:block;font-size:17px}.team-card small{display:block;color:var(--muted);margin-top:3px}
+.team-card em{font-style:normal;color:var(--muted);font-size:12px}.team-card.is-ready em{color:var(--lime);font-weight:800}
+.team-hero{padding:72px 0;background:radial-gradient(circle at 78% 32%,rgba(229,185,105,.14),transparent 28%),linear-gradient(135deg,#0b1e15,#07100d);border-bottom:1px solid var(--line)}
+.team-hero-grid{display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:80px}.team-hero h1{margin-bottom:8px}
+.team-nickname{margin:0 0 24px;color:var(--gold);font:500 24px Oswald;text-transform:uppercase;letter-spacing:.08em}
+.back-link{display:block;margin-bottom:42px;color:var(--muted);font-size:13px}.back-link:hover{color:var(--lime)}
+.hero-flag{justify-self:end;width:min(100%,360px);aspect-ratio:1;border:1px solid rgba(229,185,105,.3);border-radius:50%;background:radial-gradient(circle,rgba(229,185,105,.13),rgba(8,20,15,.3) 64%);display:grid;place-content:center;text-align:center;font-size:118px;box-shadow:0 25px 70px rgba(0,0,0,.25)}
+.hero-flag span{font:600 18px Oswald;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.team-profile{display:grid;gap:88px}.team-summary{max-width:760px}.team-summary h2{margin-bottom:16px}
+.team-summary p,.team-story p,.facts-section .section-head p,.team-fixtures .section-head p{color:var(--muted)}
+.team-stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--panel)}
+.team-stats div{padding:30px;border-right:1px solid var(--line)}.team-stats div:last-child{border:0}
+.team-stats strong{display:block;font:600 44px Oswald;color:var(--lime)}.team-stats span{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.team-content-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:54px;align-items:start}.team-story h2{margin-bottom:25px}.team-story p{font-size:17px;line-height:1.8}
+.record-card{padding:30px;background:linear-gradient(145deg,#173525,#0c1913);border:1px solid rgba(201,246,75,.22);border-radius:20px}
+.record-card>span{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.12em}.record-card>strong{display:block;font:600 42px Oswald;text-transform:uppercase;margin-top:12px}.record-card>b{color:var(--lime)}
+.record-card hr{border:0;border-top:1px solid var(--line);margin:26px 0}.record-card dl{margin:0}.record-card dl div{display:flex;justify-content:space-between;gap:20px;padding:10px 0;border-top:1px solid rgba(255,255,255,.06)}.record-card dt{color:var(--muted)}.record-card dd{margin:0;text-align:right;font-weight:700}
+.fact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.fact-grid article{padding:27px;background:var(--panel);border:1px solid var(--line);border-radius:16px}.fact-grid article>span{color:var(--lime);font:600 13px Oswald}.fact-grid h3{font:600 21px Oswald;text-transform:uppercase}.fact-grid p{color:var(--muted)}
+.qualification-band{padding:42px 48px;background:linear-gradient(100deg,#173525,#0d1c16);border:1px solid rgba(201,246,75,.2);border-radius:22px;display:flex;align-items:center;justify-content:space-between;gap:50px}.qualification-band h2{margin:12px 0}.qualification-band p{max-width:720px;color:var(--muted)}
+.qualification-mark{flex:0 0 108px;height:108px;border-radius:50%;border:1px solid var(--lime);display:grid;place-content:center;text-align:center;color:var(--lime);font:600 46px Oswald}.qualification-mark span{font:700 9px Manrope;text-transform:uppercase;letter-spacing:.12em}
+.fixture-list{display:grid;gap:10px}.fixture-list article{display:grid;grid-template-columns:180px 1fr;gap:24px;padding:21px 24px;background:var(--panel);border:1px solid var(--line);border-radius:13px}.fixture-list time{color:var(--lime);font-weight:800}.source-note{margin:0;padding:18px 0;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
+@media(max-width:900px){.participant-group{grid-template-columns:1fr}.group-heading{position:static}.team-hero-grid,.team-content-grid{grid-template-columns:1fr}.hero-flag{justify-self:start;width:230px}.team-profile{gap:68px}.fact-grid{grid-template-columns:1fr}.team-stats{grid-template-columns:repeat(2,1fr)}.team-stats div:nth-child(2){border-right:0}.team-stats div:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+@media(max-width:620px){.participants-hero h1{font-size:48px}.participant-groups{gap:46px}.team-cards{grid-template-columns:1fr}.team-card{min-height:88px;padding:15px;grid-template-columns:44px 1fr auto}.team-flag{font-size:31px}.team-card b{font-size:16px}.team-card small{font-size:11px}.team-hero{padding:42px 0 54px}.team-hero h1{font-size:56px}.team-hero-grid{gap:38px}.back-link{margin-bottom:30px}.hero-flag{width:180px;font-size:76px}.hero-flag span{font-size:13px}.team-stats div{padding:22px 18px}.team-stats strong{font-size:36px}.qualification-band{padding:30px 24px;align-items:flex-start;flex-direction:column}.qualification-mark{width:86px;height:86px;flex-basis:86px;font-size:36px}.fixture-list article{grid-template-columns:1fr;gap:5px;padding:19px}.team-profile{gap:60px}}
