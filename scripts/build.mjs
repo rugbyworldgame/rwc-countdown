@@ -13,7 +13,10 @@ const files = [
   "menu.html",
   "menu.js",
   "assets/css/site.css",
-  "assets/css/menu.css"
+  "assets/css/menu.css",
+  "assets/css/match-center.css",
+  "match-center/index.html",
+  "match-center/toulouse-bordeaux/index.html"
 ];
 
 await rm("dist", { recursive: true, force: true });
@@ -35,6 +38,10 @@ const aliases = {
   "/history": "/history.html",
   "/streams": "/streams.html",
   "/partners": "/partners.html"
+  ,"/match-center": "/match-center/index.html"
+  ,"/match-center/": "/match-center/index.html"
+  ,"/match-center/toulouse-bordeaux": "/match-center/toulouse-bordeaux/index.html"
+  ,"/match-center/toulouse-bordeaux/": "/match-center/toulouse-bordeaux/index.html"
 };
 const types = {
   ".html": "text/html; charset=utf-8",

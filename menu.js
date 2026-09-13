@@ -11,10 +11,10 @@
       toggle.setAttribute("aria-expanded", String(open));
       toggle.textContent = open ? "×" : "☰";
     });
-    const current = location.pathname.replace(/\.html$/, "") || "/";
+    const current = location.pathname.replace(/\/index\.html$/, "/").replace(/\.html$/, "") || "/";
     host.querySelectorAll("a").forEach(link => {
-      const target = new URL(link.href).pathname.replace(/\.html$/, "") || "/";
-      if (target === current) link.setAttribute("aria-current", "page");
+      const target = new URL(link.href).pathname.replace(/\/index\.html$/, "/").replace(/\.html$/, "") || "/";
+      if (target === current || (target !== "/" && current.startsWith(target))) link.setAttribute("aria-current", "page");
     });
   } catch {}
 })();
