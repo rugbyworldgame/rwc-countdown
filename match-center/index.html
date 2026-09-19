@@ -8,7 +8,7 @@
   <link rel="canonical" href="https://rugby2027.ru/match-center/">
   <link rel="icon" href="/favicon.svg">
   <link rel="stylesheet" href="/assets/css/site.css?v=20260913-3">
-  <link rel="stylesheet" href="/assets/css/match-center.css?v=20260913-2">
+  <link rel="stylesheet" href="/assets/css/match-center.css?v=20260919-support">
 </head>
 <body class="match-page">
   <div id="menu-container"></div>
@@ -45,6 +45,10 @@
         <iframe src="https://vk.ru/video_ext.php?oid=-15550428&amp;id=456245795&amp;autoplay=1" title="Прямая трансляция матча Ванн — Тулуза" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock" allowfullscreen></iframe>
       </div>
       <p class="stream-help">Если эфир не запустился автоматически, нажмите кнопку воспроизведения в центре окна.</p>
+      <aside class="project-support" aria-labelledby="support-title">
+        <div class="support-copy"><span class="support-heart" aria-hidden="true">♡</span><div><h2 id="support-title">Регби объединяет. Спасибо, что вы с нами</h2><p>Если вам здесь хорошо, можно поддержать работу сайта и нашего регбийного сообщества. Любая сумма — по желанию.</p><small>Просмотр остаётся бесплатным.</small></div></div>
+        <details class="support-details"><summary>Поддержать проект <span aria-hidden="true">♡</span></summary><div class="support-payment"><span class="support-bank">Перевод на карту · Сбер</span><span class="support-number" id="supportCard">2202 2068 8814 8090</span><button type="button" id="copySupportCard" hidden>Скопировать номер</button><span id="supportStatus" class="support-status" role="status" aria-live="polite"></span></div></details>
+      </aside>
       <aside class="stream-partner" aria-label="Постоянный партнёр трансляции — юридическая компания Баланс">
         <div class="stream-partner-brand"><span class="stream-partner-mark" aria-hidden="true">Б</span><div><small>Постоянный партнёр трансляции</small><strong>ЮК «Баланс»</strong></div></div>
         <p>Бесплатная консультация по долгам и банкротству физических лиц — по всей России.</p>
@@ -94,6 +98,26 @@
   </main>
   <footer><div class="shell"><b>RUGBY 2027</b><span>Матч-центр · время московское</span></div></footer>
   <script src="/menu.js"></script>
+  <script>
+    (() => {
+      const button = document.getElementById('copySupportCard');
+      const status = document.getElementById('supportStatus');
+      button.hidden = false;
+      button.addEventListener('click', async () => {
+        const card = document.getElementById('supportCard').textContent.replace(/\s/g, '');
+        try {
+          await navigator.clipboard.writeText(card);
+          status.textContent = 'Номер скопирован. Спасибо за поддержку!';
+        } catch (error) {
+          const range = document.createRange();
+          range.selectNodeContents(document.getElementById('supportCard'));
+          const selection = window.getSelection();
+          selection.removeAllRanges(); selection.addRange(range);
+          status.textContent = 'Выделили номер — скопируйте его вручную.';
+        }
+      });
+    })();
+  </script>
   <script>
     (function () {
       const target = new Date("2026-09-19T22:00:00+03:00").getTime();
