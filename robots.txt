@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /menu.html
+Disallow: /support.html
 
 Sitemap: https://rugby2027.ru/sitemap.xml

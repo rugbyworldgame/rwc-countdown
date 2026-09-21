@@ -1,0 +1,9 @@
+# Source and historical build artifacts are retained in Git, not published as duplicate pages.
+exclude:
+  - dist
+  - scripts
+  - worker
+  - package.json
+  - package-lock.json
+  - README.md
+  - node_modules

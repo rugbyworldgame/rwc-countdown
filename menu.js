@@ -2,14 +2,24 @@
   const host = document.getElementById("menu-container");
   if (!host) return;
   try {
-    const response = await fetch("/menu.html");
-    host.innerHTML = await response.text();
+    if (!host.querySelector('header')) {
+      const response = await fetch("/menu.html");
+      if (!response.ok) return;
+      host.innerHTML = await response.text();
+    }
     const toggle = document.getElementById("menuToggle");
     const nav = document.getElementById("mobileNav");
     toggle?.addEventListener("click", () => {
       const open = nav.classList.toggle("open");
       toggle.setAttribute("aria-expanded", String(open));
       toggle.textContent = open ? "×" : "☰";
+      toggle.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
+    });
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && nav?.classList.contains('open')) {
+        nav.classList.remove('open'); toggle.setAttribute('aria-expanded','false');
+        toggle.setAttribute('aria-label','Открыть меню'); toggle.textContent='☰'; toggle.focus();
+      }
     });
     const current = location.pathname.replace(/\/index\.html$/, "/").replace(/\.html$/, "") || "/";
     host.querySelectorAll("a").forEach(link => {
@@ -20,19 +30,23 @@
 })();
 
 (async function loadProjectSupport() {
+  if (!document.querySelector('link[href^="/assets/css/support.css"]')) {
   const stylesheet = document.createElement('link');
   stylesheet.rel = 'stylesheet'; stylesheet.href = '/assets/css/support.css?v=20260920';
   document.head.appendChild(stylesheet);
+  }
   try {
-    const response = await fetch('/support.html');
-    if (!response.ok) throw new Error('Support unavailable');
     let slot = document.getElementById('project-support-slot');
     if (!slot) {
       slot = document.createElement('div'); slot.className = 'shell support-shell';
       const footer = document.querySelector('footer');
       if (footer) footer.before(slot); else document.body.appendChild(slot);
     }
-    slot.innerHTML = await response.text();
+    if (!slot.querySelector('#project-support')) {
+      const response = await fetch('/support.html');
+      if (!response.ok) throw new Error('Support unavailable');
+      slot.innerHTML = await response.text();
+    }
     const button = slot.querySelector('#copySupportCard');
     const status = slot.querySelector('#supportStatus');
     button.hidden = false;
