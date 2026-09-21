@@ -55,5 +55,13 @@ if '--live' in sys.argv:
   print(f'{status} {url} canonical={canonical[0]["href"] if canonical else "—"}')
   if url in urls and (status!=200 or not canonical or canonical[0]['href']!=url): errors.append('live '+url)
   if url in urls and '<!-- static-menu -->' not in body: errors.append('stale '+url)
+  if url in urls:
+   local=resolve(urlsplit(url).path).read_text()
+   remote=Page(body); expected=Page(local)
+   for name in ['description']:
+    if remote.select('meta',name=name)!=expected.select('meta',name=name): errors.append('live meta '+url)
+   if re.findall('<title>(.*?)</title>',body,re.S)!=re.findall('<title>(.*?)</title>',local,re.S): errors.append('live title '+url)
+   if remote.select('meta',property='og:url')!=expected.select('meta',property='og:url'): errors.append('live OG '+url)
+   if re.findall(r'<script type="application/ld\+json"[^>]*>(.*?)</script>',body,re.S)!=re.findall(r'<script type="application/ld\+json"[^>]*>(.*?)</script>',local,re.S): errors.append('live schema '+url)
 print(f'Total errors: {len(errors)}')
 sys.exit(bool(errors))

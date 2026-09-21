@@ -3,6 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node scripts/build.mjs"
+    "build": "node scripts/build.mjs",
+    "seo:sync": "python3 scripts/seo_sync.py",
+    "test": "python3 scripts/check_seo.py",
+    "check:live": "python3 scripts/check_seo.py --live"
   }
 }

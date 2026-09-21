@@ -10,5 +10,6 @@
 .match-countdown [hidden],.match-countdown[hidden]{display:none!important}
 .match-teams>*{min-width:0;overflow-wrap:break-word}
 .hero-flag img{height:auto}
+.match-stream .support-shell{width:auto;margin-inline:0}
 @media(max-width:600px){.support-number{max-width:100%;font-size:clamp(15px,5vw,22px)}.seo-footer{gap:4px 14px}.match-versus small,.match-venue,.stream-time,.stream-help{font-size:13px}.lineup-card ol{columns:1}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
