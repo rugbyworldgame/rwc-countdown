@@ -81,10 +81,12 @@ for path in pages:
   if key=='participants' and 'loading=' not in tag: tag=tag[:-1]+' loading="lazy">'
   return tag
  s=re.sub(r'<img\b[^>]*>',img,s)
- if '<h3' in s and '<h2' not in s.split('<!-- static-support -->')[0]:
-  s=s.replace('<main>','<main><h2 class="sr-only">Информация о турнире</h2>',1)
+ s=s.replace('<h2 class="sr-only">Информация о турнире</h2>','')
+ if key in ('about','history') and 'data-seo-section' not in s:
+  label='Формат и особенности турнира' if key=='about' else 'Чемпионы прошлых турниров'
+  s=s.replace('<div class="content-grid">',f'<h2 class="sr-only" data-seo-section>{label}</h2><div class="content-grid">',1)
  if 'class="skip-link"' not in s:
-  s=s.replace('<body>','<body><a class="skip-link" href="#main-content">К содержанию</a>')
+  s=re.sub(r'<body([^>]*)>',r'<body\1><a class="skip-link" href="#main-content">К содержанию</a>',s,count=1)
   s=re.sub(r'<main\b(?![^>]*\bid=)', '<main id="main-content"',s,count=1)
  s=s.replace('<script src="/menu.js"></script>','<script src="/menu.js" defer></script>')
  s=s.replace('Официальная лента новостей','Лента новостей независимого проекта')

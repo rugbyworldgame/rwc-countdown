@@ -26,6 +26,8 @@ for url in urls:
  if len(desc)!=1 or desc[0].get('content') in descriptions: errors.append(f'description {url}')
  descriptions.add(desc[0]['content'])
  if len(p.select('h1'))!=1: errors.append(f'H1 {url}')
+ headings=[int(t[1]) for t,a in p.tags if re.fullmatch('h[1-6]',t)]
+ if headings[0]!=1 or any(b>a+1 for a,b in zip(headings,headings[1:])): errors.append(f'heading hierarchy {url}')
  if p.select('link',rel='canonical')!=[{'rel':'canonical','href':url}]: errors.append(f'canonical {url}')
  if not p.select('html',lang='ru'): errors.append(f'language {url}')
  if p.select('meta',name='robots'): errors.append(f'robots {url}')
