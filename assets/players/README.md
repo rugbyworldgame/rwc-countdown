@@ -27,3 +27,7 @@
 - `archie-griffin.webp`: Bearas, 2025; [источник](https://commons.wikimedia.org/wiki/File:2025_Autumn_Nations_Series_Wales_vs_New_Zealand_20251122_163742_Archie_Griffin.jpg), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Уменьшение и перевод в WebP; производная распространяется по CC BY-SA 4.0.
 
 Проверенные источники и пропущенные загрузки сохранены в `scripts/player_photo_sources.json`. Сетевые ошибки не означают, что фотографии отсутствуют или запрещены; неполученные файлы в рабочую базу не включаются.
+
+- `ellis-genge.webp`: Stefano Delfrate, 2015; [источник](https://commons.wikimedia.org/wiki/File:Ellis_Genge_2015.jpg), [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/). Исходное кадрирование: Stemoc. Уменьшение и перевод в WebP; производная распространяется по CC BY-SA 2.0.
+
+- `louis-rees-zammit.webp`: Stefano Delfrate (stede64), 2023; [источник](https://commons.wikimedia.org/wiki/File:Louis_Rees-Zammit_March_2023.jpg), [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/). Исходное кадрирование: Stemoc. Уменьшение и перевод в WebP; производная распространяется по CC BY-SA 2.0.

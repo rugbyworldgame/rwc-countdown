@@ -152,6 +152,44 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "changes": "Уменьшение и перевод в WebP; производная распространяется по CC BY-SA 4.0."
       }
+    },
+    {
+      "id": "ellis-genge",
+      "name": "Эллис Гендж",
+      "aliases": [
+        "Эллис Гендж",
+        "Ellis Genge"
+      ],
+      "image": {
+        "src": "/assets/players/ellis-genge.webp",
+        "width": 349,
+        "height": 440,
+        "year": 2015,
+        "author": "Stefano Delfrate",
+        "source": "https://commons.wikimedia.org/wiki/File:Ellis_Genge_2015.jpg",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "changes": "Исходное кадрирование: Stemoc. Уменьшение и перевод в WebP; производная распространяется по CC BY-SA 2.0."
+      }
+    },
+    {
+      "id": "louis-rees-zammit",
+      "name": "Луи Рис-Заммит",
+      "aliases": [
+        "Луи Рис-Заммит",
+        "Louis Rees-Zammit"
+      ],
+      "image": {
+        "src": "/assets/players/louis-rees-zammit.webp",
+        "width": 342,
+        "height": 440,
+        "year": 2023,
+        "author": "Stefano Delfrate (stede64)",
+        "source": "https://commons.wikimedia.org/wiki/File:Louis_Rees-Zammit_March_2023.jpg",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "changes": "Исходное кадрирование: Stemoc. Уменьшение и перевод в WebP; производная распространяется по CC BY-SA 2.0."
+      }
     }
   ]
 }

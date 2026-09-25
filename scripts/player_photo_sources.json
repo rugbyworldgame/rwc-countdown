@@ -120,6 +120,52 @@
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
       "sourceEditor": "",
       "status": "published"
+    },
+    {
+      "id": "ellis-genge",
+      "name": "Эллис Гендж",
+      "source": "https://commons.wikimedia.org/wiki/File:Ellis_Genge_2015.jpg",
+      "author": "Stefano Delfrate",
+      "year": 2015,
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/6/68/Ellis_Genge_2015.jpg",
+      "sourceEditor": "Stemoc",
+      "status": "published"
+    },
+    {
+      "id": "louis-rees-zammit",
+      "name": "Луи Рис-Заммит",
+      "source": "https://commons.wikimedia.org/wiki/File:Louis_Rees-Zammit_March_2023.jpg",
+      "author": "Stefano Delfrate (stede64)",
+      "year": 2023,
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/5/56/Louis_Rees-Zammit_March_2023.jpg",
+      "sourceEditor": "Stemoc",
+      "status": "published"
+    },
+    {
+      "id": "george-ford",
+      "name": "Джордж Форд",
+      "source": "https://commons.wikimedia.org/wiki/File:George_Ford_crop.jpg",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/3/3f/George_Ford_crop.jpg",
+      "author": "Graham Wilson",
+      "year": 2012,
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+      "status": "download-timeout"
+    },
+    {
+      "id": "courtney-lawes",
+      "name": "Кортни Лоус",
+      "source": "https://commons.wikimedia.org/wiki/File:Courtney_Lawes_2013.jpg",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Courtney_Lawes_2013.jpg",
+      "author": "Charlie (Charlie Tuff)",
+      "year": 2013,
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+      "status": "download-timeout"
     }
   ]
 }
