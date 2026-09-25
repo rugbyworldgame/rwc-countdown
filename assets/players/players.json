@@ -1,4 +1,157 @@
-{"version":1,"players":[
-  {"id":"finn-russell","name":"Финн Расселл","aliases":["Финн Расселл","Finn Russell"],"image":{"src":"/assets/players/finn-russell.webp","width":350,"height":440,"year":2020,"author":"Helene Brasseur","source":"https://commons.wikimedia.org/wiki/File:Finn_Russell_2020.jpg","license":"CC BY 2.0","licenseUrl":"https://creativecommons.org/licenses/by/2.0/","changes":"Исходное кадрирование: Stemoc. Уменьшение и перевод в WebP."}},
-  {"id":"chandler-cunningham-south","name":"Чандлер Каннингем-Саут","aliases":["Чандлер Каннингем-Саут","Chandler Cunningham-South"],"image":{"src":"/assets/players/chandler-cunningham-south.webp","width":363,"height":440,"year":2026,"author":"Stefano Delfrate","source":"https://commons.wikimedia.org/wiki/File:Guinness_6_Nazioni_2026-_Italia_vs_Inghilterra-16-2_(cropped).jpg","license":"CC BY-SA 4.0","licenseUrl":"https://creativecommons.org/licenses/by-sa/4.0/","changes":"Исходное кадрирование: MarioBayo. Уменьшение и перевод в WebP; производная распространяется по CC BY-SA 4.0."}}
-]}
+{
+  "version": 1,
+  "players": [
+    {
+      "id": "finn-russell",
+      "name": "Финн Расселл",
+      "aliases": [
+        "Финн Расселл",
+        "Finn Russell"
+      ],
+      "image": {
+        "src": "/assets/players/finn-russell.webp",
+        "width": 350,
+        "height": 440,
+        "year": 2020,
+        "author": "Helene Brasseur",
+        "source": "https://commons.wikimedia.org/wiki/File:Finn_Russell_2020.jpg",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+        "changes": "Исходное кадрирование: Stemoc. Уменьшение и перевод в WebP."
+      }
+    },
+    {
+      "id": "chandler-cunningham-south",
+      "name": "Чандлер Каннингем-Саут",
+      "aliases": [
+        "Чандлер Каннингем-Саут",
+        "Chandler Cunningham-South"
+      ],
+      "image": {
+        "src": "/assets/players/chandler-cunningham-south.webp",
+        "width": 363,
+        "height": 440,
+        "year": 2026,
+        "author": "Stefano Delfrate",
+        "source": "https://commons.wikimedia.org/wiki/File:Guinness_6_Nazioni_2026-_Italia_vs_Inghilterra-16-2_(cropped).jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "changes": "Исходное кадрирование: MarioBayo. Уменьшение и перевод в WebP; производная распространяется по CC BY-SA 4.0."
+      }
+    },
+    {
+      "id": "will-stuart",
+      "name": "Уилл Стюарт",
+      "aliases": [
+        "Уилл Стюарт",
+        "Will Stuart"
+      ],
+      "image": {
+        "src": "/assets/players/will-stuart.webp",
+        "width": 353,
+        "height": 440,
+        "year": 2021,
+        "author": "Stefano Delfrate",
+        "source": "https://commons.wikimedia.org/wiki/File:Will_Stuart_2021.jpg",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "changes": "Подготовка исходного файла: Stemoc. Уменьшение и перевод в WebP; производная распространяется по CC BY-SA 2.0."
+      }
+    },
+    {
+      "id": "beno-obano",
+      "name": "Бено Обано",
+      "aliases": [
+        "Бено Обано",
+        "Beno Obano"
+      ],
+      "image": {
+        "src": "/assets/players/beno-obano.webp",
+        "width": 279,
+        "height": 440,
+        "year": 2021,
+        "author": "Stefano Delfrate",
+        "source": "https://commons.wikimedia.org/wiki/File:Beno_Obano_2021.jpg",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "changes": "Подготовка исходного файла: Arn6338. Уменьшение и перевод в WebP; производная распространяется по CC BY-SA 2.0."
+      }
+    },
+    {
+      "id": "santiago-carreras",
+      "name": "Сантьяго Каррерас",
+      "aliases": [
+        "Сантьяго Каррерас",
+        "Santiago Carreras"
+      ],
+      "image": {
+        "src": "/assets/players/santiago-carreras.webp",
+        "width": 307,
+        "height": 440,
+        "year": 2021,
+        "author": "Stefano Delfrate",
+        "source": "https://commons.wikimedia.org/wiki/File:Santiago_Carreras_2021.jpg",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "changes": "Подготовка исходного файла: Arn6338. Уменьшение и перевод в WebP; производная распространяется по CC BY-SA 2.0."
+      }
+    },
+    {
+      "id": "cameron-redpath",
+      "name": "Кэмерон Редпат",
+      "aliases": [
+        "Кэмерон Редпат",
+        "Cameron Redpath"
+      ],
+      "image": {
+        "src": "/assets/players/cameron-redpath.webp",
+        "width": 315,
+        "height": 440,
+        "year": 2024,
+        "author": "Stefano Delfrate",
+        "source": "https://commons.wikimedia.org/wiki/File:Cameron_Redpath_march_2024.jpg",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "changes": "Подготовка исходного файла: Arn6338. Уменьшение и перевод в WebP; производная распространяется по CC BY-SA 2.0."
+      }
+    },
+    {
+      "id": "kepu-tuipulotu",
+      "name": "Кепуэли Туипулоту",
+      "aliases": [
+        "Кепуэли Туипулоту",
+        "Kepu Tuipulotu"
+      ],
+      "image": {
+        "src": "/assets/players/kepu-tuipulotu.webp",
+        "width": 364,
+        "height": 440,
+        "year": 2025,
+        "author": "Stefano Delfrate",
+        "source": "https://commons.wikimedia.org/wiki/File:Kepu_Tuipulotu_u20_2025.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "changes": "Подготовка исходного файла: Stemoc. Уменьшение и перевод в WebP; производная распространяется по CC BY-SA 4.0."
+      }
+    },
+    {
+      "id": "archie-griffin",
+      "name": "Арчи Гриффин",
+      "aliases": [
+        "Арчи Гриффин",
+        "Archie Griffin"
+      ],
+      "image": {
+        "src": "/assets/players/archie-griffin.webp",
+        "width": 222,
+        "height": 440,
+        "year": 2025,
+        "author": "Bearas",
+        "source": "https://commons.wikimedia.org/wiki/File:2025_Autumn_Nations_Series_Wales_vs_New_Zealand_20251122_163742_Archie_Griffin.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "changes": "Уменьшение и перевод в WebP; производная распространяется по CC BY-SA 4.0."
+      }
+    }
+  ]
+}

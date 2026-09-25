@@ -14,3 +14,14 @@
 ## Проверка
 
 `/checks/player-cards.html` — неиндексируемая страница проверки живого Матч-центра при ширинах 320/375/768/1280 px. Проверить наведение и уход курсора, открытие нажатием, повторное нажатие, нажатие снаружи, Escape, Enter/Space и ArrowDown для перехода в карточку, отсутствие запросов WebP до взаимодействия. Это проверка размеров области просмотра, не эмулятор смартфона.
+
+## Пополнение 25 сентября 2026
+
+- `will-stuart.webp`: Stefano Delfrate, 2021; [источник](https://commons.wikimedia.org/wiki/File:Will_Stuart_2021.jpg), [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/). Подготовка исходного файла: Stemoc. Уменьшение и перевод в WebP; производная распространяется по CC BY-SA 2.0.
+- `beno-obano.webp`: Stefano Delfrate, 2021; [источник](https://commons.wikimedia.org/wiki/File:Beno_Obano_2021.jpg), [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/). Подготовка исходного файла: Arn6338. Уменьшение и перевод в WebP; производная распространяется по CC BY-SA 2.0.
+- `santiago-carreras.webp`: Stefano Delfrate, 2021; [источник](https://commons.wikimedia.org/wiki/File:Santiago_Carreras_2021.jpg), [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/). Подготовка исходного файла: Arn6338. Уменьшение и перевод в WebP; производная распространяется по CC BY-SA 2.0.
+- `cameron-redpath.webp`: Stefano Delfrate, 2024; [источник](https://commons.wikimedia.org/wiki/File:Cameron_Redpath_march_2024.jpg), [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/). Подготовка исходного файла: Arn6338. Уменьшение и перевод в WebP; производная распространяется по CC BY-SA 2.0.
+- `kepu-tuipulotu.webp`: Stefano Delfrate, 2025; [источник](https://commons.wikimedia.org/wiki/File:Kepu_Tuipulotu_u20_2025.jpg), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Подготовка исходного файла: Stemoc. Уменьшение и перевод в WebP; производная распространяется по CC BY-SA 4.0.
+- `archie-griffin.webp`: Bearas, 2025; [источник](https://commons.wikimedia.org/wiki/File:2025_Autumn_Nations_Series_Wales_vs_New_Zealand_20251122_163742_Archie_Griffin.jpg), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Уменьшение и перевод в WebP; производная распространяется по CC BY-SA 4.0.
+
+Проверенные источники и пропущенные загрузки сохранены в `scripts/player_photo_sources.json`. Сетевые ошибки не означают, что фотографии отсутствуют или запрещены; неполученные файлы в рабочую базу не включаются.

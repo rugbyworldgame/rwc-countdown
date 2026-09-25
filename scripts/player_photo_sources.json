@@ -1,0 +1,125 @@
+{
+  "checked": "2026-09-25",
+  "sources": [
+    {
+      "id": "joe-cokanasiga",
+      "name": "Джо Коканасига",
+      "source": "https://commons.wikimedia.org/wiki/File:Joe_Cokanasiga_2021_(cropped).jpg",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Joe_Cokanasiga_2021_%28cropped%29.jpg",
+      "author": "Stefano Delfrate",
+      "year": 2021,
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "sourceEditor": "Stemoc",
+      "status": "download-timeout"
+    },
+    {
+      "id": "will-stuart",
+      "name": "Уилл Стюарт",
+      "source": "https://commons.wikimedia.org/wiki/File:Will_Stuart_2021.jpg",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Will_Stuart_2021.jpg",
+      "author": "Stefano Delfrate",
+      "year": 2021,
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "sourceEditor": "Stemoc",
+      "status": "published"
+    },
+    {
+      "id": "rodrigo-isgro",
+      "name": "Родриго Исгро",
+      "source": "https://commons.wikimedia.org/wiki/File:Rodrigo_Isgr%C3%B3_November_2024.jpg",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Rodrigo_Isgr%C3%B3_November_2024.jpg",
+      "author": "Stefano Delfrate",
+      "year": 2024,
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "sourceEditor": "Arn6338",
+      "status": "download-timeout"
+    },
+    {
+      "id": "charlie-ewels",
+      "name": "Чарли Юэлс",
+      "source": "https://commons.wikimedia.org/wiki/File:Charlie_Ewels_2015.jpg",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/d/df/Charlie_Ewels_2015.jpg",
+      "author": "Stefano Delfrate",
+      "year": 2015,
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "sourceEditor": "Stemoc",
+      "status": "download-timeout"
+    },
+    {
+      "id": "tom-de-glanville",
+      "name": "Том де Гланвилл",
+      "source": "https://commons.wikimedia.org/wiki/File:Tom_de_Glanville.jpg",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/a/af/Tom_de_Glanville.jpg",
+      "author": "Stefano Delfrate",
+      "year": 2024,
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "sourceEditor": "TheLucasWard",
+      "status": "download-timeout"
+    },
+    {
+      "id": "beno-obano",
+      "name": "Бено Обано",
+      "source": "https://commons.wikimedia.org/wiki/File:Beno_Obano_2021.jpg",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Beno_Obano_2021.jpg",
+      "author": "Stefano Delfrate",
+      "year": 2021,
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "sourceEditor": "Arn6338",
+      "status": "published"
+    },
+    {
+      "id": "santiago-carreras",
+      "name": "Сантьяго Каррерас",
+      "source": "https://commons.wikimedia.org/wiki/File:Santiago_Carreras_2021.jpg",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/3/30/Santiago_Carreras_2021.jpg",
+      "author": "Stefano Delfrate",
+      "year": 2021,
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "sourceEditor": "Arn6338",
+      "status": "published"
+    },
+    {
+      "id": "cameron-redpath",
+      "name": "Кэмерон Редпат",
+      "source": "https://commons.wikimedia.org/wiki/File:Cameron_Redpath_march_2024.jpg",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Cameron_Redpath_march_2024.jpg",
+      "author": "Stefano Delfrate",
+      "year": 2024,
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "sourceEditor": "Arn6338",
+      "status": "published"
+    },
+    {
+      "id": "kepu-tuipulotu",
+      "name": "Кепуэли Туипулоту",
+      "source": "https://commons.wikimedia.org/wiki/File:Kepu_Tuipulotu_u20_2025.jpg",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Kepu_Tuipulotu_u20_2025.jpg",
+      "author": "Stefano Delfrate",
+      "year": 2025,
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sourceEditor": "Stemoc",
+      "status": "published"
+    },
+    {
+      "id": "archie-griffin",
+      "name": "Арчи Гриффин",
+      "source": "https://commons.wikimedia.org/wiki/File:2025_Autumn_Nations_Series_Wales_vs_New_Zealand_20251122_163742_Archie_Griffin.jpg",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/2/2e/2025_Autumn_Nations_Series_Wales_vs_New_Zealand_20251122_163742_Archie_Griffin.jpg",
+      "author": "Bearas",
+      "year": 2025,
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sourceEditor": "",
+      "status": "published"
+    }
+  ]
+}
