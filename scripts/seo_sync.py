@@ -31,10 +31,10 @@ for path in pages:
  title=html.unescape(re.search(r'<title>(.*?)</title>',s,re.S).group(1))
  desc=descriptions.get(key, f'{h1} на Кубке мира по регби 2027: история выступлений, статистика предыдущих турниров, квалификация и матчи группового этапа.')
  if key=='match-center':
-  if '«Бордо» — «Стад Франсе»' not in h1 or '2026-09-20T22:05:00+03:00' not in s:
+  if '«Харлекуинс» — «Бат»' not in h1 or '2026-09-25T21:45:00+03:00' not in s:
    raise ValueError('Match changed: update SportsEvent data before regenerating SEO.')
   title='Матч-центр — трансляции регби | Rugby 2027'
-  desc=f'Матч-центр Rugby 2027: {h1}. Видеоплеер, составы команд и информация о встрече. Время начала указано по Москве.'
+  desc=f'Матч-центр Rugby 2027: {h1}. Прямая трансляция и информация о встрече. Время начала указано по Москве.'
  s=re.sub(r'<title>.*?</title>', '<title>'+html.escape(title)+'</title>',s,flags=re.S)
  s=re.sub(r'<meta\b[^>]*(?:name=["\'](?:description|robots|theme-color|twitter:[^"\']+)["\']|property=["\']og:[^"\']+["\'])[^>]*>','',s,flags=re.I)
  s=re.sub(r'<link\b[^>]*rel=["\']canonical["\'][^>]*>','',s,flags=re.I)
@@ -55,7 +55,7 @@ for path in pages:
   data.append({'@context':'https://schema.org','@type':'BreadcrumbList','itemListElement':[{'@type':'ListItem','position':i,'name':n,'item':u} for i,(n,u) in enumerate(crumbs,1)]})
  if key=='match-center':
   # Explicitly supplied match data. Update this record when replacing the match.
-  data.append({'@context':'https://schema.org','@type':'SportsEvent','@id':canonical+'#event-2026-09-20','name':'Бордо — Стад Франсе','sport':'Регби','startDate':'2026-09-20T22:05:00+03:00','url':canonical,'location':{'@type':'Place','name':'Шабан-Дельмас','address':{'@type':'PostalAddress','addressLocality':'Бордо','addressCountry':'FR'}},'homeTeam':{'@type':'SportsTeam','name':'Бордо'},'awayTeam':{'@type':'SportsTeam','name':'Стад Франсе'}})
+  data.append({'@context':'https://schema.org','@type':'SportsEvent','@id':canonical+'#event-2026-09-25','name':'Харлекуинс — Бат','sport':'Регби','startDate':'2026-09-25T21:45:00+03:00','url':canonical,'location':{'@type':'Place','name':'Туикенхэм Ступ','address':{'@type':'PostalAddress','addressLocality':'Лондон','addressCountry':'GB'}},'homeTeam':{'@type':'SportsTeam','name':'Харлекуинс'},'awayTeam':{'@type':'SportsTeam','name':'Бат'}})
  tags+=''.join('<script type="application/ld+json" data-seo>'+json.dumps(d,ensure_ascii=False)+'</script>' for d in data)
  s=re.sub(r'<noscript><style>@media\(max-width:1250px\).*?</noscript>','',s,flags=re.S)
  tags+='<link rel="stylesheet" href="/assets/css/support.css"><link rel="stylesheet" href="/assets/css/seo.css"><noscript><style>@media(max-width:1250px){.mobile-nav{display:flex;position:static;max-height:none;flex-wrap:wrap}.menu-toggle{display:none}.nav{flex-wrap:wrap;height:auto;padding-block:15px}}</style></noscript>'
