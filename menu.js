@@ -1,3 +1,9 @@
+// Shared enhancement for current and future match pages; no image downloads here.
+if (document.querySelector('.lineups')) {
+  const css = document.createElement('link'); css.rel = 'stylesheet'; css.href = '/assets/css/player-cards.css'; document.head.append(css);
+  import('/assets/js/player-cards.js').catch(() => {});
+}
+
 (async function () {
   const host = document.getElementById("menu-container");
   if (!host) return;

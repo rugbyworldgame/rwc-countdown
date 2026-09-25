@@ -1,0 +1,12 @@
+.player-photo-trigger{font:inherit;color:inherit;background:none;border:0;padding:3px 0;text-align:left;text-decoration:underline dotted #c7ae73;text-underline-offset:4px;cursor:pointer;max-width:100%;overflow-wrap:anywhere}
+.player-photo-trigger:hover,.player-photo-trigger[aria-expanded=true]{color:#e5ca8c}
+.player-photo-hint{color:#b6b9b6;font-size:.85rem}
+.player-photo-popover{position:fixed;z-index:200;width:260px;box-sizing:border-box;padding:14px;border:1px solid #8e7950;border-radius:14px;background:#151916;color:#f5f5ef;box-shadow:0 12px 36px #0009;overflow:auto;overscroll-behavior:contain;font:14px/1.45 system-ui,sans-serif}
+.player-photo-popover[hidden]{display:none}
+.player-photo-popover h3{margin:0 38px 10px 0;font-size:16px;line-height:1.3}
+.player-photo-popover img{display:block;width:100%;height:200px;object-fit:contain;background:#0b0e0b;border-radius:8px}
+.player-photo-popover p{margin:8px 0 0;font-size:12px;color:#cbd0cb}
+.player-photo-popover a{color:#e5ca8c;text-decoration:underline}
+.player-photo-close{position:absolute;top:4px;right:4px;width:40px;height:40px;border:0;border-radius:8px;background:transparent;color:#fff;font-size:24px;cursor:pointer}
+.player-photo-popover :focus-visible,.player-photo-trigger:focus-visible{outline:2px solid #e5ca8c;outline-offset:3px}
+@media(pointer:coarse){.player-photo-trigger{min-height:44px}.player-photo-close{width:44px;height:44px}}
