@@ -54,6 +54,7 @@ async function start() {
       credit.append(link('Источник',player.image.source),' · ',link(player.image.license,player.image.licenseUrl));
       const changes=el('p',player.image.changes);
       box.replaceChildren(dismiss,title,img,credit,changes);box.hidden=false;button.setAttribute('aria-expanded','true');position();
+      document.dispatchEvent(new CustomEvent('rugby:player-open', {detail:{playerId:player.id}}));
     } catch {
       if(active===button)close();
       for(const b of buttons.get(player.id)||[]) b.replaceWith(document.createTextNode(b.textContent));

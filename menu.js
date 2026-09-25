@@ -1,7 +1,11 @@
+// Fallback for future pages using the shared menu. The counter guards duplicate execution.
+if (!document.querySelector('script[src^="/assets/js/analytics.js"]')) {
+  const analytics = document.createElement('script'); analytics.src = '/assets/js/analytics.js?v=20260926'; analytics.async = true; document.head.append(analytics);
+}
 // Shared enhancement for current and future match pages; no image downloads here.
 if (document.querySelector('.lineups')) {
   const css = document.createElement('link'); css.rel = 'stylesheet'; css.href = '/assets/css/player-cards.css'; document.head.append(css);
-  import('/assets/js/player-cards.js').catch(() => {});
+  import('/assets/js/player-cards.js?v=20260926').catch(() => {});
 }
 
 (async function () {
