@@ -23,5 +23,5 @@ for player in data['players']:
     assert 0 < image['width'] <= 400 and 0 < image['height'] <= 440
     assert image['author'] and image['changes'] and image['year']
     assert urlparse(image['source']).scheme == 'https'
-    assert urlparse(image['licenseUrl']).netloc == 'creativecommons.org'
+    assert urlparse(image['licenseUrl']).netloc == 'creativecommons.org' or (image['license'] == 'Public domain (PD-USGov-State)' and image['licenseUrl'] == 'https://commons.wikimedia.org/wiki/Template:PD-USGov-State')
 print(f'Player registry: {len(ids)} licensed local WebP images; aliases and paths valid.')

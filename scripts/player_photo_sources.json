@@ -1,5 +1,5 @@
 {
-  "checked": "2026-09-26",
+  "checked": "2026-09-27",
   "sources": [
     {
       "id": "joe-cokanasiga",
@@ -189,6 +189,188 @@
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
       "sourceEditor": "Blackcat",
       "download": "https://upload.wikimedia.org/wikipedia/commons/8/80/Gr%C3%A9gory_Alldritt_cropped_2025.jpg",
+      "status": "download-timeout"
+    },
+    {
+      "id": "allan-alaalatoa",
+      "name": "Аллан Алаалатоа",
+      "source": "https://commons.wikimedia.org/wiki/File:Allan_Alaalatoa_2017.jpg",
+      "author": "www.davidmolloyphotography.com",
+      "year": 2017,
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/d/db/Allan_Alaalatoa_2017.jpg",
+      "status": "published"
+    },
+    {
+      "id": "ben-donaldson",
+      "name": "Бен Дональдсон",
+      "source": "https://commons.wikimedia.org/wiki/File:Ben_Donaldson_2022_(cropped).jpg",
+      "author": "Stefano Delfrate",
+      "year": 2022,
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Ben_Donaldson_2022_%28cropped%29.jpg",
+      "status": "published"
+    },
+    {
+      "id": "paul-de-villiers",
+      "name": "Пол де Вильерс",
+      "source": "https://commons.wikimedia.org/wiki/File:Paul_de_Villiers_2022.jpg",
+      "author": "Stefano Delfrate",
+      "year": 2022,
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/2/21/Paul_de_Villiers_2022.jpg",
+      "status": "published"
+    },
+    {
+      "id": "ox-nche",
+      "name": "Окс Нче",
+      "source": "https://commons.wikimedia.org/wiki/File:Ox_Nché_2015.jpg",
+      "author": "Stefano Delfrate",
+      "year": 2015,
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/2/21/Ox_Nch%C3%A9_2015.jpg",
+      "status": "published"
+    },
+    {
+      "id": "jasper-wiese",
+      "name": "Яспер Визе",
+      "source": "https://commons.wikimedia.org/wiki/File:Jasper_Wiese_2026.jpg",
+      "author": "US Embassy Johannesburg, South Africa",
+      "year": 2026,
+      "license": "Public domain (PD-USGov-State)",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-USGov-State",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Jasper_Wiese_2026.jpg",
+      "status": "published"
+    },
+    {
+      "id": "herschel-jantjies",
+      "name": "Хершел Янтьес",
+      "source": "https://commons.wikimedia.org/wiki/File:Herschel_Jantjies_Zebre_2022.jpg",
+      "author": "Stefano Delfrate",
+      "year": 2022,
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/4/44/Herschel_Jantjies_Zebre_2022.jpg",
+      "status": "published"
+    },
+    {
+      "id": "malcolm-marx",
+      "name": "Малкольм Маркс",
+      "source": "https://commons.wikimedia.org/wiki/File:Malcolm_Marx_210227b.jpg",
+      "author": "江戸村のとくぞう",
+      "year": 2021,
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/5/50/Malcolm_Marx_210227b.jpg",
+      "status": "published"
+    },
+    {
+      "id": "lood-de-jager",
+      "name": "Луд де Ягер",
+      "source": "https://commons.wikimedia.org/wiki/File:Lood_de_Jager_2015_RWC.jpg",
+      "author": "@sebastian1906",
+      "year": 2015,
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Lood_de_Jager_2015_RWC.jpg",
+      "status": "published"
+    },
+    {
+      "id": "morne-van-den-berg",
+      "name": "Морне ван ден Берг",
+      "source": "https://commons.wikimedia.org/wiki/File:Morné_van_den_Berg_2026.jpg",
+      "author": "US Embassy Johannesburg, South Africa",
+      "year": 2026,
+      "license": "Public domain (PD-USGov-State)",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-USGov-State",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/3/39/Morn%C3%A9_van_den_Berg_2026.jpg",
+      "status": "published"
+    },
+    {
+      "id": "sacha-feinberg-mngomezulu",
+      "name": "Саша Файнберг-Мнгомезулу",
+      "source": "https://commons.wikimedia.org/wiki/File:Sacha_Mngomezulu_2022.jpg",
+      "author": "Stefano Delfrate",
+      "year": 2022,
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/1/17/Sacha_Mngomezulu_2022.jpg",
+      "status": "published"
+    },
+    {
+      "source": "https://commons.wikimedia.org/wiki/File:Hunter_Paisami_2022.jpg",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/9/92/Hunter_Paisami_2022.jpg",
+      "checked": "2026-09-27",
+      "status": "download-timeout"
+    },
+    {
+      "source": "https://commons.wikimedia.org/wiki/File:Len_Ikitau_LQ_2022.jpg",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Len_Ikitau_LQ_2022.jpg",
+      "checked": "2026-09-27",
+      "status": "download-timeout"
+    },
+    {
+      "source": "https://commons.wikimedia.org/wiki/File:Zachary_Porthen.jpg",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/1/18/Zachary_Porthen.jpg",
+      "checked": "2026-09-27",
+      "status": "download-timeout"
+    },
+    {
+      "source": "https://commons.wikimedia.org/wiki/File:Eben_Etzebeth_2022.jpg",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/6/60/Eben_Etzebeth_2022.jpg",
+      "checked": "2026-09-27",
+      "status": "download-timeout"
+    },
+    {
+      "source": "https://commons.wikimedia.org/wiki/File:Franco_Mostert_2026.jpg",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/8/88/Franco_Mostert_2026.jpg",
+      "checked": "2026-09-27",
+      "status": "download-timeout"
+    },
+    {
+      "source": "https://commons.wikimedia.org/wiki/File:Elrigh_Louw_2026.jpg",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/1/14/Elrigh_Louw_2026.jpg",
+      "checked": "2026-09-27",
+      "status": "download-timeout"
+    },
+    {
+      "source": "https://commons.wikimedia.org/wiki/File:Handré_Pollard_June_2026.jpg",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Handr%C3%A9_Pollard_June_2026.jpg",
+      "checked": "2026-09-27",
+      "status": "download-timeout"
+    },
+    {
+      "source": "https://commons.wikimedia.org/wiki/File:Ethan_Hooker_2026.jpg",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Ethan_Hooker_2026.jpg",
+      "checked": "2026-09-27",
+      "status": "download-timeout"
+    },
+    {
+      "source": "https://commons.wikimedia.org/wiki/File:Andre_Esterhuizen_2018b.jpg",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/9/92/Andre_Esterhuizen_2018b.jpg",
+      "checked": "2026-09-27",
+      "status": "download-timeout"
+    },
+    {
+      "source": "https://commons.wikimedia.org/wiki/File:Canan_Moodie_2026.jpg",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Canan_Moodie_2026.jpg",
+      "checked": "2026-09-27",
+      "status": "download-timeout"
+    },
+    {
+      "source": "https://commons.wikimedia.org/wiki/File:Edwill_van_der_Merwe_2026.jpg",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Edwill_van_der_Merwe_2026.jpg",
+      "checked": "2026-09-27",
+      "status": "download-timeout"
+    },
+    {
+      "source": "https://commons.wikimedia.org/wiki/File:Aphelele_Fassi_2026.jpg",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Aphelele_Fassi_2026.jpg",
+      "checked": "2026-09-27",
       "status": "download-timeout"
     }
   ]

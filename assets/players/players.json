@@ -210,6 +210,196 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
         "changes": "Исходное кадрирование: Arn6338. Уменьшение и перевод в WebP; производная распространяется по CC BY-SA 2.0."
       }
+    },
+    {
+      "id": "allan-alaalatoa",
+      "name": "Аллан Алаалатоа",
+      "aliases": [
+        "Аллан Алаалатоа",
+        "Allan Alaalatoa"
+      ],
+      "image": {
+        "src": "/assets/players/allan-alaalatoa.webp",
+        "width": 340,
+        "height": 440,
+        "year": 2017,
+        "author": "www.davidmolloyphotography.com",
+        "source": "https://commons.wikimedia.org/wiki/File:Allan_Alaalatoa_2017.jpg",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+        "changes": "Исходное кадрирование: Stemoc. Уменьшение и перевод в WebP."
+      }
+    },
+    {
+      "id": "ben-donaldson",
+      "name": "Бен Дональдсон",
+      "aliases": [
+        "Бен Дональдсон",
+        "Ben Donaldson"
+      ],
+      "image": {
+        "src": "/assets/players/ben-donaldson.webp",
+        "width": 306,
+        "height": 440,
+        "year": 2022,
+        "author": "Stefano Delfrate",
+        "source": "https://commons.wikimedia.org/wiki/File:Ben_Donaldson_2022_(cropped).jpg",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "changes": "Исходное кадрирование: Xirkan. Уменьшение и перевод в WebP. Производная распространяется по CC BY-SA 2.0."
+      }
+    },
+    {
+      "id": "paul-de-villiers",
+      "name": "Пол де Вильерс",
+      "aliases": [
+        "Пол де Вильерс",
+        "Paul de Villiers"
+      ],
+      "image": {
+        "src": "/assets/players/paul-de-villiers.webp",
+        "width": 339,
+        "height": 440,
+        "year": 2022,
+        "author": "Stefano Delfrate",
+        "source": "https://commons.wikimedia.org/wiki/File:Paul_de_Villiers_2022.jpg",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "changes": "Кадрирование исходного файла сохранено. Уменьшение и перевод в WebP. Производная распространяется по CC BY-SA 2.0."
+      }
+    },
+    {
+      "id": "ox-nche",
+      "name": "Окс Нче",
+      "aliases": [
+        "Окс Нче",
+        "Ox Nche"
+      ],
+      "image": {
+        "src": "/assets/players/ox-nche.webp",
+        "width": 334,
+        "height": 440,
+        "year": 2015,
+        "author": "Stefano Delfrate",
+        "source": "https://commons.wikimedia.org/wiki/File:Ox_Nché_2015.jpg",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "changes": "Исходное кадрирование: Stemoc. Уменьшение и перевод в WebP. Производная распространяется по CC BY-SA 2.0."
+      }
+    },
+    {
+      "id": "jasper-wiese",
+      "name": "Яспер Визе",
+      "aliases": [
+        "Яспер Визе",
+        "Jasper Wiese"
+      ],
+      "image": {
+        "src": "/assets/players/jasper-wiese.webp",
+        "width": 316,
+        "height": 440,
+        "year": 2026,
+        "author": "US Embassy Johannesburg, South Africa",
+        "source": "https://commons.wikimedia.org/wiki/File:Jasper_Wiese_2026.jpg",
+        "license": "Public domain (PD-USGov-State)",
+        "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-USGov-State",
+        "changes": "Кадрирование исходного файла сохранено. Уменьшение и перевод в WebP."
+      }
+    },
+    {
+      "id": "herschel-jantjies",
+      "name": "Хершел Янтьес",
+      "aliases": [
+        "Хершел Янтьес",
+        "Herschel Jantjies"
+      ],
+      "image": {
+        "src": "/assets/players/herschel-jantjies.webp",
+        "width": 316,
+        "height": 440,
+        "year": 2022,
+        "author": "Stefano Delfrate",
+        "source": "https://commons.wikimedia.org/wiki/File:Herschel_Jantjies_Zebre_2022.jpg",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "changes": "Исходное кадрирование: Stemoc. Уменьшение и перевод в WebP. Производная распространяется по CC BY-SA 2.0."
+      }
+    },
+    {
+      "id": "malcolm-marx",
+      "name": "Малкольм Маркс",
+      "aliases": [
+        "Малкольм Маркс",
+        "Malcolm Marx"
+      ],
+      "image": {
+        "src": "/assets/players/malcolm-marx.webp",
+        "width": 323,
+        "height": 440,
+        "year": 2021,
+        "author": "江戸村のとくぞう",
+        "source": "https://commons.wikimedia.org/wiki/File:Malcolm_Marx_210227b.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "changes": "Кадрирование исходного файла сохранено. Уменьшение и перевод в WebP. Производная распространяется по CC BY-SA 4.0."
+      }
+    },
+    {
+      "id": "lood-de-jager",
+      "name": "Луд де Ягер",
+      "aliases": [
+        "Луд де Ягер",
+        "Lood de Jager"
+      ],
+      "image": {
+        "src": "/assets/players/lood-de-jager.webp",
+        "width": 233,
+        "height": 440,
+        "year": 2015,
+        "author": "@sebastian1906",
+        "source": "https://commons.wikimedia.org/wiki/File:Lood_de_Jager_2015_RWC.jpg",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+        "changes": "Исходное кадрирование: Arvedui89. Уменьшение и перевод в WebP."
+      }
+    },
+    {
+      "id": "morne-van-den-berg",
+      "name": "Морне ван ден Берг",
+      "aliases": [
+        "Морне ван ден Берг",
+        "Morne van den Berg"
+      ],
+      "image": {
+        "src": "/assets/players/morne-van-den-berg.webp",
+        "width": 324,
+        "height": 440,
+        "year": 2026,
+        "author": "US Embassy Johannesburg, South Africa",
+        "source": "https://commons.wikimedia.org/wiki/File:Morné_van_den_Berg_2026.jpg",
+        "license": "Public domain (PD-USGov-State)",
+        "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-USGov-State",
+        "changes": "Кадрирование исходного файла сохранено. Уменьшение и перевод в WebP."
+      }
+    },
+    {
+      "id": "sacha-feinberg-mngomezulu",
+      "name": "Саша Файнберг-Мнгомезулу",
+      "aliases": [
+        "Саша Файнберг-Мнгомезулу",
+        "Sacha Feinberg-Mngomezulu"
+      ],
+      "image": {
+        "src": "/assets/players/sacha-feinberg-mngomezulu.webp",
+        "width": 348,
+        "height": 440,
+        "year": 2022,
+        "author": "Stefano Delfrate",
+        "source": "https://commons.wikimedia.org/wiki/File:Sacha_Mngomezulu_2022.jpg",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "changes": "Исходное кадрирование: Stemoc. Уменьшение и перевод в WebP. Производная распространяется по CC BY-SA 2.0."
+      }
     }
   ]
 }
