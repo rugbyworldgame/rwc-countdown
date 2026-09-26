@@ -190,6 +190,26 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
         "changes": "Исходное кадрирование: Stemoc. Уменьшение и перевод в WebP; производная распространяется по CC BY-SA 2.0."
       }
+    },
+    {
+      "id": "julian-montoya",
+      "name": "Хулиан Монтойя",
+      "aliases": [
+        "Хулиан Монтойя",
+        "Julián Montoya",
+        "Julian Montoya"
+      ],
+      "image": {
+        "src": "/assets/players/julian-montoya.webp",
+        "width": 384,
+        "height": 440,
+        "year": 2024,
+        "author": "Stefano Delfrate",
+        "source": "https://commons.wikimedia.org/wiki/File:Julián_Montoya_2024.jpg",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "changes": "Исходное кадрирование: Arn6338. Уменьшение и перевод в WebP; производная распространяется по CC BY-SA 2.0."
+      }
     }
   ]
 }

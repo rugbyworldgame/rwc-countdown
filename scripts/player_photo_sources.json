@@ -1,5 +1,5 @@
 {
-  "checked": "2026-09-25",
+  "checked": "2026-09-26",
   "sources": [
     {
       "id": "joe-cokanasiga",
@@ -165,6 +165,30 @@
       "year": 2013,
       "license": "CC BY 2.0",
       "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+      "status": "download-timeout"
+    },
+    {
+      "id": "julian-montoya",
+      "name": "Хулиан Монтойя",
+      "source": "https://commons.wikimedia.org/wiki/File:Julián_Montoya_2024.jpg",
+      "author": "Stefano Delfrate",
+      "year": 2024,
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Juli%C3%A1n_Montoya_2024.jpg",
+      "sourceEditor": "Arn6338",
+      "status": "published"
+    },
+    {
+      "id": "gregory-alldritt",
+      "name": "Грегори Аллдритт",
+      "source": "https://commons.wikimedia.org/wiki/File:Grégory_Alldritt_cropped_2025.jpg",
+      "author": "Stefano Delfrate",
+      "year": 2025,
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "sourceEditor": "Blackcat",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/8/80/Gr%C3%A9gory_Alldritt_cropped_2025.jpg",
       "status": "download-timeout"
     }
   ]

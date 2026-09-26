@@ -31,3 +31,5 @@
 - `ellis-genge.webp`: Stefano Delfrate, 2015; [источник](https://commons.wikimedia.org/wiki/File:Ellis_Genge_2015.jpg), [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/). Исходное кадрирование: Stemoc. Уменьшение и перевод в WebP; производная распространяется по CC BY-SA 2.0.
 
 - `louis-rees-zammit.webp`: Stefano Delfrate (stede64), 2023; [источник](https://commons.wikimedia.org/wiki/File:Louis_Rees-Zammit_March_2023.jpg), [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/). Исходное кадрирование: Stemoc. Уменьшение и перевод в WebP; производная распространяется по CC BY-SA 2.0.
+
+- `julian-montoya.webp`: Stefano Delfrate, 2024; [источник](https://commons.wikimedia.org/wiki/File:Julián_Montoya_2024.jpg), [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/). Исходное кадрирование: Arn6338. Уменьшение до 384×440 и перевод в WebP; производная распространяется по CC BY-SA 2.0.
