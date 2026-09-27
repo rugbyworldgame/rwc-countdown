@@ -3,7 +3,7 @@ const lineups = [...document.querySelectorAll('.lineups')];
 const normalize = name => name.toLowerCase().replace(/ё/g,'е').replace(/\s*[—–]\s*капитан\s*$/,'').trim().replace(/\s+/g,' ');
 const el = (tag, text) => { const node=document.createElement(tag); if(text) node.textContent=text; return node; };
 async function start() {
-  const response=await fetch('/assets/players/players.json');
+  const response=await fetch('/assets/players/players.json', {cache:'no-cache'});
   if(!response.ok) return;
   const data=await response.json(), aliases=new Map(), ids=new Map();
   for(const player of data.players || []) {
