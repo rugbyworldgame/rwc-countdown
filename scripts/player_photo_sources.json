@@ -372,6 +372,102 @@
       "download": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Aphelele_Fassi_2026.jpg",
       "checked": "2026-09-27",
       "status": "download-timeout"
+    },
+    {
+      "id": "freddie-steward",
+      "name": "Фредди Стюард",
+      "source": "https://commons.wikimedia.org/wiki/File:Freddie_Steward_2019.jpg",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Freddie_Steward_2019.jpg",
+      "author": "Stefano Delfrate",
+      "year": 2019,
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "sourceEditor": "Stemoc",
+      "status": "published"
+    },
+    {
+      "id": "maro-itoje",
+      "name": "Маро Итодже",
+      "source": "https://commons.wikimedia.org/wiki/File:Maro_Itoje_2015-10-09.jpg",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/2/24/Maro_Itoje_2015-10-09.jpg",
+      "author": "Daxipedia",
+      "year": 2015,
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "sourceEditor": "",
+      "status": "published"
+    },
+    {
+      "id": "mako-vunipola",
+      "name": "Мако Вунипола",
+      "source": "https://commons.wikimedia.org/wiki/File:Mako_Vunipola_2013.jpg",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Mako_Vunipola_2013.jpg",
+      "author": "Charlie from UK",
+      "year": 2013,
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+      "sourceEditor": "Stemoc / Cropbot",
+      "status": "published"
+    },
+    {
+      "id": "tomos-williams",
+      "name": "Томос Уильямс",
+      "source": "https://commons.wikimedia.org/wiki/File:Tomos_Williams_2015.jpg",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/2/25/Tomos_Williams_2015.jpg",
+      "author": "Stefano Delfrate",
+      "year": 2015,
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "sourceEditor": "Stemoc",
+      "status": "published"
+    },
+    {
+      "id": "elliot-daly",
+      "name": "Эллиот Дейли",
+      "source": "https://commons.wikimedia.org/wiki/File:Training_%28i%29_%2832909158632%29_%28Elliot_Daly_cropped%29.jpg",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Training_%28i%29_%2832909158632%29_%28Elliot_Daly_cropped%29.jpg",
+      "author": "steven powell",
+      "year": 2017,
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+      "sourceEditor": "Gaia Octavia Agrippa",
+      "status": "published"
+    },
+    {
+      "id": "aaron-wainwright",
+      "name": "Аарон Уэйнрайт",
+      "source": "https://commons.wikimedia.org/wiki/File:Aaron_Wainwright_20250419_173900.jpg",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Aaron_Wainwright_20250419_173900.jpg",
+      "author": "Bearas",
+      "year": 2025,
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sourceEditor": "",
+      "status": "published"
+    },
+    {
+      "id": "jack-van-poortvliet",
+      "name": "Джек ван Портвлит",
+      "source": "https://commons.wikimedia.org/wiki/File:Guinness_6_Nazioni_2026-_Italia_vs_Inghilterra-631_%28cropped%29.jpg",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Guinness_6_Nazioni_2026-_Italia_vs_Inghilterra-631_%28cropped%29.jpg",
+      "author": "Stefano Delfrate",
+      "year": 2026,
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sourceEditor": "MarioBayo",
+      "status": "published"
+    },
+    {
+      "id": "tommy-reffell",
+      "name": "Томми Реффелл",
+      "source": "https://commons.wikimedia.org/wiki/File:Tommy_Reffell_2023.jpg",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/6/60/Tommy_Reffell_2023.jpg",
+      "author": "Stefano Delfrate (stede64)",
+      "year": 2023,
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "sourceEditor": "Stemoc",
+      "status": "published"
     }
   ]
 }

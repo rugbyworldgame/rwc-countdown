@@ -400,6 +400,158 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
         "changes": "Исходное кадрирование: Stemoc. Уменьшение и перевод в WebP. Производная распространяется по CC BY-SA 2.0."
       }
+    },
+    {
+      "id": "freddie-steward",
+      "name": "Фредди Стюард",
+      "aliases": [
+        "Фредди Стюард",
+        "Freddie Steward"
+      ],
+      "image": {
+        "src": "/assets/players/freddie-steward.webp",
+        "width": 315,
+        "height": 440,
+        "year": 2019,
+        "author": "Stefano Delfrate",
+        "source": "https://commons.wikimedia.org/wiki/File:Freddie_Steward_2019.jpg",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "changes": "Исходное кадрирование: Stemoc. Уменьшение и перевод в WebP. Производная также CC BY-SA 2.0."
+      }
+    },
+    {
+      "id": "maro-itoje",
+      "name": "Маро Итодже",
+      "aliases": [
+        "Маро Итодже",
+        "Maro Itoje"
+      ],
+      "image": {
+        "src": "/assets/players/maro-itoje.webp",
+        "width": 330,
+        "height": 440,
+        "year": 2015,
+        "author": "Daxipedia",
+        "source": "https://commons.wikimedia.org/wiki/File:Maro_Itoje_2015-10-09.jpg",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "changes": "Уменьшение и перевод в WebP. Производная также CC BY-SA 3.0."
+      }
+    },
+    {
+      "id": "mako-vunipola",
+      "name": "Мако Вунипола",
+      "aliases": [
+        "Мако Вунипола",
+        "Mako Vunipola"
+      ],
+      "image": {
+        "src": "/assets/players/mako-vunipola.webp",
+        "width": 295,
+        "height": 440,
+        "year": 2013,
+        "author": "Charlie from UK",
+        "source": "https://commons.wikimedia.org/wiki/File:Mako_Vunipola_2013.jpg",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+        "changes": "Исходное кадрирование: Stemoc / Cropbot. Уменьшение и перевод в WebP."
+      }
+    },
+    {
+      "id": "tomos-williams",
+      "name": "Томос Уильямс",
+      "aliases": [
+        "Томос Уильямс",
+        "Tomos Williams"
+      ],
+      "image": {
+        "src": "/assets/players/tomos-williams.webp",
+        "width": 268,
+        "height": 440,
+        "year": 2015,
+        "author": "Stefano Delfrate",
+        "source": "https://commons.wikimedia.org/wiki/File:Tomos_Williams_2015.jpg",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "changes": "Исходное кадрирование: Stemoc. Уменьшение и перевод в WebP. Производная также CC BY-SA 2.0."
+      }
+    },
+    {
+      "id": "elliot-daly",
+      "name": "Эллиот Дейли",
+      "aliases": [
+        "Эллиот Дейли",
+        "Elliot Daly"
+      ],
+      "image": {
+        "src": "/assets/players/elliot-daly.webp",
+        "width": 400,
+        "height": 410,
+        "year": 2017,
+        "author": "steven powell",
+        "source": "https://commons.wikimedia.org/wiki/File:Training_%28i%29_%2832909158632%29_%28Elliot_Daly_cropped%29.jpg",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+        "changes": "Исходное кадрирование: Gaia Octavia Agrippa. Уменьшение и перевод в WebP."
+      }
+    },
+    {
+      "id": "aaron-wainwright",
+      "name": "Аарон Уэйнрайт",
+      "aliases": [
+        "Аарон Уэйнрайт",
+        "Aaron Wainwright"
+      ],
+      "image": {
+        "src": "/assets/players/aaron-wainwright.webp",
+        "width": 221,
+        "height": 440,
+        "year": 2025,
+        "author": "Bearas",
+        "source": "https://commons.wikimedia.org/wiki/File:Aaron_Wainwright_20250419_173900.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "changes": "Уменьшение и перевод в WebP. Производная также CC BY-SA 4.0."
+      }
+    },
+    {
+      "id": "jack-van-poortvliet",
+      "name": "Джек ван Портвлит",
+      "aliases": [
+        "Джек ван Портвлит",
+        "Jack van Poortvliet"
+      ],
+      "image": {
+        "src": "/assets/players/jack-van-poortvliet.webp",
+        "width": 319,
+        "height": 440,
+        "year": 2026,
+        "author": "Stefano Delfrate",
+        "source": "https://commons.wikimedia.org/wiki/File:Guinness_6_Nazioni_2026-_Italia_vs_Inghilterra-631_%28cropped%29.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "changes": "Исходное кадрирование: MarioBayo. Уменьшение и перевод в WebP. Производная также CC BY-SA 4.0."
+      }
+    },
+    {
+      "id": "tommy-reffell",
+      "name": "Томми Реффелл",
+      "aliases": [
+        "Томми Реффелл",
+        "Tommy Reffell"
+      ],
+      "image": {
+        "src": "/assets/players/tommy-reffell.webp",
+        "width": 336,
+        "height": 440,
+        "year": 2023,
+        "author": "Stefano Delfrate (stede64)",
+        "source": "https://commons.wikimedia.org/wiki/File:Tommy_Reffell_2023.jpg",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "changes": "Исходное кадрирование: Stemoc. Уменьшение и перевод в WebP. Производная также CC BY-SA 2.0."
+      }
     }
   ]
 }
