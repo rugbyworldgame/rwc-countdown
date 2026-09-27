@@ -468,6 +468,111 @@
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
       "sourceEditor": "Stemoc",
       "status": "published"
+    },
+    {
+      "id": "thomas-ramos",
+      "name": "Тома Рамос",
+      "source": "https://commons.wikimedia.org/wiki/File:Thomas_Ramos_2018.jpg",
+      "author": "Patrick S.",
+      "year": 2018,
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "status": "published"
+    },
+    {
+      "id": "romain-ntamack",
+      "name": "Ромен Нтамак",
+      "source": "https://commons.wikimedia.org/wiki/File:Romain_Ntamack.jpg",
+      "author": "LightPrimeape",
+      "year": 2019,
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "status": "published"
+    },
+    {
+      "id": "antoine-dupont",
+      "name": "Антуан Дюпон",
+      "source": "https://commons.wikimedia.org/wiki/File:Antoine_Dupont_February_2023.jpg",
+      "author": "Stefano Delfrate (stede64)",
+      "year": 2023,
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "status": "published"
+    },
+    {
+      "id": "julien-marchand",
+      "name": "Жюльен Маршан",
+      "source": "https://commons.wikimedia.org/wiki/File:JulienMarchand2018%28cropped%29.jpg",
+      "author": "Helene Brasseur",
+      "year": 2018,
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+      "status": "published"
+    },
+    {
+      "id": "ange-capuozzo",
+      "name": "Анж Капуоццо",
+      "source": "https://commons.wikimedia.org/wiki/File:Ange_Capuozzo_after_Italy_v._South_Africa%2C_2022_%28cropped%29.jpg",
+      "author": "BouncyCactus",
+      "year": 2022,
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "status": "published"
+    },
+    {
+      "id": "adam-hastings",
+      "name": "Адам Хастингс",
+      "source": "https://commons.wikimedia.org/wiki/File:Adam_Hastings_2020_Six_Nations.jpg",
+      "author": "Stefano Delfrate",
+      "year": 2020,
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "status": "published"
+    },
+    {
+      "id": "cyril-baille",
+      "name": "Сириль Бай",
+      "source": "https://commons.wikimedia.org/wiki/File:Cyril_Baille_cropped.jpg",
+      "author": "Pierre Selim",
+      "year": 2013,
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "status": "published"
+    },
+    {
+      "id": "teddy-thomas",
+      "name": "Тедди Тома",
+      "source": "https://commons.wikimedia.org/wiki/File:TEDDY_THOMAS.jpg",
+      "author": "Victor1765",
+      "year": 2022,
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "status": "published"
+    },
+    {
+      "id": "yacouba-camara",
+      "name": "Якуба Камара",
+      "source": "https://commons.wikimedia.org/wiki/File:Yacouba_Camara_cropped.jpg",
+      "author": "Pierre Selim",
+      "year": 2013,
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "status": "published"
+    },
+    {
+      "id": "stuart-hogg",
+      "name": "Стюарт Хогг",
+      "source": "https://commons.wikimedia.org/wiki/File:Stuart_Hogg_2020_%28cropped%29.jpg",
+      "author": "Stefano Delfrate",
+      "year": 2020,
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "status": "published"
+    },
+    {
+      "id": "thibaud-flament",
+      "status": "download-unavailable",
+      "source": "https://commons.wikimedia.org/wiki/File:Flament20236Nations%28cropped%29.jpg"
     }
   ]
 }

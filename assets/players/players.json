@@ -552,6 +552,196 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
         "changes": "Исходное кадрирование: Stemoc. Уменьшение и перевод в WebP. Производная также CC BY-SA 2.0."
       }
+    },
+    {
+      "id": "thomas-ramos",
+      "name": "Тома Рамос",
+      "aliases": [
+        "Тома Рамос",
+        "Thomas Ramos"
+      ],
+      "image": {
+        "src": "/assets/players/thomas-ramos.webp",
+        "width": 342,
+        "height": 440,
+        "year": 2018,
+        "author": "Patrick S.",
+        "source": "https://commons.wikimedia.org/wiki/File:Thomas_Ramos_2018.jpg",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "changes": "Исходное кадрирование: Stemoc. Уменьшение и перевод в WebP. Производная распространяется по CC BY-SA 2.0."
+      }
+    },
+    {
+      "id": "romain-ntamack",
+      "name": "Ромен Нтамак",
+      "aliases": [
+        "Ромен Нтамак",
+        "Romain Ntamack"
+      ],
+      "image": {
+        "src": "/assets/players/romain-ntamack.webp",
+        "width": 248,
+        "height": 440,
+        "year": 2019,
+        "author": "LightPrimeape",
+        "source": "https://commons.wikimedia.org/wiki/File:Romain_Ntamack.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "changes": "Кадрирование исходного файла сохранено. Уменьшение и перевод в WebP. Производная распространяется по CC BY-SA 4.0."
+      }
+    },
+    {
+      "id": "antoine-dupont",
+      "name": "Антуан Дюпон",
+      "aliases": [
+        "Антуан Дюпон",
+        "Antoine Dupont"
+      ],
+      "image": {
+        "src": "/assets/players/antoine-dupont.webp",
+        "width": 326,
+        "height": 440,
+        "year": 2023,
+        "author": "Stefano Delfrate (stede64)",
+        "source": "https://commons.wikimedia.org/wiki/File:Antoine_Dupont_February_2023.jpg",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "changes": "Кадрирование исходного файла сохранено. Уменьшение и перевод в WebP. Производная распространяется по CC BY-SA 2.0."
+      }
+    },
+    {
+      "id": "julien-marchand",
+      "name": "Жюльен Маршан",
+      "aliases": [
+        "Жюльен Маршан",
+        "Julien Marchand"
+      ],
+      "image": {
+        "src": "/assets/players/julien-marchand.webp",
+        "width": 313,
+        "height": 440,
+        "year": 2018,
+        "author": "Helene Brasseur",
+        "source": "https://commons.wikimedia.org/wiki/File:JulienMarchand2018%28cropped%29.jpg",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+        "changes": "Кадрирование исходного файла сохранено. Уменьшение и перевод в WebP."
+      }
+    },
+    {
+      "id": "ange-capuozzo",
+      "name": "Анж Капуоццо",
+      "aliases": [
+        "Анж Капуоццо",
+        "Ange Capuozzo"
+      ],
+      "image": {
+        "src": "/assets/players/ange-capuozzo.webp",
+        "width": 343,
+        "height": 440,
+        "year": 2022,
+        "author": "BouncyCactus",
+        "source": "https://commons.wikimedia.org/wiki/File:Ange_Capuozzo_after_Italy_v._South_Africa%2C_2022_%28cropped%29.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "changes": "Кадрирование исходного файла сохранено. Уменьшение и перевод в WebP. Производная распространяется по CC BY-SA 4.0."
+      }
+    },
+    {
+      "id": "adam-hastings",
+      "name": "Адам Хастингс",
+      "aliases": [
+        "Адам Хастингс",
+        "Adam Hastings"
+      ],
+      "image": {
+        "src": "/assets/players/adam-hastings.webp",
+        "width": 316,
+        "height": 440,
+        "year": 2020,
+        "author": "Stefano Delfrate",
+        "source": "https://commons.wikimedia.org/wiki/File:Adam_Hastings_2020_Six_Nations.jpg",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "changes": "Кадрирование исходного файла сохранено. Уменьшение и перевод в WebP. Производная распространяется по CC BY-SA 2.0."
+      }
+    },
+    {
+      "id": "cyril-baille",
+      "name": "Сириль Бай",
+      "aliases": [
+        "Сириль Бай",
+        "Cyril Baille"
+      ],
+      "image": {
+        "src": "/assets/players/cyril-baille.webp",
+        "width": 293,
+        "height": 440,
+        "year": 2013,
+        "author": "Pierre Selim",
+        "source": "https://commons.wikimedia.org/wiki/File:Cyril_Baille_cropped.jpg",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "changes": "Исходное кадрирование: Blackcat. Уменьшение и перевод в WebP. Производная распространяется по CC BY-SA 3.0."
+      }
+    },
+    {
+      "id": "teddy-thomas",
+      "name": "Тедди Тома",
+      "aliases": [
+        "Тедди Тома",
+        "Teddy Thomas"
+      ],
+      "image": {
+        "src": "/assets/players/teddy-thomas.webp",
+        "width": 293,
+        "height": 440,
+        "year": 2022,
+        "author": "Victor1765",
+        "source": "https://commons.wikimedia.org/wiki/File:TEDDY_THOMAS.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "changes": "Кадрирование исходного файла сохранено. Уменьшение и перевод в WebP. Производная распространяется по CC BY-SA 4.0."
+      }
+    },
+    {
+      "id": "yacouba-camara",
+      "name": "Якуба Камара",
+      "aliases": [
+        "Якуба Камара",
+        "Yacouba Camara"
+      ],
+      "image": {
+        "src": "/assets/players/yacouba-camara.webp",
+        "width": 367,
+        "height": 440,
+        "year": 2013,
+        "author": "Pierre Selim",
+        "source": "https://commons.wikimedia.org/wiki/File:Yacouba_Camara_cropped.jpg",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "changes": "Исходное кадрирование: Blackcat. Уменьшение и перевод в WebP. Производная распространяется по CC BY-SA 3.0."
+      }
+    },
+    {
+      "id": "stuart-hogg",
+      "name": "Стюарт Хогг",
+      "aliases": [
+        "Стюарт Хогг",
+        "Stuart Hogg"
+      ],
+      "image": {
+        "src": "/assets/players/stuart-hogg.webp",
+        "width": 331,
+        "height": 440,
+        "year": 2020,
+        "author": "Stefano Delfrate",
+        "source": "https://commons.wikimedia.org/wiki/File:Stuart_Hogg_2020_%28cropped%29.jpg",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "changes": "Кадрирование исходного файла сохранено. Уменьшение и перевод в WebP. Производная распространяется по CC BY-SA 2.0."
+      }
     }
   ]
 }
