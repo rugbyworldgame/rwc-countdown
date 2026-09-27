@@ -1,3 +1,33 @@
+// Shared page controls: loaded once on every page that uses the site menu.
+(function initPageControls() {
+  if (document.getElementById('back-to-top')) return;
+  const css = document.createElement('link');
+  css.rel = 'stylesheet'; css.href = '/assets/css/page-controls.css?v=20260927';
+  document.head.append(css);
+  const button = document.createElement('button');
+  button.id = 'back-to-top'; button.type = 'button'; button.hidden = true;
+  button.setAttribute('aria-label', 'Вернуться к началу страницы');
+  button.title = 'Наверх';
+  button.innerHTML = '<span aria-hidden="true">↑</span><span class="back-to-top-label">Наверх</span>';
+  document.body.append(button);
+  let scheduled = false;
+  function update() {
+    scheduled = false;
+    button.hidden = window.scrollY < 500 || !!document.fullscreenElement;
+  }
+  window.addEventListener('scroll', () => {
+    if (!scheduled) { scheduled = true; requestAnimationFrame(update); }
+  }, {passive:true});
+  document.addEventListener('fullscreenchange', update);
+  button.addEventListener('click', () => {
+    // Return keyboard focus as well as the viewport; do not change the page URL.
+    const target = document.querySelector('.skip-link, .brand, header a');
+    target?.focus({preventScroll:true});
+    window.scrollTo({top:0, behavior:matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'});
+  });
+  update();
+})();
+
 // Fallback for future pages using the shared menu. The counter guards duplicate execution.
 if (!document.querySelector('script[src^="/assets/js/analytics.js"]')) {
   const analytics = document.createElement('script'); analytics.src = '/assets/js/analytics.js?v=20260926'; analytics.async = true; document.head.append(analytics);

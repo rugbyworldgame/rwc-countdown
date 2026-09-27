@@ -1,0 +1,12 @@
+/* Shared, unobtrusive navigation control; loaded by menu.js. */
+#back-to-top{position:fixed;right:max(18px,env(safe-area-inset-right));bottom:calc(18px + env(safe-area-inset-bottom));z-index:40;display:flex;align-items:center;justify-content:center;gap:8px;min-width:48px;min-height:48px;padding:10px 15px;border:1px solid #d9ad5b;border-radius:14px;background:#15201f;color:#f5d493;font:700 14px/1.2 Manrope,Arial,sans-serif;box-shadow:0 4px 18px #0008;cursor:pointer;touch-action:manipulation}
+#back-to-top[hidden]{display:none}
+#back-to-top>span:first-child{font:26px/1 Arial,sans-serif}
+#back-to-top:focus-visible{outline:3px solid #fff;outline-offset:4px}
+@media(hover:hover){#back-to-top:hover{background:#294035;color:#fff}}
+@media(max-width:620px){#back-to-top{right:max(12px,env(safe-area-inset-right));bottom:calc(12px + env(safe-area-inset-bottom));width:48px;height:48px;padding:0;border-radius:50%}.back-to-top-label{display:none}}
+/* Inline editorial/source links stay recognisable without hover or colour alone. */
+.match-content p a,.match-stream p a{color:#f0c978;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:.22em;text-decoration-skip-ink:auto;overflow-wrap:anywhere}
+.match-content p a:visited,.match-stream p a:visited{color:#dec19a}
+.match-content p a:focus-visible,.match-stream p a:focus-visible{outline:2px solid #f0c978;outline-offset:4px;border-radius:2px}
+@media(hover:hover){.match-content p a:hover,.match-stream p a:hover{color:#fff0cc;text-decoration-thickness:2px}}
