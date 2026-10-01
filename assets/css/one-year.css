@@ -1,0 +1,22 @@
+/* Fully scoped: removing the treatment class restores the original hero. */
+.one-year-hero{padding:48px 0 54px;background:radial-gradient(ellipse at 74% 40%,#183e29 0,transparent 55%),#07140e}
+.one-year-hero .hero-grid{gap:52px;grid-template-columns:1.15fr .85fr}
+.one-year-hero .hero-copy>[hidden]{display:none!important}
+.one-year-copy{position:relative}
+.one-year-eyebrow{color:#c9f64b;font-size:11px;letter-spacing:.15em;text-transform:uppercase;font-weight:800}
+.one-year-copy h1{font-size:clamp(38px,4.3vw,64px);line-height:1.04;letter-spacing:-.02em;margin:18px 0 8px}
+.one-year-number{display:flex;align-items:baseline;gap:18px;color:#c9f64b}
+.one-year-number strong{font:600 clamp(112px,13vw,182px)/1 Oswald,sans-serif;letter-spacing:-.055em}
+.one-year-number span{font:500 25px Oswald,sans-serif;text-transform:uppercase;letter-spacing:.1em}
+.one-year-lead{font-size:17px;color:#d8e4da;max-width:400px;margin:10px 0 20px;line-height:1.5}
+.one-year-fixture{border-left:2px solid #c9f64b;padding-left:16px;margin:0;display:grid;gap:5px}
+.one-year-fixture span{font-size:13px;color:#b7c8bb}.one-year-fixture b{font-size:20px;color:#f4f7f2}
+.one-year-end{font-size:13px;color:#b7c8bb;margin:18px 0 0}
+.one-year-hero .hero-actions{margin-top:22px;gap:10px}
+.one-year-hero .ball-mark{color:#c9f64b;border-color:#c9f64b}
+.one-year-strip{position:static;background:#102819;border-bottom:1px solid #36522a;color:#e4efdd}
+.one-year-strip .shell{display:flex;align-items:center;justify-content:center;gap:14px;padding-block:9px}
+.one-year-strip span{font:600 23px/1 Oswald,sans-serif;color:#c9f64b}
+.one-year-strip p{font:600 13px/1.4 Manrope,sans-serif;margin:0}
+@media(max-width:900px){.one-year-hero .hero-grid{grid-template-columns:1fr;gap:38px}.one-year-hero{padding:34px 0 42px}.one-year-hero .countdown-panel{margin-top:15px}}
+@media(max-width:620px){.one-year-copy h1{font-size:40px}.one-year-number strong{font-size:128px}.one-year-number span{font-size:22px}.one-year-lead{font-size:15px}.one-year-fixture b{font-size:18px}.one-year-eyebrow{font-size:10px}.one-year-strip .shell{gap:10px;padding-block:8px}.one-year-strip p{font-size:11px}.one-year-strip span{font-size:21px}}

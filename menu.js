@@ -1,3 +1,8 @@
+// Calendar-bounded campaign; no campaign assets are requested after expiry.
+if (Date.now() < Date.parse('2026-10-01T21:00:00Z')) {
+  import('/assets/js/one-year.js?v=20261001').catch(() => {});
+}
+
 // Shared page controls: loaded once on every page that uses the site menu.
 (function initPageControls() {
   if (document.getElementById('back-to-top')) return;
