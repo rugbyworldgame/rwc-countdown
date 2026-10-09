@@ -40,7 +40,7 @@ if (!document.querySelector('script[src^="/assets/js/analytics.js"]')) {
 // Shared enhancement for current and future match pages; no image downloads here.
 if (document.querySelector('.lineups')) {
   const css = document.createElement('link'); css.rel = 'stylesheet'; css.href = '/assets/css/player-cards.css'; document.head.append(css);
-  import('/assets/js/player-cards.js?v=20260927-registry').catch(() => {});
+  import('/assets/js/player-cards.js?v=20261010-no-hint').catch(() => {});
 }
 
 (async function () {

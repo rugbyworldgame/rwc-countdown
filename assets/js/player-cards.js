@@ -63,7 +63,6 @@ async function start() {
   const leave=()=>{clearTimeout(leaveTimer);leaveTimer=setTimeout(()=>{if(!pinned&&!box.matches(':hover')&&!box.contains(document.activeElement)&&!active?.matches(':hover'))close();},180);};
   box.addEventListener('pointerenter',()=>clearTimeout(leaveTimer));box.addEventListener('pointerleave',leave);
   for(const section of lineups) {
-    let count=0;
     for(const item of section.querySelectorAll('.lineup-card li')) {
       if(item.querySelector('a,button'))continue;
       const player=item.dataset.playerId?ids.get(item.dataset.playerId):aliases.get(normalize(item.textContent));
@@ -74,9 +73,8 @@ async function start() {
       button.addEventListener('pointerleave',leave);
       button.addEventListener('click',()=>{if(active===button&&pinned)close();else open(button,player,true);});
       button.addEventListener('keydown',event=>{if(event.key==='ArrowDown'){event.preventDefault();open(button,player,true).then(()=>{if(active===button&&!box.hidden)box.querySelector('button').focus();});}});
-      item.replaceChildren(button);if(!buttons.has(player.id))buttons.set(player.id,[]);buttons.get(player.id).push(button);count++;
+      item.replaceChildren(button);if(!buttons.has(player.id))buttons.set(player.id,[]);buttons.get(player.id).push(button);
     }
-    if(count){const hint=el('p','Подчёркнутые имена: наведите курсор или нажмите, чтобы увидеть фото.');hint.className='player-photo-hint';section.querySelector('.lineup-grid')?.before(hint);}
   }
   document.addEventListener('pointerdown',event=>{if(active&&!active.contains(event.target)&&!box.contains(event.target))close();});
   document.addEventListener('keydown',event=>{if(event.key==='Escape'&&active){event.preventDefault();close(true);}});
