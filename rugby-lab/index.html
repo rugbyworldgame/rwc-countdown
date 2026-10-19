@@ -11,8 +11,8 @@
 <section class="card donate"><h2>ПОДДЕРЖАТЬ РЕГБИЙНУЮ ЛАБОРАТОРИЮ</h2><p>Регбийная лаборатория создана по частной инициативе и развивается за счёт личных вложений и поддержки болельщиков.</p><p>По мере приближения Кубка мира по регби 2027 года мы будем добавлять новые интерактивные разборы, совершенствовать трёхмерные модели и постепенно переходить к реконструкциям реальных игровых ситуаций.</p><p>Если вам нравится проект, поддержите его развитие. Любая сумма помогает создавать новые материалы.</p><button disabled title="Ссылка будет добавлена владельцем">Поддержать проект — скоро</button><p class="note">Все материалы бесплатны. Ссылка для добровольной поддержки пока не предоставлена.</p></section></div>
 <p class="note">Управление камерой: перетаскивание для поворота, колесо мыши или жест двумя пальцами для приближения. Для первой версии используется внешняя загрузка Three.js; перед публикацией библиотеку можно разместить локально.</p></main>
 <script type="module">
-import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js';
-import {OrbitControls} from 'https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/controls/OrbitControls.js';
+import * as THREE from 'https://esm.sh/three@0.170.0';
+import {OrbitControls} from 'https://esm.sh/three@0.170.0/examples/jsm/controls/OrbitControls.js';
 const stage=document.getElementById('stage'),error=document.getElementById('error');
 let renderer;
 try{renderer=new THREE.WebGLRenderer({antialias:true,alpha:false});}catch(e){error.style.display='grid';throw e}
