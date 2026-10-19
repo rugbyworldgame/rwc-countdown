@@ -9,7 +9,7 @@ test('phase boundaries and backwards scrubbing', () => {
   assert.deepEqual(phaseAt('carrier',3.8), {start:3.8,name:'tackle'});
   assert.equal(phaseAt('carrier',12).name,'ground');
   assert.equal(phaseAt('carrier',0).name,'run');
-  assert.equal(phaseAt('tackler',5.5).name,'release');
+  assert.equal(phaseAt('tackler',5.6).name,'release');
   assert.equal(phaseAt('support',9).name,'contest');
 });
 test('clips start at phase boundary; tackle does not repeat', () => {

@@ -3,9 +3,9 @@ export function isLocalModelPath(file) {
   return typeof file === 'string' && /^assets\/models\/[a-z0-9_-]+\.glb$/i.test(file);
 }
 export function phaseAt(role, t) {
-  const phases = role === 'carrier' ? [[0, 'run'], [3.8, 'tackle'], [6.1, 'ground']]
-    : role === 'tackler' ? [[0, 'run'], [3.2, 'tackle'], [5.5, 'release']]
-    : [[0, 'idle'], [6, 'run'], [9, 'contest']];
+  const phases = role === 'carrier' ? [[0, 'run'], [3.8, 'tackle'], [5.6, 'ground']]
+    : role === 'tackler' ? [[0, 'run'], [3.1, 'tackle'], [5.6, 'release']]
+    : [[0, 'idle'], [6.4, 'run'], [8.4, 'contest']];
   const [start, name] = phases.filter(([start]) => start <= t).at(-1) || phases[0];
   return {start, name};
 }
