@@ -82,7 +82,7 @@ async function loadVisualModels(){
    actor.clips=gltf.animations;
    actor.actions={};
    if(actor.mixer){
-    for(const clip of actor.clips){const action=actor.mixer.clipAction(clip);action.play();action.paused=true;actor.actions[clip.name.toLowerCase()]=action}
+    for(const clip of actor.clips){const action=actor.mixer.clipAction(clip);action.play();action.paused=false;actor.actions[clip.name.toLowerCase()]=action}
    }
    actor.pelvis.visible=false;
    return true;
