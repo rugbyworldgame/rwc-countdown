@@ -24,16 +24,58 @@ scene.add(new THREE.HemisphereLight(0xd9f4ff,0x284b35,2));const sun=new THREE.Di
 const field=new THREE.Mesh(new THREE.PlaneGeometry(36,24),new THREE.MeshStandardMaterial({color:0x20563e,roughness:1}));field.rotation.x=-Math.PI/2;field.receiveShadow=true;scene.add(field);
 const lineMat=new THREE.MeshBasicMaterial({color:0xc3e4d8});for(let x=-16;x<=16;x+=4){const line=new THREE.Mesh(new THREE.PlaneGeometry(.055,22),lineMat);line.rotation.x=-Math.PI/2;line.position.set(x,.012,0);scene.add(line)}
 function part(parent,geometry,color,x,y,z){const mesh=new THREE.Mesh(geometry,new THREE.MeshStandardMaterial({color,roughness:.75}));mesh.position.set(x,y,z);mesh.castShadow=true;parent.add(mesh);return mesh}
-function player(shirt,x,z){const root=new THREE.Group();scene.add(root);root.position.set(x,0,z);const torso=part(root,new THREE.BoxGeometry(.7,.78,.38),shirt,0,1.36,0);part(root,new THREE.SphereGeometry(.22,12,10),0xe4b58d,0,2.04,0);part(root,new THREE.BoxGeometry(.68,.3,.4),0x15202b,0,.82,0);const limbs=[];for(const s of [-1,1]){const arm=new THREE.Group();arm.position.set(s*.45,1.69,0);root.add(arm);part(arm,new THREE.CapsuleGeometry(.115,.49,4,8),0xe4b58d,0,-.39,0);limbs.push(arm);const leg=new THREE.Group();leg.position.set(s*.2,.7,0);root.add(leg);part(leg,new THREE.CapsuleGeometry(.145,.54,4,8),0x263443,0,-.43,0);limbs.push(leg)}return{root,torso,limbs}}
+// Иерархический процедурный риг: каждый сустав имеет собственную точку вращения.
+function player(shirt,x,z){
+ const root=new THREE.Group();scene.add(root);root.position.set(x,0,z);
+ const pelvis=new THREE.Group();pelvis.position.y=1.05;root.add(pelvis);
+ part(pelvis,new THREE.BoxGeometry(.61,.35,.42),0x1c2a36,0,-.06,0);
+ const spine=new THREE.Group();spine.position.y=.19;pelvis.add(spine);
+ const torso=part(spine,new THREE.BoxGeometry(.78,.75,.43),shirt,0,.38,0);
+ const neck=new THREE.Group();neck.position.y=.82;spine.add(neck);
+ part(neck,new THREE.CylinderGeometry(.11,.12,.16,10),0xe4b58d,0,.06,0);
+ part(neck,new THREE.SphereGeometry(.235,16,12),0xe4b58d,0,.36,0);
+ const arms=[],elbows=[],legs=[],knees=[];
+ for(const s of [-1,1]){
+  const shoulder=new THREE.Group();shoulder.position.set(s*.48,.71,0);spine.add(shoulder);
+  part(shoulder,new THREE.CapsuleGeometry(.125,.38,5,10),shirt,0,-.3,0);
+  const elbow=new THREE.Group();elbow.position.y=-.59;shoulder.add(elbow);
+  part(elbow,new THREE.CapsuleGeometry(.095,.31,5,10),0xe4b58d,0,-.23,0);
+  part(elbow,new THREE.SphereGeometry(.11,10,8),0xe4b58d,0,-.48,0);
+  arms.push(shoulder);elbows.push(elbow);
+  const hip=new THREE.Group();hip.position.set(s*.19,-.19,0);pelvis.add(hip);
+  part(hip,new THREE.CapsuleGeometry(.16,.4,5,10),0x25384a,0,-.34,0);
+  const knee=new THREE.Group();knee.position.y=-.62;hip.add(knee);
+  part(knee,new THREE.CapsuleGeometry(.12,.37,5,10),0x23313e,0,-.29,0);
+  part(knee,new THREE.BoxGeometry(.24,.13,.43),0x101b24,0,-.62,.13);
+  legs.push(hip);knees.push(knee);
+ }
+ return {root,pelvis,spine,neck,torso,arms,elbows,legs,knees};
+}
 const carrier=player(0xf3f4f5,-5,0),tackler=player(0xc43f43,-.9,-1.1),support=player(0xc43f43,4,1.1);
-const ball=new THREE.Group();scene.add(ball);const ballMesh=part(ball,new THREE.SphereGeometry(1,16,12),0xe7d2a6,0,0,0);ballMesh.scale.set(.3,.18,.18);
+const ball=new THREE.Group();scene.add(ball);
+const ballMesh=part(ball,new THREE.SphereGeometry(1,24,16),0xe7d2a6,0,0,0);ballMesh.scale.set(.31,.19,.19);
+const seam=new THREE.Mesh(new THREE.TorusGeometry(.185,.012,5,30),new THREE.MeshBasicMaterial({color:0x5e4633}));seam.rotation.y=Math.PI/2;ball.add(seam);
 const seek=document.getElementById('seek'),play=document.getElementById('play'),timeEl=document.getElementById('time'),explanation=document.getElementById('explanation');let t=0,playing=false,speed=1,previous=performance.now(),review=false,detail=false;
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v)),smooth=v=>{v=clamp(v,0,1);return v*v*(3-2*v)},lerp=(a,b,u)=>a+(b-a)*u;
 function update(){const approach=smooth(t/4),fall=smooth((t-3.8)/2.1),contest=smooth((t-6)/3);
-carrier.root.position.set(lerp(-5,-.5,approach),.03,0);carrier.root.rotation.set(0,0,-fall*1.24);carrier.root.position.y=fall*.26;carrier.limbs[0].rotation.z=-.25-fall*.6;carrier.limbs[2].rotation.z=.25+fall*.4;
-tackler.root.position.set(lerp(-.9,-.45,smooth((t-2.8)/1.6)),0,-lerp(1.1,.25,smooth((t-2.8)/1.6)));tackler.root.rotation.z=-smooth((t-3.4)/1.6)*.75;tackler.limbs[0].rotation.z=-smooth((t-3)/1.4)*1.2;
-support.root.position.set(lerp(4,.8,contest),0,lerp(1.1,.45,contest));support.root.rotation.z=-contest*.35;support.limbs[0].rotation.z=-contest*.9;
-ball.position.set(carrier.root.position.x+.32,lerp(1.25,.35,fall),.35);ball.rotation.z=fall*.8;
+carrier.root.position.set(lerp(-5,-.5,approach),0,0);carrier.root.rotation.set(0,0,0);
+carrier.pelvis.rotation.z=-fall*1.18;carrier.pelvis.position.y=lerp(1.05,.66,fall);carrier.spine.rotation.z=-fall*.18;
+const run=(1-fall)*Math.sin(t*10)*.48;carrier.legs[0].rotation.x=run;carrier.legs[1].rotation.x=-run;
+carrier.knees[0].rotation.x=Math.max(0,-run)*.55+fall*.35;carrier.knees[1].rotation.x=Math.max(0,run)*.55+fall*.7;
+carrier.arms[0].rotation.x=-run*.7;carrier.arms[1].rotation.x=run*.7;carrier.arms[0].rotation.z=-.25-fall*.35;carrier.arms[1].rotation.z=.25+fall*.35;
+tackler.root.position.set(lerp(-.9,-.45,smooth((t-2.8)/1.6)),0,-lerp(1.1,.25,smooth((t-2.8)/1.6)));
+const tackle=smooth((t-3.2)/1.8),release=smooth((t-5.3)/1.2);
+tackler.pelvis.rotation.z=-tackle*.55;tackler.spine.rotation.z=-tackle*.25;
+tackler.arms[0].rotation.z=-tackle*1.1+release*.9;tackler.arms[1].rotation.z=tackle*1.1-release*.9;
+tackler.arms[0].rotation.x=-tackle*.4;tackler.arms[1].rotation.x=-tackle*.4;
+tackler.legs[0].rotation.x=tackle*.35;tackler.legs[1].rotation.x=-tackle*.25;
+support.root.position.set(lerp(4,.8,contest),0,lerp(1.1,.45,contest));
+support.pelvis.rotation.z=-contest*.12;support.spine.rotation.z=-contest*.35;
+support.arms[0].rotation.z=-contest*.8;support.arms[1].rotation.z=contest*.8;
+support.legs[0].rotation.x=(1-contest)*Math.sin(t*8)*.35;support.legs[1].rotation.x=-(1-contest)*Math.sin(t*8)*.35;
+const ballRelease=smooth((t-5.1)/1.4);
+ball.position.set(carrier.root.position.x+lerp(.28,.75,ballRelease),lerp(1.45,.21,fall),.35);
+ball.rotation.z=fall*.8;
 const phases=[[3.5,'Игрок с мячом продвигается навстречу защитнику.'],[5.8,'Захват: игрок с мячом опускается на землю.'],[7.3,'После захвата важно проверить действия захватывающего и освобождение мяча.'],[9.4,'Третий игрок приближается к месту захвата. Его право бороться за мяч зависит от положения и момента вступления.'],[12.1,'Контрольная остановка. Для решения необходимо установить, возник ли рак, и оценить действия каждого игрока.']];const simple=phases.find(p=>t<p[0])[1];explanation.textContent=detail?('Что проверяем: '+simple+' Судейское решение нельзя определить только по этой упрощённой постановке. Нужно отдельно установить момент завершения захвата, действия захватывающего, положение третьего игрока и факт образования рака.'):simple;timeEl.textContent=t.toFixed(1).replace('.',',')+' / 12,0 с';seek.value=t;play.textContent=playing?'Ⅱ Пауза':'▶ Воспроизвести'}
 function setTime(v){t=clamp(v,0,12);update()}document.querySelectorAll('[data-seek]').forEach(b=>b.addEventListener('click',()=>{playing=false;setTime(Number(b.dataset.seek));document.querySelectorAll('[data-seek]').forEach(x=>x.removeAttribute('aria-current'));b.setAttribute('aria-current','step')}));const terms={tackle:['Tackle — захват','Игрок с мячом удерживается соперником и оказывается на земле. После захвата у участников возникают определённые обязанности.'],ruck:['Ruck — рак','Фаза игры, когда по меньшей мере по одному игроку каждой команды, находящемуся на ногах, вступают в контакт над мячом на земле.'],jackal:['Jackal — джекал','Общеупотребительное название попытки игрока завладеть мячом после захвата, пока рак ещё не образован. Это не отдельное правило.'],offside:['Offside — офсайд','Положение вне игры. Конкретные ограничения зависят от игровой ситуации и соответствующей линии офсайда.']};document.querySelectorAll('[data-term]').forEach(b=>b.addEventListener('click',()=>{const [title,body]=terms[b.dataset.term];const g=document.getElementById('glossary');g.replaceChildren();const strong=document.createElement('strong');strong.textContent=title;const p=document.createElement('p');p.textContent=body;g.append(strong,p);g.hidden=false}));play.onclick=()=>{if(t>=12)t=0;playing=!playing;update()};document.getElementById('restart').onclick=()=>{playing=false;setTime(0)};seek.oninput=e=>{playing=false;setTime(+e.target.value)};document.getElementById('speed').onchange=e=>speed=+e.target.value;
 function view(x,y,z){camera.position.set(x,y,z);controls.target.set(0,1,0);controls.update()}document.getElementById('free').onclick=()=>view(8,8,12);document.getElementById('side').onclick=()=>view(0,4,13);document.getElementById('top').onclick=()=>view(0,16,.01);document.getElementById('resetCamera').onclick=()=>view(8,8,12);
