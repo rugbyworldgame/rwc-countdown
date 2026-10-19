@@ -76,9 +76,14 @@ async function loadVisualModels(){
    visual.scale.setScalar(Number.isFinite(entry.scale)&&entry.scale>0&&entry.scale<10?entry.scale:1);
    visual.rotation.y=Number.isFinite(entry.rotationY)?entry.rotationY:0;
    // Модель прикреплена к actor.root. Позиция и таймлайн остаются общими.
-   actor.root.add(visual);
+   // Отдельная опорная группа позволяет управлять визуальной моделью независимо от рига-заглушки.
+   const anchor=new THREE.Group();actor.root.add(anchor);anchor.add(visual);actor.visualAnchor=anchor;
    actor.visual=visual;actor.mixer=gltf.animations.length?new THREE.AnimationMixer(visual):null;
    actor.clips=gltf.animations;
+   actor.actions={};
+   if(actor.mixer){
+    for(const clip of actor.clips){const action=actor.mixer.clipAction(clip);action.play();action.paused=true;actor.actions[clip.name.toLowerCase()]=action}
+   }
    actor.pelvis.visible=false;
    return true;
   }catch(e){return false}
@@ -110,7 +115,19 @@ support.pelvis.rotation.z=-contest*.12;support.spine.rotation.z=-contest*.35;
 support.arms[0].rotation.z=-contest*.8;support.arms[1].rotation.z=contest*.8;
 support.legs[0].rotation.x=(1-contest)*Math.sin(t*8)*.35;support.legs[1].rotation.x=-(1-contest)*Math.sin(t*8)*.35;
 // Кадрирование GLB-клипов по абсолютному времени делает перемотку детерминированной.
-for(const actor of Object.values(actors)){if(!actor.mixer||!actor.clips?.length)continue;const clip=actor.clips[0];if(!actor.action){actor.action=actor.mixer.clipAction(clip);actor.action.play();actor.action.paused=true}actor.mixer.setTime(t%clip.duration)}
+for(const [role,actor] of Object.entries(actors)){
+ if(!actor.mixer||!actor.clips?.length)continue;
+ const phase=role==='carrier'?(t<3.8?'run':t<6.1?'tackle':'ground'):role==='tackler'?(t<3.2?'run':t<5.5?'tackle':'release'):(t<6?'idle':t<9?'run':'contest');
+ const named=actor.clips.find(clip=>clip.name.toLowerCase()===phase);
+ const clip=named||actor.clips[0];
+ for(const action of Object.values(actor.actions))action.setEffectiveWeight(0);
+ const action=actor.actions[clip.name.toLowerCase()];
+ if(action){action.setEffectiveWeight(1);actor.mixer.setTime(t%clip.duration)}
+}
+// Синхронизируем наклон GLB с движением персонажа, даже если клип падения отсутствует.
+if(carrier.visualAnchor){carrier.visualAnchor.rotation.z=-fall*.85;carrier.visualAnchor.position.y=fall*.18}
+if(tackler.visualAnchor)tackler.visualAnchor.rotation.z=-tackle*.4;
+if(support.visualAnchor)support.visualAnchor.rotation.z=-contest*.15;
 const ballRelease=smooth((t-5.1)/1.4);
 ball.position.set(carrier.root.position.x+lerp(.28,.75,ballRelease),lerp(1.45,.21,fall),.35);
 ball.rotation.z=fall*.8;
