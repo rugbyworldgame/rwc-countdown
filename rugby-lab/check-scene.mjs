@@ -28,7 +28,9 @@ class Controls{constructor(){this.target=new actual.Vector3()}update(){}}
 const context=vm.createContext({...choreography,...timeline,THREE:{...actual,WebGLRenderer:Renderer},OrbitControls:Controls,GLTFLoader:class {},document,devicePixelRatio:1,performance:{now:()=>0},ResizeObserver:class{observe(){}},fetch:async()=>({ok:true,json:async()=>({carrier:null,tackler:null,support:null})}),requestAnimationFrame:fn=>frame=fn,console});
 const strip=source=>source.replace(/^import .*;\n/gm,'').replace('export function createPlayer','function createPlayer');
 vm.runInContext(strip(await fs.readFile(new URL('./characters.js',import.meta.url),'utf8')),context);
-vm.runInContext(strip(await fs.readFile(new URL('./scene.js',import.meta.url),'utf8')),context);
+const sceneSource=strip(await fs.readFile(new URL('./scene.js',import.meta.url),'utf8'));
+// The simulated renderer succeeds, so the fallback import is never executed.
+vm.runInContext(sceneSource.replace("await import('https://esm.sh/three@0.170.0/examples/jsm/renderers/SVGRenderer.js')","null"),context);
 for(const time of [0,4.4,6.4,8.7,10.5,12,0]){
  node('seek').oninput({target:{value:time}});
  assert.equal(Number(node('seek').value),time);

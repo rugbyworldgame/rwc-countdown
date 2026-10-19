@@ -5,10 +5,17 @@ import * as THREE from 'https://esm.sh/three@0.170.0';
 import {OrbitControls} from 'https://esm.sh/three@0.170.0/examples/jsm/controls/OrbitControls.js';
 import {GLTFLoader} from 'https://esm.sh/three@0.170.0/examples/jsm/loaders/GLTFLoader.js';
 const stage=document.getElementById('stage'),error=document.getElementById('error');
-let renderer;
-try{renderer=new THREE.WebGLRenderer({antialias:true,alpha:false});}catch(e){error.style.display='grid';throw e}
-renderer.setPixelRatio(Math.min(devicePixelRatio,1.7));renderer.setSize(stage.clientWidth,stage.clientHeight);renderer.shadowMap.enabled=true;stage.append(renderer.domElement);
-const scene=new THREE.Scene();scene.background=new THREE.Color('#102332');
+let renderer,software=false;
+try{renderer=new THREE.WebGLRenderer({antialias:true,alpha:false});}catch(e){
+ const {SVGRenderer}=await import('https://esm.sh/three@0.170.0/examples/jsm/renderers/SVGRenderer.js');
+ renderer=new SVGRenderer();software=true;renderer.setQuality('low');
+ renderer.setPixelRatio=()=>{};renderer.shadowMap={enabled:false};
+ document.getElementById('renderStatus').textContent='Упрощённый 3D-просмотр (SVG): WebGL недоступен, тени отключены';
+ document.getElementById('quality').disabled=true;
+}
+renderer.domElement.style.touchAction='none';
+renderer.setPixelRatio(Math.min(devicePixelRatio,1.7));renderer.setSize(stage.clientWidth,stage.clientHeight);renderer.shadowMap.enabled=!software;stage.append(renderer.domElement);
+const scene=new THREE.Scene();scene.background=new THREE.Color('#102332');scene.userData.software=software;
 const camera=new THREE.PerspectiveCamera(45,stage.clientWidth/stage.clientHeight,.1,100);camera.position.set(6,5.5,8);
 const controls=new OrbitControls(camera,renderer.domElement);controls.target.set(0,.7,0);controls.enableDamping=true;controls.minDistance=4;controls.maxDistance=30;controls.maxPolarAngle=Math.PI/2-.04;
 scene.add(new THREE.HemisphereLight(0xd9f4ff,0x284b35,2));const sun=new THREE.DirectionalLight(0xffffff,2.4);sun.position.set(5,12,7);sun.castShadow=true;sun.shadow.mapSize.set(1024,1024);scene.add(sun);

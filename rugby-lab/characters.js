@@ -4,8 +4,8 @@ const yAxis=new THREE.Vector3(0,1,0);
 export function createPlayer(scene,shirt,skin=0xc58b65){
  const root=new THREE.Group(),pelvis=new THREE.Group();root.add(pelvis);scene.add(root);
  const materials={shirt:new THREE.MeshStandardMaterial({color:shirt,roughness:.9}),skin:new THREE.MeshStandardMaterial({color:skin,roughness:.85}),shorts:new THREE.MeshStandardMaterial({color:0x172737,roughness:.95}),boot:new THREE.MeshStandardMaterial({color:0x161b21,roughness:.55}),sock:new THREE.MeshStandardMaterial({color:shirt,roughness:1}),hair:new THREE.MeshStandardMaterial({color:0x30231e,roughness:1})};
- function ellipsoid(material,radii){const m=new THREE.Mesh(new THREE.SphereGeometry(1,16,12),material);m.scale.set(...radii);m.castShadow=true;pelvis.add(m);return m}
- function segment(material,radius){const m=new THREE.Mesh(new THREE.CylinderGeometry(radius*.85,radius,1,12),material);m.castShadow=true;pelvis.add(m);return m}
+ function ellipsoid(material,radii){const m=new THREE.Mesh(new THREE.SphereGeometry(1,scene.userData.software?8:16,scene.userData.software?6:12),material);m.scale.set(...radii);m.castShadow=true;pelvis.add(m);return m}
+ function segment(material,radius){const m=new THREE.Mesh(new THREE.CylinderGeometry(radius*.85,radius,1,scene.userData.software?6:12),material);m.castShadow=true;pelvis.add(m);return m}
  const torso=ellipsoid(materials.shirt,[.16,.29,.26]),waist=ellipsoid(materials.shorts,[.15,.14,.18]);
  const neck=segment(materials.skin,.065),head=ellipsoid(materials.skin,[.10,.13,.105]),hair=ellipsoid(materials.hair,[.102,.055,.106]);
  const nose=ellipsoid(materials.skin,[.025,.035,.025]);
