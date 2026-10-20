@@ -6,6 +6,7 @@ import fs from 'node:fs/promises';
 import vm from 'node:vm';
 import * as choreography from './choreography.js';
 import * as timeline from './timeline.js';
+import {rendererReport} from './renderer-startup.js';
 if(!process.env.THREE_MODULE)throw new Error('Укажите THREE_MODULE (локальный модуль Three.js 0.170.0)');
 const actual=await import(process.env.THREE_MODULE);
 assert.equal(actual.REVISION,'170');
@@ -25,7 +26,7 @@ const document={getElementById:node,querySelectorAll:q=>q==='[data-seek]'?marker
 let frame;
 class Renderer{constructor(){this.domElement=new Element();this.shadowMap={}}setPixelRatio(){}setSize(){}render(){}}
 class Controls{constructor(){this.target=new actual.Vector3()}update(){}}
-const context=vm.createContext({...choreography,...timeline,THREE:{...actual,WebGLRenderer:Renderer},OrbitControls:Controls,GLTFLoader:class {},document,devicePixelRatio:1,performance:{now:()=>0},ResizeObserver:class{observe(){}},fetch:async()=>({ok:true,json:async()=>({carrier:null,tackler:null,support:null})}),requestAnimationFrame:fn=>frame=fn,console});
+const context=vm.createContext({...choreography,...timeline,rendererReport,startWebGL:()=>({renderer:new Renderer(),attempts:[],antialias:true}),THREE:{...actual,WebGLRenderer:Renderer},OrbitControls:Controls,GLTFLoader:class {},document,devicePixelRatio:1,performance:{now:()=>0},ResizeObserver:class{observe(){}},fetch:async()=>({ok:true,json:async()=>({carrier:null,tackler:null,support:null})}),requestAnimationFrame:fn=>frame=fn,console});
 const strip=source=>source.replace(/^import .*;\n/gm,'').replace('export function createPlayer','function createPlayer');
 vm.runInContext(strip(await fs.readFile(new URL('./characters.js',import.meta.url),'utf8')),context);
 const sceneSource=strip(await fs.readFile(new URL('./scene.js',import.meta.url),'utf8'));
@@ -47,4 +48,9 @@ for(const id of ['top','side','free','resetCamera']){node(id).onclick();assert.o
 node('quality').onclick({target:node('quality')});assert.equal(node('quality').dataset.low,'1');
 node('stage').clientWidth=390;node('stage').clientHeight=320;vm.runInContext('resize()',context);assert.equal(vm.runInContext('camera.aspect',context),390/320);
 terms[1].click();assert.equal(node('glossary').hidden,false);
+for(const time of [0,3.8,5.6,9,12,0]){
+ vm.runInContext(`setTime(${time})`,context);
+ const rigErrors=vm.runInContext(`(()=>{const errors=[];const pose=sampleEpisode(t);for(const [role,actor] of Object.entries(actors)){for(const [bone,target] of [['Hand.L',pose[role].arms[0].end],['Hand.R',pose[role].arms[1].end],['Foot.L',pose[role].legs[0].end],['Head',pose[role].head]])errors.push(actor.rig.bones[bone].getWorldPosition(new THREE.Vector3()).distanceTo(new THREE.Vector3(...target)))}return errors})()`,context);
+ assert.ok(rigErrors.every(error=>error<1e-6));
+}
 console.log('PASS: Three.js geometry, seek/restart/review, playback/pause/speed, cameras, quality, resize and glossary (mock DOM/renderer; no WebGL).');

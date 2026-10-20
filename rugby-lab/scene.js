@@ -1,3 +1,4 @@
+import {startWebGL,rendererReport} from './renderer-startup.js';
 import {createPlayer} from './characters.js';
 import {sampleEpisode} from './choreography.js';
 import {isLocalModelPath, phaseAt, clipTimeAt} from './timeline.js';
@@ -5,14 +6,18 @@ import * as THREE from 'https://esm.sh/three@0.170.0';
 import {OrbitControls} from 'https://esm.sh/three@0.170.0/examples/jsm/controls/OrbitControls.js';
 import {GLTFLoader} from 'https://esm.sh/three@0.170.0/examples/jsm/loaders/GLTFLoader.js';
 const stage=document.getElementById('stage'),error=document.getElementById('error');
-let renderer,software=false;
-try{renderer=new THREE.WebGLRenderer({antialias:true,alpha:false});}catch(e){
+const startup=startWebGL(THREE,()=>document.createElement('canvas'));
+document.getElementById('rendererDiagnostics').textContent=rendererReport(THREE.REVISION,startup);
+let renderer=startup.renderer,software=!renderer;
+if(software){
  const {SVGRenderer}=await import('https://esm.sh/three@0.170.0/examples/jsm/renderers/SVGRenderer.js');
  renderer=new SVGRenderer();software=true;renderer.setQuality('low');
  renderer.setPixelRatio=()=>{};renderer.shadowMap={enabled:false};
  document.getElementById('renderStatus').textContent='Упрощённый 3D-просмотр (SVG): WebGL недоступен, тени отключены';
  document.getElementById('quality').disabled=true;
 }
+if(!software)document.getElementById('renderStatus').textContent=startup.antialias?'WebGL 2 · объёмная сцена с тенями':'WebGL 2 · без сглаживания, с тенями';
+renderer.domElement.addEventListener('webglcontextlost',()=>{document.getElementById('renderStatus').textContent='WebGL-контекст потерян. Перезагрузите страницу для повторного запуска.'});
 renderer.domElement.style.touchAction='none';
 renderer.setPixelRatio(Math.min(devicePixelRatio,1.7));renderer.setSize(stage.clientWidth,stage.clientHeight);renderer.shadowMap.enabled=!software;stage.append(renderer.domElement);
 const scene=new THREE.Scene();scene.background=new THREE.Color('#102332');scene.userData.software=software;
