@@ -36,7 +36,7 @@ for(const time of [0,4.4,6.4,8.7,10.5,12,0]){
  node('seek').oninput({target:{value:time}});
  assert.equal(Number(node('seek').value),time);
  const result=vm.runInContext(`(()=>{scene.updateMatrixWorld(true);let count=0;scene.traverse(n=>{if(n.isMesh){count++;if(!n.matrixWorld.elements.every(Number.isFinite))throw Error('Invalid mesh matrix')}});return count})()`,context);
- assert.ok(result>=70);
+ assert.ok(result>=40);
 }
 node('review').onclick();assert.ok(node('explanation').textContent.includes('Разбор:'));
 node('detailed').onclick();assert.ok(node('explanation').textContent.includes('Разбор:'));
@@ -54,3 +54,32 @@ for(const time of [0,3.8,5.6,9,12,0]){
  assert.ok(rigErrors.every(error=>error<1e-6));
 }
 console.log('PASS: Three.js geometry, seek/restart/review, playback/pause/speed, cameras, quality, resize and glossary (mock DOM/renderer; no WebGL).');
+
+// Real skin attributes, deformed vertices, deterministic seeking and SVG parity.
+vm.runInContext(`globalThis.svgScene=new THREE.Scene();svgScene.userData.software=true;globalThis.svgActor=createPlayer(svgScene,0xffffff);svgActor.apply(sampleEpisode(0).carrier);`,context);
+for(const time of [0,3.8,4.4,5.6,6.4,9,12,0]){
+ const result=vm.runInContext(`(()=>{
+  setTime(${time});svgActor.apply(sampleEpisode(${time}).carrier);
+  let maximumError=0,weighted=0;
+  for(const actor of [carrier,tackler,support,svgActor]){
+   if(actor.skins.length!==5)throw Error('Missing deformable surfaces');
+   actor.skins.forEach((mesh,m)=>{
+    if(!mesh.isSkinnedMesh)throw Error('Expected SkinnedMesh');
+    const {position,skinIndex,skinWeight}=mesh.geometry.attributes;
+    for(let i=0;i<position.count;i++){
+     const sum=skinWeight.getX(i)+skinWeight.getY(i);
+     if(Math.abs(sum-1)>1e-6||skinIndex.getX(i)>=17||skinIndex.getY(i)>=17)throw Error('Invalid skin weights');
+     if(skinWeight.getX(i)>0&&skinWeight.getY(i)>0)weighted++;
+     const vertex=mesh.applyBoneTransform(i,new THREE.Vector3().fromBufferAttribute(position,i));
+     if(!vertex.toArray().every(Number.isFinite))throw Error('Invalid deformed vertex');
+     if(vertex.distanceTo(new THREE.Vector3(...sampleEpisode(${time})[actor===tackler?'tackler':actor===support?'support':'carrier'].pelvis))>2.2)throw Error('Exploded skin');
+     if(actor===svgActor)maximumError=Math.max(maximumError,vertex.distanceTo(new THREE.Vector3().fromBufferAttribute(actor.proxies[m].geometry.attributes.position,i)));
+    }
+   });
+  }
+  return {maximumError,weighted,sample:carrier.skins[1].applyBoneTransform(200,new THREE.Vector3().fromBufferAttribute(carrier.skins[1].geometry.attributes.position,200)).toArray()};
+ })()`,context);
+ assert.ok(result.maximumError<1e-6);assert.ok(result.weighted>100);
+ if(time===0){if(globalThis.initialSkinSample)assert.deepEqual(result.sample,globalThis.initialSkinSample);else globalThis.initialSkinSample=result.sample;}
+}
+console.log('PASS: five SkinnedMesh surfaces per player, normalized weights, finite deformations, SVG CPU parity, reverse seek.');
