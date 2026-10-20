@@ -24,8 +24,8 @@ const scene=new THREE.Scene();scene.background=new THREE.Color('#102332');scene.
 const camera=new THREE.PerspectiveCamera(45,stage.clientWidth/stage.clientHeight,.1,100);camera.position.set(2.8,3.2,7);
 const controls=new OrbitControls(camera,renderer.domElement);controls.target.set(0,.7,0);controls.enableDamping=true;controls.minDistance=2.5;controls.maxDistance=30;controls.maxPolarAngle=Math.PI/2-.04;
 scene.add(new THREE.HemisphereLight(0xd9f4ff,0x284b35,2));const sun=new THREE.DirectionalLight(0xffffff,2.4);sun.position.set(5,12,7);sun.castShadow=true;sun.shadow.mapSize.set(1024,1024);scene.add(sun);
-const field=new THREE.Mesh(new THREE.PlaneGeometry(36,24,software?18:1,software?12:1),new THREE.MeshStandardMaterial({color:0x20563e,roughness:1}));field.rotation.x=-Math.PI/2;field.receiveShadow=true;scene.add(field);
-const lineMat=new THREE.MeshBasicMaterial({color:0xc3e4d8});for(let x=-16;x<=16;x+=4){const line=new THREE.Mesh(new THREE.PlaneGeometry(.055,22,1,software?12:1),lineMat);line.rotation.x=-Math.PI/2;line.position.set(x,.012,0);scene.add(line)}
+const field=new THREE.Mesh(new THREE.PlaneGeometry(36,24,software?18:1,software?12:1),new THREE.MeshStandardMaterial({color:0x20563e,roughness:1}));field.rotation.x=-Math.PI/2;field.receiveShadow=true;if(software)field.renderOrder=-20;scene.add(field);
+const lineMat=new THREE.MeshBasicMaterial({color:0xc3e4d8});for(let x=-16;x<=16;x+=4){const line=new THREE.Mesh(new THREE.PlaneGeometry(.055,22,1,software?12:1),lineMat);line.rotation.x=-Math.PI/2;line.position.set(x,.012,0);if(software)line.renderOrder=-10;scene.add(line)}
 function part(parent,geometry,color,x,y,z){const mesh=new THREE.Mesh(geometry,new THREE.MeshStandardMaterial({color,roughness:.75}));mesh.position.set(x,y,z);mesh.castShadow=true;parent.add(mesh);return mesh}
 const carrier=createPlayer(scene,0xf3f4f5),tackler=createPlayer(scene,0xc43f43,0x946344),support=createPlayer(scene,0xc43f43,0xd5a079);
 // GLB-конвейер: модели загружаются только из локального каталога assets/models.
