@@ -44,3 +44,14 @@ test('seeking is deterministic; movement is continuous across phase boundaries',
   for(const role of ['carrier','tackler','support'])assert.ok(length(sub(before[role].pelvis,after[role].pelvis))<.001);
  }
 });
+
+test('head frame is orthogonal; landing rolls onto side and keeps head clear',()=>{
+ for(let i=0;i<=720;i++)for(const actor of Object.values(sampleEpisode(i/60)).filter(v=>v?.headFront)){
+  near(length(actor.headFront),1);near(length(actor.headUp),1);
+  near(actor.headFront.reduce((s,x,j)=>s+x*actor.headUp[j],0),0);
+  assert.ok(actor.head[1]>.16);
+ }
+ const standing=sampleEpisode(0).carrier,grounded=sampleEpisode(5.6).carrier;
+ assert.ok(grounded.side[1]<-.5);
+ assert.ok(grounded.pelvis[1]<standing.pelvis[1]-.5);
+});

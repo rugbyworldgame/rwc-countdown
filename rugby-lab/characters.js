@@ -1,6 +1,11 @@
 // Авторская процедурная модель. Никаких сторонних моделей или текстур.
 import * as THREE from 'https://esm.sh/three@0.170.0';
 const yAxis=new THREE.Vector3(0,1,0);
+function bodyRotation(front,up){
+ const x=new THREE.Vector3(...front).normalize(),y=new THREE.Vector3(...up);
+ const z=new THREE.Vector3().crossVectors(x,y).normalize();y.crossVectors(z,x).normalize();
+ return new THREE.Quaternion().setFromRotationMatrix(new THREE.Matrix4().makeBasis(x,y,z));
+}
 // Общий скелет для деформируемой оболочки и существующей постановки.
 function createSkeletonRig(root){
  const bones={},order=[];
@@ -20,7 +25,8 @@ function createSkeletonRig(root){
   root.updateMatrixWorld(true);
   for(const b of order){
    b.position.copy(b.parent.worldToLocal(new THREE.Vector3(...positions[b.name])));
-   const world=new THREE.Quaternion().setFromUnitVectors(yAxis,new THREE.Vector3(...directions[b.name]).normalize());
+   const central=['Hips','Spine','Chest','Neck','Head'].includes(b.name);
+   const world=central?bodyRotation(b.name==='Head'?p.headFront:p.front,b.name==='Head'?p.headUp:p.up):new THREE.Quaternion().setFromUnitVectors(yAxis,new THREE.Vector3(...directions[b.name]).normalize());
    b.quaternion.copy(b.parent.getWorldQuaternion(new THREE.Quaternion()).invert().multiply(world));
    b.updateMatrixWorld(true);
   }
@@ -33,7 +39,7 @@ function skinSurface(rings,radial,skeleton,materials){
  const positions=[],indices=[],weights=[],triangles=[],groups=[];
  for(const ring of rings){
   const center=new THREE.Vector3(...ring.center),axis=new THREE.Vector3(...ring.axis).normalize();
-  const u=new THREE.Vector3(0,0,1).addScaledVector(axis,-axis.z);
+  const u=new THREE.Vector3(...(ring.side||[0,0,1]));u.addScaledVector(axis,-u.dot(axis));
   if(u.lengthSq()<1e-8)u.set(1,0,0).addScaledVector(axis,-axis.x);
   u.normalize();
   const v=new THREE.Vector3().crossVectors(axis,u).normalize();
@@ -63,11 +69,33 @@ export function createPlayer(scene,shirt,skin=0xc58b65){
  const software=!!scene.userData.software,skins=[],proxies=[],limbSurfaces=[];
  const materials={shirt:new THREE.MeshStandardMaterial({color:shirt,roughness:.9}),skin:new THREE.MeshStandardMaterial({color:skin,roughness:.85}),shorts:new THREE.MeshStandardMaterial({color:0x172737,roughness:.95}),boot:new THREE.MeshStandardMaterial({color:0x161b21,roughness:.55}),sock:new THREE.MeshStandardMaterial({color:shirt,roughness:1}),hair:new THREE.MeshStandardMaterial({color:0x30231e,roughness:1})};
  function ellipsoid(material,radii){const m=new THREE.Mesh(new THREE.SphereGeometry(1,software?12:28,software?8:20),material);m.scale.set(...radii);m.castShadow=true;pelvis.add(m);return m}
- const head=ellipsoid(materials.skin,[.10,.13,.105]),hair=ellipsoid(materials.hair,[.102,.055,.106]),nose=ellipsoid(materials.skin,[.025,.035,.025]);
- const neck=ellipsoid(materials.skin,[.065,.10,.065]);
+ // Facial features and boot parts share full local frames; no world-axis nose
+ // or flat horizontal footwear glued to a falling body.
+ function detail(parent,material,radii,position){const mesh=ellipsoid(material,radii);parent.add(mesh);mesh.position.set(...position);return mesh}
+ const head=new THREE.Group();pelvis.add(head);
+ detail(head,materials.skin,[.105,.13,.096],[0,0,0]);
+ detail(head,materials.skin,[.085,.066,.079],[.027,-.065,0]);
+ detail(head,materials.hair,[.108,.051,.098],[-.012,.093,0]);
+ detail(head,materials.skin,[.034,.032,.025],[.102,-.005,0]);
+ const eyeWhite=new THREE.MeshStandardMaterial({color:0xf5f1df,roughness:.7});
+ for(const side of [-1,1]){
+  detail(head,materials.skin,[.028,.040,.020],[-.018,-.007,side*.096]);
+  detail(head,eyeWhite,[.014,.012,.019],[.094,.033,side*.042]);
+  detail(head,materials.hair,[.006,.009,.010],[.106,.032,side*.041]);
+  detail(head,materials.hair,[.013,.008,.025],[.092,.054,side*.043]);
+ }
+ const neck=ellipsoid(materials.skin,[.072,.095,.071]);
  const hands=[0,1].map(()=>ellipsoid(materials.skin,[.045,.075,.035]));
- const boots=[0,1].map(()=>ellipsoid(materials.boot,[.15,.075,.068]));
-
+ const boots=[0,1].map(()=>{
+  const group=new THREE.Group();pelvis.add(group);
+  detail(group,materials.boot,[.139,.025,.065],[.018,-.056,0]); // sole
+  detail(group,materials.boot,[.115,.044,.060],[.039,-.023,0]); // toe box
+  detail(group,materials.boot,[.065,.061,.057],[-.055,.005,0]); // heel/collar
+  detail(group,materials.shorts,[.053,.026,.045],[-.015,.023,0]); // tongue
+  for(const x of [-.07,.075])for(const z of [-.038,.038])detail(group,materials.shorts,[.012,.014,.012],[x,-.077,z]);
+  for(const x of [-.025,0,.025])detail(group,eyeWhite,[.005,.005,.038],[x,.031,0]);
+  return group;
+ });
  const index=name=>rig.skeleton.bones.indexOf(rig.bones[name]);
  const smooth=value=>{const t=Math.max(0,Math.min(1,value));return t*t*(3-2*t)};
  function addSkin(rings,mats){
@@ -85,7 +113,7 @@ export function createPlayer(scene,shirt,skin=0xc58b65){
   for(let n=0;n<=40;n++){
    const section=profile.getPoint(n/40),h=section.x;
    const upper=h>.18,blend=upper?smooth((h-.18)/.18):smooth(h/.18);
-   rings.push({center:p.local(h),axis:p.up,width:Math.max(.001,section.y),depth:Math.max(.001,section.z),bones:[index(upper?'Spine':'Hips'),index(upper?'Chest':'Spine')],blend,material:h<.035?1:0});
+   rings.push({center:p.local(h),axis:p.up,side:p.side,width:Math.max(.001,section.y),depth:Math.max(.001,section.z),bones:[index(upper?'Spine':'Hips'),index(upper?'Chest':'Spine')],blend,material:h<.035?1:0});
   }
   addSkin(rings,[materials.shirt,materials.shorts]);
   for(const [side,i] of [['L',0],['R',1]])for(const arm of [true,false]){
@@ -150,11 +178,17 @@ export function createPlayer(scene,shirt,skin=0xc58b65){
  const vertex=new THREE.Vector3();
  function apply(p){
   rig.apply(p);if(!skins.length)build(p);correctLimbs(p);
-  point(head,p.head);align(head,p.up);point(neck,p.neck);align(neck,p.up);
-  point(hair,p.head.map((v,i)=>v+p.up[i]*.10));align(hair,p.up);
-  point(nose,p.head.map((v,i)=>v+p.front[i]*.105));
+  point(head,p.head);head.quaternion.copy(bodyRotation(p.headFront,p.headUp));point(neck,p.neck);neck.quaternion.copy(bodyRotation(p.front,p.up));
   hands.forEach((m,i)=>{point(m,p.arms[i].end);align(m,p.front)});
-  boots.forEach((m,i)=>{point(m,p.legs[i].end);m.rotation.y=Math.atan2(-p.front[2],p.front[0])});
+  boots.forEach((m,i)=>{
+   point(m,p.legs[i].end);
+   const grounded=1-smooth((p.legs[i].end[1]-.11)/.18);
+   const forward=new THREE.Vector3(...p.front);forward.y=0;
+   if(forward.lengthSq()<.01)forward.set(1,0,0);forward.normalize();
+   const ankleUp=new THREE.Vector3().subVectors(new THREE.Vector3(...p.legs[i].joint),new THREE.Vector3(...p.legs[i].end)).normalize();
+   ankleUp.lerp(yAxis,grounded).normalize();
+   m.quaternion.copy(bodyRotation(forward.toArray(),ankleUp.toArray()));
+  });
   if(software)skins.forEach((mesh,i)=>{
    const source=mesh.geometry.attributes.position,target=proxies[i].geometry.attributes.position;
    for(let j=0;j<source.count;j++){vertex.fromBufferAttribute(source,j);mesh.applyBoneTransform(j,vertex);target.setXYZ(j,vertex.x,vertex.y,vertex.z)}
@@ -162,5 +196,5 @@ export function createPlayer(scene,shirt,skin=0xc58b65){
   });
  }
  // Material handle retained for scene review highlights, independent of groups.
- return {root,pelvis,torso:{material:materials.shirt},apply,rig,skeleton:rig.skeleton,skins,proxies};
+ return {root,pelvis,torso:{material:materials.shirt},apply,rig,skeleton:rig.skeleton,skins,proxies,head,boots};
 }

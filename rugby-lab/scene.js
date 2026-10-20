@@ -22,7 +22,7 @@ renderer.domElement.style.touchAction='none';
 renderer.setPixelRatio(Math.min(devicePixelRatio,1.7));renderer.setSize(stage.clientWidth,stage.clientHeight);renderer.shadowMap.enabled=!software;stage.append(renderer.domElement);
 const scene=new THREE.Scene();scene.background=new THREE.Color('#102332');scene.userData.software=software;
 const camera=new THREE.PerspectiveCamera(45,stage.clientWidth/stage.clientHeight,.1,100);camera.position.set(2.8,3.2,7);
-const controls=new OrbitControls(camera,renderer.domElement);controls.target.set(0,.7,0);controls.enableDamping=true;controls.minDistance=4;controls.maxDistance=30;controls.maxPolarAngle=Math.PI/2-.04;
+const controls=new OrbitControls(camera,renderer.domElement);controls.target.set(0,.7,0);controls.enableDamping=true;controls.minDistance=2.5;controls.maxDistance=30;controls.maxPolarAngle=Math.PI/2-.04;
 scene.add(new THREE.HemisphereLight(0xd9f4ff,0x284b35,2));const sun=new THREE.DirectionalLight(0xffffff,2.4);sun.position.set(5,12,7);sun.castShadow=true;sun.shadow.mapSize.set(1024,1024);scene.add(sun);
 const field=new THREE.Mesh(new THREE.PlaneGeometry(36,24,software?18:1,software?12:1),new THREE.MeshStandardMaterial({color:0x20563e,roughness:1}));field.rotation.x=-Math.PI/2;field.receiveShadow=true;scene.add(field);
 const lineMat=new THREE.MeshBasicMaterial({color:0xc3e4d8});for(let x=-16;x<=16;x+=4){const line=new THREE.Mesh(new THREE.PlaneGeometry(.055,22,1,software?12:1),lineMat);line.rotation.x=-Math.PI/2;line.position.set(x,.012,0);scene.add(line)}
@@ -111,3 +111,9 @@ document.getElementById('quality').onclick=e=>{const low=e.target.dataset.low!==
 document.getElementById('simple').onclick=()=>{detail=false;document.getElementById('simple').setAttribute('aria-pressed','true');document.getElementById('detailed').setAttribute('aria-pressed','false');update()};document.getElementById('detailed').onclick=()=>{detail=true;document.getElementById('simple').setAttribute('aria-pressed','false');document.getElementById('detailed').setAttribute('aria-pressed','true');update()};document.getElementById('review').onclick=()=>{playing=false;setTime(9.5);review=true;update();support.torso.material.emissive.setHex(0x476a00)};
 function resize(){const w=stage.clientWidth,h=stage.clientHeight;camera.aspect=w/h;camera.updateProjectionMatrix();renderer.setSize(w,h)}new ResizeObserver(resize).observe(stage);
 document.addEventListener('keydown',e=>{if(['INPUT','SELECT','TEXTAREA','BUTTON'].includes(document.activeElement?.tagName))return;if(e.code==='Space'){e.preventDefault();play.click()}else if(e.code==='ArrowRight'){playing=false;setTime(t+.25)}else if(e.code==='ArrowLeft'){playing=false;setTime(t-.25)}});function frame(now){const dt=Math.min((now-previous)/1000,.05);previous=now;if(playing){t=Math.min(12,t+dt*speed);if(t===12)playing=false;update()}controls.update();renderer.render(scene,camera);requestAnimationFrame(frame)}update();requestAnimationFrame(frame);
+
+// Inspection camera frames the contact pair without following/overriding orbit.
+document.getElementById('close').onclick=()=>{
+ const p=sampleEpisode(t),x=(p.carrier.pelvis[0]+p.tackler.pelvis[0])*.5;
+ camera.position.set(x+1.7,2.1,3.5);controls.target.set(x,.65,0);controls.update();
+};

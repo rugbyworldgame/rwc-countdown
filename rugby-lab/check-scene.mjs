@@ -102,3 +102,11 @@ vm.runInContext('setTime(0)',context);
 node('resetCamera').onclick();
 assert.ok(vm.runInContext('camera.position.distanceTo(controls.target)<8',context));
 console.log('PASS: joint thickness across 121 poses; closer reset camera.');
+
+for(const time of [0,4.4,5.6,9]){
+ vm.runInContext(`setTime(${time});scene.updateMatrixWorld(true)`,context);
+ const error=vm.runInContext(`(()=>{const p=sampleEpisode(t);return Math.max(...Object.entries(actors).map(([role,actor])=>new THREE.Vector3(1,0,0).applyQuaternion(actor.head.quaternion).distanceTo(new THREE.Vector3(...p[role].headFront))))})()`,context);
+ assert.ok(error<1e-6,'Face must follow the intended direction');
+}
+node('close').onclick();assert.ok(vm.runInContext('camera.position.distanceTo(controls.target)<5',context));
+console.log('PASS: head orientation and inspection camera.');
