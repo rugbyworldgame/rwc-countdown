@@ -83,3 +83,22 @@ for(const time of [0,3.8,4.4,5.6,6.4,9,12,0]){
  if(time===0){if(globalThis.initialSkinSample)assert.deepEqual(result.sample,globalThis.initialSkinSample);else globalThis.initialSkinSample=result.sample;}
 }
 console.log('PASS: five SkinnedMesh surfaces per player, normalized weights, finite deformations, SVG CPU parity, reverse seek.');
+// Corrected joints must retain their cross-section throughout the episode.
+for(let frame=0;frame<=120;frame++){
+ const time=frame/10;
+ const minimum=vm.runInContext(`(()=>{setTime(${time});let minimum=Infinity;
+ for(const actor of [carrier,tackler,support])for(const mesh of actor.skins.slice(1)){
+  const positions=mesh.geometry.attributes.position,radial=positions.count/41;
+  for(let ring=14;ring<=27;ring++){
+   const a=ring*radial,b=a+radial/2;
+   const first=mesh.applyBoneTransform(a,new THREE.Vector3().fromBufferAttribute(positions,a));
+   const second=mesh.applyBoneTransform(b,new THREE.Vector3().fromBufferAttribute(positions,b));
+   minimum=Math.min(minimum,first.distanceTo(second));
+  }
+ }return minimum})()`,context);
+ assert.ok(minimum>.075,`Collapsed joint at ${time}: ${minimum}`);
+}
+vm.runInContext('setTime(0)',context);
+node('resetCamera').onclick();
+assert.ok(vm.runInContext('camera.position.distanceTo(controls.target)<8',context));
+console.log('PASS: joint thickness across 121 poses; closer reset camera.');
