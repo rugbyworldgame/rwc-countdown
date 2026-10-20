@@ -31,7 +31,14 @@ function skeleton(pelvis,lean,facing,roll=0){
  return {pelvis,up,front,side,headFront,headUp,local,chest:local(.36),neck:local(.59),head:local(.74),shoulders:[local(.49,0,-.25),local(.49,0,.25)],hips:[local(0,0,-.13),local(0,0,.13)]};
 }
 function limbs(body,hands,feet){
- const arms=body.shoulders.map((p,i)=>solveLimb(p,hands[i],add(mul(body.side,i?1:-1),mul(body.up,-.35)),BODY.upperArm,BODY.forearm));
+ const arms=body.shoulders.map((p,i)=>{
+  const target=[hands[i][0],Math.max(.08,hands[i][1]),hands[i][2]];
+  const pole=add(mul(body.side,i?1:-1),mul(body.up,-.35));
+  let result=solveLimb(p,target,pole,BODY.upperArm,BODY.forearm);
+  const clearance=ease((.17-result.joint[1])/.09);
+  if(clearance>0)result=solveLimb(p,target,mix(pole,[0,1,0],clearance),BODY.upperArm,BODY.forearm);
+  return result;
+ });
  const legs=body.hips.map((p,i)=>{
   const preferred=add(mul(body.front,.7),[0,.8,0]);
   let result=solveLimb(p,feet[i],preferred,BODY.thigh,BODY.shin);
@@ -67,7 +74,7 @@ export function sampleEpisode(time){
  const carrierFeet=walking.map((foot,i)=>mix(foot,[cx-.65,.105+(i?.12:0),i?.32:-.22],tip));
  const defenderX=.4+(cx+.72-.4)*wrap+.65*release;
  const defenderZ=.42-.12*wrap+.62*release;
- const defender=skeleton([defenderX,.91-.22*wrap-.38*tip+.06*release,defenderZ],-.48*wrap-.82*tip+.48*release,-1,-.25*tip);
+ const defender=skeleton([defenderX,.91-.22*wrap-.38*tip+.24*release,defenderZ],-.48*wrap-.82*tip+.95*release,-1,-.25*tip);
  const defenderHands=[-1,1].map(s=>mix(defender.local(.02,.22,s*.32),carrier.local(.14,0,s*.21),wrap*(1-release)));
  const defenderFeet=[-1,1].map(s=>mix([.48,.09,.42+s*.2],[defenderX+.55,.10,defenderZ+s*.24],Math.max(wrap*.35,tip,release)));
  const challengerX=3.4+(placed[0]+.40-3.4)*arrive;

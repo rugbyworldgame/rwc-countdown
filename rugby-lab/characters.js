@@ -144,6 +144,7 @@ export function createPlayer(scene,shirt,skin=0xc58b65){
    const lower=arm?.043+.028*Math.exp(-(((v-.23)/.46)**2)):.051+.047*Math.exp(-(((v-.32)/.38)**2));
    const blend=smooth((d-a+round)/(2*round));
    const radius=upper*(1-blend)+lower*blend;
+   center.y=Math.max(center.y,radius*1.04+.012);
    const cap=n===40?.001:radius; // socket overlaps torso instead of tapering to a pin
    rings.push({center:center.toArray(),axis:axis.toArray(),width:cap,depth:cap*(arm?.94:1.04),bones:[index((arm?'UpperArm.':'UpperLeg.')+side),index((arm?'LowerArm.':'LowerLeg.')+side)],blend,material:arm?(d<a*.58?0:1):(d<a*.57?2:d>a+.12?3:1)});
   }

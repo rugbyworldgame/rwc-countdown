@@ -72,6 +72,7 @@ for(const time of [0,3.8,4.4,5.6,6.4,9,12,0]){
      if(skinWeight.getX(i)>0&&skinWeight.getY(i)>0)weighted++;
      const vertex=mesh.applyBoneTransform(i,new THREE.Vector3().fromBufferAttribute(position,i));
      if(!vertex.toArray().every(Number.isFinite))throw Error('Invalid deformed vertex');
+     if(vertex.y<0)throw Error('Body surface below turf at '+t+': '+vertex.y);
      if(vertex.distanceTo(new THREE.Vector3(...sampleEpisode(${time})[actor===tackler?'tackler':actor===support?'support':'carrier'].pelvis))>2.2)throw Error('Exploded skin');
      if(actor===svgActor)maximumError=Math.max(maximumError,vertex.distanceTo(new THREE.Vector3().fromBufferAttribute(actor.proxies[m].geometry.attributes.position,i)));
     }
