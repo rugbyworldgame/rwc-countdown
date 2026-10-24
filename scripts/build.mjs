@@ -1,4 +1,5 @@
 import { execFileSync } from 'node:child_process';
+execFileSync('python3', [new URL('./render_matches.py', import.meta.url).pathname], {stdio:'inherit'});
 execFileSync('python3', [new URL('./sync_analytics.py', import.meta.url).pathname], {stdio:'inherit'});
 import { cp, mkdir, readdir, rm } from 'node:fs/promises';
 // GitHub Pages publishes root; .build is a complete local verification artifact.
