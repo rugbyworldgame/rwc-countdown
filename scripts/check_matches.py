@@ -19,7 +19,9 @@ for path,text in outputs(data).items():
  event=next(json.loads(x) for x in re.findall(r'<script type="application/ld\+json" data-seo>(.*?)</script>',text) if json.loads(x)['@type']=='SportsEvent')
  assert event['startDate']==match['start'] and event['homeTeam']['name']==match['home']['name'] and event['awayTeam']['name']==match['away']['name']
  lists=re.findall(r'<ol(?: start="16")?>(.*?)</ol>',text,re.S)
- assert [len(re.findall('<li',x)) for x in lists]==[15,8,15,8]
+ expected=[size for team in [match['home'],match['away']] if team['players'] for size in [15,8]]
+ assert [len(re.findall('<li',x)) for x in lists]==expected
+ assert text.count('Подтверждённый состав пока не добавлен.')==sum(not team['players'] for team in [match['home'],match['away']])
  for t,a in p.tags:
   if t=='a' and a.get('href','').startswith('/match-center/2026-'):
    assert (ROOT/urlsplit(a['href']).path.lstrip('/')/'index.html').exists()
