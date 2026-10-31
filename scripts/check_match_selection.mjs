@@ -19,3 +19,22 @@ assert.deepEqual(unsorted,[...matches].reverse()); // no reordering of caller da
 assert.equal(choose([matches[0]],0).id,0);
 assert.equal(choose([],0),undefined);
 console.log('Selection: all Moscow start boundaries, long gap, last retained, statuses, single/empty PASS');
+
+// A new Moscow day must not keep yesterday's broadcast before today's first kickoff.
+const weekend=[
+ {id:'friday',start:'2026-10-30T22:45:00+03:00'},
+ {id:'saturday-first',start:'2026-10-31T15:45:00+03:00'},
+ {id:'saturday-next',start:'2026-10-31T18:00:00+03:00'},
+ {id:'sunday',start:'2026-11-01T23:05:00+03:00'}
+];
+for(const [at,id] of [
+ ['2026-10-30T20:59:59Z','friday'],
+ ['2026-10-30T21:00:00Z','saturday-first'],
+ ['2026-10-31T14:30:00+03:00','saturday-first'],
+ ['2026-10-31T15:45:00+03:00','saturday-first'],
+ ['2026-10-31T17:59:59+03:00','saturday-first'],
+ ['2026-10-31T18:00:00+03:00','saturday-next'],
+ ['2026-10-31T21:00:00Z','sunday'],
+ ['2026-11-02T12:00:00+03:00','sunday']
+]) assert.equal(choose([...weekend].reverse(),Date.parse(at)).id,id,at);
+console.log('Multi-day selection: Moscow midnight, pre-match entry and subsequent starts PASS');
