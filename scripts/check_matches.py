@@ -10,6 +10,11 @@ data=json.loads((ROOT/'data/matches.json').read_text());validate(data)
 for path,text in outputs(data).items():
  if path.suffix!='.html':continue
  p=Page(text)
+ if path==ROOT/'match-center/archive/index.html':
+  links=[a['href'] for t,a in p.tags if t=='a' and a.get('href','').startswith('/match-center/2026-')]
+  assert links==['/match-center/'+m['id']+'/' for m in sorted(data['matches'],key=lambda m:m['start'],reverse=True) if m['id'] not in data['featured']]
+  assert not any(t=='iframe' for t,a in p.tags)
+  continue
  frames=[a for t,a in p.tags if t=='iframe'];assert len(frames)==1
  ids=[a['id'] for t,a in p.tags if 'id' in a];assert len(ids)==len(set(ids))
  assert len([1 for t,a in p.tags if t=='h1'])==1

@@ -74,21 +74,29 @@ def render(m,featured,allmatches,template,entry=False):
  def facts(items):return '<dl class="match-facts">'+''.join('<div><dt>'+e(k)+'</dt><dd>'+e(v or 'Пока не подтверждено')+'</dd></div>' for k,v in items)+'</dl>'
  content=f'''<section class="section shell match-content"><article class="match-intro"><span class="match-kicker">Почему стоит смотреть</span><h2>{e(m['introTitle'])}</h2><p>{e(m['intro'])}</p><p class="stream-help">Больше регби: <a href="/streams">наши трансляции</a> · <a href="/participants">участники Кубка мира 2027</a>.</p></article>
  <section class="match-info" aria-labelledby="info-title"><div class="match-section-heading"><span>Всё в одном месте</span><h2 id="info-title">Основная информация</h2></div>'''+facts([('Дата',shortdate(m)+f' {date(m).year} года'),('Начало',time(m)+' МСК'),('Турнир',m['competition']),('Сезон и тур',f'{m["season"]} · {stage}'),('Главный арбитр',m['officials'].get('referee')),('Стадион',f'«{m["venue"]}», {m["city"]}')])+'''</section><section class="lineups" aria-labelledby="lineups-title"><div class="match-section-heading"><span>Заявки команд</span><h2 id="lineups-title">Составы</h2></div><div class="lineup-grid">'''+roster(home)+roster(away)+'''</div></section><section class="match-info" aria-labelledby="officials-title"><div class="match-section-heading"><span>Назначения на матч</span><h2 id="officials-title">Судейская бригада</h2></div>'''+facts([(k,m['officials'].get(v)) for k,v in [('Главный арбитр','referee'),('Боковые судьи','assistants'),('Видеорефери','tmo')]])+'<p class="stream-help">Источники: '+' · '.join(f'<a href="{e(x["url"])}" target="_blank" rel="noopener">{e(x["label"])}</a>' for x in m['sources'])+'</p></section></section>'
- archive=[a for a in allmatches if a['id'] not in {x['id'] for x in featured}]
- groups={}
- for a in sorted(archive,key=date,reverse=True):
-  groups.setdefault(a['competition'],[]).append(a)
- def archive_group(competition,games):
-  links=''.join(f'<a href="{url(a)}">{shortdate(a)} {date(a).year} · {e(name(a))}</a>' for a in games)
-  return f'<details class="archive-competition"><summary>{e(competition)} ({len(games)})</summary>{links}</details>'
- archive_html='<details id="match-archive" class="shell match-archive"><summary>Архив матчей</summary>'+''.join(archive_group(c,g) for c,g in groups.items())+'</details>' if archive else ''
-
+ archive_jump='<div class="shell archive-shortcut"><a href="/match-center/archive/">Архив матчей</a></div>'
+ archive_html='<div id="match-archive" class="shell match-archive"><a href="/match-center/archive/">Архив матчей</a></div>'
  config=[dict(id=x['id'],start=x['start'],status=x['status'],url=url(x)) for x in featured]
  # Classic head script selects once, before any iframe is parsed. No mid-view changes.
  entry_script='<script>if(window.RugbyMatchSelection){const m=RugbyMatchSelection.choose('+js(config)+',Date.now());if(m)location.replace(m.url);}</script>' if entry and len(featured)>1 else ''
- archive_jump=('<div class="shell archive-shortcut"><a href="#match-archive" onclick="const a=document.getElementById(&quot;match-archive&quot;);a.open=true;a.querySelector(&quot;summary&quot;).focus({preventScroll:true})">Архив матчей</a></div>' if archive else '')
  values=dict(title=e(title),metadata=metadata,entry_script=entry_script,selector=archive_jump+selector(featured,m),scoreboard=scoreboard,stream=stream,content=content,archive=archive_html,timer_config='<script id="match-config" type="application/json">'+js(dict(start=m['start'],status=m['status']))+'</script>')
  return re.sub(r'\{\{([a-z_]+)\}\}',lambda x:values[x[1]],template)
+
+def archive_page(matches,template):
+ title='Архив матчей — трансляции регби | Rugby 2027'
+ desc='Сохранённые матчи по регби: поиск по сборной или клубу, выбор турнира и сезона.'
+ canonical=BASE+'/match-center/archive/'
+ meta=f'<meta name="description" content="{desc}"><link rel="canonical" href="{canonical}">'
+ for key,val in dict(title=title,description=desc,url=canonical,type='website',locale='ru_RU').items():
+  meta+=f'<meta property="og:{key}" content="{e(val)}">'
+ meta+='<script type="application/ld+json">'+js({'@context':'https://schema.org','@type':'BreadcrumbList','itemListElement':[{'@type':'ListItem','position':i,'name':n,'item':u} for i,(n,u) in enumerate([('Главная',BASE+'/'),('Матч-центр',BASE+'/match-center/'),('Архив матчей',canonical)],1)]})+'</script>'
+ def options(k):return ''.join(f'<option>{e(v)}</option>' for v in sorted({m[k] for m in matches}))
+ rows=''.join(f'<li data-comp="{e(m["competition"])}" data-season="{e(m["season"])}"><a href="{url(m)}">{e(name(m))}</a><small>{shortdate(m)} {date(m).year} · {time(m)} МСК · {e(m["competition"])} · {e(m["season"])}</small></li>' for m in reversed(matches))
+ body=(ROOT/'scripts/templates/archive.fragment.html').read_text().replace('{{rows}}',rows).replace('{{competitions}}',options('competition')).replace('{{seasons}}',options('season'))
+ page=re.sub(r'(<main id="main-content">).*?</main>',lambda m:m[1]+body+'</main>',template,flags=re.S)
+ page=page.replace('href="#project-support"','href="/#project-support"').replace('{{title}}',title).replace('{{metadata}}',meta+'<link rel="stylesheet" href="/assets/css/archive.css">')
+ page=re.sub(r'<script src="/assets/js/match-selection[^<]+</script>{{entry_script}}','',page)
+ return re.sub(r'{{timer_config}}<script[^>]*></script>','<script src="/assets/js/archive.js" defer></script>',page)
 
 def outputs(data):
  validate(data)
@@ -97,8 +105,9 @@ def outputs(data):
  template=(ROOT/'scripts/templates/match.html').read_text()
  result={ROOT/url(m).lstrip('/')/'index.html':render(m,featured,matches,template) for m in matches}
  result[ROOT/'match-center/index.html']=render(featured[0],featured,matches,template,True)
+ result[ROOT/"match-center/archive/index.html"]=archive_page([m for m in matches if m["id"] not in data["featured"]],template)
  urls=[n.text for n in ET.parse(ROOT/'sitemap.xml').iter() if n.tag.endswith('loc')]
- urls=sorted(set(urls+[BASE+'/match-center/']+[BASE+url(m) for m in matches]))
+ urls=sorted(set(urls+[BASE+'/match-center/',BASE+'/match-center/archive/']+[BASE+url(m) for m in matches]))
  result[ROOT/'sitemap.xml']='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+''.join('  <url><loc>'+u+'</loc></url>\n' for u in urls)+'</urlset>\n'
  return result
 
