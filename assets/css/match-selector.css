@@ -7,3 +7,9 @@
 .match-countdown[hidden]{display:none}.match-countdown-wrap{border-radius:16px;text-align:center}
 @media(max-width:900px){.match-selector{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:380px){.match-selector a{padding:8px}.match-selector a strong{font-size:.8rem}.match-selector a small{font-size:.64rem}}
+
+.match-countdown[hidden]{display:none}
+.match-countdown-wrap[data-state="live"] .live-dot,.match-countdown-wrap[data-state="started"] .live-dot,.match-selector .confirmed-live::before{background:#83df83;box-shadow:none}
+.match-selector a .confirmed-live{color:#abedab}
+.match-selector .confirmed-live::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px}
+.match-countdown-wrap:is([data-state="finished"],[data-state="postponed"],[data-state="cancelled"]) .live-dot{background:#aab1aa;box-shadow:none}

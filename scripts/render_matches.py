@@ -37,7 +37,8 @@ def validate(data):
 
 def selector(featured,current):
  if len(featured)<2:return ''
- links=''.join(f'<a href="{url(m)}"'+(' aria-current="page"' if m['id']==current['id'] else '')+f'><small>{e(shortdate(m))} · {time(m)} МСК · {e(m["competition"])}</small><strong>{e(name(m))}</strong></a>' for m in featured)
+ def live(m):return '<small class="confirmed-live">В эфире</small>' if m['status']=='live' else ''
+ links=''.join(f'<a href="{url(m)}"'+(' aria-current="page"' if m['id']==current['id'] else '')+f'><small>{e(shortdate(m))} · {time(m)} МСК · {e(m["competition"])}</small><strong>{e(name(m))}</strong>{live(m)}</a>' for m in featured)
  return '<nav class="shell match-selector" aria-label="Выбор матча">'+links+'</nav>'
 
 def render(m,featured,allmatches,template,entry=False):
