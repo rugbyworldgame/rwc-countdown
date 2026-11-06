@@ -1,12 +1,13 @@
 {
   "version": 1,
   "featured": [
-    "2026-10-30-glasgow-lions",
-    "2026-10-31-stormers-ulster",
-    "2026-10-31-exeter-harlequins",
-    "2026-10-31-northampton-gloucester",
-    "2026-10-31-perpignan-toulon",
-    "2026-11-01-pau-toulouse"
+    "2026-11-06-ireland-argentina",
+    "2026-11-07-italy-south-africa",
+    "2026-11-07-georgia-canada",
+    "2026-11-07-scotland-new-zealand",
+    "2026-11-07-wales-japan",
+    "2026-11-07-france-fiji",
+    "2026-11-08-england-australia"
   ],
   "matches": [
     {
@@ -1157,6 +1158,300 @@
         {
           "label": "LNR — составы, расписание и судейская бригада",
           "url": "https://top14.lnr.fr/feuille-de-match/2026-2027/j8/11874-pau-toulouse/compositions"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-06-ireland-argentina",
+      "international": true,
+      "start": "2026-11-06T23:10:00+03:00",
+      "competition": "Чемпионат наций",
+      "season": "2026",
+      "stage": "Ноябрьская серия",
+      "status": "scheduled",
+      "venue": "Авива",
+      "city": "Дублин",
+      "country": "IE",
+      "video": "https://vkvideo.ru/video_ext.php?oid=-175058841&id=456241129&hash=0b9ba36b940a76d9&hd=3",
+      "introTitle": "На поле — Ирландия и Аргентина",
+      "intro": "Дублин принимает матч турнира «Чемпионат наций». Начало встречи — в 23:10 по Москве.",
+      "home": {
+        "name": "Ирландия",
+        "badge": "IRL",
+        "color": "#275341",
+        "players": []
+      },
+      "away": {
+        "name": "Аргентина",
+        "badge": "ARG",
+        "color": "#344765",
+        "players": []
+      },
+      "officials": {
+        "referee": "Люк Пирс",
+        "assistants": "Холли Дэвидсон и Морне Феррейра",
+        "tmo": "Эндрю Джексон"
+      },
+      "sources": [
+        {
+          "label": "Расписание чемпионата",
+          "url": "https://nationschampionshiprugby.com/en/match-centre/fixtures"
+        },
+        {
+          "label": "World Rugby — судейские назначения",
+          "url": "https://www.world.rugby/the-game/high-performance/officiating/1048137"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-07-italy-south-africa",
+      "international": true,
+      "start": "2026-11-07T14:40:00+03:00",
+      "competition": "Чемпионат наций",
+      "season": "2026",
+      "stage": "Ноябрьская серия",
+      "status": "scheduled",
+      "venue": "Альянц",
+      "city": "Турин",
+      "country": "IT",
+      "video": "https://vkvideo.ru/video_ext.php?oid=-15550428&id=456245868&hash=8c2e5d5b478ab1de&hd=3",
+      "introTitle": "На поле — Италия и Южная Африка",
+      "intro": "Турин принимает матч турнира «Чемпионат наций». Начало встречи — в 14:40 по Москве.",
+      "home": {
+        "name": "Италия",
+        "badge": "ITA",
+        "color": "#275341",
+        "players": []
+      },
+      "away": {
+        "name": "Южная Африка",
+        "badge": "RSA",
+        "color": "#344765",
+        "players": []
+      },
+      "officials": {
+        "referee": "Оуэн Кросс",
+        "assistants": "Джеймс Доулман и Сэм Гроув-Уайт",
+        "tmo": "Бретт Кронан"
+      },
+      "sources": [
+        {
+          "label": "Расписание чемпионата",
+          "url": "https://nationschampionshiprugby.com/en/match-centre/fixtures"
+        },
+        {
+          "label": "World Rugby — судейские назначения",
+          "url": "https://www.world.rugby/the-game/high-performance/officiating/1048137"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-07-georgia-canada",
+      "international": true,
+      "start": "2026-11-07T17:00:00+03:00",
+      "competition": "Кубок наций",
+      "season": "2026",
+      "stage": "Ноябрьская серия",
+      "status": "scheduled",
+      "venue": "Авчала",
+      "city": "Тбилиси",
+      "country": "GE",
+      "video": "https://vk.ru/video_ext.php?oid=-200149158&id=456292690&hash=6373b6a6d62fd57e57&autoplay=1",
+      "introTitle": "На поле — Грузия и Канада",
+      "intro": "Тбилиси принимает матч турнира «Кубок наций». Начало встречи — в 17:00 по Москве.",
+      "home": {
+        "name": "Грузия",
+        "badge": "GEO",
+        "color": "#275341",
+        "players": []
+      },
+      "away": {
+        "name": "Канада",
+        "badge": "CAN",
+        "color": "#344765",
+        "players": []
+      },
+      "officials": {
+        "referee": "Джанлука Ньекки",
+        "assistants": "Федерико Ведовелли и Филиппо Руссо",
+        "tmo": "Стефано Пенне"
+      },
+      "sources": [
+        {
+          "label": "Rugby Canada — матч",
+          "url": "https://rugby.ca/en/events/international/rugby-15s/senior-men/can-v-geo/2026-11-07"
+        },
+        {
+          "label": "World Rugby — судейские назначения",
+          "url": "https://www.world.rugby/the-game/high-performance/officiating/1048138"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-07-scotland-new-zealand",
+      "international": true,
+      "start": "2026-11-07T17:10:00+03:00",
+      "competition": "Чемпионат наций",
+      "season": "2026",
+      "stage": "Ноябрьская серия",
+      "status": "scheduled",
+      "venue": "Маррифилд",
+      "city": "Эдинбург",
+      "country": "GB",
+      "video": "https://vkvideo.ru/video_ext.php?oid=-175058841&id=456241131&hash=a0e749bcdf4b55d0&hd=3",
+      "introTitle": "На поле — Шотландия и Новая Зеландия",
+      "intro": "Эдинбург принимает матч турнира «Чемпионат наций». Начало встречи — в 17:10 по Москве.",
+      "home": {
+        "name": "Шотландия",
+        "badge": "SCO",
+        "color": "#275341",
+        "players": []
+      },
+      "away": {
+        "name": "Новая Зеландия",
+        "badge": "NZL",
+        "color": "#344765",
+        "players": []
+      },
+      "officials": {
+        "referee": "Эндрю Брейс",
+        "assistants": "Андреа Пьярди и Джордан Уэй",
+        "tmo": "Олли Ходжес"
+      },
+      "sources": [
+        {
+          "label": "Расписание чемпионата",
+          "url": "https://nationschampionshiprugby.com/en/match-centre/fixtures"
+        },
+        {
+          "label": "World Rugby — судейские назначения",
+          "url": "https://www.world.rugby/the-game/high-performance/officiating/1048137"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-07-wales-japan",
+      "international": true,
+      "start": "2026-11-07T19:40:00+03:00",
+      "competition": "Чемпионат наций",
+      "season": "2026",
+      "stage": "Ноябрьская серия",
+      "status": "scheduled",
+      "venue": "Принсипалити",
+      "city": "Кардифф",
+      "country": "GB",
+      "video": "https://vkvideo.ru/video_ext.php?oid=-175058841&id=456241132&hash=2ea03d6d1460e691&hd=3",
+      "introTitle": "На поле — Уэльс и Япония",
+      "intro": "Кардифф принимает матч турнира «Чемпионат наций». Начало встречи — в 19:40 по Москве.",
+      "home": {
+        "name": "Уэльс",
+        "badge": "WAL",
+        "color": "#275341",
+        "players": []
+      },
+      "away": {
+        "name": "Япония",
+        "badge": "JPN",
+        "color": "#344765",
+        "players": []
+      },
+      "officials": {
+        "referee": "Пол Уильямс",
+        "assistants": "Кристоф Ридли и Ангус Мейби",
+        "tmo": "Гленн Ньюман"
+      },
+      "sources": [
+        {
+          "label": "Расписание чемпионата",
+          "url": "https://nationschampionshiprugby.com/en/match-centre/fixtures"
+        },
+        {
+          "label": "World Rugby — судейские назначения",
+          "url": "https://www.world.rugby/the-game/high-performance/officiating/1048137"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-07-france-fiji",
+      "international": true,
+      "start": "2026-11-07T23:10:00+03:00",
+      "competition": "Чемпионат наций",
+      "season": "2026",
+      "stage": "Ноябрьская серия",
+      "status": "scheduled",
+      "venue": "Групама",
+      "city": "Лион",
+      "country": "FR",
+      "video": "https://vkvideo.ru/video_ext.php?oid=-175058841&id=456241133&hash=cb80baf13bc8c381&hd=3",
+      "introTitle": "На поле — Франция и Фиджи",
+      "intro": "Лион принимает матч турнира «Чемпионат наций». Начало встречи — в 23:10 по Москве.",
+      "home": {
+        "name": "Франция",
+        "badge": "FRA",
+        "color": "#275341",
+        "players": []
+      },
+      "away": {
+        "name": "Фиджи",
+        "badge": "FIJ",
+        "color": "#344765",
+        "players": []
+      },
+      "officials": {
+        "referee": "Карл Диксон",
+        "assistants": "Дамиан Шнайдер и Кацуки Фурусэ",
+        "tmo": "Иэн Темпест"
+      },
+      "sources": [
+        {
+          "label": "Расписание чемпионата",
+          "url": "https://nationschampionshiprugby.com/en/match-centre/fixtures"
+        },
+        {
+          "label": "World Rugby — судейские назначения",
+          "url": "https://www.world.rugby/the-game/high-performance/officiating/1048137"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-08-england-australia",
+      "international": true,
+      "start": "2026-11-08T18:10:00+03:00",
+      "competition": "Чемпионат наций",
+      "season": "2026",
+      "stage": "Ноябрьская серия",
+      "status": "scheduled",
+      "venue": "Альянц (Туикенем)",
+      "city": "Лондон",
+      "country": "GB",
+      "video": "https://vkvideo.ru/video_ext.php?oid=-175058841&id=456241135&hash=7e2ed35da85e30d6&hd=3",
+      "introTitle": "На поле — Англия и Австралия",
+      "intro": "Лондон принимает матч турнира «Чемпионат наций». Начало встречи — в 18:10 по Москве.",
+      "home": {
+        "name": "Англия",
+        "badge": "ENG",
+        "color": "#275341",
+        "players": []
+      },
+      "away": {
+        "name": "Австралия",
+        "badge": "AUS",
+        "color": "#344765",
+        "players": []
+      },
+      "officials": {
+        "referee": "Пьер Бруссе",
+        "assistants": "Ника Амашукели и Жереми Розье",
+        "tmo": "Тюаль Траинини"
+      },
+      "sources": [
+        {
+          "label": "Расписание чемпионата",
+          "url": "https://nationschampionshiprugby.com/en/match-centre/fixtures"
+        },
+        {
+          "label": "World Rugby — судейские назначения",
+          "url": "https://www.world.rugby/the-game/high-performance/officiating/1048137"
         }
       ]
     }
