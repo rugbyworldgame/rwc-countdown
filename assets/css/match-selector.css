@@ -13,3 +13,8 @@
 .match-selector a .confirmed-live{color:#abedab}
 .match-selector .confirmed-live::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px}
 .match-countdown-wrap:is([data-state="finished"],[data-state="postponed"],[data-state="cancelled"]) .live-dot{background:#aab1aa;box-shadow:none}
+
+.archive-shortcut{display:flex;justify-content:flex-end;padding-top:8px}
+.archive-shortcut a{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border:1px solid #82975e;border-radius:8px;color:#d3f399;background:#152017;text-decoration:none;font-weight:700}
+.archive-shortcut a:hover,.archive-shortcut a:focus-visible{outline:2px solid #c4f263;outline-offset:2px}
+#match-archive{scroll-margin-top:6rem}
