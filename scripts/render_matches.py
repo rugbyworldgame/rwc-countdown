@@ -54,12 +54,13 @@ def render(m,featured,allmatches,template,entry=False):
  for k,v in {'type':'website','locale':'ru_RU','site_name':'Rugby 2027','title':title,'description':desc,'url':canonical}.items():metadata+=f'<meta property="og:{k}" content="{e(v)}">'
  metadata+=''.join('<script type="application/ld+json" data-seo>'+js(x)+'</script>' for x in schema)
  def badge(t):return f'<span aria-hidden="true" style="background:{t["color"]};color:#fff">{e(t["badge"])}</span>'
+ initial_label={'finished':'Матч завершён','cancelled':'Матч отменён','postponed':'Матч перенесён','live':'В эфире'}.get(m['status'],f'Начало: {shortdate(m)}, {time(m)} МСК')
  home,away=m['home'],m['away']
  scoreboard=f'''<section class="match-scoreboard"><div class="shell"><a class="match-back" href="/">← На главную</a>
  <div class="match-competition">{e(m['competition'])} · {e(m['season'])} · {stage}</div>
  <div class="match-teams" aria-label="{e(name(m))}"><div class="match-team">{badge(home)}<strong>{e(teamname(m,home))}</strong></div><div class="match-versus"><b>VS</b><small>{shortdate(m)} · {time(m)} МСК</small></div><div class="match-team">{badge(away)}<strong>{e(teamname(m,away))}</strong></div></div>
  <div class="match-venue">Стадион «{e(m['venue'])}» · {e(m['city'])}</div>
- <div class="match-countdown-wrap" id="matchCountdown"><span class="live-dot" aria-hidden="true"></span><span id="countdownLabel">Начало: {shortdate(m)}, {time(m)} МСК</span><div class="match-countdown" id="countdownValues" hidden>'''+''.join(f'<b><strong id="match{k}">—</strong><small>{v}</small></b>' for k,v in [('Days','дн.'),('Hours','ч.'),('Minutes','мин.'),('Seconds','сек.')])+'''</div></div></div></section>'''
+ <div class="match-countdown-wrap" id="matchCountdown" data-state="{e(m['status'])}"><span class="live-dot" aria-hidden="true"></span><span id="countdownLabel">{e(initial_label)}</span><div class="match-countdown" id="countdownValues" hidden>'''+''.join(f'<b><strong id="match{k}">—</strong><small>{v}</small></b>' for k,v in [('Days','дн.'),('Hours','ч.'),('Minutes','мин.'),('Seconds','сек.')])+'''</div></div></div></section>'''
  stream=f'''<div class="stream-heading"><div><span class="match-kicker">Трансляция матча</span><h1 id="stream-title">{e(name(m))}</h1></div><span class="stream-time">Начало в {time(m)} МСК</span></div><div class="responsive-video"><iframe src="{e(m['video'])}" title="Трансляция матча {e(name(m))}" width="1280" height="720" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock" allowfullscreen></iframe></div><p class="stream-help">Если эфир не запустился автоматически, нажмите кнопку воспроизведения в центре окна.</p><p class="stream-help"><a href="{url(m)}">Постоянная ссылка на этот матч</a></p>'''
  players=json.loads((ROOT/'assets/players/players.json').read_text())['players']
  aliases={n.lower().replace('ё','е'):p['id'] for p in players for n in [p['name'],*p.get('aliases',[])]}
