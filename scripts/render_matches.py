@@ -105,7 +105,13 @@ def outputs(data):
  featured=sorted([byid[x] for x in data['featured']],key=lambda m:date(m))
  template=(ROOT/'scripts/templates/match.html').read_text()
  result={ROOT/url(m).lstrip('/')/'index.html':render(m,featured,matches,template) for m in matches}
- result[ROOT/'match-center/index.html']=render(featured[0],featured,matches,template,True)
+ # Optional editorial entry choice; direct match pages and chronological buttons stay unchanged.
+ default_id=data.get('defaultMatch')
+ default=next((m for m in featured if m['id']==default_id),featured[0])
+ entry_page=render(default,featured,matches,template,True)
+ if default_id and default['id']==default_id:
+  entry_page=re.sub(r'<script>if\(window.RugbyMatchSelection\).*?</script>',lambda _: '<script>location.replace('+js(url(default))+');</script>',entry_page)
+ result[ROOT/'match-center/index.html']=entry_page
  result[ROOT/"match-center/archive/index.html"]=archive_page([m for m in matches if m["id"] not in data["featured"]],template)
  urls=[n.text for n in ET.parse(ROOT/'sitemap.xml').iter() if n.tag.endswith('loc')]
  urls=sorted(set(urls+[BASE+'/match-center/',BASE+'/match-center/archive/']+[BASE+url(m) for m in matches]))
