@@ -19,7 +19,7 @@ descriptions = {
 }
 menu = (ROOT/'menu.html').read_text().replace('aria-expanded="false"', 'aria-expanded="false" aria-controls="mobileNav"')
 support = (ROOT/'support.html').read_text()
-footer = '<nav class="seo-footer" aria-label="Разделы сайта">' + ''.join(f'<a href="{p}">{n}</a>' for p,n in [('/', 'Главная'),('/about','О турнире'),('/schedule','Расписание'),('/participants','Участники'),('/stadiums','Стадионы'),('/streams','Трансляции'),('/match-center/','Матч-центр'),('/partners','Партнёры')]) + '</nav><p class="seo-disclaimer">Независимый русскоязычный проект. Не является официальным сайтом World Rugby.</p>'
+footer = '<nav class="seo-footer" aria-label="Разделы сайта">' + ''.join(f'<a href="{p}">{n}</a>' for p,n in [('/', 'Главная'),('/about','О турнире'),('/schedule','Расписание'),('/participants','Участники'),('/stadiums','Стадионы'),('/match-center/','Матч-центр'),('/partners','Партнёры')]) + '</nav><p class="seo-disclaimer">Независимый русскоязычный проект. Не является официальным сайтом World Rugby.</p>'
 pages = sorted(ROOT.glob('*.html'))
 indexed=[]
 for path in pages:

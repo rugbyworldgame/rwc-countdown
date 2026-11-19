@@ -52,6 +52,14 @@ if (document.querySelector('.lineups')) {
       if (!response.ok) return;
       host.innerHTML = await response.text();
     }
+    // Older cached pages may still contain the previous header.
+    host.querySelectorAll('.desktop-nav, .mobile-nav').forEach(nav => {
+      const previous = nav.querySelector('a[href="/streams"]');
+      if (!previous) return;
+      nav.querySelector('a[href="/match-center/"]')?.remove();
+      previous.href = '/match-center/';
+      previous.textContent = 'Матч-центр';
+    });
     const toggle = document.getElementById("menuToggle");
     const nav = document.getElementById("mobileNav");
     toggle?.addEventListener("click", () => {
