@@ -5,14 +5,19 @@
   const target = Date.parse(start), label = document.getElementById('countdownLabel');
   const values = document.getElementById('countdownValues');
   const wrap = document.getElementById('matchCountdown');
-  const kickoff = new Intl.DateTimeFormat('ru-RU',{timeZone:'Europe/Moscow',hour:'2-digit',minute:'2-digit'}).format(target);
+  const today = new Intl.DateTimeFormat('sv-SE', {timeZone:'Europe/Moscow'}).format(new Date());
+  if (matchMedia('(max-width:900px)').matches) {
+    document.querySelectorAll('details[data-match-day]').forEach(group => {
+      group.open = group.dataset.matchDay === today || !!group.querySelector('[aria-current="page"]');
+    });
+  }
+  const statusText = label.textContent;
   function tick() {
     const left = target-Date.now();
-    const fixed = {finished:'Матч завершён',live:'В эфире',postponed:'Матч перенесён',cancelled:'Матч отменён'}[status];
-    if (fixed || left<=0) {
+    if (status !== 'scheduled' || left<=0) {
       values.hidden=true;
-      wrap.dataset.state=fixed ? status : 'started';
-      label.textContent=fixed || 'Начало в '+kickoff+' МСК';
+      wrap.dataset.state=status === 'scheduled' ? 'started' : status;
+      label.textContent=statusText;
       return;
     }
     label.textContent='До стартового свистка'; values.hidden=false;
