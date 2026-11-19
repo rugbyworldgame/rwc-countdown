@@ -1,13 +1,11 @@
 {
   "version": 1,
   "featured": [
-    "2026-11-13-france-south-africa",
-    "2026-11-14-italy-argentina",
-    "2026-11-14-georgia-tonga",
-    "2026-11-14-wales-new-zealand",
-    "2026-11-14-england-japan",
-    "2026-11-14-ireland-fiji",
-    "2026-11-15-scotland-australia"
+    "2026-11-20-romania-canada",
+    "2026-11-20-montauban-agen",
+    "2026-11-20-nevers-angouleme",
+    "2026-11-20-bristol-bath",
+    "2026-11-20-oyonnax-brive"
   ],
   "matches": [
     {
@@ -2389,7 +2387,7 @@
       "competition": "Чемпионат наций",
       "season": "2026",
       "stage": "Ноябрьская серия · 5-й тур",
-      "status": "scheduled",
+      "status": "finished",
       "venue": "Авива",
       "city": "Дублин",
       "country": "IE",
@@ -2483,7 +2481,7 @@
       "competition": "Чемпионат наций",
       "season": "2026",
       "stage": "Ноябрьская серия · 5-й тур",
-      "status": "scheduled",
+      "status": "finished",
       "venue": "Маррифилд",
       "city": "Эдинбург",
       "country": "GB",
@@ -2567,6 +2565,452 @@
         {
           "label": "Судейская бригада — World Rugby",
           "url": "https://www.world.rugby/beta/en/match/8eb3dfab-2f48-45ce-9ad4-9d5d0edb92cc"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-20-romania-canada",
+      "international": true,
+      "start": "2026-11-20T19:30:00+03:00",
+      "competition": "Кубок наций",
+      "season": "2026",
+      "stage": "6-й тур",
+      "status": "scheduled",
+      "venue": "Аркул де Триумф",
+      "city": "Бухарест",
+      "country": "RO",
+      "video": "https://vk.ru/video_ext.php?oid=-175058841&id=456241189&hash=14088433f8f220f8&hd=3",
+      "introTitle": "Перед матчем",
+      "intro": "В Бухаресте разыграют и Кубок Чернаводэ. Канада приезжает после победы над Гонконгом и может впервые обыграть Румынию на её поле. Эфир с оригинальным звуком.",
+      "home": {
+        "name": "Румыния",
+        "badge": "ROU",
+        "players": [
+          "Alexandru Savin",
+          "Tudor Butnariu",
+          "Gheorghe Gajion",
+          "Logan Weidner",
+          "Andrei Mahu",
+          "Cristi Boboc",
+          "Keanan Murray",
+          "Adrian Mitu",
+          "Alin Conache",
+          "Hinckley Vaovasa",
+          "Damian Bonaparte",
+          "Mihai Graure",
+          "Atila Septar",
+          "Nicolas Onuțu",
+          "Marius Simionescu",
+          "Alexandru Colev",
+          "Iulian Hartig",
+          "Jean-Pierre Smith",
+          "Ștefan Iancu",
+          "Iacopo Bianchi",
+          "Gabriel Rupanu",
+          "Ștefan Cojocariu",
+          "Jason Tomane"
+        ],
+        "color": "#23445a"
+      },
+      "away": {
+        "name": "Канада",
+        "badge": "CAN",
+        "players": [
+          "Calixto Martinez",
+          "Andrew Quattrin",
+          "Kyle Steeves",
+          "Daragh Doyle",
+          "Evan Olmstead",
+          "Matt Beukeboom",
+          "Siôn Parry",
+          "Tyler Ardron",
+          "Jason Higgins",
+          "Spencer Jones",
+          "Nic Benn",
+          "Ben LeSage",
+          "Isaac Olson",
+          "Kyle Tremblay",
+          "Takoda McMullin",
+          "Dewald Kotze",
+          "Sam Miller",
+          "Cole Keith",
+          "Izzak Kelly",
+          "Matthew Oworu",
+          "Jesse Kilgour",
+          "Josh Thiel",
+          "Demetri Patterson"
+        ],
+        "color": "#713743"
+      },
+      "officials": {
+        "referee": "Дамиан Шнайдер",
+        "assistants": "Федерико Ведовелли и Филиппо Руссо",
+        "tmo": "Франсиско Гонсалес"
+      },
+      "sources": [
+        {
+          "label": "World Rugby",
+          "url": "https://www.world.rugby/nations-cup/en/match/9cc660b2-da6d-432e-95c2-6826b9119d22"
+        },
+        {
+          "label": "Rugby Canada",
+          "url": "https://rugby.ca/en/news/2026/11/roster-named-for-canada-s-men-s-rugby-team-s-final-nations-cup-match-against-romania"
+        },
+        {
+          "label": "Заявка Румынии",
+          "url": "https://www.radiotimisoara.ro/sport/rugby/doi-jucatori-de-la-scm-timisoara-titulari-in-meciul-stejarilor-contra-canadei-393344.html"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-20-montauban-agen",
+      "international": false,
+      "start": "2026-11-20T21:00:00+03:00",
+      "competition": "Про Д2",
+      "season": "2026/27",
+      "stage": "11-й тур",
+      "status": "scheduled",
+      "venue": "Сапьяк",
+      "city": "Монтобан",
+      "country": "FR",
+      "video": "https://vk.ru/video_ext.php?oid=-175058841&id=456241190&hash=a2d404e05b96e1ca&hd=3",
+      "introTitle": "Перед матчем",
+      "intro": "Дерби на «Сапьяке» открывает пятничную программу Про Д2. Соперники подходят к игре соседями по таблице. Эфир с оригинальным звуком.",
+      "home": {
+        "name": "Монтобан",
+        "badge": "USM",
+        "players": [
+          "Daniel BRENNAN",
+          "Johnathan MATTHEWS",
+          "Sidi Mohamed DIALLO",
+          "Karl WILKINS",
+          "Noa-isaac KANIKA-BILONDA",
+          "Lucas DESSAIGNE",
+          "Romain MACURDY",
+          "Vaiolini Petelo EKUASI",
+          "Jack MAUNDER",
+          "Enzo HERVE",
+          "Yvan REILHAC",
+          "Joey James WALTON",
+          "Maxime ESPEUT",
+          "Paul VALLEE",
+          "Baptiste MOUCHOUS",
+          "Kevin FIRMIN",
+          "Leo AOUF",
+          "Youssouf SOUCOUNA",
+          "Fred QUERCY",
+          "Lomig JOUANNY",
+          "Hugo ZABALZA",
+          "Simon RENDA",
+          "Lucio SORDONI"
+        ],
+        "color": "#23445a"
+      },
+      "away": {
+        "name": "Ажен",
+        "badge": "SUA",
+        "players": [
+          "Nail AUDOIRE",
+          "Santiago SOCINO",
+          "Adam Mountaga BOUARE",
+          "Matthieu BONNET",
+          "William DEMOTTE",
+          "Julien LEBIAN",
+          "Valentin GAYRAUD",
+          "Sialevailea TOLOFUA",
+          "Hugo BOUYSSOU",
+          "Craig WILLIS",
+          "Iban ETCHEVERRY",
+          "Clément GARRIGUES",
+          "Peyo MUSCARDITZ",
+          "Charles LALOI",
+          "Louis DUPICHOT",
+          "Pierre JOUVIN",
+          "Florent GUION",
+          "Romain DELEMARLE",
+          "Taniela MATAKAIONGO",
+          "Valentino REGGIARDO",
+          "Oliver CUMMINS",
+          "Jules SOULAN",
+          "Gael GALVAN MONSALVE"
+        ],
+        "color": "#713743"
+      },
+      "officials": {
+        "referee": "Vincent Blasco Baque",
+        "assistants": "Damien Dauvissat и Aurelien Laloo",
+        "tmo": "Stephane Boyer"
+      },
+      "sources": [
+        {
+          "label": "Протокол LNR",
+          "url": "https://prod2.lnr.fr/feuille-de-match/2026-2027/j11/12091-montauban-agen/compositions"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-20-nevers-angouleme",
+      "international": false,
+      "start": "2026-11-20T21:30:00+03:00",
+      "competition": "Про Д2",
+      "season": "2026/27",
+      "stage": "11-й тур",
+      "status": "scheduled",
+      "venue": "Пре-Флёри",
+      "city": "Варен-Возель",
+      "country": "FR",
+      "video": "https://vk.ru/video_ext.php?oid=-175058841&id=456241191&hash=6b17d4aea498c08e&hd=3",
+      "introTitle": "Перед матчем",
+      "intro": "В пятницу «Невер» принимает «Ангулем» на «Пре-Флёри». Начало через полчаса после дерби в Монтобане. Эфир с оригинальным звуком.",
+      "home": {
+        "name": "Невер",
+        "badge": "USON",
+        "players": [
+          "Sami ZOUHAIR",
+          "Mathieu BONNOT",
+          "Seydou DIAKITE",
+          "Richard Tamanui ARNOLD",
+          "Leo LABARTHE",
+          "Jean Maurice DECUBBER",
+          "Clement SENTUBERY",
+          "Hubert TEXIER",
+          "Alexis LEVRON",
+          "Paul BERGES",
+          "Nathan FARISSIER",
+          "Ledua MAU",
+          "Bastien RASAL",
+          "Eoghan BARRETT",
+          "Rémi BROSSET",
+          "Mamoudou Alain MEITE",
+          "Paul TAILHADES",
+          "Maxence LEMARDELET",
+          "Germain BURGAUD GRIMART",
+          "Baptiste ESCOFFRE",
+          "Benjamin BOTICA",
+          "George TILSLEY",
+          "Pone FAAMAUSILI"
+        ],
+        "color": "#23445a"
+      },
+      "away": {
+        "name": "Ангулем",
+        "badge": "SAXV",
+        "players": [
+          "Aitor KITUTU",
+          "Luka PETRIASHVILI",
+          "Aselo IKAHEHEGI",
+          "Maxence BARJAUD",
+          "Paul JEDRASIAK",
+          "Philippus Petrus KLEYNHANS",
+          "Julien KAZUBEK",
+          "Guillem CALMON",
+          "Simon TAREL",
+          "Tom DELEUZE",
+          "Lucas BLANC",
+          "Rudy DERRIEUX",
+          "Jioji KOROINAWAI",
+          "Gabin ROCHER",
+          "Dylan JAMINET",
+          "Jean-maxence JULES ROSETTE",
+          "Luka UNGIADZE",
+          "Ugo VIGNOLLES",
+          "Kitione KAMIKAMICA",
+          "Hugues BASTIDE",
+          "Perry MAYO",
+          "Liam TURNER",
+          "Henzo KITEAU"
+        ],
+        "color": "#713743"
+      },
+      "officials": {
+        "referee": "Julien Caulier",
+        "assistants": "Thomas Chereque и Vivien Praderie",
+        "tmo": "Damien Serouart"
+      },
+      "sources": [
+        {
+          "label": "Протокол LNR",
+          "url": "https://prod2.lnr.fr/feuille-de-match/2026-2027/j11/12092-nevers-angouleme/compositions"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-20-bristol-bath",
+      "international": false,
+      "start": "2026-11-20T22:45:00+03:00",
+      "competition": "Кубок Премьершипа",
+      "season": "2026/27",
+      "stage": "5-й тур",
+      "status": "scheduled",
+      "venue": "Эштон Гейт",
+      "city": "Бристоль",
+      "country": "GB",
+      "video": "https://vk.ru/video_ext.php?oid=-175058841&id=456241192&hash=0fb73122263324eb&hd=3",
+      "introTitle": "Перед матчем",
+      "intro": "«Бристоль» включил в заявку на дерби сразу 15 игроков своей академии. У «Бата» в центре дебютирует Бейли Каттс, а Рори Макнайт начнёт встречу на скамейке. Эфир с оригинальным звуком.",
+      "home": {
+        "name": "Бристоль",
+        "badge": "BRI",
+        "players": [
+          "Andrew Turner",
+          "Tomas Gwilliam",
+          "Jimmy Halliwell",
+          "Totoa Auvaa",
+          "George Taylor",
+          "Paddy Pearce",
+          "Kenzie Jenkins",
+          "Noah Williams",
+          "Max Pepper",
+          "Sam Worsley",
+          "Tobi Wilson",
+          "James Williams",
+          "Victor Worsnip",
+          "Aidan Boshoff",
+          "Gabriel Ibitoye",
+          "Bryn Gordon",
+          "Lovejoy Chawatama",
+          "Sam Scott",
+          "Harry Wells",
+          "Ben Rogers",
+          "Tom Maslen",
+          "Louie Sinclair",
+          "Glen Gammell"
+        ],
+        "color": "#23445a"
+      },
+      "away": {
+        "name": "Бат",
+        "badge": "BAT",
+        "players": [
+          "Jacob Yates",
+          "Jasper Spandler",
+          "Kieran Verden",
+          "Will Jeanes",
+          "Jack Bennett",
+          "Ewan Richards",
+          "George Timmins",
+          "Connor Treacey",
+          "Ieuan Davies",
+          "Ciaran Donoghue",
+          "Charlie Griffin",
+          "Bailey Cutts",
+          "Will Roue",
+          "Austin Emens",
+          "Sam Winters",
+          "Max Pearce",
+          "Claudius Wheeler",
+          "Marcos Camerlinckx",
+          "Rory McKnight",
+          "James Maloney",
+          "Bernard van der Linde",
+          "James Linegar",
+          "Alex Ridgway"
+        ],
+        "color": "#713743"
+      },
+      "officials": {
+        "referee": "Гарри Уолбаум",
+        "assistants": "Иэн Ки и Калум Ховард",
+        "tmo": "Стюарт Терхьюдж"
+      },
+      "sources": [
+        {
+          "label": "Бристоль",
+          "url": "https://www.bristolbearsrugby.com/bristol-bears-men/fifteen-academy-stars-start-west-country-derby-clash/"
+        },
+        {
+          "label": "Бат",
+          "url": "https://www.bathrugby.com/content/team-news-prc-r5-bristol-bears"
+        },
+        {
+          "label": "Судейские назначения",
+          "url": "https://rugbyreferee.net/2026/11/19/19-22-november-referee-ar-tmo-appointments/"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-20-oyonnax-brive",
+      "international": false,
+      "start": "2026-11-20T23:00:00+03:00",
+      "competition": "Про Д2",
+      "season": "2026/27",
+      "stage": "11-й тур",
+      "status": "scheduled",
+      "venue": "Шарль Матон",
+      "city": "Ойонна",
+      "country": "FR",
+      "video": "https://vk.ru/video_ext.php?oid=-175058841&id=456241193&hash=d9ef9bd8d109fb28&hd=3",
+      "introTitle": "Перед матчем",
+      "intro": "В позднем матче Про Д2 у «Ойонна» игру поведут Жюль Солинас и Тома Венсан. У «Брива» в полузащите выйдут Готье Дубрер и Джеймс Шиллкок. Эфир с оригинальным звуком.",
+      "home": {
+        "name": "Ойонна",
+        "badge": "OYO",
+        "players": [
+          "Martin VILLAR",
+          "Alifeleti Tu'ifua KAITU'U",
+          "Ali OZ",
+          "Phoenix Damon BATTYE",
+          "Alban ROUSSEL",
+          "Wandrille PICAULT",
+          "Hugo HERMET",
+          "Cyriac GUILLY",
+          "Jules SOLINAS",
+          "Thomas VINCENT",
+          "Iñaki AYARZA",
+          "Lucas MENSA",
+          "Thomas DARMON",
+          "Enzo REYBIER",
+          "Alex NEWSOME",
+          "Sacha LONCHAMPT",
+          "Remi DI PIETRO",
+          "Koen BLOEMEN",
+          "Ratu Leone ROTUISOLIA",
+          "Loic GODENER",
+          "Jonathan TAUMATEINE",
+          "Paul AURADOU",
+          "Charlie ABEL"
+        ],
+        "color": "#23445a"
+      },
+      "away": {
+        "name": "Брив",
+        "badge": "CAB",
+        "players": [
+          "Vakhtang ABDALADZE",
+          "Valerio SICILIANO",
+          "Francisco CORIA MARCHETTI",
+          "Samuel MAXIMIN",
+          "Luke GRIFFITHS",
+          "Sasha GUE",
+          "Taniela SADRUGU",
+          "Asaeli TUIVUAKA",
+          "Gauthier DOUBRERE",
+          "James SHILLCOCK",
+          "Lewis NOON",
+          "Victor RAYEUR",
+          "Nicolas Christian KRONE",
+          "Gatien MASSE",
+          "Julien TISSERON",
+          "Yanis CHARCOSSET",
+          "Louis MARY",
+          "Irné HERBST",
+          "Retief MARAIS",
+          "Yann PEYSSON",
+          "Mathis GALTHIE",
+          "Leny BRONCAN",
+          "Christian James JUDGE"
+        ],
+        "color": "#713743"
+      },
+      "officials": {
+        "referee": "Evan Urruzmendi",
+        "assistants": "Thomas Monteux и Yannick Vals",
+        "tmo": "Mathieu Noirot"
+      },
+      "sources": [
+        {
+          "label": "Протокол LNR",
+          "url": "https://prod2.lnr.fr/feuille-de-match/2026-2027/j11/12094-oyonnax-brive/compositions"
         }
       ]
     }
