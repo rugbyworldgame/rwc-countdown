@@ -50,7 +50,9 @@ def selector(featured,current):
   if len(days)==1:
    groups.append(f'<div><strong>{heading}</strong>{grid}</div>')
   else:
-   groups.append(f'<details open data-match-day="{day.isoformat()}"><summary>{heading} · Матчей: {len(matches)}</summary>{grid}</details>')
+   active=any(m['status'] not in ('finished','cancelled') for m in matches)
+   expanded=' open' if active else ''
+   groups.append(f'<details{expanded} data-match-day="{day.isoformat()}"><summary>{heading} · Матчей: {len(matches)}</summary>{grid}</details>')
  return '<nav class="shell match-selector" aria-label="Выбор матча">'+''.join(groups)+'</nav>'
 
 def render(m,featured,allmatches,template,entry=False):

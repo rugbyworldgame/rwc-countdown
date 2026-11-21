@@ -6,8 +6,9 @@
   const values = document.getElementById('countdownValues');
   const wrap = document.getElementById('matchCountdown');
   const today = new Intl.DateTimeFormat('sv-SE', {timeZone:'Europe/Moscow'}).format(new Date());
-  if (matchMedia('(max-width:900px)').matches) {
-    document.querySelectorAll('details[data-match-day]').forEach(group => {
+  const activeDays = document.querySelectorAll('details[open][data-match-day]');
+  if (activeDays.length > 1 && matchMedia('(max-width:900px)').matches) {
+    activeDays.forEach(group => {
       group.open = group.dataset.matchDay === today || !!group.querySelector('[aria-current="page"]');
     });
   }
