@@ -5,7 +5,15 @@
     "2026-11-20-montauban-agen",
     "2026-11-20-nevers-angouleme",
     "2026-11-20-bristol-bath",
-    "2026-11-20-oyonnax-brive"
+    "2026-11-20-oyonnax-brive",
+    "2026-11-21-hong-kong-tonga",
+    "2026-11-21-georgia-usa",
+    "2026-11-21-england-new-zealand",
+    "2026-11-21-scotland-japan",
+    "2026-11-21-ireland-south-africa",
+    "2026-11-21-italy-fiji",
+    "2026-11-21-france-argentina",
+    "2026-11-21-wales-australia"
   ],
   "matches": [
     {
@@ -2575,7 +2583,7 @@
       "competition": "Кубок наций",
       "season": "2026",
       "stage": "6-й тур",
-      "status": "scheduled",
+      "status": "finished",
       "venue": "Аркул де Триумф",
       "city": "Бухарест",
       "country": "RO",
@@ -2669,7 +2677,7 @@
       "competition": "Про Д2",
       "season": "2026/27",
       "stage": "11-й тур",
-      "status": "scheduled",
+      "status": "finished",
       "venue": "Сапьяк",
       "city": "Монтобан",
       "country": "FR",
@@ -2755,7 +2763,7 @@
       "competition": "Про Д2",
       "season": "2026/27",
       "stage": "11-й тур",
-      "status": "scheduled",
+      "status": "finished",
       "venue": "Пре-Флёри",
       "city": "Варен-Возель",
       "country": "FR",
@@ -2841,7 +2849,7 @@
       "competition": "Кубок Премьершипа",
       "season": "2026/27",
       "stage": "5-й тур",
-      "status": "scheduled",
+      "status": "finished",
       "venue": "Эштон Гейт",
       "city": "Бристоль",
       "country": "GB",
@@ -2935,7 +2943,7 @@
       "competition": "Про Д2",
       "season": "2026/27",
       "stage": "11-й тур",
-      "status": "scheduled",
+      "status": "finished",
       "venue": "Шарль Матон",
       "city": "Ойонна",
       "country": "FR",
@@ -3011,6 +3019,762 @@
         {
           "label": "Протокол LNR",
           "url": "https://prod2.lnr.fr/feuille-de-match/2026-2027/j11/12094-oyonnax-brive/compositions"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-21-hong-kong-tonga",
+      "international": true,
+      "start": "2026-11-21T12:00:00+03:00",
+      "competition": "Кубок наций",
+      "season": "2026",
+      "stage": "6-й тур",
+      "status": "scheduled",
+      "venue": "Кай Так Ют Спортс Граунд",
+      "city": "Гонконг",
+      "country": "HK",
+      "video": "https://vk.ru/video_ext.php?oid=-175058841&id=456241205&hash=8517c31407d46f42&hd=3",
+      "introTitle": "Перед матчем",
+      "intro": "Гонконг завершает турнир дома. У хозяев Дилан Макканн выходит под десятым номером, а у Тонга в полузащиту возвращаются Сонатане Такулуа и Ману Вунипола. Эфир с оригинальным звуком.",
+      "home": {
+        "name": "Гонконг",
+        "badge": "HKG",
+        "color": "#253b58",
+        "players": [
+          "Sunia Fameitau",
+          "Alexander Post",
+          "Faizal Solomona Penesa",
+          "James Rivers",
+          "Max Murphy",
+          "Jack Bartlett",
+          "Callum McCullough",
+          "Joshua Hrstich",
+          "Jack Combes",
+          "Dylan McCann",
+          "Harry Sayers",
+          "Isaac Campbell-Wu",
+          "Marcus Ramage",
+          "Sebastian Brien",
+          "Paul Altier",
+          "Harry Baron",
+          "Thomas Concu",
+          "Keelan Chapman",
+          "Lachlan Doheny",
+          "Tsoi Kin San Sam",
+          "Brendon Nell",
+          "Joe Barker",
+          "Benjamin Axten-Burrett"
+        ]
+      },
+      "away": {
+        "name": "Тонга",
+        "badge": "TGA",
+        "color": "#a32330",
+        "players": [
+          "Siegfried Fisi'ihoi",
+          "Siua Maile",
+          "Ben Tameifuna",
+          "Justin Mataele",
+          "Halaleva Fifita",
+          "Samuel Tuitupou Jr.",
+          "Semisi Paea",
+          "Otunuku Pauta",
+          "Sonatane Takulua",
+          "Manu Vunipola",
+          "Anzelo Tuitavuki",
+          "Ngani Laumape",
+          "Fetuli Paea",
+          "John Tapueluelu",
+          "Taniela Filimone",
+          "Efitusi Ma'afu",
+          "Toma Taufa",
+          "Paula Latu",
+          "Veikoso Poloniati",
+          "Junior Ahokovi",
+          "Manu Paea",
+          "Patrick Pellegrini",
+          "Fine Inisi"
+        ]
+      },
+      "officials": {
+        "referee": "Jordan Way",
+        "assistants": "Katsuki Furuse и Ibuki Tetsuka",
+        "tmo": "Julien Castaignède"
+      },
+      "sources": [
+        {
+          "label": "Гонконг — программа матча",
+          "url": "https://www.hkrugby.com/event/details/hong-kong-china-v-tonga"
+        },
+        {
+          "label": "Заявки — Asie Rugby",
+          "url": "https://www.asierugby.com/post/hong-kong-chine-tonga-les-compos"
+        },
+        {
+          "label": "Заявка Тонга — Dragons RFC",
+          "url": "https://dragonsrfc.wales/news/2026/november/trio-named-for-hong-kong-china-fixture.html"
+        },
+        {
+          "label": "Судейские назначения",
+          "url": "https://rugbyreferee.net/2026/11/19/19-22-november-referee-ar-tmo-appointments/"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-21-georgia-usa",
+      "international": true,
+      "start": "2026-11-21T17:00:00+03:00",
+      "competition": "Кубок наций",
+      "season": "2026",
+      "stage": "6-й тур",
+      "status": "scheduled",
+      "venue": "Михаил Месхи",
+      "city": "Тбилиси",
+      "country": "GE",
+      "video": "https://vk.ru/video_ext.php?oid=-175058841&id=456241207&hash=54c77801e4754320&hd=3",
+      "introTitle": "Перед матчем",
+      "intro": "Грузия и США выиграли свои группы и встречаются в Тбилиси. Хозяев выведет на поле капитан Давит Ниниашвили, а в первой линии с первых минут сыграет Бачуки Чумбадзе. Эфир с оригинальным звуком.",
+      "home": {
+        "name": "Грузия",
+        "badge": "GEO",
+        "color": "#275341",
+        "players": [
+          "Sergi Abramishvili",
+          "Vano Karkadze",
+          "Bachuki Tchumbadze",
+          "Gagi Margvelashvili",
+          "Kote Mikautadze",
+          "Luka Ivanishvili",
+          "Beka Saginadze",
+          "Beka Gorgadze",
+          "Gela Aprasidze",
+          "Luka Matkava",
+          "Dachi Papunashvili",
+          "Tornike Kakhoidze",
+          "Giorgi Shvelidze",
+          "Akaki Tabutsadze",
+          "Davit Niniashvili",
+          "Luka Goginava",
+          "Giorgi Akhaladze",
+          "Beka Gigashvili",
+          "Mikheil Shioshvili",
+          "Ilia Spanderashvili",
+          "Tornike Jalaghonia",
+          "Vasil Lobzhanidze",
+          "Tedo Abzhandadze"
+        ]
+      },
+      "away": {
+        "name": "США",
+        "badge": "USA",
+        "color": "#253b58",
+        "players": [
+          "Jack Iscaro",
+          "Kapeli Pifeleti",
+          "Tonga Kofe",
+          "Nathan Den Hoedt",
+          "Jason Damm",
+          "Benjamin Bonasso",
+          "Paddy Ryan",
+          "Nafi Ma'afu",
+          "Oscar Lennon",
+          "Christopher Hilsenbeck",
+          "Noah Brown",
+          "Dominic Besag",
+          "Tavite Lopeti",
+          "Rufus McLean",
+          "Mitchell Wilson",
+          "Kaleb Geiger",
+          "Ezekiel Lindenmuth",
+          "Mason Pedersen",
+          "Sam Golla",
+          "Rhyno Herbst",
+          "Marno Redelinghuys",
+          "Michael Baska",
+          "Tom Pittman"
+        ]
+      },
+      "officials": {
+        "referee": "Morné Ferreira",
+        "assistants": "Peter Martin и Robbie Jenkinson",
+        "tmo": "Paulo Duarte"
+      },
+      "sources": [
+        {
+          "label": "Заявка Грузии — Exeter Chiefs",
+          "url": "https://www.exeterchiefs.co.uk/news/tchumbadze-to-start-versus-usa"
+        },
+        {
+          "label": "Заявки — It’s Rugby",
+          "url": "https://itsrugby.com/matches/264095/"
+        },
+        {
+          "label": "Судейские назначения",
+          "url": "https://rugbyreferee.net/2026/11/19/19-22-november-referee-ar-tmo-appointments/"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-21-england-new-zealand",
+      "international": true,
+      "start": "2026-11-21T17:10:00+03:00",
+      "competition": "Чемпионат наций",
+      "season": "2026",
+      "stage": "6-й тур",
+      "status": "scheduled",
+      "venue": "Альянц Стэдиум",
+      "city": "Лондон",
+      "country": "GB",
+      "video": "https://vk.ru/video_ext.php?oid=-175058841&id=456241209&hash=98b263dae0d955b2&hd=3",
+      "introTitle": "Перед матчем",
+      "intro": "На «Туикенеме» Фин Смит начнёт встречу под десятым номером, Маркус Смит останется в запасе. У Новой Зеландии игру поведёт Дэмиан Маккензи, а Боден Барретт выйдет фулбэком. Эфир с оригинальным звуком.",
+      "home": {
+        "name": "Англия",
+        "badge": "ENG",
+        "color": "#275341",
+        "players": [
+          "Fin Baxter",
+          "Jamie George",
+          "Joe Heyes",
+          "Маро Итодже",
+          "Alex Coles",
+          "Ollie Chessum",
+          "Ben Curry",
+          "Ben Earl",
+          "Джек ван Портвлит",
+          "Fin Smith",
+          "Will Joseph",
+          "Seb Atkinson",
+          "Henry Slade",
+          "Tommy Freeman",
+          "George Furbank",
+          "Luke Cowan-Dickie",
+          "Эллис Гендж",
+          "Уилл Стюарт",
+          "George Martin",
+          "Greg Fisilau",
+          "Henry Pollock",
+          "Ben Spencer",
+          "Marcus Smith"
+        ]
+      },
+      "away": {
+        "name": "Новая Зеландия",
+        "badge": "NZL",
+        "color": "#344765",
+        "players": [
+          "Ethan de Groot",
+          "Codie Taylor",
+          "Fletcher Newell",
+          "Scott Barrett",
+          "Fabian Holland",
+          "Tupou Vaa’i",
+          "Peter Lakai",
+          "Wallace Sititi",
+          "Cam Roigard",
+          "Damian McKenzie",
+          "Josh Moorby",
+          "Jordie Barrett",
+          "Anton Lienert-Brown",
+          "Will Jordan",
+          "Beauden Barrett",
+          "Asafo Aumua",
+          "George Bower",
+          "Pasilio Tosi",
+          "Anton Segner",
+          "Leicester Fainga’anuku",
+          "Cortez Ratima",
+          "Richie Mo’unga",
+          "Rieko Ioane"
+        ]
+      },
+      "officials": {
+        "referee": "Nic Berry",
+        "assistants": "Nika Amashukeli и Damon Murphy",
+        "tmo": "Marius van der Westhuizen"
+      },
+      "sources": [
+        {
+          "label": "Расписание турнира",
+          "url": "https://nationschampionshiprugby.com/en/match-centre/fixtures"
+        },
+        {
+          "label": "Заявки команд — Planet Rugby",
+          "url": "https://www.planetrugby.com/news/nations-championship-round-six-teams-predictions-global-tv-channels-and-more"
+        },
+        {
+          "label": "Судейские назначения",
+          "url": "https://rugbyreferee.net/2026/11/19/19-22-november-referee-ar-tmo-appointments/"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-21-scotland-japan",
+      "international": true,
+      "start": "2026-11-21T17:10:00+03:00",
+      "competition": "Чемпионат наций",
+      "season": "2026",
+      "stage": "6-й тур",
+      "status": "scheduled",
+      "venue": "Маррифилд",
+      "city": "Эдинбург",
+      "country": "GB",
+      "video": "https://vk.ru/video_ext.php?oid=-175058841&id=456241210&hash=957b37e3c1476f6e&hd=3",
+      "introTitle": "Перед матчем",
+      "intro": "Шотландию выведет Стаффорд Макдауэлл. Джейми Доби и Том Джордан начнут в полузащите, а Блэр Кингхорн сможет усилить заднюю линию со скамейки. Эфир с оригинальным звуком.",
+      "home": {
+        "name": "Шотландия",
+        "badge": "SCO",
+        "color": "#253b58",
+        "players": [
+          "Nathan McBeth",
+          "Gregor Hiddleston",
+          "Zander Fagerson",
+          "Jonny Gray",
+          "Max Williamson",
+          "Liam McConnell",
+          "Ollie Leatherbarrow",
+          "Matt Fagerson",
+          "Jamie Dobie",
+          "Tom Jordan",
+          "Kyle Rowe",
+          "Rory Hutchinson",
+          "Stafford McDowall",
+          "Darcy Graham",
+          "Ollie Smith",
+          "Seb Stephen",
+          "Rory Sutherland",
+          "Will Hurd",
+          "Gregor Brown",
+          "Magnus Bradbury",
+          "Freddie Douglas",
+          "George Horne",
+          "Blair Kinghorn"
+        ]
+      },
+      "away": {
+        "name": "Япония",
+        "badge": "JPN",
+        "color": "#344765",
+        "players": [
+          "Sojiro Otsuka",
+          "Kenji Sato",
+          "Ryosuke Iwaihara",
+          "Jack Cornelsen",
+          "Warner Dearns",
+          "Ben Gunter",
+          "Kenji Shimokawa",
+          "Faulua Makisi",
+          "Naoto Saito",
+          "Shinya Komura",
+          "Jone Naikabula",
+          "Charlie Lawrence",
+          "Jisu Lee",
+          "Kazuma Ueda",
+          "Takuro Matsunaga",
+          "Mamoru Harada",
+          "Yota Kamimori",
+          "Taufa Latu",
+          "Michael Stolberg",
+          "Ruan Botha",
+          "Tiennan Costley",
+          "Shinobu Fujiwara",
+          "Riku Kitahara"
+        ]
+      },
+      "officials": {
+        "referee": "Ben O’Keeffe",
+        "assistants": "James Doleman и Craig Evans",
+        "tmo": "Richard Kelly"
+      },
+      "sources": [
+        {
+          "label": "Расписание турнира",
+          "url": "https://nationschampionshiprugby.com/en/match-centre/fixtures"
+        },
+        {
+          "label": "Заявки команд — Planet Rugby",
+          "url": "https://www.planetrugby.com/news/nations-championship-round-six-teams-predictions-global-tv-channels-and-more"
+        },
+        {
+          "label": "Судейские назначения",
+          "url": "https://rugbyreferee.net/2026/11/19/19-22-november-referee-ar-tmo-appointments/"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-21-ireland-south-africa",
+      "international": true,
+      "start": "2026-11-21T19:40:00+03:00",
+      "competition": "Чемпионат наций",
+      "season": "2026",
+      "stage": "6-й тур",
+      "status": "scheduled",
+      "venue": "Авива",
+      "city": "Дублин",
+      "country": "IE",
+      "video": "https://vk.ru/video_ext.php?oid=-175058841&id=456241211&hash=cc79d142cccee358&hd=3",
+      "introTitle": "Перед матчем",
+      "intro": "В Дублине у Ирландии в полузащите сыграют Джемисон Гибсон-Парк и Сэм Прендергаст. Южная Африка доверила Морне ван ден Бергу девятый номер, Грант Уильямс начнёт в запасе. Эфир с оригинальным звуком.",
+      "home": {
+        "name": "Ирландия",
+        "badge": "IRL",
+        "color": "#275341",
+        "players": [
+          "Andrew Porter",
+          "Rónan Kelleher",
+          "Tadhg Furlong",
+          "Joe McCarthy",
+          "Tadhg Beirne",
+          "Ryan Baird",
+          "Josh van der Flier",
+          "Dan Sheehan",
+          "Jamison Gibson-Park",
+          "Sam Prendergast",
+          "Mack Hansen",
+          "Stuart McCloskey",
+          "Robbie Henshaw",
+          "Robert Baloucoune",
+          "Hugo Keenan",
+          "Tom Stewart",
+          "Tom O’Toole",
+          "Thomas Clarkson",
+          "James Ryan",
+          "Nick Timoney",
+          "Craig Casey",
+          "Ciarán Frawley",
+          "Bundee Aki"
+        ]
+      },
+      "away": {
+        "name": "ЮАР",
+        "badge": "RSA",
+        "color": "#344765",
+        "players": [
+          "Окс Нче",
+          "Малкольм Маркс",
+          "Wilco Louw",
+          "Eben Etzebeth",
+          "Franco Mostert",
+          "Siya Kolisi",
+          "Pieter-Steph du Toit",
+          "Cameron Hanekom",
+          "Морне ван ден Берг",
+          "Саша Файнберг-Мнгомезулу",
+          "Ethan Hooker",
+          "Damian de Allende",
+          "Jesse Kriel",
+          "Kurt-Lee Arendse",
+          "Damian Willemse",
+          "Jan-Hendrik Wessels",
+          "Gerhard Steenekamp",
+          "Thomas du Toit",
+          "Луд де Ягер",
+          "Пол де Вильерс",
+          "Marco van Staden",
+          "Grant Williams",
+          "Canan Moodie"
+        ]
+      },
+      "officials": {
+        "referee": "Christophe Ridley",
+        "assistants": "Angus Gardner и Anthony Woodthorpe",
+        "tmo": "Ian Tempest"
+      },
+      "sources": [
+        {
+          "label": "Расписание турнира",
+          "url": "https://nationschampionshiprugby.com/en/match-centre/fixtures"
+        },
+        {
+          "label": "Заявки команд — Planet Rugby",
+          "url": "https://www.planetrugby.com/news/nations-championship-round-six-teams-predictions-global-tv-channels-and-more"
+        },
+        {
+          "label": "Судейские назначения",
+          "url": "https://rugbyreferee.net/2026/11/19/19-22-november-referee-ar-tmo-appointments/"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-21-italy-fiji",
+      "international": true,
+      "start": "2026-11-21T19:40:00+03:00",
+      "competition": "Чемпионат наций",
+      "season": "2026",
+      "stage": "6-й тур",
+      "status": "scheduled",
+      "venue": "Блуэнерджи Стэдиум",
+      "city": "Удине",
+      "country": "IT",
+      "video": "https://vk.ru/video_ext.php?oid=-175058841&id=456241212&hash=e714f00bf1898221&hd=3",
+      "introTitle": "Перед матчем",
+      "intro": "В Удине Анж Капуоццо выйдет на правом краю итальянской атаки, Томмазо Аллан — на позиции фулбэка. У Фиджи Бен Волавола начнёт под десятым номером. Эфир с оригинальным звуком.",
+      "home": {
+        "name": "Италия",
+        "badge": "ITA",
+        "color": "#275341",
+        "players": [
+          "Danilo Fischetti",
+          "Giacomo Nicotera",
+          "Simone Ferrari",
+          "Niccolò Cannone",
+          "Alessandro Ortombina",
+          "Ross Vintcent",
+          "Manuel Zuliani",
+          "Lorenzo Cannone",
+          "Stephen Varney",
+          "Domingo Miotti",
+          "Monty Ioane",
+          "Leonardo Marin",
+          "Paolo Odogwu",
+          "Анж Капуоццо",
+          "Tommaso Allan",
+          "Gianmarco Lucchesi",
+          "Muhamed Hasa",
+          "Marco Riccioni",
+          "Federico Ruzza",
+          "Enoh Opoku-Gyamfi",
+          "Samuele Locatelli",
+          "Alessandro Garbisi",
+          "Federico Mori"
+        ]
+      },
+      "away": {
+        "name": "Фиджи",
+        "badge": "FIJ",
+        "color": "#344765",
+        "players": [
+          "Peni Ravai",
+          "Tevita Ikanivere",
+          "Luke Tagi",
+          "Setareki Turagacoke",
+          "Isoa Nasilasila",
+          "Mesake Vocevoce",
+          "Kitione Salawa",
+          "Nathan Hughes",
+          "Frank Lomani",
+          "Ben Volavola",
+          "Jiuta Wainiqolo",
+          "Josua Tuisova",
+          "Setareki Bituniyata",
+          "Selestino Ravutaumada",
+          "Ponipate Loganimasi",
+          "Zuriel Togiatama",
+          "Vilikesa Nairau",
+          "Marika Parker",
+          "Joseva Tamani",
+          "Etonia Waqa",
+          "Terio Tamani",
+          "Caleb Muntz",
+          "Iosefo Masi"
+        ]
+      },
+      "officials": {
+        "referee": "Andrew Brace",
+        "assistants": "Paul Williams и Eoghan Cross",
+        "tmo": "Leo Colgan"
+      },
+      "sources": [
+        {
+          "label": "Расписание турнира",
+          "url": "https://nationschampionshiprugby.com/en/match-centre/fixtures"
+        },
+        {
+          "label": "Заявки команд — Planet Rugby",
+          "url": "https://www.planetrugby.com/news/nations-championship-round-six-teams-predictions-global-tv-channels-and-more"
+        },
+        {
+          "label": "Судейские назначения",
+          "url": "https://rugbyreferee.net/2026/11/19/19-22-november-referee-ar-tmo-appointments/"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-21-france-argentina",
+      "international": true,
+      "start": "2026-11-21T23:10:00+03:00",
+      "competition": "Чемпионат наций",
+      "season": "2026",
+      "stage": "6-й тур",
+      "status": "scheduled",
+      "venue": "Стад де Франс",
+      "city": "Сен-Дени",
+      "country": "FR",
+      "video": "https://vk.ru/video_ext.php?oid=-175058841&id=456241213&hash=d5a8e4e9178c0e83&hd=3",
+      "introTitle": "Перед матчем",
+      "intro": "Антуан Дюпон и Матьё Жалибер сыграют вместе в полузащите Франции. Аргентину выведет Хулиан Монтойя, а с восьмым номером у гостей выйдет Факундо Иса. Эфир с оригинальным звуком.",
+      "home": {
+        "name": "Франция",
+        "badge": "FRA",
+        "color": "#275341",
+        "players": [
+          "Jean-Baptiste Gros",
+          "Peato Mauvaka",
+          "Sipili Falatea",
+          "Florian Verhaeghe",
+          "Mickaël Guillard",
+          "Esteban Capilla",
+          "Charles Ollivon",
+          "Anthony Jelonch",
+          "Антуан Дюпон",
+          "Matthieu Jalibert",
+          "Louis Bielle-Biarrey",
+          "Yoram Moefana",
+          "Kalvin Gourgues",
+          "Aaron Grandidier-Nkanang",
+          "Théo Attissogbe",
+          "Maxime Lamothe",
+          "Jefferson Poirot",
+          "Régis Montagne",
+          "Tyler Duguid",
+          "Cameron Woki",
+          "Grégory Alldritt",
+          "Maxime Lucu",
+          "Emilien Gailleton"
+        ]
+      },
+      "away": {
+        "name": "Аргентина",
+        "badge": "ARG",
+        "color": "#344765",
+        "players": [
+          "Boris Wenger",
+          "Хулиан Монтойя",
+          "Francisco Moreno",
+          "Guido Petti",
+          "Tomás Lavanini",
+          "Juan Martín González",
+          "Juan Martín Scelzo",
+          "Facundo Isa",
+          "Simón Benítez Cruz",
+          "Tomás Albornoz",
+          "Ignacio Mendy",
+          "Santiago Chocobares",
+          "Lucio Cinti",
+          "Bautista Delguy",
+          "Gerónimo Prisciantelli",
+          "Facundo Bosch",
+          "Mayco Vivas",
+          "Joel Sclavi",
+          "Efraín Elías",
+          "Pedro Rubiolo",
+          "Pablo Matera",
+          "Agustín Moyano",
+          "Rodrigo Isgró"
+        ]
+      },
+      "officials": {
+        "referee": "Hollie Davidson",
+        "assistants": "Sam Grove-White и Matthew Carley",
+        "tmo": "Mike Adamson"
+      },
+      "sources": [
+        {
+          "label": "Расписание турнира",
+          "url": "https://nationschampionshiprugby.com/en/match-centre/fixtures"
+        },
+        {
+          "label": "Заявки команд — Planet Rugby",
+          "url": "https://www.planetrugby.com/news/nations-championship-round-six-teams-predictions-global-tv-channels-and-more"
+        },
+        {
+          "label": "Судейские назначения",
+          "url": "https://rugbyreferee.net/2026/11/19/19-22-november-referee-ar-tmo-appointments/"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-21-wales-australia",
+      "international": true,
+      "start": "2026-11-21T23:10:00+03:00",
+      "competition": "Чемпионат наций",
+      "season": "2026",
+      "stage": "6-й тур",
+      "status": "scheduled",
+      "venue": "Принсипалити",
+      "city": "Кардифф",
+      "country": "GB",
+      "video": "https://vk.ru/video_ext.php?oid=-175058841&id=456241214&hash=383d346d7bda85c4&hd=3",
+      "introTitle": "Перед матчем",
+      "intro": "В Кардиффе Луис Рис-Заммит начнёт на краю атаки Уэльса, напротив него на левом фланге Австралии выйдет Макс Йоргенсен. Капитаны команд — Дьюи Лейк и Гарри Уилсон. Эфир с оригинальным звуком.",
+      "home": {
+        "name": "Уэльс",
+        "badge": "WAL",
+        "color": "#275341",
+        "players": [
+          "Nicky Smith",
+          "Dewi Lake",
+          "Арчи Гриффин",
+          "Dafydd Jenkins",
+          "Ben Carter",
+          "Alex Mann",
+          "Jac Morgan",
+          "Аарон Уэйнрайт",
+          "Томос Уильямс",
+          "Sam Costelow",
+          "Josh Adams",
+          "Max Llewellyn",
+          "Eddie James",
+          "Луи Рис-Заммит",
+          "Blair Murray",
+          "Ryan Elias",
+          "Gareth Thomas",
+          "Dillon Lewis",
+          "Taine Plumtree",
+          "Kane James",
+          "Reuben Morgan-Williams",
+          "Joe Hawkins",
+          "Louie Hennessey"
+        ]
+      },
+      "away": {
+        "name": "Австралия",
+        "badge": "AUS",
+        "color": "#8b7122",
+        "players": [
+          "Isaac Kailea",
+          "Brandon Paenga-Amosa",
+          "Taniela Tupou",
+          "Josh Canham",
+          "Tom Hooper",
+          "Rob Valetini",
+          "Carlo Tizzano",
+          "Harry Wilson",
+          "Ryan Lonergan",
+          "Carter Gordon",
+          "Harry Potter",
+          "Len Ikitau",
+          "Joseph-Aukuso Suaalii",
+          "Max Jorgensen",
+          "Tom Wright",
+          "Billy Pollard",
+          "Angus Bell",
+          "Аллан Алаалатоа",
+          "Jeremy Williams",
+          "Fraser McReight",
+          "Kalani Thomas",
+          "Бен Дональдсон",
+          "Filipo Daugunu"
+        ]
+      },
+      "officials": {
+        "referee": "Luc Ramos",
+        "assistants": "Karl Dickson и Jérémy Rozier",
+        "tmo": "Eric Gauzins"
+      },
+      "sources": [
+        {
+          "label": "Расписание турнира",
+          "url": "https://nationschampionshiprugby.com/en/match-centre/fixtures"
+        },
+        {
+          "label": "Заявки команд — Planet Rugby",
+          "url": "https://www.planetrugby.com/news/nations-championship-round-six-teams-predictions-global-tv-channels-and-more"
+        },
+        {
+          "label": "Судейские назначения",
+          "url": "https://rugbyreferee.net/2026/11/19/19-22-november-referee-ar-tmo-appointments/"
         }
       ]
     }
