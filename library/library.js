@@ -13,7 +13,7 @@ function render() {
   for (const button of filters) button.setAttribute('aria-pressed', String(button.dataset.filter === filter));
   for (const shelf of document.querySelectorAll('.shelf')) {
     let visible = 0;
-    for (const row of shelf.querySelectorAll('details')) {
+    for (const row of shelf.querySelectorAll(':scope > details')) {
       const words = normalize([shelf.querySelector('h3').textContent, row.querySelector('summary').textContent, row.dataset.aliases].join(' '));
       row.hidden = (filter === 'women' && row.dataset.women !== 'true') || !terms.every(term => words.includes(term));
       if (!row.hidden) visible++;
@@ -45,7 +45,7 @@ const matchStatus = document.querySelector('#match-status');
 for (const shelf of document.querySelectorAll('.shelf')) {
   const group = document.createElement('optgroup');
   group.label = shelf.querySelector('h3').textContent;
-  for (const summary of shelf.querySelectorAll('summary')) {
+  for (const summary of shelf.querySelectorAll(':scope > details > summary')) {
     group.append(new Option(summary.textContent, summary.textContent));
   }
   competition.append(group);

@@ -22,3 +22,8 @@ summary:hover{color:var(--lime)}details p{padding-bottom:14px} :focus-visible{ou
 #match-status{color:var(--ink);border-left:3px solid var(--lime);padding-left:12px}
 #tournament-search{margin:12px 0}
 @media(max-width:720px){.match-fields{grid-template-columns:1fr}}
+.cup-years{display:grid;grid-template-columns:repeat(auto-fit,minmax(76px,1fr));gap:6px;margin:4px 0 16px;align-items:start}
+.cup-years .cup-year{border:1px solid var(--line);border-radius:7px;background:var(--bg);padding:0 10px}
+.cup-year[open]{grid-column:1/-1}
+.cup-year>summary{font-weight:700}
+.edition-view{padding:0 6px}
