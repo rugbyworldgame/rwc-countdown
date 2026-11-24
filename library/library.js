@@ -1,4 +1,4 @@
-const search = document.querySelector('form[role="search"]');
+const search = document.querySelector('#tournament-search');
 const query = document.querySelector('#query');
 const filters = document.querySelectorAll('[data-filter]');
 function normalize(text) {
@@ -37,3 +37,27 @@ search.addEventListener('submit', event => {
 for (const button of filters) button.addEventListener('click', () => select(button.dataset.filter));
 window.addEventListener('hashchange', render);
 render();
+
+const matchSearch = document.querySelector('#match-search');
+const competition = document.querySelector('#competition');
+const teams = document.querySelector('#teams');
+const matchStatus = document.querySelector('#match-status');
+for (const shelf of document.querySelectorAll('.shelf')) {
+  const group = document.createElement('optgroup');
+  group.label = shelf.querySelector('h3').textContent;
+  for (const summary of shelf.querySelectorAll('summary')) {
+    group.append(new Option(summary.textContent, summary.textContent));
+  }
+  competition.append(group);
+}
+function showMatchStatus() {
+  matchStatus.hidden = false;
+  matchStatus.textContent = competition.value
+    ? 'В архиве турнира «' + competition.value + '» пока нет записей.'
+    : 'В библиотеку пока не добавлены записи матчей.';
+}
+matchSearch.addEventListener('submit', event => {
+  event.preventDefault();
+  showMatchStatus();
+});
+competition.addEventListener('change', showMatchStatus);

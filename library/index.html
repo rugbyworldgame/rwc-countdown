@@ -3,7 +3,7 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Библиотека регби — Rugby 2027</title>
 <link rel="icon" href="/favicon.svg"><link rel="stylesheet" href="/assets/css/site.css">
-<link rel="stylesheet" href="library.css">
+<link rel="stylesheet" href="library.css?v=2">
 <script src="/assets/js/analytics.js?v=20260926" defer></script></head><body>
 <a href="#catalog" class="library-skip">К каталогу</a>
 <div id="menu-container"><header class="site-header">
@@ -26,10 +26,18 @@
 <h1>Библиотека регби</h1>
 <p>Записи матчей сборных и клубов разных лет.</p>
 </header>
-<form role="search"><label for="query">Поиск по библиотеке</label><div class="search-box">
+<form id="match-search" role="search" aria-label="Поиск матча">
+<h2>Найти матч</h2>
+<div class="match-fields"><div><label for="competition">Турнир</label>
+<select id="competition" name="t"><option value="">Все турниры</option></select></div>
+<div><label for="teams">Команда или пара команд</label>
+<input id="teams" name="teams" type="search" placeholder="Например, Тулуза или Тулуза — Бордо"></div>
+<button>Найти матч</button></div>
+<p id="match-status" role="status" hidden></p></form>
+<section id="catalog"><h2>Каталог турниров</h2>
+<form id="tournament-search" role="search" aria-label="Поиск турнира"><label for="query">Найти турнир по названию</label><div class="search-box">
 <input id="query" type="search" name="q" placeholder="Название турнира" autocomplete="off"><button>Найти</button>
 </div></form>
-<section id="catalog"><h2>Каталог турниров</h2>
 <p class="draft-note">Черновик каталога. Турниры показаны для примера, записи ещё не добавлены.</p>
 <div class="filters" aria-label="Отбор турниров"><button type="button" data-filter="all" aria-pressed="true">Все турниры</button><button type="button" data-filter="women" aria-pressed="false">Женское регби</button></div>
 <div class="shelves"><section class="shelf"><h3>Сборные · регби-15</h3>
@@ -49,4 +57,4 @@
 </section></div>
 <p id="empty" role="status" hidden>По этому запросу турниров пока нет.</p>
 </section></main>
-<script defer src="/menu.js"></script><script defer src="library.js"></script></body></html>
+<script defer src="/menu.js"></script><script defer src="library.js?v=2"></script></body></html>

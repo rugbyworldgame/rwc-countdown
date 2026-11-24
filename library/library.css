@@ -15,3 +15,10 @@ main button{cursor:pointer;border:1px solid var(--line);border-radius:8px;paddin
 summary{cursor:pointer;min-height:46px;padding:12px 0;list-style:none}summary::-webkit-details-marker{display:none}summary:after{content:'+';float:right;color:var(--lime)}details[open]>summary:after{content:'−'}
 summary:hover{color:var(--lime)}details p{padding-bottom:14px} :focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 @media(max-width:700px){.shelves{grid-template-columns:1fr}.shelf{padding:14px 16px}}
+#match-search h2{margin:0 0 16px}
+.match-fields{display:grid;grid-template-columns:minmax(170px,1fr) minmax(250px,1.65fr) auto;gap:12px;align-items:end}
+.match-fields input,.match-fields select{width:100%;height:48px;padding:0 12px;border:0;border-radius:8px;background:var(--ink);color:var(--bg);font:inherit}
+.match-fields button{min-height:48px;background:var(--lime);color:var(--bg);font-weight:750}
+#match-status{color:var(--ink);border-left:3px solid var(--lime);padding-left:12px}
+#tournament-search{margin:12px 0}
+@media(max-width:720px){.match-fields{grid-template-columns:1fr}}
