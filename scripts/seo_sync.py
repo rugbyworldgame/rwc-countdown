@@ -83,6 +83,7 @@ for path in pages:
  s=s.replace('<script src="/menu.js"></script>','<script src="/menu.js" defer></script>')
  s=s.replace('Официальная лента новостей','Лента новостей независимого проекта')
  path.write_text('\n'.join(line.rstrip() for line in s.splitlines())+'\n')
+indexed.extend('https://rugby2027.ru/' + page.parent.relative_to(ROOT).as_posix() + '/' for page in (ROOT/'library').rglob('index.html'))
 (ROOT/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+''.join('  <url><loc>'+u+'</loc></url>\n' for u in sorted(indexed))+'</urlset>\n')
 print(f'SEO refreshed: {len(indexed)} indexable pages')
 
