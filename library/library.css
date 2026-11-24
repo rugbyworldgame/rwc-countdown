@@ -33,3 +33,6 @@ summary:hover{color:var(--lime)}details p{padding-bottom:14px} :focus-visible{ou
 .video-slot{margin-top:24px;background:#080e0a;aspect-ratio:16/9;display:grid;place-items:center;border:1px solid var(--line)}
 .video-slot iframe{width:100%;height:100%;border:0}.video-slot button{background:var(--lime);color:var(--bg)}
 #recording{margin-top:24px}
+
+.catalog-hint{margin:0 0 10px;color:var(--muted)}
+#catalog summary:after{font-size:1.15em;font-weight:700}
