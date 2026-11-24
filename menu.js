@@ -60,6 +60,14 @@ if (document.querySelector('.lineups')) {
       previous.href = '/match-center/';
       previous.textContent = 'Матч-центр';
     });
+    // Static headers on existing pages can predate the library.
+    host.querySelectorAll('.desktop-nav, .mobile-nav').forEach(nav => {
+      if (nav.querySelector('a[href="/library/"]')) return;
+      const link = document.createElement('a');
+      link.href = '/library/';
+      link.textContent = 'Библиотека регби';
+      nav.append(link);
+    });
     const toggle = document.getElementById("menuToggle");
     const nav = document.getElementById("mobileNav");
     toggle?.addEventListener("click", () => {
