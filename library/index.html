@@ -3,7 +3,7 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Библиотека регби — Rugby 2027</title>
 <link rel="icon" href="/favicon.svg"><link rel="stylesheet" href="/assets/css/site.css">
-<link rel="stylesheet" href="library.css?v=3">
+<link rel="stylesheet" href="library.css?v=4">
 <script src="/assets/js/analytics.js?v=20260926" defer></script></head><body>
 <a href="#catalog" class="library-skip">К каталогу</a>
 <div id="menu-container"><header class="site-header">
@@ -24,26 +24,17 @@
 <header class="library-intro">
 <p class="archive-label">Видеоархив</p>
 <h1>Библиотека регби</h1>
-<p>Записи матчей сборных и клубов разных лет.</p>
-</header>
-<form id="match-search" role="search" aria-label="Поиск матча">
-<h2>Найти матч</h2>
-<div class="match-fields"><div><label for="competition">Турнир</label>
-<select id="competition" name="t"><option value="">Все турниры</option></select></div>
-<div><label for="teams">Команда или пара команд</label>
-<input id="teams" name="teams" type="search" placeholder="Например, Тулуза или Тулуза — Бордо"></div>
-<button>Найти матч</button></div>
-<p id="match-status" role="status" hidden></p></form>
-<section id="catalog"><h2>Каталог турниров</h2>
-<form id="tournament-search" role="search" aria-label="Поиск турнира"><label for="query">Найти турнир по названию</label><div class="search-box">
-<input id="query" type="search" name="q" placeholder="Название турнира" autocomplete="off"><button>Найти</button>
-</div></form>
-<p class="draft-note">Бета-версия. Видеозаписи ещё не добавлены.</p>
-<div class="filters" aria-label="Отбор турниров"><button type="button" data-filter="all" aria-pressed="true">Все турниры</button><button type="button" data-filter="women" aria-pressed="false">Женское регби</button></div>
-<div class="shelves"><section class="shelf"><h3>Международные турниры</h3>
+<p>Архив видеозаписей Кубка мира.</p></header>
+<form role="search" id="archive-search"><label for="query">Найти запись</label><div class="search-box"><input id="query" name="q" type="search" placeholder="Команда, год или название записи"><button>Найти</button></div></form>
+<p id="search-status" role="status"></p>
+<section id="catalog"><section class="shelf"><h3>Международные турниры</h3>
 <details id="world-cup" open data-aliases="rwc rugby world cup сборные регби-15" data-women="false"><summary>Кубок мира</summary>
 <div class="cup-years">
-<details class="cup-year"><summary>1987</summary><p>Видеозаписи ещё не добавлены.</p></details>
+<details class="cup-year" id="year-1987" open><summary>1987</summary>
+<ul class="recordings">
+<li data-search="opening ceremony"><a href="world-cup/1987/opening/">Церемония открытия</a><small>22 мая 1987</small></li>
+<li data-search="new zealand italy nzl ita all blacks италия новая зеландия"><a href="world-cup/1987/new-zealand-italy/">Новая Зеландия — Италия</a><small>Матч № 1 · 22 мая 1987 · Английский комментарий</small></li>
+</ul></details>
 <details class="cup-year"><summary>1991</summary><p>Видеозаписи ещё не добавлены.</p></details>
 <details class="cup-year"><summary>1995</summary><p>Видеозаписи ещё не добавлены.</p></details>
 <details class="cup-year"><summary>1999</summary><p>Видеозаписи ещё не добавлены.</p></details>
@@ -54,19 +45,5 @@
 <details class="cup-year"><summary>2019</summary><p>Видеозаписи ещё не добавлены.</p></details>
 <details class="cup-year"><summary>2023</summary><details class="edition-view"><summary>Основная трансляция</summary><p>Видеозаписи ещё не добавлены.</p></details><details class="edition-view"><summary>Вид с камеры-паука</summary><p>Видеозаписи ещё не добавлены.</p></details><details class="edition-view"><summary>Вид из-за стоек ворот</summary><p>Видеозаписи ещё не добавлены.</p></details></details>
 </div></details>
-<details data-aliases="six nations 6 nations" data-women="false"><summary>Кубок шести наций</summary><p>Записи появятся после добавления матчей.</p></details>
-<details data-aliases="women rugby world cup wrwc" data-women="true"><summary>Женский Кубок мира</summary><p>Записи появятся после добавления матчей.</p></details>
-</section>
-<section class="shelf"><h3>Клубы · регби-15</h3>
-<details data-aliases="top 14 top14 топ14" data-women="false"><summary>Топ-14</summary><p>Сезоны появятся после добавления матчей.</p></details>
-<details data-aliases="champions cup epcr" data-women="false"><summary>Кубок чемпионов</summary><p>Сезоны появятся после добавления матчей.</p></details>
-</section>
-<section class="shelf"><h3>Регби-7</h3>
-<details data-aliases="svns sevens" data-women="false"><summary>Мировая серия по регби-7</summary><p>Записи появятся после добавления матчей.</p></details>
-</section>
-<section class="shelf"><h3>Регбилиг</h3>
-<details data-aliases="rlwc rugby league world cup" data-women="false"><summary>Кубок мира по регбилиг</summary><p>Записи появятся после добавления матчей.</p></details>
-</section></div>
-<p id="empty" role="status" hidden>По этому запросу турниров пока нет.</p>
-</section></main>
-<script defer src="/menu.js"></script><script defer src="library.js?v=3"></script></body></html>
+</section></section></main>
+<script defer src="/menu.js"></script><script defer src="library.js?v=4"></script></body></html>
