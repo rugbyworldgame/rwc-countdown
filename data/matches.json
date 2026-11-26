@@ -3229,12 +3229,18 @@
           "Fin Baxter",
           "Jamie George",
           "Joe Heyes",
-          "Маро Итодже",
+          {
+            "name": "Maro Itoje",
+            "playerId": "maro-itoje"
+          },
           "Alex Coles",
           "Ollie Chessum",
           "Ben Curry",
           "Ben Earl",
-          "Джек ван Портвлит",
+          {
+            "name": "Jack van Poortvliet",
+            "playerId": "jack-van-poortvliet"
+          },
           "Fin Smith",
           "Will Joseph",
           "Seb Atkinson",
@@ -3242,8 +3248,14 @@
           "Tommy Freeman",
           "George Furbank",
           "Luke Cowan-Dickie",
-          "Эллис Гендж",
-          "Уилл Стюарт",
+          {
+            "name": "Ellis Genge",
+            "playerId": "ellis-genge"
+          },
+          {
+            "name": "Will Stuart",
+            "playerId": "will-stuart"
+          },
           "George Martin",
           "Greg Fisilau",
           "Henry Pollock",
@@ -3444,16 +3456,28 @@
         "badge": "RSA",
         "color": "#344765",
         "players": [
-          "Окс Нче",
-          "Малкольм Маркс",
+          {
+            "name": "Ox Nche",
+            "playerId": "ox-nche"
+          },
+          {
+            "name": "Malcolm Marx",
+            "playerId": "malcolm-marx"
+          },
           "Wilco Louw",
           "Eben Etzebeth",
           "Franco Mostert",
           "Siya Kolisi",
           "Pieter-Steph du Toit",
           "Cameron Hanekom",
-          "Морне ван ден Берг",
-          "Саша Файнберг-Мнгомезулу",
+          {
+            "name": "Morne van den Berg",
+            "playerId": "morne-van-den-berg"
+          },
+          {
+            "name": "Sacha Feinberg-Mngomezulu",
+            "playerId": "sacha-feinberg-mngomezulu"
+          },
           "Ethan Hooker",
           "Damian de Allende",
           "Jesse Kriel",
@@ -3462,8 +3486,14 @@
           "Jan-Hendrik Wessels",
           "Gerhard Steenekamp",
           "Thomas du Toit",
-          "Луд де Ягер",
-          "Пол де Вильерс",
+          {
+            "name": "Lood de Jager",
+            "playerId": "lood-de-jager"
+          },
+          {
+            "name": "Paul de Villiers",
+            "playerId": "paul-de-villiers"
+          },
           "Marco van Staden",
           "Grant Williams",
           "Canan Moodie"
@@ -3521,7 +3551,10 @@
           "Monty Ioane",
           "Leonardo Marin",
           "Paolo Odogwu",
-          "Анж Капуоццо",
+          {
+            "name": "Ange Capuozzo",
+            "playerId": "ange-capuozzo"
+          },
           "Tommaso Allan",
           "Gianmarco Lucchesi",
           "Muhamed Hasa",
@@ -3610,7 +3643,10 @@
           "Esteban Capilla",
           "Charles Ollivon",
           "Anthony Jelonch",
-          "Антуан Дюпон",
+          {
+            "name": "Antoine Dupont",
+            "playerId": "antoine-dupont"
+          },
           "Matthieu Jalibert",
           "Louis Bielle-Biarrey",
           "Yoram Moefana",
@@ -3633,7 +3669,10 @@
         "color": "#344765",
         "players": [
           "Boris Wenger",
-          "Хулиан Монтойя",
+          {
+            "name": "Julián Montoya",
+            "playerId": "julian-montoya"
+          },
           "Francisco Moreno",
           "Guido Petti",
           "Tomás Lavanini",
@@ -3698,18 +3737,30 @@
         "players": [
           "Nicky Smith",
           "Dewi Lake",
-          "Арчи Гриффин",
+          {
+            "name": "Archie Griffin",
+            "playerId": "archie-griffin"
+          },
           "Dafydd Jenkins",
           "Ben Carter",
           "Alex Mann",
           "Jac Morgan",
-          "Аарон Уэйнрайт",
-          "Томос Уильямс",
+          {
+            "name": "Aaron Wainwright",
+            "playerId": "aaron-wainwright"
+          },
+          {
+            "name": "Tomos Williams",
+            "playerId": "tomos-williams"
+          },
           "Sam Costelow",
           "Josh Adams",
           "Max Llewellyn",
           "Eddie James",
-          "Луи Рис-Заммит",
+          {
+            "name": "Louis Rees-Zammit",
+            "playerId": "louis-rees-zammit"
+          },
           "Blair Murray",
           "Ryan Elias",
           "Gareth Thomas",
@@ -3743,11 +3794,17 @@
           "Tom Wright",
           "Billy Pollard",
           "Angus Bell",
-          "Аллан Алаалатоа",
+          {
+            "name": "Allan Alaalatoa",
+            "playerId": "allan-alaalatoa"
+          },
           "Jeremy Williams",
           "Fraser McReight",
           "Kalani Thomas",
-          "Бен Дональдсон",
+          {
+            "name": "Ben Donaldson",
+            "playerId": "ben-donaldson"
+          },
           "Filipo Daugunu"
         ]
       },
@@ -4003,7 +4060,10 @@
           "Monty Ioane",
           "Leonardo Marin",
           "Federico Mori",
-          "Анж Капуоццо",
+          {
+            "name": "Ange Capuozzo",
+            "playerId": "ange-capuozzo"
+          },
           "Tommaso Allan",
           "Giacomo Nicotera",
           "Ivan Nemer",
@@ -4116,7 +4176,10 @@
         "players": [
           "Isaac Kailea",
           "Brandon Paenga-Amosa",
-          "Аллан Алаалатоа",
+          {
+            "name": "Allan Alaalatoa",
+            "playerId": "allan-alaalatoa"
+          },
           "Josh Canham",
           "Jeremy Williams",
           "Tom Hooper",

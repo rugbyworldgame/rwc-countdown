@@ -7,6 +7,10 @@ class Page(HTMLParser):
  def __init__(self,text):super().__init__();self.tags=[];self.feed(text)
  def handle_starttag(self,t,attrs):self.tags.append((t,dict(attrs)))
 data=json.loads((ROOT/'data/matches.json').read_text());validate(data)
+for match in data['matches']:
+ names=[p if isinstance(p,str) else p['name'] for side in ('home','away') for p in match[side]['players']]
+ names=[re.sub(r' \((?:капитан|сокапитан|captain|c)\)$','',n,flags=re.I) for n in names]
+ assert not (any(re.search(r'[А-Яа-яЁё]',n) for n in names) and any(re.search(r'[A-Za-z]',n) for n in names)),match['id']+' mixes lineup scripts'
 for path,text in outputs(data).items():
  if path.suffix!='.html':continue
  p=Page(text)
