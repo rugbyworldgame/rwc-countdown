@@ -1,19 +1,12 @@
 {
   "version": 1,
   "featured": [
-    "2026-11-20-romania-canada",
-    "2026-11-20-montauban-agen",
-    "2026-11-20-nevers-angouleme",
-    "2026-11-20-bristol-bath",
-    "2026-11-20-oyonnax-brive",
-    "2026-11-21-hong-kong-tonga",
-    "2026-11-21-georgia-usa",
-    "2026-11-21-england-new-zealand",
-    "2026-11-21-scotland-japan",
-    "2026-11-21-ireland-south-africa",
-    "2026-11-21-italy-fiji",
-    "2026-11-21-france-argentina",
-    "2026-11-21-wales-australia"
+    "2026-11-26-brive-biarritz",
+    "2026-11-27-italy-fiji",
+    "2026-11-27-dax-oyonnax",
+    "2026-11-27-angouleme-nice",
+    "2026-11-27-provence-montauban",
+    "2026-11-27-ireland-australia"
   ],
   "matches": [
     {
@@ -3029,7 +3022,7 @@
       "competition": "Кубок наций",
       "season": "2026",
       "stage": "6-й тур",
-      "status": "scheduled",
+      "status": "finished",
       "venue": "Кай Так Ют Спортс Граунд",
       "city": "Гонконг",
       "country": "HK",
@@ -3127,7 +3120,7 @@
       "competition": "Кубок наций",
       "season": "2026",
       "stage": "6-й тур",
-      "status": "scheduled",
+      "status": "finished",
       "venue": "Михаил Месхи",
       "city": "Тбилиси",
       "country": "GE",
@@ -3221,7 +3214,7 @@
       "competition": "Чемпионат наций",
       "season": "2026",
       "stage": "6-й тур",
-      "status": "scheduled",
+      "status": "finished",
       "venue": "Альянц Стэдиум",
       "city": "Лондон",
       "country": "GB",
@@ -3315,7 +3308,7 @@
       "competition": "Чемпионат наций",
       "season": "2026",
       "stage": "6-й тур",
-      "status": "scheduled",
+      "status": "finished",
       "venue": "Маррифилд",
       "city": "Эдинбург",
       "country": "GB",
@@ -3409,7 +3402,7 @@
       "competition": "Чемпионат наций",
       "season": "2026",
       "stage": "6-й тур",
-      "status": "scheduled",
+      "status": "finished",
       "venue": "Авива",
       "city": "Дублин",
       "country": "IE",
@@ -3503,7 +3496,7 @@
       "competition": "Чемпионат наций",
       "season": "2026",
       "stage": "6-й тур",
-      "status": "scheduled",
+      "status": "finished",
       "venue": "Блуэнерджи Стэдиум",
       "city": "Удине",
       "country": "IT",
@@ -3597,7 +3590,7 @@
       "competition": "Чемпионат наций",
       "season": "2026",
       "stage": "6-й тур",
-      "status": "scheduled",
+      "status": "finished",
       "venue": "Стад де Франс",
       "city": "Сен-Дени",
       "country": "FR",
@@ -3691,7 +3684,7 @@
       "competition": "Чемпионат наций",
       "season": "2026",
       "stage": "6-й тур",
-      "status": "scheduled",
+      "status": "finished",
       "venue": "Принсипалити",
       "city": "Кардифф",
       "country": "GB",
@@ -3775,6 +3768,394 @@
         {
           "label": "Судейские назначения",
           "url": "https://rugbyreferee.net/2026/11/19/19-22-november-referee-ar-tmo-appointments/"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-26-brive-biarritz",
+      "international": false,
+      "start": "2026-11-26T23:00:00+03:00",
+      "competition": "Про Д2",
+      "season": "2026/27",
+      "stage": "12-й тур",
+      "status": "scheduled",
+      "venue": "Стад Мунисипаль",
+      "city": "Брив-ла-Гайард",
+      "country": "FR",
+      "video": "https://vk.ru/video_ext.php?oid=-175058841&id=456241254&hash=3980b17669e96c76&hd=3",
+      "introTitle": "Перед матчем",
+      "intro": "«Брив» открывает тур в четверг. У хозяев игру в полузащите поведут Готье Дубрер и Ленни Бронкан, у «Биаррица» — Чарли Шил и Эдгар Ретьер.",
+      "home": {
+        "name": "Брив",
+        "badge": "CAB",
+        "color": "#713743",
+        "players": [
+          "Vakhtang ABDALADZE",
+          "Yanis CHARCOSSET",
+          "Christian James JUDGE",
+          "Samuel MAXIMIN",
+          "Irné HERBST",
+          "Sasha GUE",
+          "Retief MARAIS",
+          "Asaeli TUIVUAKA",
+          "Gauthier DOUBRERE",
+          "Leny BRONCAN",
+          "Geoffrey CROS",
+          "Stuart OLDING",
+          "Nicolas Christian KRONE",
+          "Julien TISSERON",
+          "Aymeric LUC",
+          "Lucas DA SILVA",
+          "Louis MARY",
+          "Luke GRIFFITHS",
+          "Geoffrey MALATERRE",
+          "Yann PEYSSON",
+          "Mathis GALTHIE",
+          "Gatien MASSE",
+          "Francisco CORIA MARCHETTI"
+        ]
+      },
+      "away": {
+        "name": "Биарриц",
+        "badge": "BO",
+        "color": "#603646",
+        "players": [
+          "Alexandre PLANTIER",
+          "Adrien SONZOGNI",
+          "Hugo PIRLET",
+          "Raynard ROETS",
+          "Ellande SANDERSON",
+          "Baptiste BRITZ",
+          "Jessy JEGERLEHNER",
+          "Yoni TUATAANE",
+          "Charlie SHIEL",
+          "Edgar RETIERE",
+          "Mathieu ACEBES",
+          "Dorian LABORDE",
+          "Carlo MIGNOT",
+          "Arthur BONNEVAL",
+          "Andoni ECHEGARAY",
+          "Luka BEGIC",
+          "François MUR",
+          "Ekain IMAZ AGIRRE",
+          "Matthew Olamide Tatenda OWORU",
+          "Yann LESGOURGUES",
+          "Thomas DOLHAGARAY",
+          "Yohan TAPIE",
+          "Quentin SAMARAN"
+        ]
+      },
+      "officials": {
+        "referee": "Adrien Marbot",
+        "assistants": "Damien Dauvissat и Abdjallil El Khaoulani",
+        "tmo": "Denis Grenouillet"
+      },
+      "sources": [
+        {
+          "label": "Протокол LNR",
+          "url": "https://prod2.lnr.fr/feuille-de-match/2026-2027/j12/12098-brive-biarritz/compositions"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-27-dax-oyonnax",
+      "international": false,
+      "start": "2026-11-27T21:00:00+03:00",
+      "competition": "Про Д2",
+      "season": "2026/27",
+      "stage": "12-й тур",
+      "status": "scheduled",
+      "venue": "Морис Буайо",
+      "city": "Дакс",
+      "country": "FR",
+      "video": "https://vk.ru/video_ext.php?oid=-175058841&id=456241255&hash=18bdde72e8333238&hd=3",
+      "introTitle": "Перед матчем",
+      "intro": "Первый пятничный матч Про Д2 пройдёт в Даксе. «Ойонна» едет в Ланды после домашней победы над «Бривом».",
+      "home": {
+        "name": "Дакс",
+        "badge": "USD",
+        "color": "#284663",
+        "players": []
+      },
+      "away": {
+        "name": "Ойонна",
+        "badge": "OYO",
+        "color": "#23445a",
+        "players": []
+      },
+      "officials": {
+        "referee": "Julien Caulier",
+        "assistants": "Jonathan Gasnier и Yannick Vals",
+        "tmo": "Damien Serouart"
+      },
+      "sources": [
+        {
+          "label": "Протокол LNR",
+          "url": "https://prod2.lnr.fr/feuille-de-match/2026-2027/j12/12100-dax-oyonnax/compositions"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-27-angouleme-nice",
+      "international": false,
+      "start": "2026-11-27T21:30:00+03:00",
+      "competition": "Про Д2",
+      "season": "2026/27",
+      "stage": "12-й тур",
+      "status": "scheduled",
+      "venue": "Шанзи",
+      "city": "Ангулем",
+      "country": "FR",
+      "video": "https://vk.ru/video_ext.php?oid=-175058841&id=456241256&hash=e9ac2b20a1ac910c&hd=3",
+      "introTitle": "Перед матчем",
+      "intro": "После выезда в Невер «Ангулем» возвращается на «Шанзи». На этот раз в гости приезжает «Ницца».",
+      "home": {
+        "name": "Ангулем",
+        "badge": "SAXV",
+        "color": "#713743",
+        "players": []
+      },
+      "away": {
+        "name": "Ницца",
+        "badge": "NIS",
+        "color": "#603646",
+        "players": []
+      },
+      "officials": {
+        "referee": "Pierre Baptiste Nuchy",
+        "assistants": "Anthony Lac и Mickael Simon",
+        "tmo": "Laurent Sclafer"
+      },
+      "sources": [
+        {
+          "label": "Протокол LNR",
+          "url": "https://prod2.lnr.fr/feuille-de-match/2026-2027/j12/12097-angouleme-nice/compositions"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-27-provence-montauban",
+      "international": false,
+      "start": "2026-11-27T23:00:00+03:00",
+      "competition": "Про Д2",
+      "season": "2026/27",
+      "stage": "12-й тур",
+      "status": "scheduled",
+      "venue": "Морис Давид",
+      "city": "Экс-ан-Прованс",
+      "country": "FR",
+      "video": "https://vk.ru/video_ext.php?oid=-175058841&id=456241257&hash=ccbf0f54e9aa9436&hd=3",
+      "introTitle": "Перед матчем",
+      "intro": "«Монтобан» выиграл дерби у «Ажена» с перевесом в одно очко. Теперь предстоит выезд в Экс-ан-Прованс на поздний матч пятницы.",
+      "home": {
+        "name": "Прованс",
+        "badge": "PRO",
+        "color": "#284663",
+        "players": []
+      },
+      "away": {
+        "name": "Монтобан",
+        "badge": "USM",
+        "color": "#23445a",
+        "players": []
+      },
+      "officials": {
+        "referee": "Benoit Rousselet",
+        "assistants": "Julien Camus и Ludovic Sacarot",
+        "tmo": "Patrick Pechambert"
+      },
+      "sources": [
+        {
+          "label": "Протокол LNR",
+          "url": "https://prod2.lnr.fr/feuille-de-match/2026-2027/j12/12096-provence-rugby-montauban/compositions"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-27-italy-fiji",
+      "international": true,
+      "start": "2026-11-27T19:40:00+03:00",
+      "competition": "Чемпионат наций",
+      "season": "2026",
+      "stage": "Матч за 11-е место",
+      "status": "scheduled",
+      "venue": "Альянц Стэдиум, Туикенем",
+      "city": "Лондон",
+      "country": "GB",
+      "video": "https://vk.ru/video_ext.php?oid=-175058841&id=456241258&hash=c866b6297cdc956a&hd=3",
+      "introTitle": "Перед матчем",
+      "intro": "Неделю назад в Удине Фиджи выиграли 21:16. Теперь команды разыграют в Лондоне 11-е место. Италию выведет Никколо Канноне, а под десятым номером сыграет Паоло Гарбизи. Эфир с оригинальным звуком.",
+      "home": {
+        "name": "Италия",
+        "badge": "ITA",
+        "color": "#275341",
+        "players": [
+          "Danilo Fischetti",
+          "Tommaso Di Bartolomeo",
+          "Marco Riccioni",
+          "Niccolò Cannone",
+          "Federico Ruzza",
+          "Ross Vintcent",
+          "Manuel Zuliani",
+          "Enoch Opoku Gyamfi",
+          "Stephen Varney",
+          "Paolo Garbisi",
+          "Monty Ioane",
+          "Leonardo Marin",
+          "Federico Mori",
+          "Анж Капуоццо",
+          "Tommaso Allan",
+          "Giacomo Nicotera",
+          "Ivan Nemer",
+          "Ion Neculai",
+          "Andrea Zambonin",
+          "Lorenzo Cannone",
+          "Alessandro Ortombina",
+          "Alessandro Fusco",
+          "Paolo Odogwu"
+        ]
+      },
+      "away": {
+        "name": "Фиджи",
+        "badge": "FIJ",
+        "color": "#344765",
+        "players": [
+          "Vilikesa Nairau",
+          "Peniami Narisia",
+          "Inoke Ravuiwasa",
+          "Setareki Turagacoke",
+          "Isoa Nasilasila",
+          "Mesake Vocevoce",
+          "Elia Canakaivata",
+          "Kitione Salawa",
+          "Terio Tamani",
+          "Caleb Muntz",
+          "Peniasi Dakuwaqa",
+          "Vinaya Habosi",
+          "Iosefo Masi",
+          "Jiuta Wainiqolo",
+          "Ponipate Loganimasi",
+          "Tevita Ikanivere",
+          "Peni Ravai",
+          "Luke Tagi",
+          "Joseva Tamani",
+          "Etonia Waqa",
+          "Frank Lomani",
+          "Isikeli Rabitu",
+          "Sireli Maqala"
+        ]
+      },
+      "officials": {
+        "referee": "Ник Берри",
+        "assistants": "Бен О’Кифф и Пол Уильямс",
+        "tmo": "Мариус ван дер Вестхёйзен"
+      },
+      "sources": [
+        {
+          "label": "Федерация регби Италии",
+          "url": "https://www.federugby.it/italrugby-il-xv-per-la-sfida-a-twickenham-contro-le-fiji/"
+        },
+        {
+          "label": "Состав Фиджи — Reuters",
+          "url": "https://www.reuters.com/sports/fiji-ring-changes-nations-championship-playoff-against-italy-2026-11-25/"
+        },
+        {
+          "label": "Судейские назначения турнира",
+          "url": "https://nationschampionshiprugby.com/en/news/the-13-th-team-confirmed-for-finals-weekend"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-27-ireland-australia",
+      "international": true,
+      "start": "2026-11-27T23:10:00+03:00",
+      "competition": "Чемпионат наций",
+      "season": "2026",
+      "stage": "Матч за 5-е место",
+      "status": "scheduled",
+      "venue": "Альянц Стэдиум, Туикенем",
+      "city": "Лондон",
+      "country": "GB",
+      "video": "https://vk.ru/video_ext.php?oid=-175058841&id=456241259&hash=63cb1d64a5b5fed2&hd=3",
+      "introTitle": "Перед матчем",
+      "intro": "Ирландия и Австралия встретятся в Лондоне за пятое место. У ирландцев Джейкоб Стокдейл выйдет на левом краю, а у Австралии Куртли Бил начнёт матч на скамейке. Эфир с оригинальным звуком.",
+      "home": {
+        "name": "Ирландия",
+        "badge": "IRL",
+        "color": "#275341",
+        "players": [
+          "Andrew Porter",
+          "Ronan Kelleher",
+          "Tadhg Furlong",
+          "Joe McCarthy",
+          "Tadhg Beirne",
+          "Ryan Baird",
+          "Josh van der Flier",
+          "Nick Timoney",
+          "Jamison Gibson-Park",
+          "Sam Prendergast",
+          "Jacob Stockdale",
+          "Stuart McCloskey",
+          "Robbie Henshaw",
+          "Robert Baloucoune",
+          "Hugo Keenan",
+          "Tom Stewart",
+          "Tom O'Toole",
+          "Thomas Clarkson",
+          "James Ryan",
+          "James McNabney",
+          "Nathan Doak",
+          "Ciaran Frawley",
+          "Bundee Aki"
+        ]
+      },
+      "away": {
+        "name": "Австралия",
+        "badge": "AUS",
+        "color": "#8b7122",
+        "players": [
+          "Isaac Kailea",
+          "Brandon Paenga-Amosa",
+          "Аллан Алаалатоа",
+          "Josh Canham",
+          "Jeremy Williams",
+          "Tom Hooper",
+          "Carlo Tizzano",
+          "Rob Valetini",
+          "Kalani Thomas",
+          "Carter Gordon",
+          "James Ramm",
+          "Len Ikitau",
+          "Joseph-Aukuso Suaalii",
+          "Max Jorgensen",
+          "Tom Wright",
+          "Josh Nasser",
+          "Angus Bell",
+          "Taniela Tupou",
+          "Lachlan Shaw",
+          "Harry Wilson",
+          "Fraser McReight",
+          "Teddy Wilson",
+          "Kurtley Beale"
+        ]
+      },
+      "officials": {
+        "referee": "Ника Амашукели",
+        "assistants": "Кристоф Ридли и Холли Дэвидсон",
+        "tmo": "Ричард Келли"
+      },
+      "sources": [
+        {
+          "label": "Заявки команд",
+          "url": "https://www.autumn-internationals.co.uk/2026/ireland-v-australia-finals-weekend.html"
+        },
+        {
+          "label": "World Rugby",
+          "url": "https://www.world.rugby/beta/en/match/b1d07ba6-de16-4c54-99c1-fbc145c18c75"
+        },
+        {
+          "label": "Судейские назначения турнира",
+          "url": "https://nationschampionshiprugby.com/en/news/the-13-th-team-confirmed-for-finals-weekend"
         }
       ]
     }

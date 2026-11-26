@@ -106,7 +106,7 @@ def archive_page(matches,template):
   meta+=f'<meta property="og:{key}" content="{e(val)}">'
  meta+='<script type="application/ld+json">'+js({'@context':'https://schema.org','@type':'BreadcrumbList','itemListElement':[{'@type':'ListItem','position':i,'name':n,'item':u} for i,(n,u) in enumerate([('Главная',BASE+'/'),('Матч-центр',BASE+'/match-center/'),('Архив матчей',canonical)],1)]})+'</script>'
  def options(k):return ''.join(f'<option>{e(v)}</option>' for v in sorted({m[k] for m in matches}))
- rows=''.join(f'<li data-comp="{e(m["competition"])}" data-season="{e(m["season"])}"><a href="{url(m)}">{e(name(m))}</a><small>{shortdate(m)} {date(m).year} · {time(m)} МСК · {e(m["competition"])} · {e(m["season"])}</small></li>' for m in reversed(matches))
+ rows=''.join(f'<li data-comp="{e(m["competition"])}" data-season="{e(m["season"])}"><a href="{url(m)}">{e(name(m))}</a><small>{shortdate(m)} {date(m).year} · {time(m)} МСК · {e(m["competition"])} · {e(m["season"])}</small></li>' for m in sorted(matches,key=date,reverse=True))
  body=(ROOT/'scripts/templates/archive.fragment.html').read_text().replace('{{rows}}',rows).replace('{{competitions}}',options('competition')).replace('{{seasons}}',options('season'))
  page=re.sub(r'(<main id="main-content">).*?</main>',lambda m:m[1]+body+'</main>',template,flags=re.S)
  page=page.replace('href="#project-support"','href="/#project-support"').replace('{{title}}',title).replace('{{metadata}}',meta+'<link rel="stylesheet" href="/assets/css/archive.css">')
