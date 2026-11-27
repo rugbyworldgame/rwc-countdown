@@ -91,7 +91,8 @@ def render(m,featured,allmatches,template,entry=False):
  <div class="match-teams" aria-label="{e(name(m))}"><div class="match-team">{badge(home)}<strong>{e(teamname(m,home))}</strong></div><div class="match-versus"><b>VS</b><small>{shortdate(m)} · {time(m)} МСК</small></div><div class="match-team">{badge(away)}<strong>{e(teamname(m,away))}</strong></div></div>
  <div class="match-venue">Стадион «{e(m['venue'])}» · {e(m['city'])}</div>
  <div class="match-countdown-wrap" id="matchCountdown" data-state="{e(m['status'])}"><span class="live-dot" aria-hidden="true"></span><span id="countdownLabel">{e(initial_label)}</span><div class="match-countdown" id="countdownValues" hidden>'''+''.join(f'<b><strong id="match{k}">—</strong><small>{v}</small></b>' for k,v in [('Days','дн.'),('Hours','ч.'),('Minutes','мин.'),('Seconds','сек.')])+'''</div></div></div></section>'''
- stream=f'''<div class="stream-heading"><div><span class="match-kicker">Трансляция матча</span><h1 id="stream-title">{e(name(m))}</h1></div><span class="stream-time">{e(initial_label)}</span></div><div class="responsive-video"><iframe src="{e(m['video'])}" title="Трансляция матча {e(name(m))}" width="1280" height="720" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock" allowfullscreen></iframe></div><p class="stream-help stream-support-note">Друзья, ваша поддержка сейчас очень важна. Поддержать эфир можно донатом на экране трансляции.</p><p class="stream-help">Если эфир не запустился автоматически, нажмите кнопку воспроизведения в центре окна.</p><p class="stream-help"><a href="{url(m)}">Постоянная ссылка на этот матч</a></p>'''
+ stream=f'''<div class="stream-heading"><div><span class="match-kicker">Трансляция матча</span><h1 id="stream-title">{e(name(m))}</h1></div><span class="stream-time">{e(initial_label)}</span></div><div class="responsive-video"><iframe src="{e(m['video'])}" title="Трансляция матча {e(name(m))}" width="1280" height="720" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock" allowfullscreen></iframe></div>'''
+ stream_after=f'''<p class="stream-help">Если эфир не запустился автоматически, нажмите кнопку воспроизведения в центре окна.</p><p class="stream-help"><a href="{url(m)}">Постоянная ссылка на этот матч</a></p>'''
  players=json.loads((ROOT/'assets/players/players.json').read_text())['players']
  aliases={n.lower().replace('ё','е'):p['id'] for p in players for n in [p['name'],*p.get('aliases',[])]}
  def li(p):
@@ -104,19 +105,20 @@ def render(m,featured,allmatches,template,entry=False):
   return h+'</article>'
  def facts(items):return '<dl class="match-facts">'+''.join('<div><dt>'+e(k)+'</dt><dd>'+e(v or 'Пока не подтверждено')+'</dd></div>' for k,v in items)+'</dl>'
  if m.get('sessionTitle'):
-  stream=stream.replace('Трансляция матча','Трансляция этапа').replace('на этот матч','на этот эфир')
+  stream=stream.replace('Трансляция матча','Трансляция этапа')
+  stream_after=stream_after.replace('на этот матч','на этот эфир')
   if m.get('scheduleBlocks'):
    metadata += '<link rel="stylesheet" href="/assets/css/session-schedule.css?v=1">'
-   stream += '<section class="session-schedule" aria-labelledby="schedule-title"><h2 id="schedule-title">Расписание матчей</h2><p>Время московское (МСК)</p>'
+   stream_after += '<section class="session-schedule" aria-labelledby="schedule-title"><h2 id="schedule-title">Расписание матчей</h2><p>Время московское (МСК)</p>'
    for block in m['scheduleBlocks']:
-    stream += f'<h3>{e(block["label"])}</h3>'
+    stream_after += f'<h3>{e(block["label"])}</h3>'
     from itertools import groupby
     for category, games in groupby(block['games'], key=lambda game: game['category']):
-     stream += f'<table><caption>{e(category)}</caption><tbody>'
+     stream_after += f'<table><caption>{e(category)}</caption><tbody>'
      for game in games:
-      stream += f'<tr><td><time>{e(game["time"])}</time></td> <td>{e(game["teams"])}</td></tr>'
-     stream += '</tbody></table>'
-   stream += '</section>'
+      stream_after += f'<tr><td><time>{e(game["time"])}</time></td> <td>{e(game["teams"])}</td></tr>'
+     stream_after += '</tbody></table>'
+   stream_after += '</section>'
   content=f'<section class="section shell match-content"><article class="match-intro"><h2>{e(m["introTitle"])}</h2><p>{e(m["intro"])}</p><a href="{e(m["sources"][0]["url"])}">Расписание организатора</a></article></section>'
  else:
   content=f'''<section class="section shell match-content"><article class="match-intro"><span class="match-kicker">Почему стоит смотреть</span><h2>{e(m['introTitle'])}</h2><p>{e(m['intro'])}</p><p class="stream-help"><a href="/participants">Участники Кубка мира 2027</a>.</p></article>
@@ -126,7 +128,7 @@ def render(m,featured,allmatches,template,entry=False):
  config=[dict(id=x['id'],start=x['start'],status=x['status'],url=url(x)) for x in featured]
  # Classic head script selects once, before any iframe is parsed. No mid-view changes.
  entry_script='<script>if(window.RugbyMatchSelection){const m=RugbyMatchSelection.choose('+js(config)+',Date.now());if(m)location.replace(m.url);}</script>' if entry and len(featured)>1 else ''
- values=dict(title=e(title),metadata=metadata,entry_script=entry_script,selector=archive_jump+selector(featured,m),scoreboard=scoreboard,stream=stream,content=content,archive=archive_html,timer_config='<script id="match-config" type="application/json">'+js(dict(start=m['start'],status=m['status']))+'</script>')
+ values=dict(title=e(title),metadata=metadata,entry_script=entry_script,selector=archive_jump+selector(featured,m),scoreboard=scoreboard,stream=stream,stream_after=stream_after,content=content,archive=archive_html,timer_config='<script id="match-config" type="application/json">'+js(dict(start=m['start'],status=m['status']))+'</script>')
  return re.sub(r'\{\{([a-z_]+)\}\}',lambda x:values[x[1]],template)
 
 def archive_page(matches,template):

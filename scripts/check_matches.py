@@ -42,8 +42,9 @@ for path,text in outputs(data).items():
  if match['status']=='finished':
   assert '<span class="stream-time">Матч завершён</span>' in text
   assert 'data-state="finished"' in text
- assert text.count('Друзья, ваша поддержка сейчас очень важна.')==1
- assert text.index('Друзья, ваша поддержка сейчас очень важна.')>text.index('</iframe>')
+ assert text.count('id="project-support"')==1
+ assert text.index('</iframe>') < text.index('id="project-support"') < text.index('id="copySupportCard"')
+ assert text.index('/assets/support/sber-qr.png') < text.index('class="session-schedule"') if match.get('scheduleBlocks') else True
  assert '{{' not in text
 m=copy.deepcopy(next(m for m in reversed(data['matches']) if not m.get('sessionTitle')));template=(ROOT/'scripts/templates/match.html').read_text()
 single=render(m,[m],[m],template,True)

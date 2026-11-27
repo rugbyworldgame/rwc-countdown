@@ -125,13 +125,15 @@ if (document.querySelector('.lineups')) {
     function revealSupport(event) {
       if (!event.target.closest('a[href="#project-support"]')) return;
       event.preventDefault();
-      slot.querySelector('details').open = true;
+      const details = slot.querySelector('.support-details');
+      if (details) details.open = true;
       slot.querySelector('#project-support').scrollIntoView({block:'center'});
-      slot.querySelector('summary').focus({preventScroll:true});
+      (details?.querySelector('summary') || button).focus({preventScroll:true});
     }
     document.addEventListener('click', revealSupport);
     if (location.hash === '#project-support') {
-      slot.querySelector('details').open = true;
+      const details = slot.querySelector('.support-details');
+      if (details) details.open = true;
       slot.scrollIntoView();
     }
   } catch { /* Navigation and page content remain available. */ }
