@@ -20,3 +20,8 @@
   .gift-desktop { display: none; }
   .gift-mobile { display: block; margin-top: .5rem; }
 }
+.gift-transfer { display: grid; justify-items: center; }
+.match-gift .gift-link { display: inline-flex; align-items: center; min-height: 44px; color: #e7c789; font-weight: 600; text-decoration: underline; text-underline-offset: .2em; }
+@media (max-width: 640px) {
+  .gift-transfer { justify-items: start; }
+}
