@@ -6,7 +6,13 @@
     "2026-11-27-dax-oyonnax",
     "2026-11-27-angouleme-nice",
     "2026-11-27-provence-montauban",
-    "2026-11-27-ireland-australia"
+    "2026-11-27-ireland-australia",
+    "2026-11-28-dubai-svns-day-1",
+    "2026-11-28-wales-japan",
+    "2026-11-28-bordeaux-montpellier",
+    "2026-11-28-bayonne-castres",
+    "2026-11-28-england-new-zealand",
+    "2026-11-28-lyon-toulouse"
   ],
   "matches": [
     {
@@ -3835,7 +3841,7 @@
       "competition": "Про Д2",
       "season": "2026/27",
       "stage": "12-й тур",
-      "status": "scheduled",
+      "status": "finished",
       "venue": "Стад Мунисипаль",
       "city": "Брив-ла-Гайард",
       "country": "FR",
@@ -4035,7 +4041,7 @@
       "competition": "Чемпионат наций",
       "season": "2026",
       "stage": "Матч за 11-е место",
-      "status": "scheduled",
+      "status": "finished",
       "venue": "Альянц Стэдиум, Туикенем",
       "city": "Лондон",
       "country": "GB",
@@ -4219,6 +4225,465 @@
         {
           "label": "Судейские назначения турнира",
           "url": "https://nationschampionshiprugby.com/en/news/the-13-th-team-confirmed-for-finals-weekend"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-28-bordeaux-montpellier",
+      "start": "2026-11-28T16:30:00+03:00",
+      "international": false,
+      "competition": "Top 14",
+      "season": "2026/27",
+      "stage": "10-й тур",
+      "status": "scheduled",
+      "venue": "Шабан-Дельмас",
+      "city": "Бордо",
+      "country": "FR",
+      "video": "https://vk.ru/video_ext.php?oid=-175058841&id=456241265&hash=1977778c6985a834&hd=3",
+      "introTitle": "Перед матчем",
+      "intro": "В Бордо открывается десятый тур. У хозяев игру поведёт Артюр Ретьер, а у «Монпелье» на позиции десятого номера выйдет Адам Хастингс.",
+      "home": {
+        "name": "Бордо",
+        "badge": "UBB",
+        "color": "#7b2344",
+        "players": [
+          "Matis PERCHAUD",
+          "Connor SA",
+          "Carlu Johann SADIE",
+          "Boris PALU",
+          "Cyril CAZEAUX",
+          "Pierre BOCHATON",
+          "Elyjah IBSAIENE",
+          "Thomas Daniel WILLIS",
+          "Arthur RETIERE",
+          "Louis FAVRAU",
+          "Hugo AVOGADRO",
+          "Röhan JANSE VAN RENSBURG",
+          "Nicolas DEPOORTERE",
+          "Pablo UBERTI",
+          "Xan MOUSQUES",
+          "Clement MALINOWSKI",
+          "Lasha PKHAKADZE",
+          "Benjamin TAMEIFUNA",
+          "Alexander James MOON",
+          "Temo MATIU",
+          "Valentin HUTTEAU",
+          "Damian PENAUD",
+          "Felix DUGUAY"
+        ]
+      },
+      "away": {
+        "name": "Монпелье",
+        "badge": "MHR",
+        "color": "#25465a",
+        "players": [
+          "Luca TABAROT",
+          "Lyam AKRAB",
+          "Luka JAPARIDZE",
+          "Ruben VAN HEERDEN",
+          "Mael PERRIN",
+          "Lenni NOUCHI",
+          "Alexander MASIBAKA",
+          "Viliami VUNIPOLA",
+          "Alexis BERNADET",
+          "Adam HASTINGS",
+          "Donovan TAOFIFENUA",
+          "Lennox ANYANWU",
+          "Arthur VINCENT",
+          "Melvyn RATES",
+          "Jon ECHEGARAY",
+          "Ricky RICCITELLI",
+          "Christopher TOLOFUA",
+          "Mohamed HAOUAS",
+          "Yacouba CAMARA",
+          "Raphaël AUDEBERT",
+          "Sebastien BEZY",
+          "Auguste CADOT",
+          "Tom BANKS"
+        ]
+      },
+      "officials": {
+        "referee": "Ludovic Cayre",
+        "assistants": "Stephane Crapoix и Hugo Dutreuilh",
+        "tmo": "Jean Lespes"
+      },
+      "sources": [
+        {
+          "label": "Заявки и судьи — LNR",
+          "url": "https://top14.lnr.fr/feuille-de-match/2026-2027/j10/11883-bordeaux-begles-montpellier/compositions"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-28-bayonne-castres",
+      "start": "2026-11-28T18:35:00+03:00",
+      "international": false,
+      "competition": "Top 14",
+      "season": "2026/27",
+      "stage": "10-й тур",
+      "status": "scheduled",
+      "venue": "Жан-Доже",
+      "city": "Байонна",
+      "country": "FR",
+      "video": "https://vk.ru/video_ext.php?oid=-175058841&id=456241266&hash=76e95b854ad48b8f&hd=3",
+      "introTitle": "Перед матчем",
+      "intro": "«Байон» принимает «Кастр» на «Жан-Доже». У хозяев в полузащите сыграют Лео Коли и Жорис Сегон, у гостей — Колен Дюпюи и Тео Видаль.",
+      "home": {
+        "name": "Байон",
+        "badge": "AB",
+        "color": "#25465a",
+        "players": [
+          "Andy BORDELAI",
+          "Lucas MARTIN",
+          "Emerick SETIANO",
+          "Killian GERACI",
+          "Ewan JOHNSON",
+          "Alexandre FISCHER",
+          "Matthieu UHILA",
+          "Rodrigo BRUNI",
+          "Léo COLY",
+          "Joris SEGONDS",
+          "Madosha TAMBWE",
+          "Etuale Manusamoa TUILAGI",
+          "Robert James DU PREEZ",
+          "Tom SPRING",
+          "Yohan ORABE",
+          "Ignacio CALLES",
+          "Swan CORMENIER",
+          "Komiti Junior ALAINUUESE",
+          "Baptiste HEGUY",
+          "Giovanni HABEL KUFFNER",
+          "Baptiste Jules TILLOLES",
+          "Cheikh Saliou TIBERGHIEN",
+          "Tevita TATAFU"
+        ]
+      },
+      "away": {
+        "name": "Кастр",
+        "badge": "CO",
+        "color": "#25465a",
+        "players": [
+          "Lois GUEROIS GALISSON",
+          "Teddy DURAND",
+          "Mate GURTSKAIA",
+          "Guillaume DUCAT",
+          "Florent VANVERBERGHE",
+          "Mathieu BABILLOT",
+          "Hamish WATSON",
+          "Veresa Tuqovu RAMOTOTABUA",
+          "Colin DUPUY",
+          "Théo VIDAL",
+          "Remy BAGET",
+          "Elias Jack GOODHUE",
+          "Vuate KARAWALEVU",
+          "Adam VARGAS",
+          "Geoffrey PALIS",
+          "Loris ZARANTONELLO",
+          "Quentin WALCKER",
+          "Foliga Christopher GABRIEL",
+          "Gauthier MARAVAT",
+          "Baptiste COPE",
+          "Louis LE BRUN",
+          "Adrea COCAGI",
+          "Levan CHILACHAVA"
+        ]
+      },
+      "officials": {
+        "referee": "Vivien Praderie",
+        "assistants": "Jonathan Gasnier и Pierre Olivier Julien",
+        "tmo": "Christophe Berdos"
+      },
+      "sources": [
+        {
+          "label": "Заявки и судьи — LNR",
+          "url": "https://top14.lnr.fr/feuille-de-match/2026-2027/j10/11882-bayonne-castres/compositions"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-28-lyon-toulouse",
+      "start": "2026-11-28T23:00:00+03:00",
+      "international": false,
+      "competition": "Top 14",
+      "season": "2026/27",
+      "stage": "10-й тур",
+      "status": "scheduled",
+      "venue": "Матмют Стадиум де Жерлан",
+      "city": "Лион",
+      "country": "FR",
+      "video": "https://vk.ru/video_ext.php?oid=-175058841&id=456241267&hash=cd5577408c3b74ae&hd=3",
+      "introTitle": "Перед матчем",
+      "intro": "Субботнюю программу в Лионе закроет «Тулуза». У хозяев в полузащите привычная связка Батиста Куйю и Лео Бердё, у гостей — Симон Дарок и Валантен Дельпи.",
+      "home": {
+        "name": "Лион",
+        "badge": "LOU",
+        "color": "#25465a",
+        "players": [
+          "Thomas MOUKORO ABOUEM",
+          "Guillaume MARCHAND",
+          "Irakli APTSIAURI",
+          "Marvin Saint Gys OKUYA",
+          "Fousseynou CISSOKHO",
+          "Antoine DELIANCE",
+          "Beka SAGINADZE",
+          "Beka SHVANGIRADZE",
+          "Baptiste COUILLOUD",
+          "Léo BERDEU",
+          "Ethan DUMORTIER",
+          "Theo MILLET",
+          "Josiah Meihana MARAKU",
+          "Arthur MATHIRON",
+          "Gabin LORRE",
+          "Camille CHAT",
+          "Jérôme REY",
+          "Theo WILLIAM",
+          "Dylan CRETIN",
+          "Charlie CASSANG",
+          "David Patrick JACKSON",
+          "Maxime GOUZOU",
+          "Mattéo NOCERA"
+        ]
+      },
+      "away": {
+        "name": "Тулуза",
+        "badge": "ST",
+        "color": "#b52132",
+        "players": [
+          "Rodrigue NETI",
+          "Thomas LACOMBRE",
+          "Paul MALLEZ",
+          "Joshua BRENNAN",
+          "Joel MERKLER PEREZ",
+          "Jack WILLIS",
+          "Léo BANOS",
+          "Alexandre ROUMAT",
+          "Simon DAROQUE",
+          "Valentin DELPY",
+          "Matthis LEBEL",
+          "Lucas VIGNERES",
+          "Lukas AMATI",
+          "Celian POUZELGUES",
+          "Matias REMUE",
+          "Benjamin BERTRAND",
+          "Cyril BAILLE",
+          "Romeo BONNARD MARTIN",
+          "Raphaël PORTAT",
+          "Mathis CASTRO FERREIRA",
+          "Nathan LLAVERIA",
+          "Lucien RICHARDIS",
+          "Dorian ALDEGHERI"
+        ]
+      },
+      "officials": {
+        "referee": "Thibault Santamaria",
+        "assistants": "Remi Aiguebonne и Thomas Chereque",
+        "tmo": "Mathieu Noirot"
+      },
+      "sources": [
+        {
+          "label": "Заявки и судьи — LNR",
+          "url": "https://top14.lnr.fr/feuille-de-match/2026-2027/j10/11886-lyon-toulouse/compositions"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-28-wales-japan",
+      "start": "2026-11-28T16:10:00+03:00",
+      "international": true,
+      "competition": "Чемпионат наций",
+      "season": "2026",
+      "stage": "Матч за 9-е место",
+      "status": "scheduled",
+      "venue": "Альянц Стэдиум, Туикенем",
+      "city": "Лондон",
+      "country": "GB",
+      "video": "https://vk.ru/video_ext.php?oid=-175058841&id=456241268&hash=dff93c267646b4f1&hd=3",
+      "introTitle": "Перед матчем",
+      "intro": "В Лондоне Уэльс и Япония разыграют девятое место. Рубен Морган-Уильямс впервые выйдет в стартовом составе валлийцев. Эфир с оригинальным звуком.",
+      "home": {
+        "name": "Уэльс",
+        "badge": "WAL",
+        "color": "#275341",
+        "players": [
+          "Rhys Carre",
+          "Ryan Elias",
+          "Archie Griffin",
+          "Dafydd Jenkins",
+          "Adam Beard",
+          "Alex Mann",
+          "James Botham",
+          "Aaron Wainwright",
+          "Reuben Morgan-Williams",
+          "Sam Costelow",
+          "Josh Adams",
+          "Max Llewellyn",
+          "Eddie James",
+          "Louis Rees-Zammit",
+          "Blair Murray",
+          "Dewi Lake",
+          "Gareth Thomas",
+          "Dillon Lewis",
+          "Taine Plumtree",
+          "Jac Morgan",
+          "Tomos Williams",
+          "Joe Hawkins",
+          "Ellis Mee"
+        ]
+      },
+      "away": {
+        "name": "Япония",
+        "badge": "JPN",
+        "color": "#344765",
+        "players": [
+          "Yota Kamimori",
+          "Mamoru Harada",
+          "Taufa Latu",
+          "Michael Stolberg",
+          "Warner Dearns",
+          "Ben Gunter",
+          "Kanji Shimokawa",
+          "Faulua Makisi",
+          "Naoto Saito",
+          "Riku Kitahara",
+          "Tiennan Costley",
+          "Charlie Lawrence",
+          "Samisoni Tua",
+          "Koga Nezuka",
+          "Takuro Matsunaga",
+          "Kenji Sato",
+          "Sojiro Otsuka",
+          "Shunsuke Asaoka",
+          "Ruan Botha",
+          "Esei Haangana",
+          "Shinobu Fujiwara",
+          "Shinya Komura",
+          "Halatoa Vailea"
+        ]
+      },
+      "officials": {
+        "referee": "Luke Pearce",
+        "assistants": "Matthew Carley и Damián Schneider",
+        "tmo": "Ian Tempest"
+      },
+      "sources": [
+        {
+          "label": "Заявки команд — Planet Rugby",
+          "url": "https://www.planetrugby.com/news/nations-championship-finals-weekend-teams-global-tv-channels-referees-and-more"
+        },
+        {
+          "label": "Судейские назначения — World Rugby",
+          "url": "https://www.world.rugby/the-game/high-performance/officiating/1048137"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-28-england-new-zealand",
+      "start": "2026-11-28T19:40:00+03:00",
+      "international": true,
+      "competition": "Чемпионат наций",
+      "season": "2026",
+      "stage": "Матч за 3-е место",
+      "status": "scheduled",
+      "venue": "Альянц Стэдиум, Туикенем",
+      "city": "Лондон",
+      "country": "GB",
+      "video": "https://vk.ru/video_ext.php?oid=-175058841&id=456241269&hash=67aa00c66374a9e8&hd=3",
+      "introTitle": "Перед матчем",
+      "intro": "Неделю назад Англия выиграла на «Туикенеме» 37:12. Теперь соперники вернутся на то же поле, чтобы разыграть третье место. Эфир с оригинальным звуком.",
+      "home": {
+        "name": "Англия",
+        "badge": "ENG",
+        "color": "#275341",
+        "players": [
+          "Ellis Genge",
+          "Luke Cowan-Dickie",
+          "Joe Heyes",
+          "Maro Itoje",
+          "Alex Coles",
+          "Ollie Chessum",
+          "Greg Fisilau",
+          "Ben Earl",
+          "Jack van Poortvliet",
+          "Fin Smith",
+          "Will Joseph",
+          "Seb Atkinson",
+          "Henry Slade",
+          "Tommy Freeman",
+          "Freddie Steward",
+          "Jamie George",
+          "Fin Baxter",
+          "Will Stuart",
+          "George Martin",
+          "Ben Curry",
+          "Henry Pollock",
+          "Archie McParland",
+          "Marcus Smith"
+        ]
+      },
+      "away": {
+        "name": "Новая Зеландия",
+        "badge": "NZL",
+        "color": "#344765",
+        "players": [
+          "Ethan de Groot",
+          "Asafo Aumua",
+          "Fletcher Newell",
+          "Scott Barrett",
+          "Fabian Holland",
+          "Anton Segner",
+          "Peter Lakai",
+          "Wallace Sititi",
+          "Cortez Ratima",
+          "Richie Mo’unga",
+          "Josh Moorby",
+          "Jordie Barrett",
+          "Leicester Fainga’anuku",
+          "Rieko Ioane",
+          "Damian McKenzie",
+          "George Bell",
+          "Xavier Numia",
+          "Pasilio Tosi",
+          "Josh Lord",
+          "Ethan Blackadder",
+          "Cam Roigard",
+          "Timoci Tavatavanawai",
+          "Beauden Barrett"
+        ]
+      },
+      "officials": {
+        "referee": "Angus Gardner",
+        "assistants": "Andrea Piardi и Eoghan Cross",
+        "tmo": "Olly Hodges"
+      },
+      "sources": [
+        {
+          "label": "Заявки команд — Planet Rugby",
+          "url": "https://www.planetrugby.com/news/nations-championship-finals-weekend-teams-global-tv-channels-referees-and-more"
+        },
+        {
+          "label": "Судейские назначения — World Rugby",
+          "url": "https://www.world.rugby/the-game/high-performance/officiating/1048137"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-28-dubai-svns-day-1",
+      "sessionTitle": "Регби-7 · Дубай",
+      "competition": "Мировая серия по регби-7",
+      "season": "2026/27",
+      "stage": "Групповой этап · День 1",
+      "start": "2026-11-28T09:00:00+03:00",
+      "status": "scheduled",
+      "city": "Дубай",
+      "country": "AE",
+      "venue": "The Sevens",
+      "video": "https://vk.ru/video_ext.php?oid=-175058841&id=456241270&hash=e5d3e0954f766f2a&hd=3",
+      "introTitle": "Групповой этап в Дубае",
+      "intro": "Мужской и женский турниры в одном эфире на весь игровой день. В 09:00 МСК на поле выйдут женские сборные США и Испании. В мужской сетке Новая Зеландия начнёт защиту титула в Дубае матчем против Фиджи. Оригинальный звук.",
+      "sources": [
+        {
+          "label": "Dubai 7s",
+          "url": "https://www.emiratesdubai7s.com/news/svns-schedule-2026/"
         }
       ]
     }

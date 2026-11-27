@@ -20,3 +20,5 @@
 .archive-shortcut a{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border:1px solid #82975e;border-radius:8px;color:#d3f399;background:#152017;text-decoration:none;font-weight:700}
 .archive-shortcut a:hover,.archive-shortcut a:focus-visible{outline:2px solid #c4f263;outline-offset:2px}
 #match-archive{scroll-margin-top:6rem}
+
+.match-day-grid a.session-card{grid-column:1/-1;border-left:5px solid #f4c467;background:#302719;padding:14px 16px}.match-day-grid a.session-card strong{font-size:1.1rem}.match-day-grid a.session-card[aria-current="page"]{outline:2px solid #c4f263;outline-offset:-2px}

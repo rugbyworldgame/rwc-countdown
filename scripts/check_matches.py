@@ -8,7 +8,7 @@ class Page(HTMLParser):
  def handle_starttag(self,t,attrs):self.tags.append((t,dict(attrs)))
 data=json.loads((ROOT/'data/matches.json').read_text());validate(data)
 for match in data['matches']:
- names=[p if isinstance(p,str) else p['name'] for side in ('home','away') for p in match[side]['players']]
+ names=[p if isinstance(p,str) else p['name'] for side in ('home','away') if side in match for p in match[side]['players']]
  names=[re.sub(r' \((?:капитан|сокапитан|captain|c)\)$','',n,flags=re.I) for n in names]
  assert not (any(re.search(r'[А-Яа-яЁё]',n) for n in names) and any(re.search(r'[A-Za-z]',n) for n in names)),match['id']+' mixes lineup scripts'
 for path,text in outputs(data).items():
@@ -26,11 +26,16 @@ for path,text in outputs(data).items():
  assert 'refLinkId=246672' in text and '2202 2068 8814 8090' in text
  match=next(m for m in data['matches'] if m['video']==frames[0]['src'])
  event=next(json.loads(x) for x in re.findall(r'<script type="application/ld\+json" data-seo>(.*?)</script>',text) if json.loads(x)['@type']=='SportsEvent')
- assert event['startDate']==match['start'] and event['homeTeam']['name']==match['home']['name'] and event['awayTeam']['name']==match['away']['name']
+ assert event['startDate']==match['start'] 
+ if match.get('sessionTitle'):
+  assert 'homeTeam' not in event and 'awayTeam' not in event and event['sport']=='Регби-7'
+  assert 'class="lineups"' not in text and 'class="session-card"' in text
+ else:
+  assert all(event[k+'Team']['name']==match[k]['name'] for k in ('home','away'))
  lists=re.findall(r'<ol(?: start="16")?>(.*?)</ol>',text,re.S)
- expected=[size for team in [match['home'],match['away']] if team['players'] for size in [15,8]]
+ expected=[size for team in [match[k] for k in ('home','away') if k in match] if team['players'] for size in [15,8]]
  assert [len(re.findall('<li',x)) for x in lists]==expected
- assert text.count('Подтверждённый состав пока не добавлен.')==sum(not team['players'] for team in [match['home'],match['away']])
+ assert text.count('Подтверждённый состав пока не добавлен.')==sum(not team['players'] for team in [match[k] for k in ('home','away') if k in match])
  for t,a in p.tags:
   if t=='a' and a.get('href','').startswith('/match-center/2026-'):
    assert (ROOT/urlsplit(a['href']).path.lstrip('/')/'index.html').exists()
@@ -40,7 +45,7 @@ for path,text in outputs(data).items():
  assert text.count('Друзья, ваша поддержка сейчас очень важна.')==1
  assert text.index('Друзья, ваша поддержка сейчас очень важна.')>text.index('</iframe>')
  assert '{{' not in text
-m=copy.deepcopy(data['matches'][-1]);template=(ROOT/'scripts/templates/match.html').read_text()
+m=copy.deepcopy(next(m for m in reversed(data['matches']) if not m.get('sessionTitle')));template=(ROOT/'scripts/templates/match.html').read_text()
 single=render(m,[m],[m],template,True)
 assert 'aria-label="Выбор матча"' not in single and 'location.replace' not in single
 m['home']['players']=[];m['officials']={}

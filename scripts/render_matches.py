@@ -11,7 +11,7 @@ e=lambda x:escape(str(x),quote=True)
 def js(x):return json.dumps(x,ensure_ascii=False).replace('<','\\u003c')
 def url(m):return '/match-center/'+m['id']+'/'
 def teamname(m,t):return t['name'] if m.get('international') else '«'+t['name']+'»'
-def name(m):return teamname(m,m["home"])+" — "+teamname(m,m["away"])
+def name(m):return m.get("sessionTitle") or teamname(m,m["home"])+" — "+teamname(m,m["away"])
 def date(m):return datetime.fromisoformat(m['start']).astimezone(ZoneInfo('Europe/Moscow'))
 MONTHS='января февраля марта апреля мая июня июля августа сентября октября ноября декабря'.split()
 def shortdate(m):
@@ -28,7 +28,7 @@ def validate(data):
   u=urlsplit(m['video']);q=parse_qs(u.query)
   assert u.scheme=='https' and u.hostname in ['vk.ru','vkvideo.ru'] and u.path=='/video_ext.php'
   assert all(q.get(k) for k in ['oid','id','hash'])
-  for t in [m['home'],m['away']]:
+  for t in ([] if m.get('sessionTitle') else [m['home'],m['away']]):
    assert t['name'] and re.fullmatch(r'#[0-9a-fA-F]{6}',t['color'])
    assert len(t['players']) in [0,23], 'Use full confirmed 23 or empty pending lineup'
    for p in t['players']:assert isinstance(p,str) or (p.get('name') and p.get('playerId'))
@@ -44,7 +44,14 @@ def selector(featured,current):
  groups=[]
  weekdays=('Понедельник','Вторник','Среда','Четверг','Пятница','Суббота','Воскресенье')
  for day,matches in days.items():
-  links=''.join(f'<a href="{url(m)}"'+(' aria-current="page"' if m['id']==current['id'] else '')+f'><small>{time(m)} МСК · {e(m["competition"])}</small><strong>{e(name(m))}</strong>{live(m)}</a>' for m in matches)
+  cards=[]
+  for m in matches:
+   selected=' aria-current="page"' if m['id']==current['id'] else ''
+   session=m.get('sessionTitle')
+   style=' class="session-card"' if session else ''
+   subtitle=m['stage']+' · Оригинальный звук' if session else m['competition']
+   cards.append(f'<a{style} href="{url(m)}"{selected}><small>{time(m)} МСК · {e(subtitle)}</small><strong>{e(name(m))}</strong>{live(m)}</a>')
+  links=''.join(cards)
   heading=f'{weekdays[day.weekday()]}, {shortdate(matches[0])}'
   grid=f'<div class="match-day-grid">{links}</div>'
   if len(days)==1:
@@ -52,7 +59,7 @@ def selector(featured,current):
   else:
    active=any(m['status'] not in ('finished','cancelled') for m in matches)
    expanded=' open' if active else ''
-   groups.append(f'<details{expanded} data-match-day="{day.isoformat()}"><summary>{heading} · Матчей: {len(matches)}</summary>{grid}</details>')
+   groups.append(f'<details{expanded} data-match-day="{day.isoformat()}"><summary>{heading} · {("Эфиров" if any(m.get("sessionTitle") for m in matches) else "Матчей")}: {len(matches)}</summary>{grid}</details>')
  return '<nav class="shell match-selector" aria-label="Выбор матча">'+''.join(groups)+'</nav>'
 
 def render(m,featured,allmatches,template,entry=False):
@@ -63,14 +70,23 @@ def render(m,featured,allmatches,template,entry=False):
  crumbs=[('Главная',BASE+'/'),('Матч-центр',BASE+'/match-center/')]
  if not entry:crumbs.append((name(m),canonical))
  schema=[{'@context':'https://schema.org','@type':'BreadcrumbList','itemListElement':[{'@type':'ListItem','position':i,'name':n,'item':u} for i,(n,u) in enumerate(crumbs,1)]}]
- schema.append({'@context':'https://schema.org','@type':'SportsEvent','@id':BASE+url(m)+'#event','name':name(m),'sport':'Регби','startDate':m['start'],'url':BASE+url(m),'location':{'@type':'Place','name':m['venue'],'address':{'@type':'PostalAddress','addressLocality':m['city'],'addressCountry':m['country']}},'homeTeam':{'@type':'SportsTeam','name':m['home']['name']},'awayTeam':{'@type':'SportsTeam','name':m['away']['name']}})
+ schema.append({'@context':'https://schema.org','@type':'SportsEvent','@id':BASE+url(m)+'#event','name':name(m),'sport':'Регби','startDate':m['start'],'url':BASE+url(m),'location':{'@type':'Place','name':m['venue'],'address':{'@type':'PostalAddress','addressLocality':m['city'],'addressCountry':m['country']}}})
+ if not m.get('sessionTitle'):
+  for side in ('home','away'):
+   schema[-1][side+'Team']={'@type':'SportsTeam','name':m[side]['name']}
+ else:
+  schema[-1]['sport']='Регби-7'
+  if not entry:desc=m['intro']
  metadata=f'<meta name="description" content="{e(desc)}"><link rel="canonical" href="{canonical}">'
  for k,v in {'type':'website','locale':'ru_RU','site_name':'Rugby 2027','title':title,'description':desc,'url':canonical}.items():metadata+=f'<meta property="og:{k}" content="{e(v)}">'
  metadata+=''.join('<script type="application/ld+json" data-seo>'+js(x)+'</script>' for x in schema)
  def badge(t):return f'<span aria-hidden="true" style="background:{t["color"]};color:#fff">{e(t["badge"])}</span>'
  initial_label={'finished':'Матч завершён','cancelled':'Матч отменён','postponed':'Матч перенесён','live':'В эфире'}.get(m['status'],f'По расписанию — {time(m)} МСК')
- home,away=m['home'],m['away']
- scoreboard=f'''<section class="match-scoreboard"><div class="shell"><a class="match-back" href="/">← На главную</a>
+ if m.get('sessionTitle'):
+  scoreboard=f'<section class="match-scoreboard"><div class="shell"><div class="match-competition">{e(m["competition"])} · {e(stage)}</div><p>{shortdate(m)} · {time(m)} МСК · {e(m["venue"])}</p></div></section>'
+ else:
+  home,away=m['home'],m['away']
+  scoreboard=f'''<section class="match-scoreboard"><div class="shell"><a class="match-back" href="/">← На главную</a>
  <div class="match-competition">{e(m['competition'])} · {e(m['season'])} · {stage}</div>
  <div class="match-teams" aria-label="{e(name(m))}"><div class="match-team">{badge(home)}<strong>{e(teamname(m,home))}</strong></div><div class="match-versus"><b>VS</b><small>{shortdate(m)} · {time(m)} МСК</small></div><div class="match-team">{badge(away)}<strong>{e(teamname(m,away))}</strong></div></div>
  <div class="match-venue">Стадион «{e(m['venue'])}» · {e(m['city'])}</div>
@@ -87,7 +103,11 @@ def render(m,featured,allmatches,template,entry=False):
   else:h+='<p>Подтверждённый состав пока не добавлен.</p>'
   return h+'</article>'
  def facts(items):return '<dl class="match-facts">'+''.join('<div><dt>'+e(k)+'</dt><dd>'+e(v or 'Пока не подтверждено')+'</dd></div>' for k,v in items)+'</dl>'
- content=f'''<section class="section shell match-content"><article class="match-intro"><span class="match-kicker">Почему стоит смотреть</span><h2>{e(m['introTitle'])}</h2><p>{e(m['intro'])}</p><p class="stream-help"><a href="/participants">Участники Кубка мира 2027</a>.</p></article>
+ if m.get('sessionTitle'):
+  stream=stream.replace('Трансляция матча','Трансляция этапа').replace('на этот матч','на этот эфир')
+  content=f'<section class="section shell match-content"><article class="match-intro"><h2>{e(m["introTitle"])}</h2><p>{e(m["intro"])}</p><a href="{e(m["sources"][0]["url"])}">Расписание организатора</a></article></section>'
+ else:
+  content=f'''<section class="section shell match-content"><article class="match-intro"><span class="match-kicker">Почему стоит смотреть</span><h2>{e(m['introTitle'])}</h2><p>{e(m['intro'])}</p><p class="stream-help"><a href="/participants">Участники Кубка мира 2027</a>.</p></article>
  <section class="match-info" aria-labelledby="info-title"><div class="match-section-heading"><span>Всё в одном месте</span><h2 id="info-title">Основная информация</h2></div>'''+facts([('Дата',shortdate(m)+f' {date(m).year} года'),('Начало',time(m)+' МСК'),('Турнир',m['competition']),('Сезон и тур',f'{m["season"]} · {stage}'),('Главный арбитр',m['officials'].get('referee')),('Стадион',f'«{m["venue"]}», {m["city"]}')])+'''</section><section class="lineups" aria-labelledby="lineups-title"><div class="match-section-heading"><span>Заявки команд</span><h2 id="lineups-title">Составы</h2></div><div class="lineup-grid">'''+roster(home)+roster(away)+'''</div></section><section class="match-info" aria-labelledby="officials-title"><div class="match-section-heading"><span>Назначения на матч</span><h2 id="officials-title">Судейская бригада</h2></div>'''+facts([(k,m['officials'].get(v)) for k,v in [('Главный арбитр','referee'),('Боковые судьи','assistants'),('Видеорефери','tmo')]])+'<p class="stream-help">Источники: '+' · '.join(f'<a href="{e(x["url"])}" target="_blank" rel="noopener">{e(x["label"])}</a>' for x in m['sources'])+'</p></section></section>'
  archive_jump='<div class="shell archive-shortcut"><a href="/match-center/archive/">Архив матчей</a></div>'
  archive_html='<div id="match-archive" class="shell match-archive"><a href="/match-center/archive/">Архив матчей</a></div>'

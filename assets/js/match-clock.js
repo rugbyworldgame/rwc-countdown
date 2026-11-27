@@ -12,6 +12,7 @@
       group.open = group.dataset.matchDay === today || !!group.querySelector('[aria-current="page"]');
     });
   }
+  if (!label) return;
   const statusText = label.textContent;
   function tick() {
     const left = target-Date.now();
