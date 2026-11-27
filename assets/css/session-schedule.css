@@ -1,0 +1,7 @@
+.session-schedule { margin-top: 2rem; max-width: 46rem; text-align: left; }
+.session-schedule h2 { font-size: clamp(1.6rem, 5vw, 2.4rem); }
+.session-schedule h3 { margin: 1.5rem 0 .35rem; }
+.session-schedule table { width: 100%; border-collapse: collapse; }
+.session-schedule caption { padding: .85rem 0 .25rem; text-align: left; color: #e4bf79; font-weight: 700; }
+.session-schedule td { padding: .45rem 0; border-bottom: 1px solid #ffffff26; vertical-align: top; }
+.session-schedule td:first-child { width: 4.5rem; padding-right: .75rem; font-variant-numeric: tabular-nums; }

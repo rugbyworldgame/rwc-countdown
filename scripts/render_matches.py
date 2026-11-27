@@ -106,12 +106,16 @@ def render(m,featured,allmatches,template,entry=False):
  if m.get('sessionTitle'):
   stream=stream.replace('Трансляция матча','Трансляция этапа').replace('на этот матч','на этот эфир')
   if m.get('scheduleBlocks'):
+   metadata += '<link rel="stylesheet" href="/assets/css/session-schedule.css?v=1">'
    stream += '<section class="session-schedule" aria-labelledby="schedule-title"><h2 id="schedule-title">Расписание матчей</h2><p>Время московское (МСК)</p>'
    for block in m['scheduleBlocks']:
-    stream += f'<h3>{e(block["label"])}</h3><ul>'
-    for game in block['games']:
-     stream += f'<li><time>{e(game["time"])}</time><strong>{e(game["teams"])}</strong><span>{e(game["category"])}</span></li>'
-    stream += '</ul>'
+    stream += f'<h3>{e(block["label"])}</h3>'
+    from itertools import groupby
+    for category, games in groupby(block['games'], key=lambda game: game['category']):
+     stream += f'<table><caption>{e(category)}</caption><tbody>'
+     for game in games:
+      stream += f'<tr><td><time>{e(game["time"])}</time></td> <td>{e(game["teams"])}</td></tr>'
+     stream += '</tbody></table>'
    stream += '</section>'
   content=f'<section class="section shell match-content"><article class="match-intro"><h2>{e(m["introTitle"])}</h2><p>{e(m["intro"])}</p><a href="{e(m["sources"][0]["url"])}">Расписание организатора</a></article></section>'
  else:
