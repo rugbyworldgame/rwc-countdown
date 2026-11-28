@@ -21,7 +21,14 @@
   .gift-mobile { display: block; margin-top: .5rem; }
 }
 .gift-transfer { display: grid; justify-items: center; }
-.match-gift .gift-link { display: inline-flex; align-items: center; min-height: 44px; color: #e7c789; font-weight: 600; text-decoration: underline; text-underline-offset: .2em; }
+.match-gift .gift-link {
+  display: inline-flex; align-items: center; justify-content: center; gap: .6em;
+  box-sizing: border-box; min-height: 44px; margin-top: .6rem; padding: .6rem 1rem;
+  border-radius: 8px; background: #e7c789; color: #1c1a16;
+  font-weight: 700; text-decoration: none;
+}
+.match-gift .gift-link:hover { background: #f2d8a6; }
+.match-gift .gift-link:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
 @media (max-width: 640px) {
   .gift-transfer { justify-items: start; }
 }
